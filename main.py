@@ -10,6 +10,7 @@ import numpy as np
 import mlflow
 import argparse
 import os
+import shutil
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -155,10 +156,14 @@ def extract_metadata(test_dataset):
 
 def delete_model(model_path):
     if os.path.exists(model_path):
-        os.remove(model_path)
-        print(f"Model file {model_path} has been deleted.")
+        if os.path.isdir(model_path):
+            shutil.rmtree(model_path)
+            print(f"Directory {model_path} has been deleted.")
+        elif os.path.isfile(model_path):
+            os.remove(model_path)
+            print(f"Model file {model_path} has been deleted.")
     else:
-        print(f"Model file {model_path} does not exist.")
+        print(f"Model file or directory {model_path} does not exist.")
 
 
 def train_multimodel():
