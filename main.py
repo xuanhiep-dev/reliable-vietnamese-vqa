@@ -9,10 +9,10 @@ import modules.model
 from utils.dataset import get_dataset
 import pandas as pd
 import torch
-import json
 from torch.nn.functional import softmax
 
 os.environ['MLFLOW_EXPERIMENT_NAME'] = 'mlflow-vivqa'
+BASE_MODEL_PATH = "vqa_checkpoints/base_model.pth"
 
 
 def compute_metrics(p):
@@ -62,7 +62,8 @@ def get_options():
     args.add_argument("--encoder-attention-heads-layers", type=int, default=6)
     args.add_argument("--classes", type=int, default=353)
     args.add_argument("--conf-id", type=int, default=1)
-    args.add_argument("--predictions-dir", type=str, default="./data/multi-predictions")
+    args.add_argument("--predictions-dir", type=str,
+                      default="./data/multi-predictions")
 
     opt = args.parse_args()
     return opt
@@ -117,16 +118,29 @@ def _get_train_config(opt):
     return args
 
 
+def save_base_model(opt):
+    if not os.path.exists(BASE_MODEL_PATH):
+        print("Creating model...")
+        base_model = create_model('vivqa_model',
+                                  num_classes=opt.classes,
+                                  drop_path_rate=opt.drop_path_rate,
+                                  encoder_layers=opt.encoder_layers,
+                                  encoder_attention_heads=opt.encoder_attention_heads_layers)
+        torch.save(base_model, BASE_MODEL_PATH)
+
+
+def load_base_model():
+    print("Loading model...")
+    return torch.load(BASE_MODEL_PATH)
+
+
 def main():
     opt = get_options()
 
     train_dataset, val_dataset, test_dataset = get_dataset(opt)
 
-    model = create_model('vivqa_model',
-                            num_classes=opt.classes,
-                            drop_path_rate=opt.drop_path_rate,
-                            encoder_layers=opt.encoder_layers,
-                            encoder_attention_heads=opt.encoder_attention_heads_layers)
+    save_base_model()
+    model = load_base_model()
 
     args = _get_train_config(opt)
 
@@ -148,14 +162,18 @@ def main():
     predicted_labels = torch.argmax(probabilities, dim=-1).numpy()
     confidence_scores = torch.max(probabilities, dim=-1).values.numpy()
 
-    for i, sample in enumerate(test_dataset):
-        sample["predicted_answer"] = predicted_labels[i]
-        sample["confidence"] = confidence_scores[i]
+    df = pd.DataFrame({
+        "question": [sample["question"] for sample in test_dataset],
+        "img_id": [sample["img_id"] for sample in test_dataset],
+        "predicted_answer": predicted_labels,
+        "confidence": confidence_scores
+    })
 
-    
-    predictions_file = f"{opt.predictions_dir}/predictions-{str(opt.conf_id)}.json"
-    with open(predictions_file, "w", encoding="utf-8") as f:
-        json.dump(test_dataset, f, ensure_ascii=False, indent=4)
+    df["predicted_answer"] = np.array(predicted_labels, dtype=int)
+    df["confidence"] = np.array(confidence_scores, dtype=np.float32)
+
+    predictions_file = f"{opt.predictions_dir}/predictions-{opt.conf_id}.json"
+    df.to_json(predictions_file, orient="records", force_ascii=False, indent=4)
 
     test = trainer.evaluate(test_dataset)
     print(f'Test Accuracy: {test["eval_accuracy"]}')
@@ -163,8 +181,7 @@ def main():
     mlflow.end_run()
 
     del model
-    torch.cuda.empty_cache() 
-    print(f"Model {opt.conf_id} deleted and GPU cache cleared.")
+    torch.cuda.empty_cache()
 
 
 if __name__ == '__main__':
