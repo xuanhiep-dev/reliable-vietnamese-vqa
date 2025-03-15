@@ -152,7 +152,8 @@ def main():
         sample["predicted_answer"] = predicted_labels[i]
         sample["confidence"] = confidence_scores[i]
 
-    predictions_file = f"predictions-{opt.conf_id}.json"
+    
+    predictions_file = f"{opt.predictions_dir}/predictions-{opt.conf_id}.json"
     with open(predictions_file, "w", encoding="utf-8") as f:
         json.dump(test_dataset, f, ensure_ascii=False, indent=4)
 
