@@ -11,16 +11,10 @@ import mlflow
 import argparse
 import os
 import warnings
-import sys
 
-
-sys.stderr = open(os.devnull, 'w')
+warnings.filterwarnings("ignore")
 os.environ['MLFLOW_EXPERIMENT_NAME'] = 'mlflow-vivqa'
 BASE_MODEL_PATH = "vqa_checkpoints/base_model.pth"
-torch.cuda.empty_cache()
-warnings.filterwarnings("ignore")
-warnings.filterwarnings("ignore", module="timm")
-os.environ["XLA_FLAGS"] = "--xla_gpu_use_unsupported_ops=false"
 
 
 def compute_metrics(p):
@@ -209,5 +203,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-sys.stderr = sys.__stderr__
