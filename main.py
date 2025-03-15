@@ -126,18 +126,15 @@ def save_base_model(opt):
                                   drop_path_rate=opt.drop_path_rate,
                                   encoder_layers=opt.encoder_layers,
                                   encoder_attention_heads=opt.encoder_attention_heads_layers)
-        
-        base_model = torch.jit.script(base_model)
-        base_model.save(BASE_MODEL_PATH)
+        torch.save(base_model, BASE_MODEL_PATH)
 
 
 def load_base_model():
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     if not os.path.exists(BASE_MODEL_PATH):
         raise FileNotFoundError(f"Model checkpoint not found at {BASE_MODEL_PATH}.")
-    
-    print("Loading base model from checkpoint...")
-    return torch.jit.load(BASE_MODEL_PATH, map_location=device)
+
+    print("Loading model...")
+    return torch.load(BASE_MODEL_PATH)
 
 
 def main():
@@ -178,6 +175,7 @@ def main():
         "predicted_answer": np.array(predicted_labels, dtype=str),
         "confidence": np.array(confidence_scores, dtype=np.float32)
     })
+
 
     predictions_file = f"{opt.predictions_dir}/predictions-{opt.sub_id}.json"
     df.to_csv(predictions_file, encoding="utf-8-sig")

@@ -192,8 +192,6 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
 @register_model
 def vivqa_model(pretrained=False, num_classes=353, **kwargs):
     args = _get_base_config(**kwargs)
-    kwargs = dict(kwargs)
-
     model = BEiT3ForVietnameseVisualQuestionAnswering(
         args, num_classes=num_classes, **kwargs)
     return model
