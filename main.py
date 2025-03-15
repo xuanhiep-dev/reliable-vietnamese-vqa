@@ -62,7 +62,7 @@ def get_options():
     args.add_argument("--encoder-attention-heads-layers", type=int, default=6)
     args.add_argument("--classes", type=int, default=353)
     args.add_argument("--conf-id", type=int, default=1)
-    args.add_argument("--predictions-dir", type=int, default="./data/multi-predictions")
+    args.add_argument("--predictions-dir", type=str, default="./data/multi-predictions")
 
     opt = args.parse_args()
     return opt
