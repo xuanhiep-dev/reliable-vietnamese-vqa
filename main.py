@@ -7,6 +7,9 @@ from timm.models import create_model
 from sklearn.metrics import accuracy_score
 import modules.model
 from utils.dataset import get_dataset
+import pandas as pd
+import torch
+from torch.nn.functional import softmax
 
 os.environ['MLFLOW_EXPERIMENT_NAME'] = 'mlflow-vivqa'
 
@@ -57,6 +60,7 @@ def get_options():
     args.add_argument("--encoder-layers", type=int, default=6)
     args.add_argument("--encoder-attention-heads-layers", type=int, default=6)
     args.add_argument("--classes", type=int, default=353)
+    args.add_argument("--conf-id", type=int, default=1)
 
     opt = args.parse_args()
     return opt
@@ -134,6 +138,25 @@ def main():
     )
 
     trainer.train()
+
+    predictions = trainer.predict(test_dataset)
+    logits = torch.tensor(predictions.predictions)  # Lấy logits từ mô hình
+    probabilities = softmax(logits, dim=-1)
+
+    predicted_labels = torch.argmax(probabilities, dim=-1).numpy()
+    confidence_scores = torch.max(probabilities, dim=-1).values.numpy()
+
+    df = pd.DataFrame(test_dataset)
+    if 'answer' in df.columns:
+        df.drop(columns=['answer'], inplace=True)
+
+    df['answer'] = predicted_labels
+    df['confidence'] = confidence_scores
+
+    predictions_name = "predictions" + {opt.conf_id} + ".csv"
+    df.to_csv(predictions_name)
+
+    print(f'Test Accuracy: {predictions.metrics["test_accuracy"]}')
 
     test = trainer.evaluate(test_dataset)
     print(f'Test Accuracy: {test["eval_accuracy"]}')
