@@ -126,12 +126,18 @@ def save_base_model(opt):
                                   drop_path_rate=opt.drop_path_rate,
                                   encoder_layers=opt.encoder_layers,
                                   encoder_attention_heads=opt.encoder_attention_heads_layers)
-        torch.save(base_model, BASE_MODEL_PATH)
+        
+        base_model = torch.jit.script(base_model)
+        base_model.save(BASE_MODEL_PATH)
 
 
 def load_base_model():
-    print("Loading model...")
-    return torch.load(BASE_MODEL_PATH)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if not os.path.exists(BASE_MODEL_PATH):
+        raise FileNotFoundError(f"Model checkpoint not found at {BASE_MODEL_PATH}.")
+    
+    print("Loading base model from checkpoint...")
+    return torch.jit.load(BASE_MODEL_PATH, map_location=device)
 
 
 def main():
@@ -163,8 +169,8 @@ def main():
     confidence_scores = torch.max(probabilities, dim=-1).values.numpy()
 
     test_series = pd.Series(test_dataset)
-    questions = test_series.apply(lambda x: x["custom_preds"]["question"])
-    img_ids = test_series.apply(lambda x: x["custom_preds"]["img_id"])
+    questions = test_series.apply(lambda x: x["metadata"]["question"])
+    img_ids = test_series.apply(lambda x: x["metadata"]["img_id"])
 
     df = pd.DataFrame({
         "question": questions,
