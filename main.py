@@ -114,17 +114,24 @@ def _get_train_config(opt):
     )
     return args
 
-
-def main():
-    opt = get_options()
-
-    train_dataset, val_dataset, test_dataset = get_dataset(opt)
-
-    model = create_model('vivqa_model',
+model = None
+def create_model(opt):
+    global model
+    if model is None:
+        print("Creating new model...")
+        model = create_model('vivqa_model',
                          num_classes=opt.classes,
                          drop_path_rate=opt.drop_path_rate,
                          encoder_layers=opt.encoder_layers,
                          encoder_attention_heads=opt.encoder_attention_heads_layers)
+
+
+def main(id):
+    opt = get_options()
+
+    train_dataset, val_dataset, test_dataset = get_dataset(opt)
+
+    create_model(opt)
 
     args = _get_train_config(opt)
 
@@ -153,7 +160,7 @@ def main():
     df['answer'] = predicted_labels
     df['confidence'] = confidence_scores
 
-    predictions_name = "predictions" + {opt.conf_id} + ".csv"
+    predictions_name = "predictions-" + str(id) + ".csv"
     df.to_csv(predictions_name)
 
     print(f'Test Accuracy: {predictions.metrics["test_accuracy"]}')
@@ -162,6 +169,10 @@ def main():
     print(f'Test Accuracy: {test["eval_accuracy"]}')
 
     mlflow.end_run()
+
+    del model
+    torch.cuda.empty_cache()  # Giải phóng bộ nhớ GPU
+    print(f"Model {id} deleted and GPU cache cleared.")
 
 
 if __name__ == '__main__':
