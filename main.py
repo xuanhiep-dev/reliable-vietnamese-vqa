@@ -9,6 +9,7 @@ import modules.model
 from utils.dataset import get_dataset
 import pandas as pd
 import torch
+import json
 from torch.nn.functional import softmax
 
 os.environ['MLFLOW_EXPERIMENT_NAME'] = 'mlflow-vivqa'
@@ -61,6 +62,7 @@ def get_options():
     args.add_argument("--encoder-attention-heads-layers", type=int, default=6)
     args.add_argument("--classes", type=int, default=353)
     args.add_argument("--conf-id", type=int, default=1)
+    args.add_argument("--predictions-dir", type=int, default="./data/multi-predictions")
 
     opt = args.parse_args()
     return opt
@@ -115,20 +117,16 @@ def _get_train_config(opt):
     return args
 
 
-model = None
 def main():
     opt = get_options()
 
     train_dataset, val_dataset, test_dataset = get_dataset(opt)
 
-    global model
-    if model is None:
-        print("Creating new model...")
-        model = create_model('vivqa_model',
-                             num_classes=opt.classes,
-                             drop_path_rate=opt.drop_path_rate,
-                             encoder_layers=opt.encoder_layers,
-                             encoder_attention_heads=opt.encoder_attention_heads_layers)
+    model = create_model('vivqa_model',
+                            num_classes=opt.classes,
+                            drop_path_rate=opt.drop_path_rate,
+                            encoder_layers=opt.encoder_layers,
+                            encoder_attention_heads=opt.encoder_attention_heads_layers)
 
     args = _get_train_config(opt)
 
@@ -144,23 +142,19 @@ def main():
     trainer.train()
 
     predictions = trainer.predict(test_dataset)
-    logits = torch.tensor(predictions.predictions)  # Lấy logits từ mô hình
+    logits = torch.tensor(predictions.predictions)
     probabilities = softmax(logits, dim=-1)
 
     predicted_labels = torch.argmax(probabilities, dim=-1).numpy()
     confidence_scores = torch.max(probabilities, dim=-1).values.numpy()
 
-    df = pd.DataFrame(test_dataset)
-    if 'answer' in df.columns:
-        df.drop(columns=['answer'], inplace=True)
+    for i, sample in enumerate(test_dataset):
+        sample["predicted_answer"] = predicted_labels[i]
+        sample["confidence"] = confidence_scores[i]
 
-    df['answer'] = predicted_labels
-    df['confidence'] = confidence_scores
-
-    predictions_name = "predictions-" + str(opt.conf_id) + ".csv"
-    df.to_csv(predictions_name)
-
-    print(f'Test Accuracy: {predictions.metrics["test_accuracy"]}')
+    predictions_file = f"predictions-{opt.conf_id}.json"
+    with open(predictions_file, "w", encoding="utf-8") as f:
+        json.dump(test_dataset, f, ensure_ascii=False, indent=4)
 
     test = trainer.evaluate(test_dataset)
     print(f'Test Accuracy: {test["eval_accuracy"]}')
@@ -168,8 +162,8 @@ def main():
     mlflow.end_run()
 
     del model
-    torch.cuda.empty_cache()  # Giải phóng bộ nhớ GPU
-    print(f"Model {id} deleted and GPU cache cleared.")
+    torch.cuda.empty_cache() 
+    print(f"Model {opt.conf_id} deleted and GPU cache cleared.")
 
 
 if __name__ == '__main__':
