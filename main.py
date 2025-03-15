@@ -101,7 +101,7 @@ def _get_train_config(opt):
         lr_scheduler_type=opt.lr_scheduler_type,
         warmup_ratio=opt.warmup_ratio,
         logging_strategy=opt.logging_strategy,
-        save_strategy=opt.save_strategy,
+        save_strategy='no',
         save_total_limit=opt.save_total_limit,
         per_device_train_batch_size=opt.train_batch_size,
         per_device_eval_batch_size=opt.eval_batch_size,
@@ -153,27 +153,6 @@ def extract_metadata(test_dataset):
             yield metadata["question"], metadata["img_id"]
 
 
-class CustomTrainer(Trainer):
-    def save_model(self, output_dir=None):
-        if not output_dir:
-            output_dir = self.args.output_dir
-
-        model_to_save = self.model.module if hasattr(
-            self.model, 'module') else self.model
-        model_state_dict = model_to_save.state_dict()
-
-        torch.save(model_state_dict, f"{output_dir}/pytorch_model.bin")
-
-        self.tokenizer.save_pretrained(output_dir)
-        self.feature_extractor.save_pretrained(
-            output_dir) if self.feature_extractor else None
-
-    def remove_model(self):
-        del self.model
-        torch.cuda.empty_cache()
-        print("Model deleted and GPU cache cleared.")
-
-
 def main():
     opt = get_options()
 
@@ -184,7 +163,7 @@ def main():
 
     args = _get_train_config(opt)
 
-    trainer = CustomTrainer(
+    trainer = Trainer(
         model=model,
         args=args,
         train_dataset=train_dataset,
