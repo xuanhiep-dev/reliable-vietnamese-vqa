@@ -114,24 +114,21 @@ def _get_train_config(opt):
     )
     return args
 
+
 model = None
-def create_model(opt):
-    global model
-    if model is None:
-        print("Creating new model...")
-        model = create_model('vivqa_model',
-                         num_classes=opt.classes,
-                         drop_path_rate=opt.drop_path_rate,
-                         encoder_layers=opt.encoder_layers,
-                         encoder_attention_heads=opt.encoder_attention_heads_layers)
-
-
 def main():
     opt = get_options()
 
     train_dataset, val_dataset, test_dataset = get_dataset(opt)
 
-    create_model(opt)
+    global model
+    if model is None:
+        print("Creating new model...")
+        model = create_model('vivqa_model',
+                             num_classes=opt.classes,
+                             drop_path_rate=opt.drop_path_rate,
+                             encoder_layers=opt.encoder_layers,
+                             encoder_attention_heads=opt.encoder_attention_heads_layers)
 
     args = _get_train_config(opt)
 
