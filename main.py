@@ -60,8 +60,8 @@ def get_options():
     args.add_argument("--encoder-layers", type=int, default=6)
     args.add_argument("--encoder-attention-heads-layers", type=int, default=6)
     args.add_argument("--classes", type=int, default=353)
-    args.add_argument("--sub-id", type=int, default=1)
     args.add_argument("--checkpoint-dir", type=str, default="./vqa_checkpoints")
+    args.add_argument("--sub-id", type=int, default=1)
     args.add_argument("--predictions-dir", type=str,
                       default="./data/multi-predictions")
 
@@ -93,7 +93,7 @@ def _get_train_all_config(opt):
 
 def _get_train_config(opt):
     args = TrainingArguments(
-        output_dir=f"{opt.checkpoint_dir}/model-{opt.conf_id}",
+        output_dir=f"{opt.checkpoint_dir}/model-{opt.sub_id}",
         log_level=opt.log_level,
         lr_scheduler_type=opt.lr_scheduler_type,
         warmup_ratio=opt.warmup_ratio,
@@ -173,7 +173,7 @@ def main():
     df["confidence"] = np.array(confidence_scores, dtype=np.float32)
 
     predictions_file = f"{opt.predictions_dir}/predictions-{opt.sub_id}.json"
-    df.to_json(predictions_file, orient="records", force_ascii=False, indent=4)
+    df.to_csv(predictions_file, encoding="utf-8-sig")
 
     test = trainer.evaluate(test_dataset)
     print(f'Test Accuracy: {test["eval_accuracy"]}')
