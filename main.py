@@ -44,7 +44,6 @@ def get_options():
     args.add_argument("-lr", "--learning-rate", type=float, default=3e-5)
     args.add_argument("--weight-decay", type=float, default=0.01)
     args.add_argument("--workers", type=int, default=2)
-    args.add_argument("--load-best-model-at-end", type=bool, default=False)
 
     # Varriables setting
     args.add_argument("--image-path", type=str, default="./data/images")
@@ -102,7 +101,7 @@ def _get_train_config(opt):
         lr_scheduler_type=opt.lr_scheduler_type,
         warmup_ratio=opt.warmup_ratio,
         logging_strategy=opt.logging_strategy,
-        save_strategy='no',
+        save_strategy='epoch',
         save_total_limit=opt.save_total_limit,
         per_device_train_batch_size=opt.train_batch_size,
         per_device_eval_batch_size=opt.eval_batch_size,
@@ -116,7 +115,7 @@ def _get_train_config(opt):
         overwrite_output_dir=True,
         metric_for_best_model='accuracy',
         eval_strategy='epoch',
-        load_best_model_at_end=opt.load_best_model_at_end,
+        load_best_model_at_end=True,
         greater_is_better=True
     )
     return args
@@ -154,7 +153,21 @@ def extract_metadata(test_dataset):
             yield metadata["question"], metadata["img_id"]
 
 
-def main():
+class CustomTrainer(Trainer):
+    def save_model(self, output_dir=None, _internal_call=False):
+        output_dir = output_dir or self.args.output_dir
+
+        model_to_save = self.model.module if hasattr(
+            self.model, 'module') else self.model
+        model_to_save.save_pretrained(output_dir)
+
+        if self.tokenizer is not None:
+            self.tokenizer.save_pretrained(output_dir)
+
+        print(f"Model state_dict saved to {output_dir}")
+
+
+def train_multimodel():
     opt = get_options()
 
     train_dataset, val_dataset, test_dataset = get_dataset(opt)
@@ -164,7 +177,7 @@ def main():
 
     args = _get_train_config(opt)
 
-    trainer = Trainer(
+    trainer = CustomTrainer(
         model=model,
         args=args,
         train_dataset=train_dataset,
@@ -203,4 +216,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    train_multimodel()
