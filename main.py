@@ -111,7 +111,7 @@ def _get_train_config(opt):
         disable_tqdm=False,
         overwrite_output_dir=True,
         metric_for_best_model='accuracy',
-        evaluation_strategy='epoch',
+        eval_strategy='epoch',
         load_best_model_at_end=True,
         greater_is_better=True
     )
@@ -137,7 +137,7 @@ def load_base_model():
 def main():
     opt = get_options()
 
-    train_dataset, val_dataset, test_dataset = get_dataset(opt)
+    train_dataset, val_dataset, test_dataset, custom_preds = get_dataset(opt)
 
     save_base_model(opt)
     model = load_base_model()
@@ -162,15 +162,16 @@ def main():
     predicted_labels = torch.argmax(probabilities, dim=-1).numpy()
     confidence_scores = torch.max(probabilities, dim=-1).values.numpy()
 
-    df = pd.DataFrame({
-        "question": [sample["question"] for sample in test_dataset],
-        "img_id": [sample["img_id"] for sample in test_dataset],
-        "predicted_answer": predicted_labels,
-        "confidence": confidence_scores
-    })
+    test_series = pd.Series(test_dataset)
+    questions = test_series.apply(lambda x: x["custom_preds"]["question"])
+    img_ids = test_series.apply(lambda x: x["custom_preds"]["img_id"])
 
-    df["predicted_answer"] = np.array(predicted_labels, dtype=int)
-    df["confidence"] = np.array(confidence_scores, dtype=np.float32)
+    df = pd.DataFrame({
+        "question": questions,
+        "img_id": img_ids,
+        "predicted_answer": np.array(predicted_labels, dtype=str),
+        "confidence": np.array(confidence_scores, dtype=np.float32)
+    })
 
     predictions_file = f"{opt.predictions_dir}/predictions-{opt.sub_id}.json"
     df.to_csv(predictions_file, encoding="utf-8-sig")

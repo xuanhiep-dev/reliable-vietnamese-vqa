@@ -121,7 +121,15 @@ class ViVQADataset(Dataset):
                                 truncation=True,
                                 padding='max_length',
                                 max_length=40)
+        
         inputs |= {'labels': answer}
+
+        inputs.update({
+            "metadata": {
+                "question": question,
+                "img_id": img_id
+            }
+        })
 
         return inputs
 
