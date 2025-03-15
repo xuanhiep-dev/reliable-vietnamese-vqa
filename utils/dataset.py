@@ -121,17 +121,22 @@ class ViVQADataset(Dataset):
                                 truncation=True,
                                 padding='max_length',
                                 max_length=40)
-        
+
         inputs |= {'labels': answer}
 
-        inputs.update({
-            "metadata": {
-                "question": question,
-                "img_id": img_id
-            }
-        })
-
         return inputs
+
+    def __get_metadata(self, idx):
+        question = self.dataframe['question'].iloc[idx]
+        img_id = self.dataframe['img_id'].iloc[idx]
+        metadata = {
+            "question": question,
+            "img_id": img_id
+        }
+        return metadata
+
+    def get_sample_metadata(self, idx):
+        return self.__get_metadata(idx)
 
 
 def get_dataset(opt, validation=True):
