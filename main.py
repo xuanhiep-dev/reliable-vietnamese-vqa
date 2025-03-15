@@ -153,6 +153,27 @@ def extract_metadata(test_dataset):
             yield metadata["question"], metadata["img_id"]
 
 
+class CustomTrainer(Trainer):
+    def save_model(self, output_dir=None):
+        if not output_dir:
+            output_dir = self.args.output_dir
+
+        model_to_save = self.model.module if hasattr(
+            self.model, 'module') else self.model
+        model_state_dict = model_to_save.state_dict()
+
+        torch.save(model_state_dict, f"{output_dir}/pytorch_model.bin")
+
+        self.tokenizer.save_pretrained(output_dir)
+        self.feature_extractor.save_pretrained(
+            output_dir) if self.feature_extractor else None
+
+    def remove_model(self):
+        del self.model
+        torch.cuda.empty_cache()
+        print("Model deleted and GPU cache cleared.")
+
+
 def main():
     opt = get_options()
 
@@ -163,7 +184,7 @@ def main():
 
     args = _get_train_config(opt)
 
-    trainer = Trainer(
+    trainer = CustomTrainer(
         model=model,
         args=args,
         train_dataset=train_dataset,
@@ -189,8 +210,8 @@ def main():
         "confidence": np.array(confidence_scores, dtype=np.float32)
     })
 
-    predictions_file = f"{opt.predictions_dir}/predictions-{opt.sub_id}.json"
-    df.to_csv(predictions_file, encoding="utf-8-sig")
+    predictions_file = f"{opt.predictions_dir}/predictions-{opt.sub_id}.csv"
+    df.to_csv(predictions_file, encoding="utf-8")
 
     test = trainer.evaluate(test_dataset)
     print(f'Test Accuracy: {test["eval_accuracy"]}')
