@@ -137,7 +137,7 @@ def load_base_model():
 def main():
     opt = get_options()
 
-    train_dataset, val_dataset, test_dataset, custom_preds = get_dataset(opt)
+    train_dataset, val_dataset, test_dataset = get_dataset(opt)
 
     save_base_model(opt)
     model = load_base_model()
