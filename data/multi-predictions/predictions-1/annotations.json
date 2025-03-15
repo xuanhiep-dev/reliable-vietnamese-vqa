@@ -1,0 +1,3009 @@
+{
+    "annotations": [
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 64697,
+            "question_id": 1
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 352155,
+            "question_id": 2
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 401232,
+            "question_id": 3
+        },
+        {
+            "answers": "m\u00e0u tr\u1eafng",
+            "image_id": 215135,
+            "question_id": 4
+        },
+        {
+            "answers": "hai",
+            "image_id": 274416,
+            "question_id": 5
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 498765,
+            "question_id": 6
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 502410,
+            "question_id": 7
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 563155,
+            "question_id": 8
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 353830,
+            "question_id": 9
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 8999,
+            "question_id": 10
+        },
+        {
+            "answers": "m\u00e1y bay",
+            "image_id": 413734,
+            "question_id": 11
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 409331,
+            "question_id": 12
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 559483,
+            "question_id": 13
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 262407,
+            "question_id": 14
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 570755,
+            "question_id": 15
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 446352,
+            "question_id": 16
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 408906,
+            "question_id": 17
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 254225,
+            "question_id": 18
+        },
+        {
+            "answers": "hai",
+            "image_id": 382318,
+            "question_id": 19
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 495973,
+            "question_id": 20
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 548722,
+            "question_id": 21
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 388766,
+            "question_id": 22
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 435994,
+            "question_id": 23
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 305464,
+            "question_id": 24
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 16664,
+            "question_id": 25
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 133482,
+            "question_id": 26
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 20727,
+            "question_id": 27
+        },
+        {
+            "answers": "m\u00e0u tr\u1eafng",
+            "image_id": 453397,
+            "question_id": 28
+        },
+        {
+            "answers": "hai",
+            "image_id": 58796,
+            "question_id": 29
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 537861,
+            "question_id": 30
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 483803,
+            "question_id": 31
+        },
+        {
+            "answers": "hai",
+            "image_id": 185579,
+            "question_id": 32
+        },
+        {
+            "answers": "hai",
+            "image_id": 256229,
+            "question_id": 33
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 398507,
+            "question_id": 34
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 538163,
+            "question_id": 35
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 490099,
+            "question_id": 36
+        },
+        {
+            "answers": "hai",
+            "image_id": 345608,
+            "question_id": 37
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 65209,
+            "question_id": 38
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 5913,
+            "question_id": 39
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 552273,
+            "question_id": 40
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 182960,
+            "question_id": 41
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 240590,
+            "question_id": 42
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 178746,
+            "question_id": 43
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 545235,
+            "question_id": 44
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 493883,
+            "question_id": 45
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 354533,
+            "question_id": 46
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 337180,
+            "question_id": 47
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 450762,
+            "question_id": 48
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 426075,
+            "question_id": 49
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 571808,
+            "question_id": 50
+        },
+        {
+            "answers": "hai",
+            "image_id": 286061,
+            "question_id": 51
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 437262,
+            "question_id": 52
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 212181,
+            "question_id": 53
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 483531,
+            "question_id": 54
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 492548,
+            "question_id": 55
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 292804,
+            "question_id": 56
+        },
+        {
+            "answers": "hai",
+            "image_id": 430257,
+            "question_id": 57
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 521231,
+            "question_id": 58
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 355860,
+            "question_id": 59
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 580931,
+            "question_id": 60
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 568961,
+            "question_id": 61
+        },
+        {
+            "answers": "con ng\u1ef1a",
+            "image_id": 546222,
+            "question_id": 62
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 285042,
+            "question_id": 63
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 372252,
+            "question_id": 64
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 384848,
+            "question_id": 65
+        },
+        {
+            "answers": "hai",
+            "image_id": 157204,
+            "question_id": 66
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 549725,
+            "question_id": 67
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 264930,
+            "question_id": 68
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 449856,
+            "question_id": 69
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 314647,
+            "question_id": 70
+        },
+        {
+            "answers": "hai",
+            "image_id": 249905,
+            "question_id": 71
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 383448,
+            "question_id": 72
+        },
+        {
+            "answers": "l\u1ecd c\u1eafm hoa",
+            "image_id": 416468,
+            "question_id": 73
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 412604,
+            "question_id": 74
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 574645,
+            "question_id": 75
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 564699,
+            "question_id": 76
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 271949,
+            "question_id": 77
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 235683,
+            "question_id": 78
+        },
+        {
+            "answers": "hai",
+            "image_id": 32115,
+            "question_id": 79
+        },
+        {
+            "answers": "hai",
+            "image_id": 170173,
+            "question_id": 80
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 409198,
+            "question_id": 81
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 511143,
+            "question_id": 82
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 388846,
+            "question_id": 83
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 458631,
+            "question_id": 84
+        },
+        {
+            "answers": "hai",
+            "image_id": 483311,
+            "question_id": 85
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 59476,
+            "question_id": 86
+        },
+        {
+            "answers": "hai",
+            "image_id": 183603,
+            "question_id": 87
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 175883,
+            "question_id": 88
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 407976,
+            "question_id": 89
+        },
+        {
+            "answers": "m\u00e1y bay",
+            "image_id": 475710,
+            "question_id": 90
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 152566,
+            "question_id": 91
+        },
+        {
+            "answers": "xe bu\u00fdt",
+            "image_id": 356263,
+            "question_id": 92
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 473466,
+            "question_id": 93
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 47944,
+            "question_id": 94
+        },
+        {
+            "answers": "hai",
+            "image_id": 125298,
+            "question_id": 95
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 398177,
+            "question_id": 96
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 162993,
+            "question_id": 97
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 227577,
+            "question_id": 98
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 568882,
+            "question_id": 99
+        },
+        {
+            "answers": "hai",
+            "image_id": 402073,
+            "question_id": 100
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 383606,
+            "question_id": 101
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 537611,
+            "question_id": 102
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 370103,
+            "question_id": 103
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 196900,
+            "question_id": 104
+        },
+        {
+            "answers": "con voi",
+            "image_id": 566538,
+            "question_id": 105
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 507421,
+            "question_id": 106
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 490639,
+            "question_id": 107
+        },
+        {
+            "answers": "hai",
+            "image_id": 149410,
+            "question_id": 108
+        },
+        {
+            "answers": "con ch\u00f3",
+            "image_id": 406976,
+            "question_id": 109
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 235110,
+            "question_id": 110
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 406182,
+            "question_id": 111
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 557220,
+            "question_id": 112
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 561037,
+            "question_id": 113
+        },
+        {
+            "answers": "con thuy\u1ec1n",
+            "image_id": 354744,
+            "question_id": 114
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 453369,
+            "question_id": 115
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 503715,
+            "question_id": 116
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 60953,
+            "question_id": 117
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 22415,
+            "question_id": 118
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 52992,
+            "question_id": 119
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 232410,
+            "question_id": 120
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 140867,
+            "question_id": 121
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 434735,
+            "question_id": 122
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 557396,
+            "question_id": 123
+        },
+        {
+            "answers": "hai",
+            "image_id": 285477,
+            "question_id": 124
+        },
+        {
+            "answers": "hai",
+            "image_id": 247547,
+            "question_id": 125
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 271395,
+            "question_id": 126
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 581632,
+            "question_id": 127
+        },
+        {
+            "answers": "hai",
+            "image_id": 472749,
+            "question_id": 128
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 165410,
+            "question_id": 129
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 508639,
+            "question_id": 130
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 312344,
+            "question_id": 131
+        },
+        {
+            "answers": "con voi",
+            "image_id": 437426,
+            "question_id": 132
+        },
+        {
+            "answers": "hai",
+            "image_id": 433277,
+            "question_id": 133
+        },
+        {
+            "answers": "m\u00e0u tr\u1eafng",
+            "image_id": 392537,
+            "question_id": 134
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 466890,
+            "question_id": 135
+        },
+        {
+            "answers": "hai",
+            "image_id": 395853,
+            "question_id": 136
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 417590,
+            "question_id": 137
+        },
+        {
+            "answers": "hai",
+            "image_id": 284964,
+            "question_id": 138
+        },
+        {
+            "answers": "hai",
+            "image_id": 70258,
+            "question_id": 139
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 516871,
+            "question_id": 140
+        },
+        {
+            "answers": "m\u00e0u tr\u1eafng",
+            "image_id": 207686,
+            "question_id": 141
+        },
+        {
+            "answers": "m\u00e1y bay",
+            "image_id": 344397,
+            "question_id": 142
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 318328,
+            "question_id": 143
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 215436,
+            "question_id": 144
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 356248,
+            "question_id": 145
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 376278,
+            "question_id": 146
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 212712,
+            "question_id": 147
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 29085,
+            "question_id": 148
+        },
+        {
+            "answers": "hai",
+            "image_id": 418569,
+            "question_id": 149
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 520091,
+            "question_id": 150
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 344942,
+            "question_id": 151
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 516470,
+            "question_id": 152
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 436693,
+            "question_id": 153
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 253388,
+            "question_id": 154
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 430788,
+            "question_id": 155
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 2106,
+            "question_id": 156
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 129563,
+            "question_id": 157
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 215523,
+            "question_id": 158
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 411208,
+            "question_id": 159
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 542213,
+            "question_id": 160
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 458079,
+            "question_id": 161
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 523390,
+            "question_id": 162
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 556230,
+            "question_id": 163
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 478766,
+            "question_id": 164
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 506540,
+            "question_id": 165
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 517386,
+            "question_id": 166
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 358171,
+            "question_id": 167
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 561928,
+            "question_id": 168
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 574144,
+            "question_id": 169
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 335810,
+            "question_id": 170
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 527535,
+            "question_id": 171
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 252868,
+            "question_id": 172
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 547383,
+            "question_id": 173
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 158831,
+            "question_id": 174
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 29161,
+            "question_id": 175
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 385174,
+            "question_id": 176
+        },
+        {
+            "answers": "hai",
+            "image_id": 113905,
+            "question_id": 177
+        },
+        {
+            "answers": "hai",
+            "image_id": 172556,
+            "question_id": 178
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 439479,
+            "question_id": 179
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 519359,
+            "question_id": 180
+        },
+        {
+            "answers": "m\u00e1y bay",
+            "image_id": 374886,
+            "question_id": 181
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 40129,
+            "question_id": 182
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 458510,
+            "question_id": 183
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 82255,
+            "question_id": 184
+        },
+        {
+            "answers": "hai",
+            "image_id": 132612,
+            "question_id": 185
+        },
+        {
+            "answers": "hai",
+            "image_id": 452404,
+            "question_id": 186
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 44923,
+            "question_id": 187
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 24294,
+            "question_id": 188
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 85624,
+            "question_id": 189
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 294426,
+            "question_id": 190
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 555894,
+            "question_id": 191
+        },
+        {
+            "answers": "hai",
+            "image_id": 114330,
+            "question_id": 192
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 341118,
+            "question_id": 193
+        },
+        {
+            "answers": "xe bu\u00fdt",
+            "image_id": 409921,
+            "question_id": 194
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 123646,
+            "question_id": 195
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 314787,
+            "question_id": 196
+        },
+        {
+            "answers": "hai",
+            "image_id": 421502,
+            "question_id": 197
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 458921,
+            "question_id": 198
+        },
+        {
+            "answers": "hai",
+            "image_id": 26762,
+            "question_id": 199
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 384503,
+            "question_id": 200
+        },
+        {
+            "answers": "con chim",
+            "image_id": 473015,
+            "question_id": 201
+        },
+        {
+            "answers": "con chim",
+            "image_id": 507766,
+            "question_id": 202
+        },
+        {
+            "answers": "con thuy\u1ec1n",
+            "image_id": 451090,
+            "question_id": 203
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 517032,
+            "question_id": 204
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 467157,
+            "question_id": 205
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 200952,
+            "question_id": 206
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 215201,
+            "question_id": 207
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 52611,
+            "question_id": 208
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 524742,
+            "question_id": 209
+        },
+        {
+            "answers": "hai",
+            "image_id": 165818,
+            "question_id": 210
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 441483,
+            "question_id": 211
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 372466,
+            "question_id": 212
+        },
+        {
+            "answers": "hai",
+            "image_id": 75603,
+            "question_id": 213
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 509750,
+            "question_id": 214
+        },
+        {
+            "answers": "hai",
+            "image_id": 81988,
+            "question_id": 215
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 18917,
+            "question_id": 216
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 491061,
+            "question_id": 217
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 558421,
+            "question_id": 218
+        },
+        {
+            "answers": "hai",
+            "image_id": 545411,
+            "question_id": 219
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 414236,
+            "question_id": 220
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 567693,
+            "question_id": 221
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 178692,
+            "question_id": 222
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 532779,
+            "question_id": 223
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 389128,
+            "question_id": 224
+        },
+        {
+            "answers": "hai",
+            "image_id": 202328,
+            "question_id": 225
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 519361,
+            "question_id": 226
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 77383,
+            "question_id": 227
+        },
+        {
+            "answers": "m\u00e1y bay",
+            "image_id": 443737,
+            "question_id": 228
+        },
+        {
+            "answers": "hai",
+            "image_id": 414850,
+            "question_id": 229
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 360318,
+            "question_id": 230
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 528578,
+            "question_id": 231
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 469671,
+            "question_id": 232
+        },
+        {
+            "answers": "m\u00e1y bay",
+            "image_id": 424445,
+            "question_id": 233
+        },
+        {
+            "answers": "con voi",
+            "image_id": 83013,
+            "question_id": 234
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 363126,
+            "question_id": 235
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 160660,
+            "question_id": 236
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 11222,
+            "question_id": 237
+        },
+        {
+            "answers": "hai",
+            "image_id": 389418,
+            "question_id": 238
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 159456,
+            "question_id": 239
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 478407,
+            "question_id": 240
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 492605,
+            "question_id": 241
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 531697,
+            "question_id": 242
+        },
+        {
+            "answers": "con ch\u00f3",
+            "image_id": 444770,
+            "question_id": 243
+        },
+        {
+            "answers": "hai",
+            "image_id": 341241,
+            "question_id": 244
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 60140,
+            "question_id": 245
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 498994,
+            "question_id": 246
+        },
+        {
+            "answers": "hai",
+            "image_id": 149616,
+            "question_id": 247
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 573485,
+            "question_id": 248
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 469918,
+            "question_id": 249
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 499104,
+            "question_id": 250
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 365116,
+            "question_id": 251
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 468280,
+            "question_id": 252
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 556703,
+            "question_id": 253
+        },
+        {
+            "answers": "hai",
+            "image_id": 88621,
+            "question_id": 254
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 351793,
+            "question_id": 255
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 208868,
+            "question_id": 256
+        },
+        {
+            "answers": "con ng\u1ef1a",
+            "image_id": 560880,
+            "question_id": 257
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 419116,
+            "question_id": 258
+        },
+        {
+            "answers": "con voi",
+            "image_id": 562595,
+            "question_id": 259
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 391199,
+            "question_id": 260
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 499835,
+            "question_id": 261
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 133905,
+            "question_id": 262
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 549882,
+            "question_id": 263
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 432309,
+            "question_id": 264
+        },
+        {
+            "answers": "hai",
+            "image_id": 539132,
+            "question_id": 265
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 575199,
+            "question_id": 266
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 505028,
+            "question_id": 267
+        },
+        {
+            "answers": "hai",
+            "image_id": 202507,
+            "question_id": 268
+        },
+        {
+            "answers": "hai",
+            "image_id": 477831,
+            "question_id": 269
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 337011,
+            "question_id": 270
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 383039,
+            "question_id": 271
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 486383,
+            "question_id": 272
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 568572,
+            "question_id": 273
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 515176,
+            "question_id": 274
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 294942,
+            "question_id": 275
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 468280,
+            "question_id": 276
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 423189,
+            "question_id": 277
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 371791,
+            "question_id": 278
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 347925,
+            "question_id": 279
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 348047,
+            "question_id": 280
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 93553,
+            "question_id": 281
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 421144,
+            "question_id": 282
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 490720,
+            "question_id": 283
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 238336,
+            "question_id": 284
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 520109,
+            "question_id": 285
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 556608,
+            "question_id": 286
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 222122,
+            "question_id": 287
+        },
+        {
+            "answers": "xe m\u00e1y",
+            "image_id": 466939,
+            "question_id": 288
+        },
+        {
+            "answers": "sandwich",
+            "image_id": 348519,
+            "question_id": 289
+        },
+        {
+            "answers": "con thuy\u1ec1n",
+            "image_id": 519703,
+            "question_id": 290
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 257712,
+            "question_id": 291
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 466838,
+            "question_id": 292
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 529348,
+            "question_id": 293
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 333583,
+            "question_id": 294
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 307050,
+            "question_id": 295
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 89912,
+            "question_id": 296
+        },
+        {
+            "answers": "con ch\u00f3",
+            "image_id": 441458,
+            "question_id": 297
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 469075,
+            "question_id": 298
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 293328,
+            "question_id": 299
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 520434,
+            "question_id": 300
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 546500,
+            "question_id": 301
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 259284,
+            "question_id": 302
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 340222,
+            "question_id": 303
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 500871,
+            "question_id": 304
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 571182,
+            "question_id": 305
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 499365,
+            "question_id": 306
+        },
+        {
+            "answers": "hai",
+            "image_id": 480687,
+            "question_id": 307
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 204345,
+            "question_id": 308
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 524535,
+            "question_id": 309
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 500084,
+            "question_id": 310
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 285893,
+            "question_id": 311
+        },
+        {
+            "answers": "hai",
+            "image_id": 391088,
+            "question_id": 312
+        },
+        {
+            "answers": "m\u00e0u tr\u1eafng",
+            "image_id": 532509,
+            "question_id": 313
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 394970,
+            "question_id": 314
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 211788,
+            "question_id": 315
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 344897,
+            "question_id": 316
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 471095,
+            "question_id": 317
+        },
+        {
+            "answers": "hai",
+            "image_id": 224699,
+            "question_id": 318
+        },
+        {
+            "answers": "m\u00e0u tr\u1eafng",
+            "image_id": 542814,
+            "question_id": 319
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 480712,
+            "question_id": 320
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 385641,
+            "question_id": 321
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 487688,
+            "question_id": 322
+        },
+        {
+            "answers": "hai",
+            "image_id": 52382,
+            "question_id": 323
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 96517,
+            "question_id": 324
+        },
+        {
+            "answers": "hai",
+            "image_id": 250897,
+            "question_id": 325
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 130171,
+            "question_id": 326
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 306288,
+            "question_id": 327
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 364470,
+            "question_id": 328
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 565331,
+            "question_id": 329
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 300123,
+            "question_id": 330
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 304864,
+            "question_id": 331
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 377329,
+            "question_id": 332
+        },
+        {
+            "answers": "hai",
+            "image_id": 3003,
+            "question_id": 333
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 27267,
+            "question_id": 334
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 251132,
+            "question_id": 335
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 422432,
+            "question_id": 336
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 414764,
+            "question_id": 337
+        },
+        {
+            "answers": "hai",
+            "image_id": 304614,
+            "question_id": 338
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 389258,
+            "question_id": 339
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 387355,
+            "question_id": 340
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 434035,
+            "question_id": 341
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 536343,
+            "question_id": 342
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 508101,
+            "question_id": 343
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 295154,
+            "question_id": 344
+        },
+        {
+            "answers": "hai",
+            "image_id": 268938,
+            "question_id": 345
+        },
+        {
+            "answers": "hai",
+            "image_id": 376342,
+            "question_id": 346
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 452179,
+            "question_id": 347
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 401235,
+            "question_id": 348
+        },
+        {
+            "answers": "m\u00e0u tr\u1eafng",
+            "image_id": 250720,
+            "question_id": 349
+        },
+        {
+            "answers": "con voi",
+            "image_id": 551459,
+            "question_id": 350
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 573993,
+            "question_id": 351
+        },
+        {
+            "answers": "hai",
+            "image_id": 340528,
+            "question_id": 352
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 110724,
+            "question_id": 353
+        },
+        {
+            "answers": "hai",
+            "image_id": 61773,
+            "question_id": 354
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 289915,
+            "question_id": 355
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 136929,
+            "question_id": 356
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 387875,
+            "question_id": 357
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 67246,
+            "question_id": 358
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 372390,
+            "question_id": 359
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 411958,
+            "question_id": 360
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 241206,
+            "question_id": 361
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 395817,
+            "question_id": 362
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 434786,
+            "question_id": 363
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 540943,
+            "question_id": 364
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 435359,
+            "question_id": 365
+        },
+        {
+            "answers": "con ng\u1ef1a",
+            "image_id": 553990,
+            "question_id": 366
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 329012,
+            "question_id": 367
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 417653,
+            "question_id": 368
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 352080,
+            "question_id": 369
+        },
+        {
+            "answers": "hai",
+            "image_id": 222394,
+            "question_id": 370
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 570736,
+            "question_id": 371
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 574810,
+            "question_id": 372
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 576576,
+            "question_id": 373
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 320731,
+            "question_id": 374
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 434279,
+            "question_id": 375
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 555597,
+            "question_id": 376
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 242210,
+            "question_id": 377
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 568675,
+            "question_id": 378
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 412781,
+            "question_id": 379
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 108238,
+            "question_id": 380
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 389128,
+            "question_id": 381
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 5600,
+            "question_id": 382
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 109777,
+            "question_id": 383
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 407214,
+            "question_id": 384
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 243382,
+            "question_id": 385
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 395817,
+            "question_id": 386
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 72995,
+            "question_id": 387
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 200560,
+            "question_id": 388
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 398507,
+            "question_id": 389
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 306439,
+            "question_id": 390
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 67230,
+            "question_id": 391
+        },
+        {
+            "answers": "hai",
+            "image_id": 100124,
+            "question_id": 392
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 527994,
+            "question_id": 393
+        },
+        {
+            "answers": "hai",
+            "image_id": 302343,
+            "question_id": 394
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 395046,
+            "question_id": 395
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 373653,
+            "question_id": 396
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 406426,
+            "question_id": 397
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 526392,
+            "question_id": 398
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 570788,
+            "question_id": 399
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 426852,
+            "question_id": 400
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 419378,
+            "question_id": 401
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 15016,
+            "question_id": 402
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 222970,
+            "question_id": 403
+        },
+        {
+            "answers": "hai",
+            "image_id": 294712,
+            "question_id": 404
+        },
+        {
+            "answers": "con ch\u00f3",
+            "image_id": 440729,
+            "question_id": 405
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 149566,
+            "question_id": 406
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 6715,
+            "question_id": 407
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 441058,
+            "question_id": 408
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 437556,
+            "question_id": 409
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 422295,
+            "question_id": 410
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 93232,
+            "question_id": 411
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 431431,
+            "question_id": 412
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 383341,
+            "question_id": 413
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 559483,
+            "question_id": 414
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 491845,
+            "question_id": 415
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 343999,
+            "question_id": 416
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 32183,
+            "question_id": 417
+        },
+        {
+            "answers": "hai",
+            "image_id": 471915,
+            "question_id": 418
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 519112,
+            "question_id": 419
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 450577,
+            "question_id": 420
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 431139,
+            "question_id": 421
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 460183,
+            "question_id": 422
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 382671,
+            "question_id": 423
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 451102,
+            "question_id": 424
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 1216,
+            "question_id": 425
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 170990,
+            "question_id": 426
+        },
+        {
+            "answers": "m\u00e1y bay",
+            "image_id": 206670,
+            "question_id": 427
+        },
+        {
+            "answers": "m\u00e1y bay",
+            "image_id": 497568,
+            "question_id": 428
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 505619,
+            "question_id": 429
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 577036,
+            "question_id": 430
+        },
+        {
+            "answers": "hai",
+            "image_id": 564301,
+            "question_id": 431
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 308739,
+            "question_id": 432
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 565245,
+            "question_id": 433
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 337814,
+            "question_id": 434
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 175480,
+            "question_id": 435
+        },
+        {
+            "answers": "hai",
+            "image_id": 229552,
+            "question_id": 436
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 465266,
+            "question_id": 437
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 342724,
+            "question_id": 438
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 430654,
+            "question_id": 439
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 17890,
+            "question_id": 440
+        },
+        {
+            "answers": "m\u00e1y bay",
+            "image_id": 381599,
+            "question_id": 441
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 510684,
+            "question_id": 442
+        },
+        {
+            "answers": "hai",
+            "image_id": 121056,
+            "question_id": 443
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 426400,
+            "question_id": 444
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 140730,
+            "question_id": 445
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 536517,
+            "question_id": 446
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 340321,
+            "question_id": 447
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 541541,
+            "question_id": 448
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 495349,
+            "question_id": 449
+        },
+        {
+            "answers": "hai",
+            "image_id": 532753,
+            "question_id": 450
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 309168,
+            "question_id": 451
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 516119,
+            "question_id": 452
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 547645,
+            "question_id": 453
+        },
+        {
+            "answers": "con chim",
+            "image_id": 337139,
+            "question_id": 454
+        },
+        {
+            "answers": "hai",
+            "image_id": 377282,
+            "question_id": 455
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 462767,
+            "question_id": 456
+        },
+        {
+            "answers": "con voi",
+            "image_id": 500018,
+            "question_id": 457
+        },
+        {
+            "answers": "hai",
+            "image_id": 316583,
+            "question_id": 458
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 137995,
+            "question_id": 459
+        },
+        {
+            "answers": "con ch\u00f3",
+            "image_id": 455506,
+            "question_id": 460
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 185209,
+            "question_id": 461
+        },
+        {
+            "answers": "hai",
+            "image_id": 580695,
+            "question_id": 462
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 45131,
+            "question_id": 463
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 69081,
+            "question_id": 464
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 233706,
+            "question_id": 465
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 114080,
+            "question_id": 466
+        },
+        {
+            "answers": "con ch\u00f3",
+            "image_id": 444770,
+            "question_id": 467
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 479762,
+            "question_id": 468
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 531126,
+            "question_id": 469
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 448868,
+            "question_id": 470
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 138456,
+            "question_id": 471
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 455597,
+            "question_id": 472
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 512892,
+            "question_id": 473
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 198788,
+            "question_id": 474
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 566038,
+            "question_id": 475
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 80200,
+            "question_id": 476
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 231052,
+            "question_id": 477
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 501153,
+            "question_id": 478
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 385641,
+            "question_id": 479
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 96154,
+            "question_id": 480
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 393195,
+            "question_id": 481
+        },
+        {
+            "answers": "l\u1ecd c\u1eafm hoa",
+            "image_id": 541353,
+            "question_id": 482
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 483089,
+            "question_id": 483
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 484547,
+            "question_id": 484
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 121555,
+            "question_id": 485
+        },
+        {
+            "answers": "hai",
+            "image_id": 537506,
+            "question_id": 486
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 536708,
+            "question_id": 487
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 204407,
+            "question_id": 488
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 261144,
+            "question_id": 489
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 449634,
+            "question_id": 490
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 198164,
+            "question_id": 491
+        },
+        {
+            "answers": "m\u00e1y bay",
+            "image_id": 524202,
+            "question_id": 492
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 428740,
+            "question_id": 493
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 434996,
+            "question_id": 494
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 435309,
+            "question_id": 495
+        },
+        {
+            "answers": "l\u1ecd c\u1eafm hoa",
+            "image_id": 385842,
+            "question_id": 496
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 419489,
+            "question_id": 497
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 102923,
+            "question_id": 498
+        },
+        {
+            "answers": "con voi",
+            "image_id": 477389,
+            "question_id": 499
+        },
+        {
+            "answers": "hai",
+            "image_id": 515006,
+            "question_id": 500
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 124985,
+            "question_id": 501
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 385305,
+            "question_id": 502
+        },
+        {
+            "answers": "hai",
+            "image_id": 454144,
+            "question_id": 503
+        },
+        {
+            "answers": "con voi",
+            "image_id": 402123,
+            "question_id": 504
+        },
+        {
+            "answers": "hai",
+            "image_id": 64348,
+            "question_id": 505
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 328427,
+            "question_id": 506
+        },
+        {
+            "answers": "hai",
+            "image_id": 160648,
+            "question_id": 507
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 430654,
+            "question_id": 508
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 109654,
+            "question_id": 509
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 552073,
+            "question_id": 510
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 470711,
+            "question_id": 511
+        },
+        {
+            "answers": "hai",
+            "image_id": 504635,
+            "question_id": 512
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 361739,
+            "question_id": 513
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 569347,
+            "question_id": 514
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 91656,
+            "question_id": 515
+        },
+        {
+            "answers": "hai",
+            "image_id": 531144,
+            "question_id": 516
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 407053,
+            "question_id": 517
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 360943,
+            "question_id": 518
+        },
+        {
+            "answers": "m\u00e0u tr\u1eafng",
+            "image_id": 43011,
+            "question_id": 519
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 508822,
+            "question_id": 520
+        },
+        {
+            "answers": "t\u00e0u h\u1ecfa",
+            "image_id": 404739,
+            "question_id": 521
+        },
+        {
+            "answers": "hai",
+            "image_id": 577176,
+            "question_id": 522
+        },
+        {
+            "answers": "con ch\u00f3",
+            "image_id": 430380,
+            "question_id": 523
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 399957,
+            "question_id": 524
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 102589,
+            "question_id": 525
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 477029,
+            "question_id": 526
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 394970,
+            "question_id": 527
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 160102,
+            "question_id": 528
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 350206,
+            "question_id": 529
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 445638,
+            "question_id": 530
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 87338,
+            "question_id": 531
+        },
+        {
+            "answers": "con thuy\u1ec1n",
+            "image_id": 377080,
+            "question_id": 532
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 547439,
+            "question_id": 533
+        },
+        {
+            "answers": "hai",
+            "image_id": 213739,
+            "question_id": 534
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 573778,
+            "question_id": 535
+        },
+        {
+            "answers": "con voi",
+            "image_id": 456483,
+            "question_id": 536
+        },
+        {
+            "answers": "hai",
+            "image_id": 253477,
+            "question_id": 537
+        },
+        {
+            "answers": "ba",
+            "image_id": 298141,
+            "question_id": 538
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 526143,
+            "question_id": 539
+        },
+        {
+            "answers": "hai",
+            "image_id": 521752,
+            "question_id": 540
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 162828,
+            "question_id": 541
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 550707,
+            "question_id": 542
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 338105,
+            "question_id": 543
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 13274,
+            "question_id": 544
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 416385,
+            "question_id": 545
+        },
+        {
+            "answers": "l\u1ecd c\u1eafm hoa",
+            "image_id": 171317,
+            "question_id": 546
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 460737,
+            "question_id": 547
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 520326,
+            "question_id": 548
+        },
+        {
+            "answers": "con chim",
+            "image_id": 400994,
+            "question_id": 549
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 298573,
+            "question_id": 550
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 201655,
+            "question_id": 551
+        },
+        {
+            "answers": "m\u00e1y bay",
+            "image_id": 392670,
+            "question_id": 552
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 454329,
+            "question_id": 553
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 378137,
+            "question_id": 554
+        },
+        {
+            "answers": "hai",
+            "image_id": 237207,
+            "question_id": 555
+        },
+        {
+            "answers": "hai",
+            "image_id": 14677,
+            "question_id": 556
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 137745,
+            "question_id": 557
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 543696,
+            "question_id": 558
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 529283,
+            "question_id": 559
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 11495,
+            "question_id": 560
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 338105,
+            "question_id": 561
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 517600,
+            "question_id": 562
+        },
+        {
+            "answers": "hai",
+            "image_id": 17927,
+            "question_id": 563
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 476605,
+            "question_id": 564
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 511583,
+            "question_id": 565
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 512989,
+            "question_id": 566
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 244465,
+            "question_id": 567
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 124914,
+            "question_id": 568
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 23017,
+            "question_id": 569
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 277070,
+            "question_id": 570
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 471097,
+            "question_id": 571
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 334491,
+            "question_id": 572
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 381384,
+            "question_id": 573
+        },
+        {
+            "answers": "hai",
+            "image_id": 212675,
+            "question_id": 574
+        },
+        {
+            "answers": "con m\u00e8o",
+            "image_id": 569464,
+            "question_id": 575
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 215776,
+            "question_id": 576
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 367724,
+            "question_id": 577
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 515065,
+            "question_id": 578
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 8836,
+            "question_id": 579
+        },
+        {
+            "answers": "con ng\u1ef1a",
+            "image_id": 407225,
+            "question_id": 580
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 379259,
+            "question_id": 581
+        },
+        {
+            "answers": "hai",
+            "image_id": 71716,
+            "question_id": 582
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 151170,
+            "question_id": 583
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 347648,
+            "question_id": 584
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 340993,
+            "question_id": 585
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 549885,
+            "question_id": 586
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 413497,
+            "question_id": 587
+        },
+        {
+            "answers": "hai",
+            "image_id": 64697,
+            "question_id": 588
+        },
+        {
+            "answers": "h\u01b0\u01a1u cao c\u1ed5",
+            "image_id": 394611,
+            "question_id": 589
+        },
+        {
+            "answers": "gi\u01b0\u1eddng",
+            "image_id": 439132,
+            "question_id": 590
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 82929,
+            "question_id": 591
+        },
+        {
+            "answers": "ph\u00f2ng t\u1eafm",
+            "image_id": 390439,
+            "question_id": 592
+        },
+        {
+            "answers": "hai",
+            "image_id": 376241,
+            "question_id": 593
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 59384,
+            "question_id": 594
+        },
+        {
+            "answers": "hai",
+            "image_id": 205282,
+            "question_id": 595
+        },
+        {
+            "answers": "ph\u00f2ng",
+            "image_id": 434689,
+            "question_id": 596
+        },
+        {
+            "answers": "xe \u00f4 t\u00f4",
+            "image_id": 346954,
+            "question_id": 597
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 405882,
+            "question_id": 598
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 543672,
+            "question_id": 599
+        },
+        {
+            "answers": "ph\u00f2ng b\u1ebfp",
+            "image_id": 345397,
+            "question_id": 600
+        },
+        {
+            "answers": "m\u00e0u xanh l\u00e1",
+            "image_id": 541994,
+            "question_id": 601
+        }
+    ]
+}
