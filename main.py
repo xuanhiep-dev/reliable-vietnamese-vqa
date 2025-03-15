@@ -10,9 +10,11 @@ from utils.dataset import get_dataset
 import pandas as pd
 import torch
 from torch.nn.functional import softmax
+import warnings
 
 os.environ['MLFLOW_EXPERIMENT_NAME'] = 'mlflow-vivqa'
 BASE_MODEL_PATH = "vqa_checkpoints/base_model.pth"
+warnings.filterwarnings("ignore")
 
 
 def compute_metrics(p):
@@ -60,7 +62,8 @@ def get_options():
     args.add_argument("--encoder-layers", type=int, default=6)
     args.add_argument("--encoder-attention-heads-layers", type=int, default=6)
     args.add_argument("--classes", type=int, default=353)
-    args.add_argument("--checkpoint-dir", type=str, default="./vqa_checkpoints")
+    args.add_argument("--checkpoint-dir", type=str,
+                      default="./vqa_checkpoints")
     args.add_argument("--sub-id", type=int, default=1)
     args.add_argument("--predictions-dir", type=str,
                       default="./data/multi-predictions")
@@ -130,11 +133,23 @@ def save_base_model(opt):
 
 
 def load_base_model():
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
     if not os.path.exists(BASE_MODEL_PATH):
-        raise FileNotFoundError(f"Model checkpoint not found at {BASE_MODEL_PATH}.")
+        raise FileNotFoundError(
+            f"Model checkpoint not found at {BASE_MODEL_PATH}.")
 
     print("Loading model...")
-    return torch.load(BASE_MODEL_PATH)
+    model = torch.load(BASE_MODEL_PATH, map_location="cpu").to(device)
+
+    return model
+
+
+def extract_metadata(test_dataset):
+    for item in test_dataset:
+        if "metadata" in item:
+            yield item["metadata"]["question"], item["metadata"]["img_id"]
 
 
 def main():
@@ -164,10 +179,7 @@ def main():
 
     predicted_labels = torch.argmax(probabilities, dim=-1).numpy()
     confidence_scores = torch.max(probabilities, dim=-1).values.numpy()
-
-    test_series = pd.Series(test_dataset)
-    questions = test_series.apply(lambda x: x["metadata"]["question"])
-    img_ids = test_series.apply(lambda x: x["metadata"]["img_id"])
+    questions, img_ids = zip(*extract_metadata(test_dataset))
 
     df = pd.DataFrame({
         "question": questions,
@@ -175,7 +187,6 @@ def main():
         "predicted_answer": np.array(predicted_labels, dtype=str),
         "confidence": np.array(confidence_scores, dtype=np.float32)
     })
-
 
     predictions_file = f"{opt.predictions_dir}/predictions-{opt.sub_id}.json"
     df.to_csv(predictions_file, encoding="utf-8-sig")
