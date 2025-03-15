@@ -1,20 +1,25 @@
 from transformers import TrainingArguments, Trainer, EarlyStoppingCallback
-import mlflow
-import argparse
-import os
-import numpy as np
+from torch.nn.functional import softmax
 from timm.models import create_model
+import torch
 from sklearn.metrics import accuracy_score
 import modules.model
 from utils.dataset import get_dataset
 import pandas as pd
-import torch
-from torch.nn.functional import softmax
+import numpy as np
+import mlflow
+import argparse
+import os
 import warnings
+import sys
 
+
+sys.stderr = open(os.devnull, 'w')
 os.environ['MLFLOW_EXPERIMENT_NAME'] = 'mlflow-vivqa'
 BASE_MODEL_PATH = "vqa_checkpoints/base_model.pth"
+torch.cuda.empty_cache()
 warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore", category=FutureWarning, module="timm")
 
 
 def compute_metrics(p):
@@ -202,3 +207,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+sys.stderr = sys.__stderr__
