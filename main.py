@@ -93,7 +93,7 @@ def _get_train_all_config(opt):
 
 def _get_train_config(opt):
     args = TrainingArguments(
-        output_dir=f"{opt.vqa_checkpoints}/model-{opt.conf_id}",
+        output_dir=f"{opt.checkpoint_dir}/model-{opt.conf_id}",
         log_level=opt.log_level,
         lr_scheduler_type=opt.lr_scheduler_type,
         warmup_ratio=opt.warmup_ratio,
