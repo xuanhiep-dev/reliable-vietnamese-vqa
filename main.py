@@ -126,7 +126,7 @@ def create_model(opt):
                          encoder_attention_heads=opt.encoder_attention_heads_layers)
 
 
-def main(id):
+def main():
     opt = get_options()
 
     train_dataset, val_dataset, test_dataset = get_dataset(opt)
@@ -160,7 +160,7 @@ def main(id):
     df['answer'] = predicted_labels
     df['confidence'] = confidence_scores
 
-    predictions_name = "predictions-" + str(id) + ".csv"
+    predictions_name = "predictions-" + str(opt.conf_id) + ".csv"
     df.to_csv(predictions_name)
 
     print(f'Test Accuracy: {predictions.metrics["test_accuracy"]}')
