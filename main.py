@@ -153,21 +153,12 @@ def extract_metadata(test_dataset):
             yield metadata["question"], metadata["img_id"]
 
 
-class CustomTrainer(Trainer):
-    def save_model(self, output_dir=None, _internal_call=False):
-        output_dir = output_dir or self.args.output_dir
-
-        model_to_save = self.model.module if hasattr(
-            self.model, 'module') else self.model
-
-        model_state_dict = model_to_save.state_dict()
-
-        torch.save(model_state_dict, f"{output_dir}/pytorch_model.bin")
-
-        if self.tokenizer is not None:
-            self.tokenizer.save_pretrained(output_dir)
-
-        print(f"Model weights saved to {output_dir}/pytorch_model.bin")
+def delete_model(model_path):
+    if os.path.exists(model_path):
+        os.remove(model_path)
+        print(f"Model file {model_path} has been deleted.")
+    else:
+        print(f"Model file {model_path} does not exist.")
 
 
 def train_multimodel():
@@ -180,7 +171,7 @@ def train_multimodel():
 
     args = _get_train_config(opt)
 
-    trainer = CustomTrainer(
+    trainer = Trainer(
         model=model,
         args=args,
         train_dataset=train_dataset,
@@ -202,7 +193,7 @@ def train_multimodel():
     df = pd.DataFrame({
         "question": questions,
         "img_id": img_ids,
-        "answer": np.array(predicted_labels, dtype=str),
+        "predicted_answer": np.array(predicted_labels, dtype=str),
         "confidence": np.array(confidence_scores, dtype=np.float32)
     })
 
@@ -215,6 +206,7 @@ def train_multimodel():
     mlflow.end_run()
 
     del model
+    delete_model(f"{opt.checkpoint_dir}/model-{opt.sub_id}")
     torch.cuda.empty_cache()
 
 
