@@ -44,6 +44,7 @@ def get_options():
     args.add_argument("-lr", "--learning-rate", type=float, default=3e-5)
     args.add_argument("--weight-decay", type=float, default=0.01)
     args.add_argument("--workers", type=int, default=2)
+    args.add_argument("--load-best-model-at-end", type=bool, default=False)
 
     # Varriables setting
     args.add_argument("--image-path", type=str, default="./data/images")
@@ -115,7 +116,7 @@ def _get_train_config(opt):
         overwrite_output_dir=True,
         metric_for_best_model='accuracy',
         eval_strategy='epoch',
-        load_best_model_at_end=True,
+        load_best_model_at_end=opt.load_best_model_at_end,
         greater_is_better=True
     )
     return args
