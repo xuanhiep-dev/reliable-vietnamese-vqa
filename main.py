@@ -26,7 +26,6 @@ def get_options():
     args = argparse.ArgumentParser()
 
     # Training Argument
-    args.add_argument("--output-dir", type=str, default="./output")
     args.add_argument("--log-level", choices=[
                       "debug", "info", "warning", "error", "critical", "passive"], default="passive")
     args.add_argument("--lr-scheduler-type",
@@ -61,7 +60,8 @@ def get_options():
     args.add_argument("--encoder-layers", type=int, default=6)
     args.add_argument("--encoder-attention-heads-layers", type=int, default=6)
     args.add_argument("--classes", type=int, default=353)
-    args.add_argument("--conf-id", type=int, default=1)
+    args.add_argument("--sub-id", type=int, default=1)
+    args.add_argument("--checkpoint-dir", type=str, default="./vqa_checkpoints")
     args.add_argument("--predictions-dir", type=str,
                       default="./data/multi-predictions")
 
@@ -93,7 +93,7 @@ def _get_train_all_config(opt):
 
 def _get_train_config(opt):
     args = TrainingArguments(
-        output_dir=opt.output_dir,
+        output_dir=f"{opt.vqa_checkpoints}/model-{opt.conf_id}",
         log_level=opt.log_level,
         lr_scheduler_type=opt.lr_scheduler_type,
         warmup_ratio=opt.warmup_ratio,
@@ -172,7 +172,7 @@ def main():
     df["predicted_answer"] = np.array(predicted_labels, dtype=int)
     df["confidence"] = np.array(confidence_scores, dtype=np.float32)
 
-    predictions_file = f"{opt.predictions_dir}/predictions-{opt.conf_id}.json"
+    predictions_file = f"{opt.predictions_dir}/predictions-{opt.sub_id}.json"
     df.to_json(predictions_file, orient="records", force_ascii=False, indent=4)
 
     test = trainer.evaluate(test_dataset)
