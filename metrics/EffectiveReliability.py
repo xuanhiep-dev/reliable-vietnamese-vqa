@@ -305,7 +305,11 @@ if __name__=="__main__":
         confidences = np.exp(-np.abs(answers - gt_answers) - epsilon)
 
         noise_indices = np.random.choice(n, int(0.1*n), replace=False)
-        confidences[noise_indices] = 1 - confidences[noise_indices]
+        for idx in noise_indices:
+            if gt_answers[idx] != confidences[idx]:
+                gt_answers[idx] = confidences[idx]
+            else:
+                gt_answers[idx] = confidences[idx] + 1
 
         print("Generating testcase ...")
         print("Number of true prediction =", sum(int(i == j) for i, j in zip(answers, gt_answers)))
@@ -319,7 +323,7 @@ if __name__=="__main__":
 
         return model_output
 
-    er_evaluator = EffectiveReliability(cost_values=[i for i in range(1, 101, 9)])
+    er_evaluator = EffectiveReliability()
 
     model_output = generate_testcase(10000)
 
