@@ -142,7 +142,8 @@ def load_base_model():
             f"Model checkpoint not found at {BASE_MODEL_PATH}.")
 
     print("Loading model...")
-    model = torch.load(BASE_MODEL_PATH, map_location="cpu").to(device)
+    model = torch.load(BASE_MODEL_PATH, map_location="cpu",
+                       weights_only=False).to(device)
 
     return model
 
