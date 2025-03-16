@@ -80,7 +80,7 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
                 nn.Dropout(p=kwargs["dropout"]),
                 nn.BatchNorm1d(kwargs["hidden_2"]),
                 nn.ReLU(),
-                nn.Linear(kwargs["hidden_2"], 2),
+                nn.Linear(kwargs["hidden_2"], n_answers),
                 # nn.Softmax(dim=-1),
             )
         else:
@@ -91,7 +91,7 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
                 nn.Linear(kwargs["hidden_1"], kwargs["hidden_2"]),
                 nn.Dropout(p=kwargs["dropout"]),
                 nn.ReLU(),
-                nn.Linear(kwargs["hidden_2"], 2),
+                nn.Linear(kwargs["hidden_2"], n_answers),
                 # nn.Softmax(dim=-1),
             )
 
