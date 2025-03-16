@@ -213,16 +213,17 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
             self._init_selector()
 
     def _init_selector(self, **kwargs):
-        config_attr = "selector"
-        select_type = kwargs[config_attr].type
-        feat_size = kwargs["hidden_size"]
-        num_answers = kwargs["num_labels"]
+        config_attr = kwargs.get("model_config", {}).get(
+            "select_vivqa", {}).get("selector", {})
+        select_type = config_attr["type"]
+        feat_size = config_attr["hidden_size"]
+        num_answers = config_attr["num_labels"]
 
         self.selector = SelectivePredictor(
             select_type,
             feat_size=feat_size,
             num_answers=num_answers,
-            **kwargs[config_attr].params
+            **config_attr["params"]
         )
 
     def get_optimizer_parameters(self, config):
