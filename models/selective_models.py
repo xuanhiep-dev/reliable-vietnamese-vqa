@@ -194,6 +194,11 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
         text_emb = self.text_embed(text_feats)
         answer_emb = self.s_embed(answer_logits)
 
+        print(image_emb.shape)
+        print(text_emb.shape)
+        print(answer_emb.shape)
+        print(qi_emb.shape)
+
         if self.use_qi_embed:
             qi_emb = self.qi_embed(qi_embed)
             input_feat = torch.cat(

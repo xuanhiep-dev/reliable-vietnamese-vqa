@@ -251,10 +251,6 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
         image_emb, text_emb, multimodal_emb = self.beit3(textual_tokens=self._question, visual_tokens=self._image,
                                                          text_padding_position=self._padding_mask, return_embeddings=True)
 
-        print(image_emb.shape)
-        print(text_emb.shape)
-        print(multimodal_emb.shape)
-
         confidences = None
         if self.use_selector:
             selector_output = self.selector(
