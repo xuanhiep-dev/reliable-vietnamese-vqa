@@ -6,6 +6,7 @@ import os
 NULL = np.inf
 
 
+# Naive accuracy
 class ClassificationVQAAccuracyEvaluator:
     def eval_pred_list(self, pred_answers, gt_answers, *args, **kwargs):
         return [int(pred_answer == gt_answer) for pred_answer, gt_answer in zip(pred_answers, gt_answers)]
@@ -67,7 +68,6 @@ class EffectiveReliability: #(BaseMetric):
     #         broad_result[k] = broadcast_tensor(t, src=0)
     #     return broad_result
 
-    # understood
     def _get_sorted_costs(self, sorted_scores):
         """
         Return dictionary mapping a cost value c to an array sorted_costs
@@ -113,7 +113,6 @@ class EffectiveReliability: #(BaseMetric):
 
         return best_possible_phi, best_coverage, best_risk
 
-    # understood
     def _calc_cost_threshold(self, sorted_confs, sorted_costs):
         """
         Given a list of model confidences and corresponding phi_c cost values
@@ -129,7 +128,6 @@ class EffectiveReliability: #(BaseMetric):
         threshold = sorted_confs[threshold_index]
         return threshold
 
-    # understood
     def _calc_phi_from_precomputed_threshold(
             self, c, threshold, sorted_confs, sorted_scores
     ):
@@ -159,7 +157,6 @@ class EffectiveReliability: #(BaseMetric):
         risk = 1 - (acc_score / num_answered)
         return phi, coverage, risk
 
-    # understood
     def _calc_phi_no_abstention(self, c, sorted_scores):
         """
         Given an array of accuracy scores, compute phi_c where the
@@ -175,7 +172,6 @@ class EffectiveReliability: #(BaseMetric):
         phi_no_abstention = cum_score / len(sorted_scores)
         return phi_no_abstention
 
-    # understood
     def _calc_er_result(self, scores, confidences, device, best):
         assert len(scores) == len(confidences), \
             "{} != {}".format(len(scores), len(confidences))
