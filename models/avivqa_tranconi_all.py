@@ -220,6 +220,9 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
         feat_size = config_attr.get("hidden_size", {})
         num_answers = config_attr.get("num_labels", {})
 
+        print(config_attr)
+        print(feat_size)
+
         self.selector = SelectivePredictor(
             select_type,
             feat_size=feat_size,
