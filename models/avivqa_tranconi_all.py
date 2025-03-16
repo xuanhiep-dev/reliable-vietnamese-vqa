@@ -51,7 +51,7 @@ class Pooler(nn.Module):
 
 
 class ViVQABEiT3(nn.Module):
-    def __init__(self, args):
+    def __init__(self, args, **kwargs):
         super().__init__()
         self.args = args
         assert args.multiway
@@ -125,7 +125,7 @@ class BEiT3Wrapper(nn.Module):
     def __init__(self, args, **kwargs):
         super().__init__()
         self.args = args
-        self.beit3 = ViVQABEiT3(args)
+        self.beit3 = ViVQABEiT3(args, **kwargs)
         # self.apply(self._init_weights)
 
     def fix_init_weight(self):
@@ -211,14 +211,13 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
         self.use_selector = use_selector
 
         if use_selector:
-            self._init_selector()
+            self._init_selector(**kwargs)
 
     def _init_selector(self, **kwargs):
-        config_attr = kwargs.get("model_config", {}).get(
-            "select_vivqa", {}).get("selector") or {}
-        select_type = config_attr.get("type", {})
-        feat_size = config_attr.get("hidden_size", {})
-        num_answers = config_attr.get("num_labels", {})
+        config_attr = (kwargs.get("model_config") or {}).get(
+            "select_vivqa", {}).get("selector", {})
+        select_type, feat_size, num_answers = map(
+            config_attr.get, ("type", "hidden_size", "num_labels"))
 
         print(config_attr)
         print(feat_size)
@@ -280,7 +279,6 @@ def avivqa_model(pretrained=False, num_classes=353, **kwargs):
 
 @register_model
 def selective_avivqa_model(pretrained=False, num_classes=353, **kwargs):
-    print(kwargs)
     args = _get_base_config(**kwargs)
     model = ViVQABEiT3Selective(
         args, num_classes=num_classes, **kwargs)
