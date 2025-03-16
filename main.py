@@ -221,36 +221,35 @@ def train_selective_model():
     opt = get_options()
     config_path = "configs/select_pred.yaml"
 
-    # train_dataset, val_dataset, test_dataset = get_dataset(opt)
+    train_dataset, val_dataset, test_dataset = get_dataset(opt)
 
     config = load_config(config_path)
-    print(config)
 
-    # model = create_model('selective_avivqa_model',
-    #                      num_classes=opt.classes,
-    #                      drop_path_rate=opt.drop_path_rate,
-    #                      encoder_layers=opt.encoder_layers,
-    #                      encoder_attention_heads=opt.encoder_attention_heads_layers, **config)
+    model = create_model('selective_avivqa_model',
+                         num_classes=opt.classes,
+                         drop_path_rate=opt.drop_path_rate,
+                         encoder_layers=opt.encoder_layers,
+                         encoder_attention_heads=opt.encoder_attention_heads_layers, **config)
 
-    # optimizer_params = model.get_optimizer_parameters(config)
-    # optimizer = torch.optim.AdamW(optimizer_params, lr=0.0001)
+    optimizer_params = model.get_optimizer_parameters(config)
+    optimizer = torch.optim.AdamW(optimizer_params, lr=0.0001)
 
-    # args = _get_train_config(opt)
+    args = _get_train_config(opt)
 
-    # trainer = Trainer(
-    #     model=model,
-    #     args=args,
-    #     train_dataset=train_dataset,
-    #     eval_dataset=val_dataset,
-    #     compute_metrics=compute_metrics,
-    #     optimizers=(optimizer, None),
-    #     callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
-    # )
+    trainer = Trainer(
+        model=model,
+        args=args,
+        train_dataset=train_dataset,
+        eval_dataset=val_dataset,
+        compute_metrics=compute_metrics,
+        optimizers=(optimizer, None),
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
+    )
 
-    # trainer.train()
+    trainer.train()
 
-    # test = trainer.evaluate(test_dataset)
-    # print(f'Test Accuracy: {test["eval_accuracy"]}')
+    test = trainer.evaluate(test_dataset)
+    print(f'Test Accuracy: {test["eval_accuracy"]}')
 
     mlflow.end_run()
 

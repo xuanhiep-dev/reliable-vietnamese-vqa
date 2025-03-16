@@ -161,7 +161,8 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
             norm_layer=nn.LayerNorm,
             **kwargs
     ):
-        super(BEiT3ForVietnameseVisualQuestionAnswering, self).__init__(args=args)
+        super(BEiT3ForVietnameseVisualQuestionAnswering,
+              self).__init__(args=args, **kwargs)
         embed_dim = args.encoder_embed_dim
         self.pooler = Pooler(
             input_features=embed_dim,
@@ -214,16 +215,16 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
 
     def _init_selector(self, **kwargs):
         config_attr = kwargs.get("model_config", {}).get(
-            "select_vivqa", {}).get("selector", {})
-        select_type = config_attr["type"]
-        feat_size = config_attr["hidden_size"]
-        num_answers = config_attr["num_labels"]
+            "select_vivqa", {}).get("selector") or {}
+        select_type = config_attr.get("type", {})
+        feat_size = config_attr.get("hidden_size", {})
+        num_answers = config_attr.get("num_labels", {})
 
         self.selector = SelectivePredictor(
             select_type,
             feat_size=feat_size,
             num_answers=num_answers,
-            **config_attr["params"]
+            **config_attr.get("params", {})
         )
 
     def get_optimizer_parameters(self, config):
