@@ -231,7 +231,7 @@ def train_selective_model():
                          encoder_layers=opt.encoder_layers,
                          encoder_attention_heads=opt.encoder_attention_heads_layers, **config)
 
-    optimizer_params = model.get_optimizer_parameters(config)
+    optimizer_params = model.get_optimizer_parameters()
     optimizer = torch.optim.AdamW(optimizer_params, lr=0.0001)
 
     args = _get_train_config(opt)

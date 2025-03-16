@@ -209,39 +209,38 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
     def __init__(self, args, num_classes, use_selector=True, norm_layer=nn.LayerNorm, **kwargs):
         super().__init__(args, num_classes, norm_layer=norm_layer, **kwargs)
         self.use_selector = use_selector
+        self.vivqa_attr = (kwargs.get("model_config") or {}).get(
+            "select_vivqa", {})
+        self.selector_attr = self.vivqa_attr.get(
+            "selector", {})
 
         if use_selector:
-            self._init_selector(**kwargs)
+            self._init_selector()
 
-    def _init_selector(self, **kwargs):
-        config_attr = (kwargs.get("model_config") or {}).get(
-            "select_vivqa", {}).get("selector", {})
-        select_type = config_attr.get("type") or "default_type"
-        feat_size = config_attr.get("hidden_size") or 768
-        num_answers = config_attr.get("num_labels") or 353
+    def _init_selector(self):
 
-        print(select_type)
-        print(feat_size)
-        print(num_answers)
+        select_type = self.selector_attr.get("type") or "default_type"
+        feat_size = self.selector_attr.get("hidden_size") or 768
+        num_answers = self.selector_attr.get("num_labels") or 353
 
         self.selector = SelectivePredictor(
             select_type,
             feat_size=feat_size,
             num_answers=num_answers,
-            **config_attr.get("params", {})
+            **self.selector_attr.get("params", {})
         )
 
-    def get_optimizer_parameters(self, config):
+    def get_optimizer_parameters(self):
         params = []
 
-        if config.get("freeze_vqa", False):
+        if not self.vivqa_attr.get("freeze_vqa", False):
             params.append({"params": self.selector.parameters()})
         else:
             params.append({"params": self.parameters()})
 
-        if "sel_lr" in config["selector"]:
+        if "sel_lr" in self.selector_attr:
             params.append({"params": self.selector.parameters(),
-                          "lr": config["selector"]["sel_lr"]})
+                          "lr": self.selector_attr.get("sel_lr") or 0.001})
 
         return params
 
