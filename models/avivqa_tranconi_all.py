@@ -233,14 +233,16 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
     def get_optimizer_parameters(self):
         params = []
 
+        selector_params = {"params": list(self.selector.parameters())}
+
         if not self.vivqa_attr.get("freeze_vqa", False):
-            params.append({"params": self.selector.parameters()})
+            params.append(
+                {"params": list(set(self.parameters()) - set(self.selector.parameters()))})
         else:
-            params.append({"params": self.parameters()})
+            params.append(selector_params)
 
         if "sel_lr" in self.selector_attr:
-            params.append({"params": self.selector.parameters(),
-                          "lr": self.selector_attr.get("sel_lr") or 0.001})
+            selector_params["lr"] = self.selector_attr.get("sel_lr") or 0.001
 
         return params
 
