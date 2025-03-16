@@ -3,7 +3,7 @@ from torch.nn.functional import softmax
 from timm.models import create_model
 import torch
 from sklearn.metrics import accuracy_score
-import models.avivqa_tranconi
+import models.avivqa_tranconi_all
 from utils.dataset import get_dataset
 from utils.processor import load_config
 import pandas as pd
