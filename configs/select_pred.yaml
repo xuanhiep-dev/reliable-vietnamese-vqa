@@ -43,6 +43,8 @@ model_config:
         pool_image_dim: 1
         pool_text_embedding: true
         pool_text_dim: 1
+        pool_multi_embedding: true
+        pool_multi_dim: 1
         pool_type: max
       sel_lr: 0.0001
     freeze_vqa: true

@@ -61,10 +61,12 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
 
         self.pool_image_feats = kwargs.get("pool_image_embedding", False)
         self.pool_text_feats = kwargs.get("pool_text_embedding", False)
+        self.pool_multi_feats = kwargs.get("pool_multi_embedding", False)
         self.pool_image_dim = kwargs.get("pool_image_dim", 1)
         self.pool_text_dim = kwargs.get("pool_text_dim", 1)
+        self.pool_multi_dim = kwargs.get("pool_multi_dim", 1)
         self.pool_type = kwargs.get("pool_type", None)
-        if self.pool_image_feats or self.pool_text_feats:
+        if self.pool_image_feats or self.pool_text_feats or self.pool_multi_feats:
             assert self.pool_type is not None
 
         use_batchnorm = kwargs.get("use_batchnorm", False)
@@ -189,21 +191,19 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
             text_feats = self.pool_features(
                 text_feats, self.pool_text_dim, self.pool_type
             )
+        if self.pool_multi_feats:
+            qi_embed = self.pool_features(
+                qi_embed, self.pool_multi_dim, self.pool_type
+            )
 
         image_emb = self.image_embed(image_feats)
         text_emb = self.text_embed(text_feats)
         answer_emb = self.s_embed(answer_logits)
 
-        print(image_emb.shape)
-        print(text_emb.shape)
-        print(answer_emb.shape)
-
         if self.use_qi_embed:
             qi_emb = self.qi_embed(qi_embed)
-            print(qi_emb.shape)
             input_feat = torch.cat(
                 [image_emb, text_emb, qi_emb, answer_emb], -1)
-            print(input_feat.shape)
         else:
             input_feat = torch.cat([image_emb, text_emb, answer_emb], -1)
 
