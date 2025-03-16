@@ -81,7 +81,6 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
                 nn.BatchNorm1d(kwargs["hidden_2"]),
                 nn.ReLU(),
                 nn.Linear(kwargs["hidden_2"], n_answers),
-                # nn.Softmax(dim=-1),
             )
         else:
             self.selective_predictor = nn.Sequential(
@@ -92,7 +91,6 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
                 nn.Dropout(p=kwargs["dropout"]),
                 nn.ReLU(),
                 nn.Linear(kwargs["hidden_2"], n_answers),
-                # nn.Softmax(dim=-1),
             )
 
         if self.use_softmax:
