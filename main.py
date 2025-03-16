@@ -3,8 +3,9 @@ from torch.nn.functional import softmax
 from timm.models import create_model
 import torch
 from sklearn.metrics import accuracy_score
-import modules.model
+import models.avivqa_tranconi
 from utils.dataset import get_dataset
+from utils.processor import load_config
 import pandas as pd
 import numpy as np
 import mlflow
@@ -125,7 +126,7 @@ def _get_train_config(opt):
 def save_base_model(opt):
     if not os.path.exists(BASE_MODEL_PATH):
         print("Creating model...")
-        base_model = create_model('vivqa_model',
+        base_model = create_model('avivqa_model',
                                   num_classes=opt.classes,
                                   drop_path_rate=opt.drop_path_rate,
                                   encoder_layers=opt.encoder_layers,
@@ -216,5 +217,41 @@ def train_multimodel():
     torch.cuda.empty_cache()
 
 
+def train_selective_model():
+    opt = get_options()
+    config_path = "configs/select_pred.yaml"
+
+    train_dataset, val_dataset, test_dataset = get_dataset(opt)
+
+    config = load_config(config_path)
+    model = create_model('selective_avivqa_model',
+                         num_classes=opt.classes,
+                         drop_path_rate=opt.drop_path_rate,
+                         encoder_layers=opt.encoder_layers,
+                         encoder_attention_heads=opt.encoder_attention_heads_layers, **config)
+
+    optimizer_params = model.get_optimizer_parameters(config)
+    optimizer = torch.optim.AdamW(optimizer_params, lr=0.0001)
+
+    args = _get_train_config(opt)
+
+    trainer = Trainer(
+        model=model,
+        args=args,
+        train_dataset=train_dataset,
+        eval_dataset=val_dataset,
+        compute_metrics=compute_metrics,
+        optimizers=(optimizer, None),
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
+    )
+
+    trainer.train()
+
+    test = trainer.evaluate(test_dataset)
+    print(f'Test Accuracy: {test["eval_accuracy"]}')
+
+    mlflow.end_run()
+
+
 if __name__ == '__main__':
-    train_multimodel()
+    train_selective_model()

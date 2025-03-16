@@ -7,6 +7,7 @@ import transformers
 from transformers.utils import TensorType
 from lavis.processors.base_processor import BaseProcessor
 import torch
+import yaml
 
 
 class Processor:
@@ -82,3 +83,24 @@ class Processor:
             'question': text['input_ids'].to(self.device),
             'padding_mask': text['padding_mask'].to(self.device)
         }
+
+
+def load_config(config_path):
+    with open(config_path, "r") as file:
+        config = yaml.safe_load(file)
+
+    def resolve_references(config, root_config):
+        for key, value in config.items():
+            if isinstance(value, dict):
+                config[key] = resolve_references(value, root_config)
+            elif isinstance(value, str) and value.startswith("${"):
+                ref_path = value.strip("${}").split(".")
+                ref_value = root_config
+                for ref in ref_path:
+                    ref_value = ref_value.get(ref, None)
+                    if ref_value is None:
+                        raise ValueError(f"Variable is missing: {value}")
+                config[key] = ref_value
+        return config
+
+    return resolve_references(config, config)

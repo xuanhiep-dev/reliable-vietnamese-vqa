@@ -11,8 +11,9 @@ import math
 from transformers.utils.generic import ModelOutput
 from dataclasses import dataclass
 from typing import Optional
-from modules.TextEmbedding import BartPhoExtractor
-from modules.VisionEmbedding import Blip2EfficientExtractor
+from models.language_embedding import BartPhoExtractor
+from models.vision_embedding import Blip2EfficientExtractor
+from models.selective_models import SelectivePredictor
 
 
 @dataclass
@@ -82,7 +83,7 @@ class ViVQABEiT3(nn.Module):
             is_encoder_decoder=False,
         )
 
-    def forward(self, textual_tokens, visual_tokens, text_padding_position):
+    def forward(self, textual_tokens, visual_tokens, text_padding_position, return_embeddings=False):
         x1 = self.vision_embed(visual_tokens)
         multiway_split_position = x1.size(1)
 
@@ -107,6 +108,16 @@ class ViVQABEiT3(nn.Module):
             multiway_split_position=multiway_split_position
         )
         encoder_out["multiway_split_position"] = multiway_split_position
+
+        multimodal_emb = encoder_out["encoder_out"]
+        image_emb = encoder_out["encoder_out"][:,
+                                               :multiway_split_position, :]
+        text_emb = encoder_out["encoder_out"][:,
+                                              multiway_split_position:, :]
+
+        if return_embeddings:
+            return image_emb, text_emb, multimodal_emb
+
         return encoder_out
 
 
@@ -170,6 +181,10 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
         question = question.squeeze(dim=1)
         padding_mask = padding_mask.squeeze(dim=1)
 
+        self._image = image
+        self._question = question
+        self._padding_mask = padding_mask
+
         outputs = self.beit3(
             textual_tokens=question,
             visual_tokens=image,
@@ -189,9 +204,79 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
         )
 
 
+class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
+    def __init__(self, args, num_classes, use_selector=True, norm_layer=nn.LayerNorm, **kwargs):
+        super().__init__(args, num_classes, norm_layer=norm_layer, **kwargs)
+        self.use_selector = use_selector
+
+        if use_selector:
+            self._init_selector()
+
+    def _init_selector(self):
+        config_attr = "selector"
+        select_type = self.config[config_attr].type
+        feat_size = self.config["hidden_size"]
+        num_answers = self.config.num_labels
+
+        self.selector = SelectivePredictor(
+            select_type,
+            feat_size=feat_size,
+            num_answers=num_answers,
+            **self.args.selector.params
+        )
+
+    def get_optimizer_parameters(self, config):
+        params = []
+
+        if config.get("freeze_vqa", False):
+            params.append({"params": self.selector.parameters()})
+        else:
+            params.append({"params": self.parameters()})
+
+        if "sel_lr" in config["selector"]:
+            params.append({"params": self.selector.parameters(),
+                          "lr": config["selector"]["sel_lr"]})
+
+        return params
+
+    def forward(self, image, question, padding_mask, labels=None, **kwargs):
+        outputs = super().forward(image, question, padding_mask, labels, **kwargs)
+        image_emb, text_emb, multimodal_emb = self.beit3(textual_tokens=self._question, visual_tokens=self._image,
+                                                         text_padding_position=self._padding_mask, return_embeddings=True)
+
+        print(image_emb.shape)
+        print(text_emb.shape)
+        print(multimodal_emb.shape)
+        print(image_emb.shape)
+
+        confidences = None
+        if self.use_selector:
+            selector_output = self.selector(
+                outputs.logits.detach(),
+                image_emb.detach(),
+                text_emb.detach(),
+                multimodal_emb.detach(),
+            )
+            confidences = selector_output["confidences"]
+
+        loss = None
+        if labels is not None:
+            loss = F.cross_entropy(confidences, labels)
+
+        return ViVQAOutput(loss=loss, logits=confidences)
+
+
 @register_model
-def vivqa_model(pretrained=False, num_classes=353, **kwargs):
+def avivqa_model(pretrained=False, num_classes=353, **kwargs):
     args = _get_base_config(**kwargs)
     model = BEiT3ForVietnameseVisualQuestionAnswering(
+        args, num_classes=num_classes, **kwargs)
+    return model
+
+
+@register_model
+def selective_avivqa_model(pretrained=False, num_classes=353, **kwargs):
+    args = _get_base_config(**kwargs)
+    model = ViVQABEiT3Selective(
         args, num_classes=num_classes, **kwargs)
     return model
