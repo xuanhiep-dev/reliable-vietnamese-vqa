@@ -212,17 +212,17 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
         if use_selector:
             self._init_selector()
 
-    def _init_selector(self):
+    def _init_selector(self, **kwargs):
         config_attr = "selector"
-        select_type = self.config[config_attr].type
-        feat_size = self.config["hidden_size"]
-        num_answers = self.config.num_labels
+        select_type = kwargs[config_attr].type
+        feat_size = kwargs["hidden_size"]
+        num_answers = kwargs["num_labels"]
 
         self.selector = SelectivePredictor(
             select_type,
             feat_size=feat_size,
             num_answers=num_answers,
-            **self.args.selector.params
+            **kwargs[config_attr].params
         )
 
     def get_optimizer_parameters(self, config):
@@ -247,7 +247,6 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
         print(image_emb.shape)
         print(text_emb.shape)
         print(multimodal_emb.shape)
-        print(image_emb.shape)
 
         confidences = None
         if self.use_selector:
