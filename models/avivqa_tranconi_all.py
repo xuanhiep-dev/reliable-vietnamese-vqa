@@ -190,6 +190,7 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
             textual_tokens=question,
             visual_tokens=image,
             text_padding_position=padding_mask,
+            return_embeddings=False
         )
         x = outputs["encoder_out"]
         cls_rep = self.pooler(x)
