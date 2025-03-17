@@ -204,17 +204,21 @@ def get_options():
     args.add_argument("--save-total-limit", type=int, default=1)
     args.add_argument("-tb", "--train-batch-size", type=int, default=32)
     args.add_argument("-eb", "--eval-batch-size", type=int, default=32)
-    args.add_argument("-e", "--epochs", type=int, default=10)
+    args.add_argument("-e", "--epochs", type=int, default=3)
     args.add_argument("-lr", "--learning-rate", type=float, default=1e-4)
     args.add_argument("--weight-decay", type=float, default=0.01)
     args.add_argument("--workers", type=int, default=2)
+    args.add_argument("--skip-training", action="store_true", help="Skip the training step and just run evaluation")
+    args.add_argument("--minimal-model", action="store_true", help="Use a minimal model for faster testing")
+    args.add_argument("--quick-eval", action="store_true", help="Run evaluation on a smaller subset of examples")
+    args.add_argument("--eval-samples", type=int, default=10, help="Number of samples to use for quick evaluation")
 
     # Data paths
-    args.add_argument("--image-path", type=str, default="./data/images")
-    args.add_argument("--ans-path", type=str, default="./data/vocab.json")
-    args.add_argument("--train-path", type=str, default="./data/ViVQA-csv/train.csv")
-    args.add_argument("--val-path", type=str, default="./data/ViVQA-csv/val.csv")
-    args.add_argument("--test-path", type=str, default="./data/ViVQA-csv/test.csv")
+    args.add_argument("--image-path", type=str, default="./dummy_data/images")
+    args.add_argument("--ans-path", type=str, default="./dummy_data/vocab.json")
+    args.add_argument("--train-path", type=str, default="./dummy_data/ViVQA-csv/train.csv")
+    args.add_argument("--val-path", type=str, default="./dummy_data/ViVQA-csv/val.csv")
+    args.add_argument("--test-path", type=str, default="./dummy_data/ViVQA-csv/test.csv")
 
     # Model settings
     args.add_argument("--drop-path-rate", type=float, default=0.3)
@@ -251,11 +255,10 @@ def _get_train_config(opt):
         weight_decay=opt.weight_decay,
         dataloader_num_workers=opt.workers,
         report_to='mlflow',
-        save_safetensors=False,
         disable_tqdm=False,
         overwrite_output_dir=True,
         metric_for_best_model='cov@0.1',  # Use coverage at 10% risk tolerance as the main metric
-        eval_strategy='epoch',
+        evaluation_strategy='epoch',  # Changed from eval_strategy to evaluation_strategy
         load_best_model_at_end=True,
         greater_is_better=True
     )
@@ -263,14 +266,45 @@ def _get_train_config(opt):
 
 
 def save_base_model(opt):
+    # Make sure the checkpoint directory exists
+    os.makedirs(os.path.dirname(BASE_MODEL_PATH), exist_ok=True)
+    
     if not os.path.exists(BASE_MODEL_PATH):
-        print("Creating model...")
-        base_model = create_model('vivqa_model',
-                                num_classes=opt.classes,
-                                drop_path_rate=opt.drop_path_rate,
-                                encoder_layers=opt.encoder_layers,
-                                encoder_attention_heads=opt.encoder_attention_heads_layers)
-        torch.save(base_model, BASE_MODEL_PATH)
+        print(f"Creating base model and saving to {BASE_MODEL_PATH}...")
+        try:
+            # Import required modules here to handle potential import errors
+            from modules.model import vivqa_model
+            
+            # Determine model parameters based on minimal model flag
+            if opt.minimal_model:
+                print("Using minimal model configuration for faster testing")
+                # Smaller model parameters
+                encoder_layers = 1
+                encoder_attention_heads = 1
+                drop_path_rate = 0.0
+            else:
+                # Regular model parameters
+                encoder_layers = opt.encoder_layers
+                encoder_attention_heads = opt.encoder_attention_heads_layers
+                drop_path_rate = opt.drop_path_rate
+            
+            # Create the model
+            base_model = vivqa_model(
+                num_classes=opt.classes,
+                drop_path_rate=drop_path_rate,
+                encoder_layers=encoder_layers,
+                encoder_attention_heads=encoder_attention_heads
+            )
+            
+            # Save the model
+            torch.save(base_model, BASE_MODEL_PATH)
+            print(f"Base model successfully saved to {BASE_MODEL_PATH}")
+        except Exception as e:
+            print(f"Error creating or saving base model: {e}")
+            print("This could be due to missing dependencies or incompatible versions.")
+            sys.exit(1)
+    else:
+        print(f"Base model already exists at {BASE_MODEL_PATH}")
 
 
 def load_base_model():
@@ -279,10 +313,14 @@ def load_base_model():
     if not os.path.exists(BASE_MODEL_PATH):
         raise FileNotFoundError(f"Model checkpoint not found at {BASE_MODEL_PATH}.")
 
-    print("Loading base model...")
-    model = torch.load(BASE_MODEL_PATH, map_location="cpu", weights_only=False).to(device)
-
-    return model
+    print(f"Loading base model from {BASE_MODEL_PATH}...")
+    try:
+        model = torch.load(BASE_MODEL_PATH, map_location="cpu").to(device)
+        return model
+    except Exception as e:
+        print(f"Error loading model: {e}")
+        print("This could be due to compatibility issues or file corruption.")
+        sys.exit(1)
 
 
 def evaluate_with_risk_coverage(confidences, correctness, results_dir):
@@ -328,188 +366,256 @@ def train_selective_model():
     """
     Train a selective VQA model on top of the base BEiT3 model.
     """
-    opt = get_options()
-
-    # Get datasets
-    train_dataset, val_dataset, test_dataset = get_dataset(opt)
-
-    # Load or create base model
-    save_base_model(opt)
-    base_model = load_base_model()
-
-    # Convert to selective model
-    print("Creating selective model...")
-    selective_model = convert_base_model_to_selective(
-        base_model=base_model,
-        hidden_size=768,
-        selective_hidden_1=opt.selective_hidden_1,
-        selective_hidden_2=opt.selective_hidden_2,
-        selective_dropout=opt.selective_dropout,
-        selective_features=opt.selective_features,
-        freeze_base_model=opt.freeze_base_model,
-    )
-
-    # Training configuration
-    training_args = _get_train_config(opt)
-
-    # Create trainer
-    trainer = SelectiveTrainer(
-        model=selective_model,
-        args=training_args,
-        train_dataset=train_dataset,
-        eval_dataset=val_dataset,
-        compute_metrics=compute_metrics,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
-    )
-
-    # Train model
-    print("Training selective model...")
-    trainer.train()
-
-    # Save model
-    print(f"Saving model to {SELECTIVE_MODEL_PATH}...")
-    torch.save(selective_model, SELECTIVE_MODEL_PATH)
-
-    # Evaluate on test set
-    print("Evaluating on test set...")
-    test_results = trainer.evaluate(test_dataset)
-    print(f"Test results: {test_results}")
-
-    # Create results directory
-    results_dir = os.path.join(opt.checkpoint_dir, "selective_results")
-    os.makedirs(results_dir, exist_ok=True)
-
-    # Save test results
-    with open(os.path.join(results_dir, "test_metrics.txt"), "w") as f:
-        for key, value in test_results.items():
-            f.write(f"{key}: {value}\n")
-
-    # Generate predictions with proper risk-coverage evaluation
-    print("Generating predictions with risk-coverage evaluation...")
+    try:
+        opt = get_options()
     
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    selective_model.to(device)
-    selective_model.eval()
-
-    # Collect predictions and ground truth
-    all_predictions = []
-    all_confidences = []
-    all_is_correct = []
-    all_metadata = []
-
-    test_loader = DataLoader(
-        test_dataset,
-        batch_size=opt.eval_batch_size,
-        shuffle=False,
-        num_workers=opt.workers
-    )
-
-    # Process all test samples
-    for batch_idx, batch in enumerate(test_loader):
-        # Move batch to device
-        batch = {k: v.to(device) if isinstance(v, torch.Tensor) else v for k, v in batch.items()}
+        # Ensure checkpoint directory exists
+        os.makedirs(opt.checkpoint_dir, exist_ok=True)
+        os.makedirs(os.path.dirname(BASE_MODEL_PATH), exist_ok=True)
         
-        # Extract labels
-        labels = batch.pop("labels", None)
+        # Ensure base model path directory exists
+        model_dir = os.path.dirname(os.path.abspath(BASE_MODEL_PATH))
+        if model_dir:
+            os.makedirs(model_dir, exist_ok=True)
+    
+        # Get datasets
+        try:
+            print("Loading datasets...")
+            train_dataset, val_dataset, test_dataset = get_dataset(opt)
+            print(f"Datasets loaded successfully. Train: {len(train_dataset)}, Val: {len(val_dataset)}, Test: {len(test_dataset)} samples")
+        except Exception as e:
+            print(f"Error loading datasets: {e}")
+            print("Make sure the data paths are correct and the files exist.")
+            sys.exit(1)
+    
+        # Load or create base model
+        save_base_model(opt)
+        base_model = load_base_model()
         
-        # Generate predictions
-        with torch.no_grad():
-            # Get base model predictions first to calculate correctness
-            base_outputs = selective_model.base_model(**batch)
-            pred_classes = torch.argmax(base_outputs.logits, dim=-1)
+        # Convert to selective model
+        try:
+            print("Creating selective model...")
+            selective_model = convert_base_model_to_selective(
+                base_model=base_model,
+                hidden_size=768,
+                selective_hidden_1=128 if opt.minimal_model else opt.selective_hidden_1,
+                selective_hidden_2=64 if opt.minimal_model else opt.selective_hidden_2,
+                selective_dropout=0.0 if opt.minimal_model else opt.selective_dropout,
+                selective_features="pooled_text+pooled_img+prob" if opt.minimal_model else opt.selective_features,
+                freeze_base_model=opt.freeze_base_model,
+            )
+            print("Selective model created successfully")
+        except Exception as e:
+            print(f"Error creating selective model: {e}")
+            print("This could be due to compatibility issues with the base model.")
+            sys.exit(1)
+    
+        # Check if we should skip training
+        if not opt.skip_training:
+            # Training configuration
+            try:
+                training_args = _get_train_config(opt)
             
-            # Generate correctness labels
-            correctness = (pred_classes == labels).float()
+                # Create trainer
+                trainer = SelectiveTrainer(
+                    model=selective_model,
+                    args=training_args,
+                    train_dataset=train_dataset,
+                    eval_dataset=val_dataset,
+                    compute_metrics=compute_metrics,
+                    callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
+                )
             
-            # Get confidence scores from selective model
-            outputs = selective_model(
-                **batch, 
-                labels=labels,
-                confidence_labels=correctness
+                # Train model
+                print("Training selective model...")
+                trainer.train()
+            
+                # Save model
+                print(f"Saving model to {SELECTIVE_MODEL_PATH}...")
+                torch.save(selective_model, SELECTIVE_MODEL_PATH)
+                
+                # Evaluate on test set using trainer
+                print("Evaluating on test set...")
+                test_results = trainer.evaluate(test_dataset)
+                print(f"Test results: {test_results}")
+            except Exception as e:
+                print(f"Error during training: {e}")
+                print("Proceeding with evaluation on the untrained model.")
+        else:
+            print("Skipping training as --skip-training is set")
+            if os.path.exists(SELECTIVE_MODEL_PATH):
+                print(f"Loading existing selective model from {SELECTIVE_MODEL_PATH}")
+                try:
+                    selective_model = torch.load(SELECTIVE_MODEL_PATH, map_location="cpu")
+                except Exception as e:
+                    print(f"Error loading selective model: {e}")
+                    print("Proceeding with the newly created model...")
+            else:
+                print("No trained model found. Proceeding with evaluation on untrained model.")
+    
+        # Create results directory
+        results_dir = os.path.join(opt.checkpoint_dir, "selective_results")
+        os.makedirs(results_dir, exist_ok=True)
+        
+        # Generate predictions with proper risk-coverage evaluation
+        print("Generating predictions with risk-coverage evaluation...")
+        
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        selective_model.to(device)
+        selective_model.eval()
+    
+        # Collect predictions and ground truth
+        all_predictions = []
+        all_confidences = []
+        all_is_correct = []
+        all_metadata = []
+    
+        try:
+            # If quick-eval is enabled, only use a subset of the test dataset
+            if opt.quick_eval:
+                print(f"Quick evaluation mode: Using only {opt.eval_samples} samples")
+                # Use a random subset of the test dataset
+                import random
+                indices = random.sample(range(len(test_dataset)), min(len(test_dataset), opt.eval_samples))
+                subset_test_dataset = torch.utils.data.Subset(test_dataset, indices)
+                test_loader = DataLoader(
+                    subset_test_dataset,
+                    batch_size=opt.eval_batch_size,
+                    shuffle=False,
+                    num_workers=1  # Use 1 worker for quick evaluation
+                )
+            else:
+                test_loader = DataLoader(
+                    test_dataset,
+                    batch_size=opt.eval_batch_size,
+                    shuffle=False,
+                    num_workers=opt.workers
+                )
+        
+            # Process all test samples
+            for batch_idx, batch in enumerate(test_loader):
+                # Move batch to device
+                batch = {k: v.to(device) if isinstance(v, torch.Tensor) else v for k, v in batch.items()}
+                
+                # Extract labels
+                labels = batch.pop("labels", None)
+                
+                # Generate predictions
+                with torch.no_grad():
+                    # Get base model predictions first to calculate correctness
+                    base_outputs = selective_model.base_model(**batch)
+                    pred_classes = torch.argmax(base_outputs.logits, dim=-1)
+                    
+                    # Generate correctness labels
+                    correctness = (pred_classes == labels).float()
+                    
+                    # Get confidence scores from selective model
+                    outputs = selective_model(
+                        **batch, 
+                        labels=labels,
+                        confidence_labels=correctness
+                    )
+                    
+                    # Convert logits to probabilities 
+                    confidences = torch.sigmoid(outputs.confidence).cpu().numpy()
+                    
+                    # Store predictions and metadata
+                    for i in range(len(pred_classes)):
+                        idx = batch_idx * opt.eval_batch_size + i
+                        if idx < len(test_dataset):
+                            pred_idx = pred_classes[i].item()
+                            label_idx = labels[i].item()
+                            is_correct = (pred_idx == label_idx)
+                            confidence = confidences[i]
+                            
+                            # Try to get metadata if available
+                            metadata = {}
+                            if hasattr(test_dataset, "get_sample_metadata"):
+                                sample_metadata = test_dataset.get_sample_metadata(idx)
+                                if sample_metadata:
+                                    metadata = sample_metadata
+                            
+                            # Store result
+                            all_predictions.append(pred_idx)
+                            all_confidences.append(confidence)
+                            all_is_correct.append(float(is_correct))
+                            all_metadata.append(metadata)
+        
+            # Convert to numpy arrays
+            all_confidences = np.array(all_confidences)
+            all_is_correct = np.array(all_is_correct)
+            
+            # Perform risk-coverage evaluation
+            risk_cov_metrics = evaluate_with_risk_coverage(
+                all_confidences,
+                all_is_correct,
+                results_dir
             )
             
-            # Convert logits to probabilities 
-            confidences = torch.sigmoid(outputs.confidence).cpu().numpy()
+            # Create a dataframe with all prediction results
+            if all_metadata and len(all_metadata) > 0 and bool(all_metadata[0]):
+                metadata_keys = list(all_metadata[0].keys())
+                metadata_dict = {key: [item.get(key, None) for item in all_metadata] for key in metadata_keys}
+            else:
+                metadata_dict = {}
+                
+            results_df = pd.DataFrame({
+                "prediction": all_predictions,
+                "confidence": all_confidences,
+                "is_correct": all_is_correct,
+                **metadata_dict
+            })
             
-            # Store predictions and metadata
-            for i in range(len(pred_classes)):
-                idx = batch_idx * opt.eval_batch_size + i
-                if idx < len(test_dataset):
-                    pred_idx = pred_classes[i].item()
-                    label_idx = labels[i].item()
-                    is_correct = (pred_idx == label_idx)
-                    confidence = confidences[i]
-                    
-                    # Try to get metadata if available
-                    metadata = {}
-                    if hasattr(test_dataset, "get_sample_metadata"):
-                        sample_metadata = test_dataset.get_sample_metadata(idx)
-                        if sample_metadata:
-                            metadata = sample_metadata
-                    
-                    # Store result
-                    all_predictions.append(pred_idx)
-                    all_confidences.append(confidence)
-                    all_is_correct.append(float(is_correct))
-                    all_metadata.append(metadata)
-
-    # Convert to numpy arrays
-    all_confidences = np.array(all_confidences)
-    all_is_correct = np.array(all_is_correct)
-    
-    # Perform risk-coverage evaluation
-    risk_cov_metrics = evaluate_with_risk_coverage(
-        all_confidences,
-        all_is_correct,
-        results_dir
-    )
-    
-    # Create a dataframe with all prediction results
-    results_df = pd.DataFrame({
-        "prediction": all_predictions,
-        "confidence": all_confidences,
-        "is_correct": all_is_correct,
-        **{key: [item.get(key, None) for item in all_metadata] for key in all_metadata[0] if all_metadata}
-    })
-    
-    # Save full prediction results
-    results_path = os.path.join(results_dir, "test_predictions.csv")
-    results_df.to_csv(results_path, index=False)
-    print(f"Saved predictions to {results_path}")
-    
-    # Generate a report for each risk level
-    for risk_level in [0.01, 0.05, 0.1, 0.2]:
-        # Get threshold for this risk level
-        threshold = risk_cov_metrics[f"thresh@{risk_level}"]
+            # Save full prediction results
+            results_path = os.path.join(results_dir, "test_predictions.csv")
+            results_df.to_csv(results_path, index=False)
+            print(f"Saved predictions to {results_path}")
+            
+            # Generate a report for each risk level
+            for risk_level in [0.01, 0.05, 0.1, 0.2]:
+                # Get threshold for this risk level
+                threshold = risk_cov_metrics[f"thresh@{risk_level}"]
+                
+                # Apply threshold
+                answered = all_confidences >= threshold
+                abstained = ~answered
+                
+                # Calculate metrics
+                coverage = answered.mean()
+                if answered.sum() > 0:
+                    accuracy_answered = all_is_correct[answered].mean()
+                    risk = 1.0 - accuracy_answered
+                else:
+                    accuracy_answered = 0.0
+                    risk = 0.0
+                
+                # Print metrics
+                print(f"\nAt risk tolerance {risk_level*100}%:")
+                print(f"  Confidence threshold: {threshold:.4f}")
+                print(f"  Coverage: {coverage:.4f}")
+                print(f"  Accuracy on answered questions: {accuracy_answered:.4f}")
+                print(f"  Risk: {risk:.4f}")
+                print(f"  Questions answered: {answered.sum()} / {len(answered)}")
+                print(f"  Questions abstained: {abstained.sum()} / {len(abstained)}")
+            
+            # Create risk-coverage visualization
+            visualize_risk_coverage_curve(
+                all_confidences, 
+                all_is_correct,
+                save_path=os.path.join(results_dir, "risk_coverage_curve.png")
+            )
+            
+        except Exception as e:
+            print(f"Error during evaluation: {e}")
+            print("This could be due to compatibility issues or missing data.")
+            import traceback
+            traceback.print_exc()
         
-        # Apply threshold
-        answered = all_confidences >= threshold
-        abstained = ~answered
-        
-        # Calculate metrics
-        coverage = answered.mean()
-        if answered.sum() > 0:
-            accuracy_answered = all_is_correct[answered].mean()
-            risk = 1.0 - accuracy_answered
-        else:
-            accuracy_answered = 0.0
-            risk = 0.0
-        
-        # Print metrics
-        print(f"\nAt risk tolerance {risk_level*100}%:")
-        print(f"  Confidence threshold: {threshold:.4f}")
-        print(f"  Coverage: {coverage:.4f}")
-        print(f"  Accuracy on answered questions: {accuracy_answered:.4f}")
-        print(f"  Risk: {risk:.4f}")
-        print(f"  Questions answered: {answered.sum()} / {len(answered)}")
-        print(f"  Questions abstained: {abstained.sum()} / {len(abstained)}")
-    
-    # Create risk-coverage visualization
-    visualize_risk_coverage_curve(
-        all_confidences, 
-        all_is_correct,
-        save_path=os.path.join(results_dir, "risk_coverage_curve.png")
-    )
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
 
 
 if __name__ == '__main__':

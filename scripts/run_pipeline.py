@@ -56,6 +56,14 @@ def main():
                       help="Skip dataset creation if it already exists")
     parser.add_argument("--epochs", type=int, default=3,
                       help="Number of epochs for training")
+    parser.add_argument("--quick-test", action="store_true",
+                      help="Run a quick test with minimal evaluation")
+    parser.add_argument("--test-samples", type=int, default=10,
+                      help="Number of test samples to evaluate")
+    parser.add_argument("--skip-test", action="store_true",
+                      help="Skip the testing step")
+    parser.add_argument("--skip-train", action="store_true",
+                      help="Skip the training step")
     
     args = parser.parse_args()
     
@@ -66,6 +74,11 @@ def main():
     # Ensure directories exist
     os.makedirs(data_dir, exist_ok=True)
     os.makedirs(checkpoint_dir, exist_ok=True)
+    
+    # Ensure subdirectories exist
+    os.makedirs(os.path.join(data_dir, "images"), exist_ok=True)
+    os.makedirs(os.path.join(data_dir, "ViVQA-csv"), exist_ok=True)
+    os.makedirs(os.path.join(checkpoint_dir, "test_results"), exist_ok=True)
     
     # Step 1: Create dummy dataset if needed
     if args.skip_dataset and os.path.exists(os.path.join(data_dir, "ViVQA-csv", "train.csv")):
@@ -95,36 +108,47 @@ def main():
             return 1
     
     # Step 2: Test the setup using the dummy data
-    # Use proper quoting for paths with spaces
-    script_path = os.path.join(script_dir, 'test_selective_vqa.py')
-    test_cmd = f'"{python_path}" "{script_path}" --data-dir "{data_dir}" --checkpoint-dir "{checkpoint_dir}"'
-    success = run_command(test_cmd, "Testing Selective VQA setup")
-    if not success:
-        print("Failed to test the setup. Exiting.")
-        return 1
+    if args.skip_test:
+        print("Skipping test step as --skip-test is set")
+    else:
+        # Use proper quoting for paths with spaces
+        script_path = os.path.join(script_dir, 'test_selective_vqa.py')
+        quick_test_option = "--quick-test" if args.quick_test else ""
+        test_cmd = (f'"{python_path}" "{script_path}" '
+                   f'--data-dir "{data_dir}" '
+                   f'--checkpoint-dir "{checkpoint_dir}" '
+                   f'--num-samples {args.test_samples} '
+                   f'{quick_test_option}')
+        success = run_command(test_cmd, "Testing Selective VQA setup")
+        if not success:
+            print("Failed to test the setup. Exiting.")
+            return 1
     
     # Step 3: Train the model
-    # Use proper quoting for paths with spaces
-    script_path = os.path.join(script_dir, 'train_selective_vqa.py')
-    images_path = os.path.join(data_dir, 'images')
-    vocab_path = os.path.join(data_dir, 'vocab.json')
-    train_path = os.path.join(data_dir, 'ViVQA-csv', 'train.csv')
-    val_path = os.path.join(data_dir, 'ViVQA-csv', 'val.csv')
-    test_path = os.path.join(data_dir, 'ViVQA-csv', 'test.csv')
-    
-    train_cmd = (f'"{python_path}" "{script_path}" '
-                f'--image-path "{images_path}" '
-                f'--ans-path "{vocab_path}" '
-                f'--train-path "{train_path}" '
-                f'--val-path "{val_path}" '
-                f'--test-path "{test_path}" '
-                f'--checkpoint-dir "{checkpoint_dir}" '
-                f'--epochs {args.epochs}')
-    
-    success = run_command(train_cmd, "Training Selective VQA model")
-    if not success:
-        print("Failed to train the model. Exiting.")
-        return 1
+    if args.skip_train:
+        print("Skipping training step as --skip-train is set")
+    else:
+        # Use proper quoting for paths with spaces
+        script_path = os.path.join(script_dir, 'train_selective_vqa.py')
+        images_path = os.path.join(data_dir, 'images')
+        vocab_path = os.path.join(data_dir, 'vocab.json')
+        train_path = os.path.join(data_dir, 'ViVQA-csv', 'train.csv')
+        val_path = os.path.join(data_dir, 'ViVQA-csv', 'val.csv')
+        test_path = os.path.join(data_dir, 'ViVQA-csv', 'test.csv')
+        
+        train_cmd = (f'"{python_path}" "{script_path}" '
+                    f'--image-path "{images_path}" '
+                    f'--ans-path "{vocab_path}" '
+                    f'--train-path "{train_path}" '
+                    f'--val-path "{val_path}" '
+                    f'--test-path "{test_path}" '
+                    f'--checkpoint-dir "{checkpoint_dir}" '
+                    f'--epochs {args.epochs}')
+        
+        success = run_command(train_cmd, "Training Selective VQA model")
+        if not success:
+            print("Failed to train the model. Exiting.")
+            return 1
     
     print("\n" + "=" * 80)
     print("🎉 Pipeline completed successfully!")
