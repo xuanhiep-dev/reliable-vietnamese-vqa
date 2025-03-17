@@ -10,3 +10,8 @@ torch
 transformers
 mlflow
 efficientnet_pytorch
+matplotlib
+pandas
+numpy
+scikit-learn
+opencv-python==4.8.0.74

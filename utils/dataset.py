@@ -92,7 +92,7 @@ class Process:
 
 class ViVQADataset(Dataset):
     def __init__(self, dataframe, processor, image_path, answers_path):
-        with open(answers_path, 'r') as f:
+        with open(answers_path, 'r', encoding='utf-8') as f:
             vocab = json.loads(f.read())
         self.vocab_a = vocab['answer']
         self.answers = self.answers2idx(
