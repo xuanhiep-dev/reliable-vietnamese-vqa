@@ -176,7 +176,7 @@ def train_multimodel():
     save_base_model(opt)
     model = load_base_model()
 
-    args = _get_train_config(opt)
+    args = _get_train_all_config(opt)
 
     trainer = Trainer(
         model=model,
@@ -234,7 +234,8 @@ def train_selective_model():
     optimizer_params = model.get_optimizer_parameters()
     optimizer = torch.optim.AdamW(optimizer_params, lr=0.0001)
 
-    args = _get_train_config(opt)
+    args = _get_train_all_config(opt)
+    # => update to train selective model
 
     trainer = Trainer(
         model=model,

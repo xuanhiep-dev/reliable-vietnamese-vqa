@@ -22,7 +22,6 @@ epoch=1
 # Chạy training script với các tham số cụ thể
 python main.py --log-level 'info' \
                --checkpoint-dir ${checkpoint_dir} \
-               --sub-id ${subset} \
                --image-path ${image_path} \
                --train-path ${train_path} \
                --val-path ${valid_path} \
