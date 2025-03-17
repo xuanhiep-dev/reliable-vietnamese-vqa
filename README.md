@@ -50,16 +50,22 @@ Install.
 pip install salesforce-lavis
 pip install torchscale underthesea mlflow efficientnet_pytorch
 pip install --upgrade transformers
+pip install --upgrade timm
 ```
-Run training.
+Training VQA from peers.
 ```bash
-python main.py  --log-level 'info'\
-                --output-dir './output'\
-                --image-path './data/images' \
-                --train-path './data/ViVQA-csv/train.csv'\
-                --val-path './data/ViVQA-csv/validation.csv'\
-                --test-path './data/ViVQA-csv/test.csv' \
-                --ans-path './data/vocab.json'\
+!bash scripts/train_vqa_mulmodels_loop.sh
+```
+
+Training VQA model.
+```bash
+!python main.py  --log-level 'info'\
+                --checkpoint-dir 'output/'\
+                --image-path 'data/images' \
+                --train-path 'data/train.csv'\
+                --val-path 'data/valid.csv'\
+                --test-path 'data/test.csv' \
+                --ans-path 'data/answers.json'\
                 --train-batch-size 32 \
                 --eval-batch-size 32 \
                 --encoder-layers 6 \
