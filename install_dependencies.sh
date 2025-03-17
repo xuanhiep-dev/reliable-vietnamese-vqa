@@ -140,6 +140,10 @@ $PYTHON_CMD -m pip install --upgrade pip
 # Install PyTorch
 print_header "INSTALLING PYTORCH"
 
+# Clean any existing problematic installations
+echo "Removing any existing PyTorch/torchvision installations to prevent CUDA version conflicts..."
+$PYTHON_CMD -m pip uninstall -y torch torchvision torchaudio
+
 # Determine PyTorch install command based on user preferences
 if [ "$CPU_ONLY" = true ]; then
     TORCH_INSTALL="torch torchvision torchaudio"
@@ -148,33 +152,104 @@ else
     # Determine PyTorch CUDA version
     case "$CUDA_VERSION" in
         "112")
-            TORCH_INSTALL="torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu112"
+            TORCH_INSTALL="torch==1.13.1+cu112 torchvision==0.14.1+cu112 torchaudio==0.13.1 --index-url https://download.pytorch.org/whl/cu112"
             ;;
         "116")
-            TORCH_INSTALL="torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu116"
+            TORCH_INSTALL="torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --index-url https://download.pytorch.org/whl/cu116"
             ;;
         "117")
-            TORCH_INSTALL="torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117"
+            TORCH_INSTALL="torch==2.0.0+cu117 torchvision==0.15.1+cu117 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu117"
             ;;
         "118")
-            TORCH_INSTALL="torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118"
+            TORCH_INSTALL="torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118"
             ;;
         "121")
-            TORCH_INSTALL="torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121"
+            TORCH_INSTALL="torch==2.1.0+cu121 torchvision==0.16.0+cu121 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121"
             ;;
         *)
             echo -e "${YELLOW}Warning: Unknown CUDA version '$CUDA_VERSION'. Using default (cu118).${NC}"
-            TORCH_INSTALL="torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118"
+            TORCH_INSTALL="torch==2.0.1+cu118 torchvision==0.15.2+cu118 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118"
             ;;
     esac
     echo "Installing PyTorch with CUDA $CUDA_VERSION support..."
 fi
 
-# Install PyTorch
+# Install PyTorch with pinned versions to ensure compatibility
 if [ "$FORCE_REINSTALL" = true ]; then
     $PYTHON_CMD -m pip install --force-reinstall $TORCH_INSTALL
 else
     $PYTHON_CMD -m pip install $TORCH_INSTALL
+fi
+
+# Verify CUDA compatibility between PyTorch and torchvision
+print_header "VERIFYING CUDA COMPATIBILITY"
+echo "Checking PyTorch and torchvision CUDA compatibility..."
+COMPATIBILITY_CHECK=$($PYTHON_CMD -c "
+import torch
+import torchvision
+import sys
+
+torch_cuda = torch.version.cuda if torch.cuda.is_available() else 'N/A'
+torchvision_build_info = torchvision.__version__
+
+print(f'PyTorch CUDA version: {torch_cuda}')
+print(f'torchvision version: {torchvision_build_info}')
+
+# Check if there's a mismatch
+if torch.cuda.is_available() and '+cu' in torchvision_build_info:
+    torch_cuda_major = torch_cuda.split('.')[0]
+    tv_cuda = torchvision_build_info.split('+cu')[1][:3]
+    if tv_cuda != torch_cuda_major + torch_cuda.split('.')[1]:
+        print('ERROR: CUDA version mismatch detected!')
+        sys.exit(1)
+    else:
+        print('CUDA versions compatible!')
+else:
+    print('Either CUDA not available or non-CUDA build')
+" 2>&1)
+
+echo "$COMPATIBILITY_CHECK"
+
+if [[ "$COMPATIBILITY_CHECK" == *"ERROR: CUDA version mismatch detected!"* ]]; then
+    echo -e "${RED}Error: PyTorch and torchvision have incompatible CUDA versions.${NC}"
+    echo "Attempting to fix by reinstalling with compatible versions..."
+    
+    # Force reinstall with the exact same version specifications
+    $PYTHON_CMD -m pip uninstall -y torch torchvision torchaudio
+    $PYTHON_CMD -m pip install --no-cache-dir $TORCH_INSTALL
+    
+    # Check again
+    COMPATIBILITY_RECHECK=$($PYTHON_CMD -c "
+import torch
+import torchvision
+import sys
+
+torch_cuda = torch.version.cuda if torch.cuda.is_available() else 'N/A'
+torchvision_build_info = torchvision.__version__
+
+print(f'PyTorch CUDA version: {torch_cuda}')
+print(f'torchvision version: {torchvision_build_info}')
+
+# Check if there's a mismatch
+if torch.cuda.is_available() and '+cu' in torchvision_build_info:
+    torch_cuda_major = torch_cuda.split('.')[0]
+    tv_cuda = torchvision_build_info.split('+cu')[1][:3]
+    if tv_cuda != torch_cuda_major + torch_cuda.split('.')[1]:
+        print('ERROR: CUDA version mismatch still detected!')
+        sys.exit(1)
+    else:
+        print('CUDA versions compatible!')
+else:
+    print('Either CUDA not available or non-CUDA build')
+" 2>&1)
+    
+    echo "$COMPATIBILITY_RECHECK"
+    
+    if [[ "$COMPATIBILITY_RECHECK" == *"ERROR: CUDA version mismatch still detected!"* ]]; then
+        echo -e "${RED}Error: Failed to resolve CUDA version mismatch between PyTorch and torchvision.${NC}"
+        echo "Please consider using the --cpu-only option if you continue to experience issues."
+        exit 1
+    fi
 fi
 
 # Install specific version of OpenCV
