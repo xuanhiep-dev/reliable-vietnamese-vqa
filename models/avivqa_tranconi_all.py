@@ -269,6 +269,14 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
 
 
 @register_model
+def avivqa_model(pretrained=False, num_classes=353, **kwargs):
+    args = _get_base_config(**kwargs)
+    model = BEiT3ForVietnameseVisualQuestionAnswering(
+        args, num_classes=num_classes, **kwargs)
+    return model
+
+
+@register_model
 def selective_avivqa_model(pretrained=False, num_classes=353, **kwargs):
     args = _get_base_config(**kwargs)
     model = ViVQABEiT3Selective(
