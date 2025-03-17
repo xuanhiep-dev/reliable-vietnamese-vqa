@@ -255,4 +255,4 @@ def train_selective_model():
 
 
 if __name__ == '__main__':
-    train_multimodel()
+    train_selective_model()
