@@ -1,22 +1,24 @@
 from transformers import TrainingArguments, Trainer, EarlyStoppingCallback
-from torch.nn.functional import softmax
-from timm.models import create_model
 import torch
 from sklearn.metrics import accuracy_score
-import models.avivqa_tranconi_all
-from utils.dataset import get_dataset
-from utils.processor import load_config
+import models.model
+from timm.models import create_model
+from utils.dataset import get_sample, process_punctuation
+from utils.config import ConfigLoader
+from utils.trainer import TrainingModeHandler
 import pandas as pd
 import numpy as np
 import mlflow
-import argparse
+import json
 import os
-import shutil
 import warnings
 
 warnings.filterwarnings("ignore")
 os.environ['MLFLOW_EXPERIMENT_NAME'] = 'mlflow-vivqa'
-BASE_MODEL_PATH = "vqa_checkpoints/base_model.pth"
+
+
+def load_config():
+    return ConfigLoader()
 
 
 def compute_metrics(p):
@@ -26,233 +28,110 @@ def compute_metrics(p):
     return {"accuracy": accuracy}
 
 
-def get_options():
-    args = argparse.ArgumentParser()
-
-    # Training Argument
-    args.add_argument("--log-level", choices=[
-                      "debug", "info", "warning", "error", "critical", "passive"], default="passive")
-    args.add_argument("--lr-scheduler-type",
-                      choices=["cosine", "linear"], default="cosine")
-    args.add_argument("--warmup-ratio", type=float, default=0.1)
-    args.add_argument("--logging-strategy",
-                      choices=["no", "epoch", "steps"], default="epoch")
-    args.add_argument("--save-strategy",
-                      choices=["no", "epoch", "steps"], default="epoch")
-    args.add_argument("--save-total-limit", type=int, default=1)
-    args.add_argument("-tb", "--train-batch-size", type=int, default=65)
-    args.add_argument("-eb", "--eval-batch-size", type=int, default=65)
-    args.add_argument("-e", "--epochs", type=int, default=15)
-    args.add_argument("-lr", "--learning-rate", type=float, default=3e-5)
-    args.add_argument("--weight-decay", type=float, default=0.01)
-    args.add_argument("--workers", type=int, default=2)
-
-    # Varriables setting
-    args.add_argument("--image-path", type=str, default="./data/images")
-    args.add_argument("--ans-path", type=str, default="./data/vocab.json")
-    args.add_argument("--train-path", type=str,
-                      default="./data/ViVQA-csv/train.csv")
-    args.add_argument("--val-path", type=str,
-                      default="./data/ViVQA-csv/val.csv")
-    args.add_argument("--test-path", type=str,
-                      default="./data/ViVQA-csv/test.csv")
-    # args.add_argument("--feature-paths", type=str, default="./features")
-
-    # Model setting
-    # args.add_argument("--efficientnet-b", choices=[0, 1, 2, 3, 4, 5, 6, 7], default=7)
-    args.add_argument("--drop-path-rate", type=float, default=0.3)
-    args.add_argument("--encoder-layers", type=int, default=6)
-    args.add_argument("--encoder-attention-heads-layers", type=int, default=6)
-    args.add_argument("--classes", type=int, default=353)
-    args.add_argument("--checkpoint-dir", type=str,
-                      default="./vqa_checkpoints")
-    args.add_argument("--sub-id", type=int, default=1)
-    args.add_argument("--predictions-dir", type=str,
-                      default="./data/multi-predictions")
-
-    opt = args.parse_args()
-    return opt
-
-
-def _get_train_all_config(opt):
+def _get_train_config(cfg):
+    training_cfg = cfg.get("training")
     args = TrainingArguments(
-        output_dir=opt.output_dir,
-        log_level=opt.log_level,
-        lr_scheduler_type=opt.lr_scheduler_type,
-        warmup_ratio=opt.warmup_ratio,
-        logging_strategy=opt.logging_strategy,
-        save_strategy=opt.save_strategy,
-        save_total_limit=opt.save_total_limit,
-        per_device_train_batch_size=opt.train_batch_size,
-        per_device_eval_batch_size=opt.eval_batch_size,
-        num_train_epochs=opt.epochs,
-        learning_rate=opt.learning_rate,
-        weight_decay=opt.weight_decay,
-        dataloader_num_workers=opt.workers,
-        report_to='mlflow',
-        save_safetensors=False,
-        disable_tqdm=False
+        output_dir=f"{cfg.get('paths')['checkpoint_path']}/model-{cfg.get('training')['subset_id']}",
+        log_level=training_cfg["log_level"],
+        lr_scheduler_type=training_cfg["lr_scheduler_type"],
+        warmup_ratio=training_cfg["warmup_ratio"],
+        logging_strategy=training_cfg["logging_strategy"],
+        save_strategy=training_cfg["save_strategy"],
+        save_total_limit=training_cfg["save_total_limit"],
+        per_device_train_batch_size=training_cfg["train_batch_size"],
+        per_device_eval_batch_size=training_cfg["eval_batch_size"],
+        num_train_epochs=training_cfg["epochs"],
+        learning_rate=training_cfg["learning_rate"],
+        weight_decay=training_cfg["weight_decay"],
+        dataloader_num_workers=training_cfg["workers"],
+        report_to=training_cfg["report_to"],
+        save_safetensors=training_cfg["save_safetensors"],
+        disable_tqdm=training_cfg["disable_tqdm"],
+        overwrite_output_dir=training_cfg["overwrite_output_dir"],
+        metric_for_best_model=training_cfg["metric_for_best_model"],
+        eval_strategy=training_cfg["eval_strategy"],
+        load_best_model_at_end=training_cfg["load_best_model_at_end"],
+        greater_is_better=training_cfg["greater_is_better"]
     )
     return args
 
 
-def _get_train_config(opt):
-    args = TrainingArguments(
-        output_dir=f"{opt.checkpoint_dir}/model-{opt.sub_id}",
-        log_level=opt.log_level,
-        lr_scheduler_type=opt.lr_scheduler_type,
-        warmup_ratio=opt.warmup_ratio,
-        logging_strategy=opt.logging_strategy,
-        save_strategy='epoch',
-        save_total_limit=opt.save_total_limit,
-        per_device_train_batch_size=opt.train_batch_size,
-        per_device_eval_batch_size=opt.eval_batch_size,
-        num_train_epochs=opt.epochs,
-        learning_rate=opt.learning_rate,
-        weight_decay=opt.weight_decay,
-        dataloader_num_workers=opt.workers,
-        report_to='mlflow',
-        save_safetensors=False,
-        disable_tqdm=False,
-        overwrite_output_dir=True,
-        metric_for_best_model='accuracy',
-        eval_strategy='epoch',
-        load_best_model_at_end=True,
-        greater_is_better=True
-    )
-    return args
-
-
-def save_base_model(opt):
-    if not os.path.exists(BASE_MODEL_PATH):
-        print("Creating model...")
-        base_model = create_model('avivqa_model',
-                                  num_classes=opt.classes,
-                                  drop_path_rate=opt.drop_path_rate,
-                                  encoder_layers=opt.encoder_layers,
-                                  encoder_attention_heads=opt.encoder_attention_heads_layers)
-        torch.save(base_model, BASE_MODEL_PATH)
-
-
-def load_base_model():
-
+def load_final_model(model_name="avivqa_model", model_path=None, num_classes=353, **kwargs):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    if not os.path.exists(BASE_MODEL_PATH):
-        raise FileNotFoundError(
-            f"Model checkpoint not found at {BASE_MODEL_PATH}.")
+    try:
+        model = create_model(model_name, pretrained=False,
+                             num_classes=num_classes, **kwargs)
+    except Exception as e:
+        raise ValueError(f"Cannot create the model `{model_name}`: {e}")
 
-    print("Loading model...")
-    model = torch.load(BASE_MODEL_PATH, map_location="cpu",
-                       weights_only=False).to(device)
+    if model_path and os.path.exists(model_path):
+        print(f"Loading weights from {model_path}")
+        state_dict = torch.load(model_path, map_location=device)
 
-    return model
+        if isinstance(state_dict, dict) and "model" in state_dict:
+            state_dict = state_dict["model"]
 
-
-def extract_metadata(test_dataset):
-    for idx in range(len(test_dataset)):
-        metadata = test_dataset.get_sample_metadata(idx)
-        if metadata:
-            yield metadata["question"], metadata["img_id"]
-
-
-def delete_model(model_path):
-    if os.path.exists(model_path):
-        if os.path.isdir(model_path):
-            shutil.rmtree(model_path)
-            print(f"Directory {model_path} has been deleted.")
-        elif os.path.isfile(model_path):
-            os.remove(model_path)
-            print(f"Model file {model_path} has been deleted.")
+        model.load_state_dict(state_dict, strict=False)
+        print("Model loaded successfully.")
     else:
-        print(f"Model file or directory {model_path} does not exist.")
+        print("Checkpoint path does not exist")
+
+    return model.to(device).eval()
 
 
-def train_multimodel():
-    opt = get_options()
+def predict_sample(image_path, question, ans_path, model):
+    print(
+        f"[INFO] Inference on image: {image_path}\n Question: {question}")
 
-    train_dataset, val_dataset, test_dataset = get_dataset(opt)
+    sample = get_sample(image_path, question)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    save_base_model(opt)
-    model = load_base_model()
+    with open(ans_path, 'r') as f:
+        vocab = {v: process_punctuation(k.lower())
+                 for k, v in json.load(f)["answer"].items()}
+    image = sample["image"].to(device, dtype=torch.float32)
+    question_ids = sample["question"].to(device)
+    mask = sample["padding_mask"].to(device)
 
-    args = _get_train_config(opt)
+    model.eval()
+    with torch.no_grad():
+        logits = model(image=image, question=question_ids,
+                       padding_mask=mask).logits
+        probs = torch.softmax(logits, dim=-1)
+        pred_idx = torch.argmax(probs, dim=-1).item()
+        confidence = probs[0][pred_idx].item()
 
+    answer = vocab.get(pred_idx, "I don't know")
+
+    print(f"[RESULT] Answer: {answer} (Confidence: {confidence:.4f})")
+    return answer, confidence
+
+
+def train():
+    handler = TrainingModeHandler()
+
+    handler.save_base_model()
+    model = handler.load_base_model()
+    optimizer = handler.build_optimizer()
+
+    args = _get_train_config(handler.config)
     trainer = Trainer(
         model=model,
         args=args,
-        train_dataset=train_dataset,
-        eval_dataset=val_dataset,
-        compute_metrics=compute_metrics,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
-    )
-
-    trainer.train()
-
-    predictions = trainer.predict(test_dataset)
-    logits = torch.tensor(predictions.predictions)
-    probabilities = softmax(logits, dim=-1)
-
-    predicted_labels = torch.argmax(probabilities, dim=-1).numpy()
-    confidence_scores = torch.max(probabilities, dim=-1).values.numpy()
-    questions, img_ids = zip(*extract_metadata(test_dataset))
-
-    df = pd.DataFrame({
-        "question": questions,
-        "img_id": img_ids,
-        "predicted_answer": np.array(predicted_labels, dtype=str),
-        "confidence": np.array(confidence_scores, dtype=np.float32)
-    })
-
-    predictions_file = f"{opt.predictions_dir}/predictions-{opt.sub_id}.csv"
-    df.to_csv(predictions_file, encoding="utf-8")
-
-    test = trainer.evaluate(test_dataset)
-    print(f'Test Accuracy: {test["eval_accuracy"]}')
-
-    mlflow.end_run()
-
-    del model
-    delete_model(f"{opt.checkpoint_dir}/model-{opt.sub_id}")
-    torch.cuda.empty_cache()
-
-
-def train_selective_model():
-    opt = get_options()
-    config_path = "configs/select_pred.yaml"
-
-    train_dataset, val_dataset, test_dataset = get_dataset(opt)
-
-    config = load_config(config_path)
-
-    model = create_model('selective_avivqa_model',
-                         num_classes=opt.classes,
-                         drop_path_rate=opt.drop_path_rate,
-                         encoder_layers=opt.encoder_layers,
-                         encoder_attention_heads=opt.encoder_attention_heads_layers, **config)
-
-    optimizer_params = model.get_optimizer_parameters()
-    optimizer = torch.optim.AdamW(optimizer_params, lr=0.0001)
-
-    args = _get_train_config(opt)
-
-    trainer = Trainer(
-        model=model,
-        args=args,
-        train_dataset=train_dataset,
-        eval_dataset=val_dataset,
+        train_dataset=handler.train_dataset,
+        eval_dataset=handler.valid_dataset,
         compute_metrics=compute_metrics,
         optimizers=(optimizer, None),
         callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
     )
 
     trainer.train()
-
-    test = trainer.evaluate(test_dataset)
-    print(f'Test Accuracy: {test["eval_accuracy"]}')
+    handler.post_train(trainer)
 
     mlflow.end_run()
+    handler.cleanup_after_training()
 
 
 if __name__ == '__main__':
-    train_selective_model()
+    train()

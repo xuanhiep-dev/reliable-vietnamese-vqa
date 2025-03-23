@@ -1,0 +1,3 @@
+paths: paths.yaml
+model: model.yaml
+training: training.yaml

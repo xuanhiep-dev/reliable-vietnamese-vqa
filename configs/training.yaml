@@ -1,0 +1,25 @@
+log_level: "info"            # ["debug", "info", "warning", "error", "critical", "passive"]
+lr_scheduler_type: "cosine"     # ["cosine", "linear"]
+warmup_ratio: 0.1
+logging_strategy: "epoch"       # ["no", "epoch", "steps"]
+save_strategy: "epoch"          # ["no", "epoch", "steps"]
+save_total_limit: 1
+
+train_batch_size: 32
+eval_batch_size: 32
+epochs: 1
+learning_rate: 3e-5
+weight_decay: 0.01
+workers: 2
+
+report_to: "mlflow"
+save_safetensors: false
+disable_tqdm: false
+overwrite_output_dir: true
+metric_for_best_model: "accuracy"
+eval_strategy: "epoch"
+load_best_model_at_end: true
+greater_is_better: true
+
+train_with_base_data: false
+subset_id: 1

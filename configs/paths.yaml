@@ -1,0 +1,5 @@
+checkpoint_path: "checkpoints/"
+prediction_path: "predictions/"
+base_model_path: "checkpoints/base_model.pt"
+image_path: "data/images"
+ans_path: "data/answers.json"

@@ -5,12 +5,12 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
-subset=$1
-train_path="data/subsets/train/train-$subset.csv"
-valid_path="data/subsets/valid/valid-$subset.csv"
-test_path="data/subsets/test/test-$subset.csv"
- 
-python main.py --set paths.subset_id=${subset} \
+train_path="data/full/train.csv"
+valid_path="data/full/valid.csv"
+test_path="data/full/test.csv"
+train_with_base_data=True
+
+python main.py --set training.train_with_base_data=${train_with_base_data} \
                      paths.train_path=${train_path} \
                      paths.valid_path=${valid_path} \
                      paths.test_path=${test_path}

@@ -13,6 +13,7 @@ import transformers
 from transformers.utils import TensorType
 from lavis.processors.base_processor import BaseProcessor
 from PIL import Image
+import matplotlib.pyplot as plt
 
 
 class Process:
@@ -138,25 +139,48 @@ class ViVQADataset(Dataset):
     def get_sample_metadata(self, idx):
         return self.__get_metadata(idx)
 
+    def get_answers(self):
+        return self.vocab_a
 
-def get_dataset(opt, validation=True):
+
+def get_dataset(cfg, validation=True):
     processor = Process()
+    image_path = cfg.get("paths")["image_path"]
+    ans_path = cfg.get("paths")["ans_path"]
 
-    df_train = pd.read_csv(opt.train_path, index_col=0)
-    df_test = pd.read_csv(opt.test_path, index_col=0)
+    df_train = pd.read_csv(cfg.get("paths")["train_path"], index_col=0)
+    df_test = pd.read_csv(cfg.get("paths")["test_path"], index_col=0)
 
     train_dataset = ViVQADataset(
-        df_train, processor, opt.image_path, opt.ans_path)
+        df_train, processor, image_path, ans_path)
     test_dataset = ViVQADataset(
-        df_test, processor, opt.image_path, opt.ans_path)
+        df_test, processor, image_path, ans_path)
 
     if validation:
-        df_val = pd.read_csv(opt.val_path, index_col=0)
+        df_val = pd.read_csv(cfg.get("paths")["valid_path"], index_col=0)
         val_dataset = ViVQADataset(
-            df_val, processor, opt.image_path, opt.ans_path)
+            df_val, processor, image_path, ans_path)
         return train_dataset, val_dataset, test_dataset
 
     return train_dataset, test_dataset
+
+
+def get_sample(image_path, question):
+    processor = Process()
+    image = Image.open(image_path)
+    output = processor(image, question,
+                       return_tensors='pt',
+                       return_token_type_ids=False,
+                       return_attention_mask=True,
+                       truncation=True,
+                       padding='max_length',
+                       max_length=40)
+
+    output["image"] = torch.tensor(output["image"]).unsqueeze(0)
+    output["question"] = torch.tensor(output["question"])
+    output["padding_mask"] = torch.tensor(output["padding_mask"])
+
+    return output
 
 
 period_strip = re.compile(r'(?!<=\d)(\.)(?!\d)')
@@ -188,3 +212,10 @@ def preprocess_answers(df):
     answers = [process_punctuation(answer.lower())
                for answer in list(df['answer'])]
     return answers
+
+
+def plot_an_image(image_path):
+    image = Image.open(image_path)
+    plt.imshow(image)
+    plt.axis('off')
+    plt.show()
