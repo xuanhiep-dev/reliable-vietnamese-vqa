@@ -30,8 +30,11 @@ def compute_metrics(p):
 
 def _get_train_config(cfg):
     training_cfg = cfg.get("training")
+    output_dir = cfg["paths"].get(
+        "output_path") or f"{cfg['paths']['checkpoint_path']}/model-{cfg['training']['subset_id']}"
+
     args = TrainingArguments(
-        output_dir=f"{cfg.get('paths')['checkpoint_path']}/model-{cfg.get('training')['subset_id']}",
+        output_dir=output_dir,
         log_level=training_cfg["log_level"],
         lr_scheduler_type=training_cfg["lr_scheduler_type"],
         warmup_ratio=training_cfg["warmup_ratio"],

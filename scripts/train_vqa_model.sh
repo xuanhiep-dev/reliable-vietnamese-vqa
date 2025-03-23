@@ -6,14 +6,14 @@
 # LICENSE file in the root directory of this source tree.
 
 use_selector=$1
-lyp_mode=$2
+output_path=$2
 train_path="data/full/train.csv"
 valid_path="data/full/valid.csv"
 test_path="data/full/test.csv"
 
 
 python main.py --set model.use_selector=${use_selector} \
-                     training.lyp_mode=${lyp_mode} \
+                     paths.output_path=${output_path} \
                      paths.train_path=${train_path} \
                      paths.valid_path=${valid_path} \
                      paths.test_path=${test_path}

@@ -6,7 +6,7 @@
 # LICENSE file in the root directory of this source tree.
 
 use_selector=$1
-lyp_mode=$2
+lyp_mode=True
 
 for id in 1 2 3 4 5 6 7 8 9 10
 do

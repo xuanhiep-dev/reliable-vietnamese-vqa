@@ -5,7 +5,7 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
-subset=$1v
+subset=$1
 use_selector=$2
 lyp_mode=$3
 train_path="data/subsets/train/train-$subset.csv"
