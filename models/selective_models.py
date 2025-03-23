@@ -42,7 +42,7 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
         super(ComboEmbeddingsFullLogitSelectivePredictor, self).__init__()
 
         ans_embed_size = kwargs["answer_hidden_size"]
-        n_answers = kwargs["num_answers"]
+        n_answers = kwargs["classes"]
 
         self.use_softmax = kwargs.get("use_softmax", False)
         self.use_qi_embed = kwargs.get("use_qi_embed", False)

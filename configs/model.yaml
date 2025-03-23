@@ -36,6 +36,6 @@ selector:
     pool_multi_embedding: true
     pool_multi_dim: 1
     pool_type: max
-    classes: 353
+    classes: 2
   sel_lr: 0.0001
   freeze_vqa: true
