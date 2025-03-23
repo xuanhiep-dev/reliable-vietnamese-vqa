@@ -38,7 +38,7 @@ class SelectivePredictor(nn.Module):
 
 
 class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
-    def __init__(self, feat_size, **kwargs):
+    def __init__(self, **kwargs):
         super(ComboEmbeddingsFullLogitSelectivePredictor, self).__init__()
 
         ans_embed_size = kwargs["answer_hidden_size"]
@@ -209,7 +209,7 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
 
 
 class Calibration(nn.Module):
-    def __init__(self, feat_size, **kwargs):
+    def __init__(self, **kwargs):
         super(Calibration, self).__init__()
         n_answers = kwargs['num_answers']
         self.weight = torch.nn.Parameter(torch.ones(n_answers))
