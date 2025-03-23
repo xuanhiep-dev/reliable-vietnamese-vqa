@@ -156,6 +156,33 @@ class BEiT3Wrapper(nn.Module):
 
         return ViVQAOutput(loss=loss, logits=logits)
 
+    def compute_loss(self, logits, labels=None, confidences=None, use_selector=None):
+        """
+        Parameters:
+            logits: output từ model (vqa_logits hoặc selector_logits)
+            labels: ground truth cho selector (0 hoặc 1), dùng trong mode="selector"
+            targets: one-hot ground truth cho VQA, dùng trong mode="vqa"
+            mode: "vqa" hoặc "selector"
+        """
+        loss = None
+        if not use_selector:
+            print("Selector is OFF. Computing VQA loss.")
+            if labels is not None:
+                loss = F.cross_entropy(logits, labels)
+
+        else:
+            print("Selector is ON. Computing Selective loss.")
+            if labels is not None:
+                logits = F.softmax(logits, dim=1)
+                pred_inds = torch.argmax(logits, dim=1)
+                correctness = (pred_inds == labels).to(dtype=torch.long)
+                loss = F.cross_entropy(confidences, correctness)
+
+        return ViVQAOutput(
+            loss=loss,
+            logits=logits
+        )
+
 
 class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
     def __init__(self, args,
@@ -199,7 +226,8 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
         logits = self.head(cls_rep)
 
         if not self.use_selector:
-            return self.compute_loss(logits, labels)
+            print("Selector is OFF. Only getting logits from VQA model.")
+            return self.compute_loss(logits=logits, labels=labels)
         return logits
 
 
@@ -245,9 +273,9 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
             text_emb.detach(),
             multimodal_emb.detach(),
         )
-        logits = selector_output["confidences"]
+        confidences = selector_output["confidences"]
 
-        return self.compute_loss(logits, labels)
+        return self.compute_loss(logits=outputs, labels=labels, confidences=confidences, use_selector=self.use_selector)
 
 
 @register_model
@@ -255,10 +283,10 @@ def avivqa_model(pretrained=False, **kwargs):
     args = _get_base_config(**kwargs["vqa"])
 
     use_selector = kwargs["use_selector"]
-    if use_selector:
-        model = ViVQABEiT3Selective(args, **kwargs["selector"])
-    else:
+    if not use_selector:
         model = BEiT3ForVietnameseVisualQuestionAnswering(
             args, use_selector=use_selector, **kwargs["vqa"])
+    else:
+        model = ViVQABEiT3Selective(args, **kwargs["selector"])
 
     return model

@@ -81,7 +81,7 @@ class TrainingModeHandler:
         self._model = None
         gc.collect()
 
-        if not self._cfg.get("training")["train_with_base_data"]:
+        if self._cfg.get("training")["lyp_mode"]:
             self.delete_model()
         torch.cuda.empty_cache()
 

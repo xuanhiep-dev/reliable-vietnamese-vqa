@@ -5,12 +5,15 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
+use_selector=$1
+lyp_mode=$2
 train_path="data/full/train.csv"
 valid_path="data/full/valid.csv"
 test_path="data/full/test.csv"
-train_with_base_data=True
 
-python main.py --set training.train_with_base_data=${train_with_base_data} \
+
+python main.py --set model.use_selector=${use_selector} \
+                     training.lyp_mode=${lyp_mode} \
                      paths.train_path=${train_path} \
                      paths.valid_path=${valid_path} \
                      paths.test_path=${test_path}
