@@ -234,7 +234,7 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
 class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
     def __init__(self, args, norm_layer=nn.LayerNorm, **kwargs):
         super().__init__(args, norm_layer=norm_layer,
-                         use_selector=kwargs["use_selector"], ** kwargs)
+                         use_selector=kwargs["use_selector"], **kwargs["vqa"])
         self.select_cfg = kwargs["selector"]
         self.vqa_cfg = kwargs["vqa"]
         self._init_selector()
