@@ -187,7 +187,7 @@ class BEiT3Wrapper(nn.Module):
 class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
     def __init__(self, args,
                  norm_layer=nn.LayerNorm,
-                 use_selector=False,
+                 use_selector=None,
                  **kwargs):
         super(BEiT3ForVietnameseVisualQuestionAnswering,
               self).__init__(args=args, **kwargs)
@@ -233,31 +233,35 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
 
 class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
     def __init__(self, args, norm_layer=nn.LayerNorm, **kwargs):
-        super().__init__(args, norm_layer=norm_layer, **kwargs)
+        super().__init__(args, norm_layer=norm_layer,
+                         use_selector=kwargs["use_selector"], ** kwargs)
+        self.select_cfg = kwargs["selector"]
+        self.vqa_cfg = kwargs["vqa"]
         self._init_selector()
 
-    def _init_selector(self, **kwargs):
+    def _init_selector(self):
         self.selector = SelectivePredictor(
-            kwargs["type"], **kwargs["params"])
+            self.select_cfg["type"], **self.select_cfg["params"])
 
-    def get_optimizer_parameters(self, **kwargs):
+    def get_optimizer_parameters(self):
         params = []
 
         selector_params = {"params": list(self.selector.parameters())}
 
-        if not kwargs["freeze_vqa"]:
+        if not self.select_cfg["freeze_vqa"]:
             params.append(
                 {"params": list(set(self.parameters()) - set(self.selector.parameters()))})
         else:
             params.append(selector_params)
 
-        if "sel_lr" in kwargs:
-            selector_params["lr"] = kwargs["sel_lr"]
+        if "sel_lr" in self.select_cfg:
+            selector_params["lr"] = self.select_cfg["sel_lr"]
 
         return params
 
-    def forward(self, image, question, padding_mask, labels=None, **kwargs):
-        outputs = super().forward(image, question, padding_mask, labels, **kwargs)
+    def forward(self, image, question, padding_mask, labels=None):
+        outputs = super().forward(image, question,
+                                  padding_mask, labels, **self.vqa_cfg)
 
         encoder_out = outputs.encoder_out
         multiway_split_position = encoder_out["multiway_split_position"]
@@ -287,6 +291,6 @@ def avivqa_model(pretrained=False, **kwargs):
         model = BEiT3ForVietnameseVisualQuestionAnswering(
             args, use_selector=use_selector, **kwargs["vqa"])
     else:
-        model = ViVQABEiT3Selective(args, **kwargs["selector"])
+        model = ViVQABEiT3Selective(args, **kwargs)
 
     return model
