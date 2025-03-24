@@ -62,6 +62,7 @@ def _get_train_config(cfg):
 class PrintMessageCallback(TrainerCallback):
     def __init__(self, cfg):
         self.cfg = cfg
+        print(cfg)
 
     def on_train_begin(self, args, state, control, **kwargs):
         if self.cfg.get("model")["use_selector"]:
@@ -130,7 +131,7 @@ def train():
     model = handler.load_base_model()
     optimizer = handler.build_optimizer()
 
-    args = _get_train_config(handler.config)
+    args = _get_train_config(**handler.config)
     trainer = Trainer(
         model=model,
         args=args,
@@ -139,7 +140,7 @@ def train():
         compute_metrics=compute_metrics,
         optimizers=(optimizer, None),
         callbacks=[EarlyStoppingCallback(
-            early_stopping_patience=5), PrintMessageCallback(cfg=handler.config)]
+            early_stopping_patience=5), PrintMessageCallback(**handler.config)]
     )
 
     trainer.train()
