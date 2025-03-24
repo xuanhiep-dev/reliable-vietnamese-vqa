@@ -157,21 +157,11 @@ class BEiT3Wrapper(nn.Module):
         return ViVQAOutput(loss=loss, logits=logits)
 
     def compute_loss(self, logits, labels=None, confidences=None, use_selector=None):
-        if not hasattr(self, "printed"):
-            self.printed = False
-
         loss = None
         if not use_selector:
-            if not self.printed:
-                print("Selector is OFF. Computing VQA loss.")
-                self.printed = True
             if labels is not None:
                 loss = F.cross_entropy(logits, labels)
-
         else:
-            if not self.printed:
-                print("Selector is ON. Computing Selective loss.")
-                self.printed = True
             if labels is not None:
                 logits = F.softmax(logits, dim=1)
                 pred_inds = torch.argmax(logits, dim=1)
@@ -227,8 +217,6 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
         logits = self.head(cls_rep)
 
         if not self.use_selector:
-            if not self.printed:
-                print("Selector is OFF. Only getting logits from VQA model.")
             return self.compute_loss(logits=logits, labels=labels)
 
         return {"logits": logits, "outputs": outputs}

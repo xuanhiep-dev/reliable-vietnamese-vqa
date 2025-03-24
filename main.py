@@ -1,4 +1,4 @@
-from transformers import TrainingArguments, Trainer, EarlyStoppingCallback
+from transformers import TrainingArguments, Trainer, EarlyStoppingCallback, TrainerCallback
 import torch
 from sklearn.metrics import accuracy_score
 import models.model
@@ -57,6 +57,15 @@ def _get_train_config(cfg):
         greater_is_better=training_cfg["greater_is_better"]
     )
     return args
+
+
+class PrintMessageCallback(TrainerCallback):
+    def on_train_begin(self, args, state, control, **kwargs):
+        if args.use_selector:
+            print("Selector is ON. Computing Selective loss.")
+        else:
+            print(
+                "Selector is OFF. Only getting logits from VQA model and computing VQA loss.")
 
 
 def load_final_model(model_name="avivqa_model", model_path=None, num_classes=353, **kwargs):
@@ -126,7 +135,8 @@ def train():
         eval_dataset=handler.valid_dataset,
         compute_metrics=compute_metrics,
         optimizers=(optimizer, None),
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
+        callbacks=[EarlyStoppingCallback(
+            early_stopping_patience=5), PrintMessageCallback]
     )
 
     trainer.train()
