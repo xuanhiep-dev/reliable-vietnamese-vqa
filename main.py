@@ -146,7 +146,7 @@ def train():
     handler.post_train(trainer)
 
     mlflow.end_run()
-    handler.cleanup_after_training()
+    # handler.cleanup_after_training()
 
 
 if __name__ == '__main__':
