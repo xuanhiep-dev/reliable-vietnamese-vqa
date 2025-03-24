@@ -131,7 +131,7 @@ def train():
     model = handler.load_base_model()
     optimizer = handler.build_optimizer()
 
-    args = _get_train_config(**handler.config)
+    args = _get_train_config(handler.config)
     trainer = Trainer(
         model=model,
         args=args,
@@ -140,7 +140,7 @@ def train():
         compute_metrics=compute_metrics,
         optimizers=(optimizer, None),
         callbacks=[EarlyStoppingCallback(
-            early_stopping_patience=5), PrintMessageCallback(**handler.config)]
+            early_stopping_patience=5), PrintMessageCallback(handler.config)]
     )
 
     trainer.train()
