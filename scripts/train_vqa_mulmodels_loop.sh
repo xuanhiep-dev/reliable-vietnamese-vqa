@@ -16,5 +16,6 @@ lyp_mode=True
 
 for id in 1 2 3 4 5 6 7 8 9 10
 do
+    echo "Loading subset: $id, lyp_mode: $lyp_mode, use_selector: $use_selector"
     bash scripts/train_vqa_mulmodels.sh $id $lyp_mode $use_selector
 done
