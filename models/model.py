@@ -149,13 +149,6 @@ class BEiT3Wrapper(nn.Module):
             nn.init.constant_(m.bias, 0)
             nn.init.constant_(m.weight, 1.0)
 
-    def compute_loss(self, logits, labels=None):
-        loss = None
-        if labels is not None:
-            loss = F.cross_entropy(logits, labels)
-
-        return ViVQAOutput(loss=loss, logits=logits)
-
     def compute_loss(self, logits, labels=None, confidences=None, use_selector=None):
         loss = None
         if not use_selector:
