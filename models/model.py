@@ -221,6 +221,7 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
             visual_tokens=image,
             text_padding_position=padding_mask
         )
+        print(outputs)
         x = outputs["encoder_out"]
         cls_rep = self.pooler(x)
         logits = self.head(cls_rep)
@@ -260,12 +261,9 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
         return params
 
     def forward(self, image, question, padding_mask, labels=None, **kwargs):
-        outputs = super().forward(image, question,
-                                  padding_mask, labels, **self.vqa_cfg)
+        logits = super().forward(image, question,
+                                 padding_mask, labels, **self.vqa_cfg)
 
-        print(outputs)
-
-        encoder_out = outputs.encoder_out
         multiway_split_position = encoder_out["multiway_split_position"]
         multimodal_emb = encoder_out["encoder_out"]
         image_emb = encoder_out["encoder_out"][:,
@@ -274,14 +272,14 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
                                               multiway_split_position:, :]
 
         selector_output = self.selector(
-            outputs.detach(),
+            logits.detach(),
             image_emb.detach(),
             text_emb.detach(),
             multimodal_emb.detach(),
         )
         confidences = selector_output["confidences"]
 
-        return self.compute_loss(logits=outputs, labels=labels, confidences=confidences, use_selector=self.use_selector)
+        return self.compute_loss(logits=logits, labels=labels, confidences=confidences, use_selector=self.use_selector)
 
 
 @register_model
