@@ -208,7 +208,7 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
         )
         self.head.apply(self._init_weights)
 
-    def forward(self, image, question, padding_mask, labels=None):
+    def forward(self, image, question, padding_mask, labels=None, **kwargs):
         question = question.squeeze(dim=1)
         padding_mask = padding_mask.squeeze(dim=1)
 
@@ -259,7 +259,7 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
 
         return params
 
-    def forward(self, image, question, padding_mask, labels=None):
+    def forward(self, image, question, padding_mask, labels=None, **kwargs):
         outputs = super().forward(image, question,
                                   padding_mask, labels, **self.vqa_cfg)
 
