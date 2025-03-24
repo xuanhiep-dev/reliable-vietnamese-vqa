@@ -221,7 +221,7 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
             visual_tokens=image,
             text_padding_position=padding_mask
         )
-        print(outputs)
+
         x = outputs["encoder_out"]
         cls_rep = self.pooler(x)
         logits = self.head(cls_rep)
@@ -229,7 +229,8 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
         if not self.use_selector:
             print("Selector is OFF. Only getting logits from VQA model.")
             return self.compute_loss(logits=logits, labels=labels)
-        return logits
+
+        return {"logits": logits, "outputs": outputs}
 
 
 class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
@@ -261,15 +262,18 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
         return params
 
     def forward(self, image, question, padding_mask, labels=None, **kwargs):
-        logits = super().forward(image, question,
-                                 padding_mask, labels, **self.vqa_cfg)
+        results = super().forward(image, question,
+                                  padding_mask, labels, **self.vqa_cfg)
 
-        multiway_split_position = encoder_out["multiway_split_position"]
-        multimodal_emb = encoder_out["encoder_out"]
-        image_emb = encoder_out["encoder_out"][:,
-                                               :multiway_split_position, :]
-        text_emb = encoder_out["encoder_out"][:,
-                                              multiway_split_position:, :]
+        logits = results["logits"]
+        outputs = results["outputs"]
+
+        multiway_split_position = outputs["multiway_split_position"]
+        multimodal_emb = outputs["encoder_out"]
+        image_emb = outputs["encoder_out"][:,
+                                           :multiway_split_position, :]
+        text_emb = outputs["encoder_out"][:,
+                                          multiway_split_position:, :]
 
         selector_output = self.selector(
             logits.detach(),
