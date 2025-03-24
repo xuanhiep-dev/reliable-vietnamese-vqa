@@ -6,15 +6,15 @@
 # LICENSE file in the root directory of this source tree.
 
 subset=$1
-use_selector=$2
-lyp_mode=$3
+lyp_mode=$2
+use_selector=$3
 train_path="data/subsets/train/train-$subset.csv"
 valid_path="data/subsets/valid/valid-$subset.csv"
 test_path="data/subsets/test/test-$subset.csv"
  
-python main.py --set paths.subset_id=${subset} \
-                     model.use_selector=${use_selector} \
-                     training.lyp_mode=${lyp_mode} \
-                     paths.train_path=${train_path} \
-                     paths.valid_path=${valid_path} \
-                     paths.test_path=${test_path}
+python main.py --set paths.subset_id="$subset" \
+                     training.lyp_mode="$lyp_mode" \
+                     model.use_selector="$use_selector" \
+                     paths.train_path="$train_path" \
+                     paths.valid_path="$valid_path" \
+                     paths.test_path="$test_path"

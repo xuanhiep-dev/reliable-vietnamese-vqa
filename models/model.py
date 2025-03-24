@@ -263,6 +263,8 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
         outputs = super().forward(image, question,
                                   padding_mask, labels, **self.vqa_cfg)
 
+        print(outputs)
+
         encoder_out = outputs.encoder_out
         multiway_split_position = encoder_out["multiway_split_position"]
         multimodal_emb = encoder_out["encoder_out"]
