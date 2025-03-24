@@ -60,8 +60,11 @@ def _get_train_config(cfg):
 
 
 class PrintMessageCallback(TrainerCallback):
-    def on_train_begin(self, cfg):
-        if cfg.get("model".use_selector):
+    def __init__(self, cfg):
+        self.cfg = cfg
+
+    def on_train_begin(self, args, state, control, **kwargs):
+        if self.cfg.get("model".use_selector):
             print("Selector is ON. Computing Selective loss.")
         else:
             print(
@@ -136,7 +139,7 @@ def train():
         compute_metrics=compute_metrics,
         optimizers=(optimizer, None),
         callbacks=[EarlyStoppingCallback(
-            early_stopping_patience=5), PrintMessageCallback(handler.config)]
+            early_stopping_patience=5), PrintMessageCallback(cfg=handler.config)]
     )
 
     trainer.train()
