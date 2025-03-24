@@ -42,7 +42,8 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
         super(ComboEmbeddingsFullLogitSelectivePredictor, self).__init__()
 
         ans_embed_size = kwargs["answer_hidden_size"]
-        n_answers = kwargs["classes"]
+        classes = kwargs["classes"]
+        n_answers = kwargs["n_answers"]
 
         self.use_softmax = kwargs.get("use_softmax", False)
         self.use_qi_embed = kwargs.get("use_qi_embed", False)
@@ -80,7 +81,7 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
                 nn.Dropout(p=kwargs["dropout"]),
                 nn.BatchNorm1d(kwargs["hidden_2"]),
                 nn.ReLU(),
-                nn.Linear(kwargs["hidden_2"], n_answers),
+                nn.Linear(kwargs["hidden_2"], classes),
             )
         else:
             self.selective_predictor = nn.Sequential(
@@ -90,7 +91,7 @@ class ComboEmbeddingsFullLogitSelectivePredictor(nn.Module):
                 nn.Linear(kwargs["hidden_1"], kwargs["hidden_2"]),
                 nn.Dropout(p=kwargs["dropout"]),
                 nn.ReLU(),
-                nn.Linear(kwargs["hidden_2"], n_answers),
+                nn.Linear(kwargs["hidden_2"], classes),
             )
 
         if self.use_softmax:
@@ -215,6 +216,6 @@ class Calibration(nn.Module):
         self.weight = torch.nn.Parameter(torch.ones(n_answers))
         self.bias = torch.nn.Parameter(torch.zeros(n_answers))
 
-    def forward(self, answer_logits, image_feats, text_feats, qi_embed, **kwargs):
+    def forward(self, answer_logits, **kwargs):
         calibrated_logits = self.weight * answer_logits + self.bias
         return {'scores': calibrated_logits}
