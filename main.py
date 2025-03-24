@@ -64,7 +64,7 @@ class PrintMessageCallback(TrainerCallback):
         self.cfg = cfg
 
     def on_train_begin(self, args, state, control, **kwargs):
-        if self.cfg.get("model".use_selector):
+        if self.cfg.get("model")["use_selector"]:
             print("Selector is ON. Computing Selective loss.")
         else:
             print(
