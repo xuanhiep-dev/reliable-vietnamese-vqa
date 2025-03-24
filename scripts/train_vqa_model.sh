@@ -17,7 +17,7 @@ valid_path="data/full/valid.csv"
 test_path="data/full/test.csv"
 
 python main.py --set model.use_selector="$use_selector" \
-                     paths.output_path="$output_path" \
+                     paths.checkpoint_path="$checkpoint_path" \
                      paths.train_path="$train_path" \
                      paths.valid_path="$valid_path" \
                      paths.test_path="$test_path"

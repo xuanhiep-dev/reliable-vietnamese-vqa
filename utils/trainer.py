@@ -17,7 +17,7 @@ class TrainingModeHandler:
         self._paths_cfg = self._cfg.get("paths")
         self._model_cfg = self._cfg.get("model")
         self._use_selector = self._model_cfg.get("use_selector", False)
-        self._base_model_path = self._paths_cfg["base_model_path"]
+        self._base_model_path = f"{self._paths_cfg["checkpoint_path"]}/{self._paths_cfg["base_model"]}"
         self._model = None
 
     # ====== Properties ======
