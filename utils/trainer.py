@@ -78,12 +78,11 @@ class TrainingModeHandler:
                 f"[WARN] Model file or directory {model_path} does not exist.")
 
     def cleanup_after_training(self):
-        self._model = None
-        gc.collect()
-
         if self._cfg.get("training")["lyp_mode"]:
+            self._model = None
+            gc.collect()
             self.delete_model()
-        torch.cuda.empty_cache()
+            torch.cuda.empty_cache()
 
     # ====== optimizer ======
     def build_optimizer(self):
