@@ -62,6 +62,7 @@ def _get_train_config(cfg):
 class PrintMessageCallback(TrainerCallback):
     def __init__(self, cfg):
         self.cfg = cfg
+        print(type(cfg))
         print(cfg)
 
     def on_train_begin(self, args, state, control, **kwargs):
