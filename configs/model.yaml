@@ -16,7 +16,7 @@ selector:
   type: combo_embeddings_logit
   params:
     use_softmax: false
-    answer_hidden_size: 1024
+    answer_hidden_size: 353
     hidden_1: 1024
     hidden_2: 1024
     dropout: 0.5
