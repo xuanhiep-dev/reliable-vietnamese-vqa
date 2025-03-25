@@ -57,7 +57,8 @@ class TrainingModeHandler:
             print("[INFO] Creating base model...")
             base_model = create_model("avivqa_model", **self._model_cfg)
             torch.save(base_model.state_dict(), self._base_model_path)
-            print(f"[INFO] Base model saved to {self._base_model_path}")
+            print(
+                f"[INFO] Base model weights saved to {self._base_model_path}")
 
     def load_model(self):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -83,8 +84,9 @@ class TrainingModeHandler:
         if isinstance(state_dict, dict) and "model" in state_dict:
             state_dict = state_dict["model"]
 
-        self._model = model.load_state_dict(
-            state_dict, strict=False).to(device)
+        model.load_state_dict(state_dict, strict=False)
+        self._model = model.to(device)
+
         return self._model
 
     def delete_model(self):
