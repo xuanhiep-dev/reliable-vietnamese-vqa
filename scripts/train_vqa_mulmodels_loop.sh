@@ -12,10 +12,16 @@ parse_args() {
 }
 parse_args "$@"
 
-lyp_mode=True
+lyp_mode=${lyp_mode:-true}
+use_selector=${use_selector:-false}
+subsets_cleaned="${subsets:1:-1}"
+IFS=',' read -ra subset_array <<< "$subsets_cleaned"
 
-for id in 1 2 3 4 5 6 7 8 9 10
-do
-    echo "Loading subset: $id, lyp_mode: $lyp_mode, use_selector: $use_selector"
+
+echo "Training from peers (selector: off, subsets: $subsets)"
+for id in "${subset_array[@]}"; do
+    id=$(echo "$id" | xargs)
     bash scripts/train_vqa_mulmodels.sh $id $lyp_mode $use_selector
 done
+
+

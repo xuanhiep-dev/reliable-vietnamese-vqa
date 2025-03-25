@@ -30,8 +30,8 @@ def compute_metrics(p):
 
 def _get_train_config(cfg):
     training_cfg = cfg.get("training")
-    cfg.get("paths")["checkpoint_path"] = cfg.get(
-        "paths")["checkpoint_path"] or "checkpoint/"
+    ckpt_cfg = cfg.get("paths")["checkpoint"]
+    ckpt_cfg["save_path"] = ckpt_cfg["save_path"] or "checkpoint/"
 
     args = TrainingArguments(
         output_dir=cfg.get("paths")["checkpoint_path"],

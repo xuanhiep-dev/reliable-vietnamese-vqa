@@ -12,12 +12,14 @@ parse_args() {
 }
 parse_args "$@"
 
+lyp_mode=${lyp_mode:-false}
 train_path="data/full/train.csv"
 valid_path="data/full/valid.csv"
 test_path="data/full/test.csv"
 
-python main.py --set model.use_selector="$use_selector" \
-                     paths.checkpoint_path="$checkpoint_path" \
+python main.py --set training.lyp_mode="$lyp_mode" \
+                     model.use_selector="$use_selector" \
+                     paths.checkpoint.save_path="$save_checkpoint_path" \
                      paths.train_path="$train_path" \
                      paths.valid_path="$valid_path" \
                      paths.test_path="$test_path"

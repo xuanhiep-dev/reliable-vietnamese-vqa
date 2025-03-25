@@ -17,8 +17,11 @@ class TrainingModeHandler:
         self._paths_cfg = self._cfg.get("paths")
         self._model_cfg = self._cfg.get("model")
         self._use_selector = self._model_cfg.get("use_selector", False)
-        self._paths_cfg["checkpoint_path"] = self._paths_cfg["checkpoint_path"] or "checkpoint/"
-        self._base_model_path = f"{self._paths_cfg['checkpoint_path']}/{self._paths_cfg['base_model']}"
+
+        self.ckpt_cfg = self._paths_cfg["checkpoint"]
+        self.ckpt_cfg["save_path"] = self.ckpt_cfg["save_path"] or "checkpoint/"
+        self.ckpt_cfg["load_path"] = self.ckpt_cfg["load_path"] or "checkpoint/"
+        self._base_model_path = f"{self.ckpt_cfg["save_path"]}/{self._paths_cfg['base_model']}"
         self._model = None
 
     # ====== Properties ======
@@ -66,7 +69,7 @@ class TrainingModeHandler:
 
     def delete_model(self):
         model_path = os.path.join(
-            self._paths_cfg["checkpoint_path"], f"model-{self._cfg.get('training')['subset_id']}")
+            self.ckpt_cfg["save_path"], f"model-{self._cfg.get('training')['subset_id']}")
         if os.path.exists(model_path):
             if os.path.isdir(model_path):
                 shutil.rmtree(model_path)
@@ -131,10 +134,11 @@ class TrainingModeHandler:
         })
 
         os.makedirs("predictions", exist_ok=True)
+
+        subset_id = self._cfg.get("training")["subset_id"]
+        filename = f"answers-{subset_id}.csv" if subset_id is not None else "answers.csv"
         output_path = os.path.join(
-            self._paths_cfg["prediction_path"],
-            f"answers-{self._cfg.get('training')['subset_id']}.csv"
-        )
+            self._paths_cfg["prediction_path"], filename)
 
         df.to_csv(output_path, encoding="utf-8")
         print(f"[INFO] Predictions saved to {output_path}")
