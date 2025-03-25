@@ -119,6 +119,8 @@ class TrainingModeHandler:
                 return {"accuracy": acc}
             else:
                 labels = (preds == labels).astype(int)
+                labels = np.array(labels, dtype=int)
+                preds = np.array(preds, dtype=int)
 
                 acc = accuracy_score(labels, preds)
                 prec, recall, f1, _ = precision_recall_fscore_support(
