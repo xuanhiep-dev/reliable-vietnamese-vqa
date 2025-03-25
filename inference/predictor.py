@@ -57,9 +57,10 @@ class PredictorModeHandler:
         answer = sample["vocab"].get(pred_idx, "I don't know")
 
         print(f"[RESULT] Answer: {answer} (Confidence: {confidence:.4f})")
-        return answer, confidence
 
-    def plot_an_image(image_path):
+        self.plot_an_image(image_path)
+
+    def plot_an_image(self, image_path):
         image = Image.open(image_path)
         plt.imshow(image)
         plt.axis('off')

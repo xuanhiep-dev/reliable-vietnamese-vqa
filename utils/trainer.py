@@ -76,10 +76,11 @@ class TrainingModeHandler:
 
             print("[INFO] Loading weights from base model...")
             state_dict = torch.load(
-                self._base_model_path, map_location="cpu")
+                self._base_model_path, map_location="cpu", weights_only=True)
         else:
             print(f"[INFO] Loading checkpoint from {load_path}...")
-            state_dict = torch.load(load_path, map_location="cpu")
+            state_dict = torch.load(
+                load_path, map_location="cpu", weights_only=True)
 
         if isinstance(state_dict, dict) and "model" in state_dict:
             state_dict = state_dict["model"]
