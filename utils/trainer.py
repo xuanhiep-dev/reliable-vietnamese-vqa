@@ -118,13 +118,19 @@ class TrainingModeHandler:
                 acc = accuracy_score(labels, preds)
                 return {"accuracy": acc}
             else:
-                labels = (preds == labels).astype(int)
-                labels = np.array(labels, dtype=int)
+                correctness = (preds == labels).astype(int)
+                correctness = np.array(correctness, dtype=int)
                 preds = np.array(preds, dtype=int)
 
-                acc = accuracy_score(labels, preds)
+                print("correctness =", correctness)
+                print("preds =", preds)
+
+                print("labels:", np.unique(correctness))
+                print("preds:", np.unique(preds))
+
+                acc = accuracy_score(correctness, preds)
                 prec, recall, f1, _ = precision_recall_fscore_support(
-                    labels, preds, average='binary', zero_division=0
+                    correctness, preds, average='binary', zero_division=0
                 )
                 return {
                     "accuracy": acc,
