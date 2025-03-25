@@ -15,11 +15,11 @@ class PredictorModeHandler:
 
     def load_final_model(self, model_path=None):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
+        print("[DEBUG] model config:", self._model_cfg)
         try:
             model = create_model("avivqa_model", **self._model_cfg)
         except Exception as e:
-            raise ValueError(f"Cannot create the model.")
+            raise ValueError(f"Cannot create the model: {e}")
 
         if model_path and os.path.exists(model_path):
             print(f"Loading weights from {model_path}")
