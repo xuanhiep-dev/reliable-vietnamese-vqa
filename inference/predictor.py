@@ -1,5 +1,6 @@
 import os
 import torch
+import models.model
 from utils.config import ConfigLoader
 from timm.models import create_model
 from utils.dataset import get_sample
@@ -15,7 +16,6 @@ class PredictorModeHandler:
 
     def load_final_model(self, model_path=None):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        print("[DEBUG] model config:", self._model_cfg)
         try:
             model = create_model("avivqa_model", **self._model_cfg)
         except Exception as e:
