@@ -56,14 +56,14 @@ class TrainingModeHandler:
 
             print("[INFO] Creating base model...")
             base_model = create_model("avivqa_model", **self._model_cfg)
-            torch.save(base_model, self._base_model_path)
+            torch.save(base_model.state_dict(), self._base_model_path)
             print(f"[INFO] Base model saved to {self._base_model_path}")
 
     def load_model(self):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
         load_path = self.ckpt_cfg["load_path"]
 
+        model = create_model("avivqa_model", **self._model_cfg)
         if not os.path.exists(load_path):
             print(
                 f"[INFO] load_path {load_path} not found. Creating and loading base model.")
@@ -73,13 +73,18 @@ class TrainingModeHandler:
                 raise FileNotFoundError(
                     f"Base model not found at {self._base_model_path}.")
 
-            print("[INFO] Loading base model...")
-            self._model = torch.load(
-                self._base_model_path, map_location="cpu").to(device)
+            print("[INFO] Loading weights from base model...")
+            state_dict = torch.load(
+                self._base_model_path, map_location="cpu")
         else:
             print(f"[INFO] Loading checkpoint from {load_path}...")
-            self._model = torch.load(load_path, map_location="cpu").to(device)
+            state_dict = torch.load(load_path, map_location="cpu")
 
+        if isinstance(state_dict, dict) and "model" in state_dict:
+            state_dict = state_dict["model"]
+
+        self._model = model.load_state_dict(
+            state_dict, strict=False).to(device)
         return self._model
 
     def delete_model(self):
