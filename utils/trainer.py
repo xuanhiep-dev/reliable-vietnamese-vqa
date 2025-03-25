@@ -67,7 +67,7 @@ class TrainingModeHandler:
         model = create_model("avivqa_model", **self._model_cfg)
         if not os.path.exists(load_path):
             print(
-                f"[INFO] load_path {load_path} not found. Creating and loading base model.")
+                f"[INFO] Load path: {load_path} not found. Creating and loading base model.")
             self.save_base_model()
 
             if not os.path.exists(self._base_model_path):
