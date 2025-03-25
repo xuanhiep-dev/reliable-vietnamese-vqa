@@ -13,6 +13,6 @@ pip install --upgrade timm
 ```
 2. Train from peers (without using selector)
 ```bash
-!bash scripts/train_vqa_mulmodels_loop.sh subsets=[list]
+!bash scripts/train_vqa_mulmodels_loop.sh subsets=subset_id1,subset_id2,...
 ```
 ## 3. Inference.

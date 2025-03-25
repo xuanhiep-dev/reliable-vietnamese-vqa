@@ -23,7 +23,8 @@ class TrainingModeHandler:
         self.ckpt_cfg = self._paths_cfg["checkpoint"]
         self.ckpt_cfg["save_path"] = self.ckpt_cfg["save_path"] or "checkpoint/"
         self.ckpt_cfg["load_path"] = self.ckpt_cfg["load_path"] or "checkpoint/"
-        self._base_model_path = f"{self.ckpt_cfg['save_path']}/{self._paths_cfg['base_model']}"
+        self._base_model_path = self.ckpt_cfg["base_model_path"] or os.path.join(
+            "checkpoints/base", self._paths_cfg["base_model"])
         self._model = None
 
     # ====== Properties ======
@@ -58,15 +59,27 @@ class TrainingModeHandler:
             torch.save(base_model, self._base_model_path)
             print(f"[INFO] Base model saved to {self._base_model_path}")
 
-    def load_base_model(self):
-        if not os.path.exists(self._base_model_path):
-            raise FileNotFoundError(
-                f"Model checkpoint not found at {self._base_model_path}.")
-
-        print("[INFO] Loading base model...")
+    def load_model(self):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self._model = torch.load(
-            self._base_model_path, map_location="cpu", weights_only=False).to(device)
+
+        load_path = self.ckpt_cfg["load_path"]
+
+        if not os.path.exists(load_path):
+            print(
+                f"[INFO] load_path {load_path} not found. Creating and loading base model.")
+            self.save_base_model()
+
+            if not os.path.exists(self._base_model_path):
+                raise FileNotFoundError(
+                    f"Base model not found at {self._base_model_path}.")
+
+            print("[INFO] Loading base model...")
+            self._model = torch.load(
+                self._base_model_path, map_location="cpu").to(device)
+        else:
+            print(f"[INFO] Loading checkpoint from {load_path}...")
+            self._model = torch.load(load_path, map_location="cpu").to(device)
+
         return self._model
 
     def delete_model(self):

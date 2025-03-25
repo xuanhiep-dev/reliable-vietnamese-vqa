@@ -5,4 +5,5 @@ ans_path: "data/answers.json"
 checkpoint:
   save_path: null
   load_path: null
+  base_model_path: null
   

@@ -118,8 +118,7 @@ def predict_sample(image_path, question, ans_path, model):
 def train():
     handler = TrainingModeHandler()
 
-    handler.save_base_model()
-    model = handler.load_base_model()
+    model = handler.load_model()
     optimizer = handler.build_optimizer()
     compute_metrics = handler.build_compute_metrics()
 

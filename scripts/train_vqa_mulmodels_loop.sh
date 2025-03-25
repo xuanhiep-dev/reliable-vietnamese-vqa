@@ -20,6 +20,7 @@ IFS=',' read -ra subset_array <<< "$subsets"
 echo "Training from peers (selector: off, subsets: $subsets)"
 for id in "${subset_array[@]}"; do
     id=$(echo "$id" | xargs)
+    echo "Subset $id has been loaded successfully."
     bash scripts/train_vqa_mulmodels.sh $id $lyp_mode $use_selector
 done
 
