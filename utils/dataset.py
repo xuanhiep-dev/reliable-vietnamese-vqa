@@ -13,7 +13,6 @@ import transformers
 from transformers.utils import TensorType
 from lavis.processors.base_processor import BaseProcessor
 from PIL import Image
-import matplotlib.pyplot as plt
 
 
 class Process:
@@ -166,8 +165,12 @@ def get_dataset(cfg, validation=True):
     return train_dataset, test_dataset
 
 
-def get_sample(image_path, question):
+def get_sample(cfg, image_path, question):
     processor = Process()
+    with open(cfg.get("paths")["ans_path"], 'r') as f:
+        vocab = {v: process_punctuation(k.lower())
+                 for k, v in json.load(f)["answer"].items()}
+
     image = Image.open(image_path)
     output = processor(image, question,
                        return_tensors='pt',
@@ -180,6 +183,7 @@ def get_sample(image_path, question):
     output["image"] = torch.tensor(output["image"]).unsqueeze(0)
     output["question"] = torch.tensor(output["question"])
     output["padding_mask"] = torch.tensor(output["padding_mask"])
+    output |= {'vocab': vocab}
 
     return output
 
@@ -213,10 +217,3 @@ def preprocess_answers(df):
     answers = [process_punctuation(answer.lower())
                for answer in list(df['answer'])]
     return answers
-
-
-def plot_an_image(image_path):
-    image = Image.open(image_path)
-    plt.imshow(image)
-    plt.axis('off')
-    plt.show()

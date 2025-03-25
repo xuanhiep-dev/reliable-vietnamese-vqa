@@ -1,23 +1,14 @@
 from transformers import TrainingArguments, Trainer, EarlyStoppingCallback, TrainerCallback
-import torch
 import models.model
-from timm.models import create_model
-from utils.dataset import get_sample, process_punctuation
-from utils.config import ConfigLoader
 from utils.trainer import TrainingModeHandler
 import pandas as pd
 import numpy as np
 import mlflow
-import json
 import os
 import warnings
 
 warnings.filterwarnings("ignore")
 os.environ['MLFLOW_EXPERIMENT_NAME'] = 'mlflow-vivqa'
-
-
-def load_config():
-    return ConfigLoader()
 
 
 def _get_train_config(cfg):
@@ -61,58 +52,6 @@ class PrintMessageCallback(TrainerCallback):
         else:
             print(
                 "Selector is OFF. Only getting logits from VQA model and computing VQA loss.")
-
-
-def load_final_model(model_name="avivqa_model", model_path=None, num_classes=353, **kwargs):
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-    try:
-        model = create_model(model_name, pretrained=False,
-                             num_classes=num_classes, **kwargs)
-    except Exception as e:
-        raise ValueError(f"Cannot create the model `{model_name}`: {e}")
-
-    if model_path and os.path.exists(model_path):
-        print(f"Loading weights from {model_path}")
-        state_dict = torch.load(model_path, map_location=device)
-
-        if isinstance(state_dict, dict) and "model" in state_dict:
-            state_dict = state_dict["model"]
-
-        model.load_state_dict(state_dict, strict=False)
-        print("Model loaded successfully.")
-    else:
-        print("Checkpoint path does not exist")
-
-    return model.to(device).eval()
-
-
-def predict_sample(image_path, question, ans_path, model):
-    print(
-        f"[INFO] Inference on image: {image_path}\n Question: {question}")
-
-    sample = get_sample(image_path, question)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-    with open(ans_path, 'r') as f:
-        vocab = {v: process_punctuation(k.lower())
-                 for k, v in json.load(f)["answer"].items()}
-    image = sample["image"].to(device, dtype=torch.float32)
-    question_ids = sample["question"].to(device)
-    mask = sample["padding_mask"].to(device)
-
-    model.eval()
-    with torch.no_grad():
-        logits = model(image=image, question=question_ids,
-                       padding_mask=mask).logits
-        probs = torch.softmax(logits, dim=-1)
-        pred_idx = torch.argmax(probs, dim=-1).item()
-        confidence = probs[0][pred_idx].item()
-
-    answer = vocab.get(pred_idx, "I don't know")
-
-    print(f"[RESULT] Answer: {answer} (Confidence: {confidence:.4f})")
-    return answer, confidence
 
 
 def train():
