@@ -21,7 +21,7 @@ class TrainingModeHandler:
         self.ckpt_cfg = self._paths_cfg["checkpoint"]
         self.ckpt_cfg["save_path"] = self.ckpt_cfg["save_path"] or "checkpoint/"
         self.ckpt_cfg["load_path"] = self.ckpt_cfg["load_path"] or "checkpoint/"
-        self._base_model_path = f"{self.ckpt_cfg["save_path"]}/{self._paths_cfg['base_model']}"
+        self._base_model_path = f"{self.ckpt_cfg['save_path']}/{self._paths_cfg['base_model']}"
         self._model = None
 
     # ====== Properties ======

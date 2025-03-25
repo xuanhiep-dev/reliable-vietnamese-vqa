@@ -5,7 +5,6 @@ pip install salesforce-lavis
 pip install torchscale underthesea mlflow efficientnet_pytorch
 pip install --upgrade transformers
 pip install --upgrade timm
-
 ```
 ## 2. Training.
 1. Train from standard VQA model.
