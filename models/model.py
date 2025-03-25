@@ -174,7 +174,7 @@ class BEiT3Wrapper(nn.Module):
 
         return ViVQAOutput(
             loss=loss,
-            logits=logits
+            logits=confidences if use_selector else logits
         )
 
 
