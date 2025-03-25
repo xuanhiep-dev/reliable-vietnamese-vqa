@@ -15,6 +15,7 @@ parse_args "$@"
 lyp_mode=${lyp_mode:-true}
 use_selector=${use_selector:-false}
 subsets_cleaned="${subsets:1:-1}"
+subsets_cleaned="${subsets_cleaned// /}"
 IFS=',' read -ra subset_array <<< "$subsets_cleaned"
 
 

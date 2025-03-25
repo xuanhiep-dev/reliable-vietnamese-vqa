@@ -122,12 +122,6 @@ class TrainingModeHandler:
                 correctness = np.array(correctness, dtype=int)
                 preds = np.array(preds, dtype=int)
 
-                print("correctness =", correctness)
-                print("preds =", preds)
-
-                print("labels:", np.unique(correctness))
-                print("preds:", np.unique(preds))
-
                 acc = accuracy_score(correctness, preds)
                 prec, recall, f1, _ = precision_recall_fscore_support(
                     correctness, preds, average='binary', zero_division=0
