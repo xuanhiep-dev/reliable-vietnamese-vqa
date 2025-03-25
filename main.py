@@ -1,6 +1,5 @@
 from transformers import TrainingArguments, Trainer, EarlyStoppingCallback, TrainerCallback
 import torch
-from sklearn.metrics import accuracy_score
 import models.model
 from timm.models import create_model
 from utils.dataset import get_sample, process_punctuation
@@ -21,20 +20,13 @@ def load_config():
     return ConfigLoader()
 
 
-def compute_metrics(p):
-    pred, labels = p
-    pred = np.argmax(pred, axis=1)
-    accuracy = accuracy_score(y_true=labels, y_pred=pred)
-    return {"accuracy": accuracy}
-
-
 def _get_train_config(cfg):
     training_cfg = cfg.get("training")
     ckpt_cfg = cfg.get("paths")["checkpoint"]
     ckpt_cfg["save_path"] = ckpt_cfg["save_path"] or "checkpoint/"
 
     args = TrainingArguments(
-        output_dir=cfg.get("paths")["checkpoint_path"],
+        output_dir=ckpt_cfg["save_path"],
         log_level=training_cfg["log_level"],
         lr_scheduler_type=training_cfg["lr_scheduler_type"],
         warmup_ratio=training_cfg["warmup_ratio"],
@@ -129,6 +121,7 @@ def train():
     handler.save_base_model()
     model = handler.load_base_model()
     optimizer = handler.build_optimizer()
+    compute_metrics = handler.build_compute_metrics()
 
     args = _get_train_config(handler.config)
     trainer = Trainer(

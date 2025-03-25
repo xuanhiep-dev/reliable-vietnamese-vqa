@@ -123,6 +123,7 @@ class BEiT3Wrapper(nn.Module):
         super().__init__()
         self.args = args
         self.beit3 = ViVQABEiT3(args, **kwargs)
+        self.unk_index = 0
         # self.apply(self._init_weights)
 
     def fix_init_weight(self):
@@ -151,15 +152,25 @@ class BEiT3Wrapper(nn.Module):
 
     def compute_loss(self, logits, labels=None, confidences=None, use_selector=None):
         loss = None
+
         if not use_selector:
             if labels is not None:
-                loss = F.cross_entropy(logits, labels)
+                loss = F.cross_entropy(
+                    logits, labels, ignore_index=self.unk_index)
         else:
             if labels is not None:
-                logits = F.softmax(logits, dim=1)
-                pred_inds = torch.argmax(logits, dim=1)
+                pred_inds = torch.argmax(F.softmax(logits, dim=1), dim=1)
                 correctness = (pred_inds == labels).to(dtype=torch.long)
-                loss = F.cross_entropy(confidences, correctness)
+
+                valid_mask = labels != self.unk_index
+                if valid_mask.any():
+                    filtered_confidences = confidences[valid_mask]
+                    filtered_correctness = correctness[valid_mask]
+                    loss = F.cross_entropy(
+                        filtered_confidences, filtered_correctness)
+                else:
+                    loss = torch.tensor(
+                        0.0, device=logits.device, requires_grad=True)
 
         return ViVQAOutput(
             loss=loss,

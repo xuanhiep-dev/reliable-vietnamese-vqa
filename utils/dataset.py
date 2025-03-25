@@ -104,7 +104,8 @@ class ViVQADataset(Dataset):
         self.processor = processor
 
     def answers2idx(self, answers, vocab_a):
-        return [vocab_a[answer] for answer in answers]
+        unk_idx = vocab_a.get("<unk>", 0)
+        return [vocab_a[answer] if answer in vocab_a else unk_idx for answer in answers]
 
     def __len__(self):
         return len(self.dataframe)

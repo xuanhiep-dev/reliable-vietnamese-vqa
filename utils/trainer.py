@@ -7,6 +7,7 @@ import numpy as np
 from utils.config import ConfigLoader
 from utils.dataset import get_dataset
 from timm.models import create_model
+from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
 
 class TrainingModeHandler:
@@ -17,6 +18,7 @@ class TrainingModeHandler:
         self._paths_cfg = self._cfg.get("paths")
         self._model_cfg = self._cfg.get("model")
         self._use_selector = self._model_cfg.get("use_selector", False)
+        self._unk_index = 0
 
         self.ckpt_cfg = self._paths_cfg["checkpoint"]
         self.ckpt_cfg["save_path"] = self.ckpt_cfg["save_path"] or "checkpoint/"
@@ -93,6 +95,43 @@ class TrainingModeHandler:
         if self._use_selector:
             return torch.optim.AdamW(self._model.get_optimizer_parameters())
         return torch.optim.AdamW(self._model.parameters())
+
+    # ====== evaluation ======
+    def build_compute_metrics(self):
+        def compute_metrics(p):
+            logits, labels = p
+            preds = np.argmax(logits, axis=1)
+
+            valid_mask = labels != self._unk_index
+            labels = labels[valid_mask]
+            preds = preds[valid_mask]
+
+            if len(labels) == 0:
+                return {
+                    "accuracy": 0.0,
+                    "precision": 0.0,
+                    "recall": 0.0,
+                    "f1": 0.0
+                } if self._use_selector else {"accuracy": 0.0}
+
+            if not self._use_selector:
+                acc = accuracy_score(labels, preds)
+                return {"accuracy": acc}
+            else:
+                labels = (preds == labels).astype(int)
+
+                acc = accuracy_score(labels, preds)
+                prec, recall, f1, _ = precision_recall_fscore_support(
+                    labels, preds, average='binary', zero_division=0
+                )
+                return {
+                    "accuracy": acc,
+                    "precision": prec,
+                    "recall": recall,
+                    "f1": f1
+                }
+
+        return compute_metrics
 
     # ====== Post-training process ======
     def post_train(self, trainer):
