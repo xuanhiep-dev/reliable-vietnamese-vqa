@@ -167,7 +167,7 @@ def get_dataset(cfg, validation=True):
 
 def get_sample(cfg, image_path, question):
     processor = Process()
-    with open(cfg.get("paths")["ans_path"], 'r') as f:
+    with open(cfg["ans_path"], 'r') as f:
         vocab = {v: process_punctuation(k.lower())
                  for k, v in json.load(f)["answer"].items()}
 

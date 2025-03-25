@@ -23,7 +23,8 @@ class PredictorModeHandler:
 
         if model_path and os.path.exists(model_path):
             print(f"Loading weights from {model_path}")
-            state_dict = torch.load(model_path, map_location=device)
+            state_dict = torch.load(
+                model_path, map_location=device, weights_only=True)
 
             if isinstance(state_dict, dict) and "model" in state_dict:
                 state_dict = state_dict["model"]
