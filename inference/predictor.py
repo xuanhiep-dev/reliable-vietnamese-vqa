@@ -39,7 +39,7 @@ class PredictorModeHandler:
     def predict_sample(self, model, image_path, question):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         print(
-            f"[INFO] Inference on image: {image_path}\n Question: {question}")
+            f"[INFO] Question: {question} \n")
 
         sample = get_sample(self._paths_cfg, image_path, question)
         image = sample["image"].to(device, dtype=torch.float32)
