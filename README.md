@@ -28,4 +28,4 @@ image_path = "data/images/119776.jpg"
 question = "Con vật trong ảnh màu gì ?"
 predictor.predict_sample(model, image_path, question)
 
-![Sample Result](example/example.jpg)
+![Sample Result](example/example.png)
