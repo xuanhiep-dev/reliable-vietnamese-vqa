@@ -6,6 +6,7 @@ from utils.reliable_vqa_eval import ReliabilityEval
 class EvaluatorModeHandler:
     def __init__(self, predict_df):
         self.predict_df = predict_df
+        self.predict_df['question_id'] = range(1, len(self.predict_df) + 1)
         self.questions = self._build_questions()
         self.annotations = self._build_annotations()
         self.predictions = self._build_predictions()

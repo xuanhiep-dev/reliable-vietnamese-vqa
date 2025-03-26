@@ -1,4 +1,4 @@
-,question,img_id,predicted_answer,confidence
+,question,img_id,answer,confidence
 0,màu của bồn rửa là gì,438315,177,0.12977485
 1,màu của ánh sáng là gì,68223,184,0.10135822
 2,màu của mặt trước là gì,66283,177,0.11278979
