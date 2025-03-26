@@ -43,5 +43,5 @@ image_path = <your_image_path>
 question = <your_question>
 predictor.predict_sample(model, image_path, question)
 ```
-## The picture below shows an example of a model result.
+### The picture below shows an example of a model result.
 ![Sample Result](example/example.png)
