@@ -37,10 +37,11 @@ predictor = PredictorModeHandler()
 model_path = <path_to_existing_model>
 model = predictor.load_final_model(model_path)
 ```
-### 44.2. Get the model output.
+### 4.2. Get the model output.
 ```bash
 image_path = <your_image_path>
 question = <your_question>
 predictor.predict_sample(model, image_path, question)
 ```
+The picture below shows an example of a model result:
 ![Sample Result](example/example.png)
