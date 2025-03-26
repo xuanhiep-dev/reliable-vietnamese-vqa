@@ -7,11 +7,15 @@ pip install --upgrade transformers
 pip install --upgrade timm
 ```
 ## 2. Training.
-### 2.1. Train from standard VQA model.
+### 2.1. Train a new model and save checkpoint.
 ```bash
 !bash scripts/train_vqa_model.sh use_selector=<true|false> save_checkpoint_path=<path>
 ```
-### 2.2. Train from peers (without using selector)
+### 2.2. Resume training from existing checkpoint.
+```bash
+!bash scripts/train_vqa_model.sh use_selector=<true|false> load_checkpoint_path=<path>
+```
+### 2.3. Train from peers (multi-subset training without selector)
 ```bash
 !bash scripts/train_vqa_mulmodels_loop.sh subsets=subset_id1,subset_id2,...
 ```
