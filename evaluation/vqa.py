@@ -19,8 +19,6 @@ class VQA:
         if not annotations == None and not questions == None:
             print("loading VQA annotations and questions into memory...")
             time_t = datetime.datetime.utcnow()
-            # dataset = json.load(open(annotation_file, 'r'))
-            # questions = json.load(open(question_file, 'r'))
             print(datetime.datetime.utcnow() - time_t)
             self.dataset = annotations
             self.questions = questions
@@ -60,7 +58,7 @@ class VQA:
             )
         else:
             anns = self.dataset["annotations"]
-            
+
         ids = [ann["question_id"] for ann in anns]
         return ids
 

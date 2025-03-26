@@ -291,8 +291,6 @@ class ReliabilityEval:
             resConf = res["confidence"]
 
             gtAcc = []
-
-            # Xử lý các dấu câu và chữ số (nếu cần)
             gtAnswer = self.processPunctuation(gtAnswer)
             gtAnswer = self.processDigitArticle(gtAnswer)
             resAns = self.processPunctuation(resAns)
