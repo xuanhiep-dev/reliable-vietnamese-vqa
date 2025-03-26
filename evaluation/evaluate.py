@@ -1,6 +1,6 @@
 import json
-from utils.vqa import VQA
-from utils.reliable_vqa_eval import ReliabilityEval
+from evaluation.vqa import VQA
+from evaluation.reliable_vqa_eval import ReliabilityEval
 
 
 class EvaluatorModeHandler:
