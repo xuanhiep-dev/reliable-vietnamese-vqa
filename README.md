@@ -19,19 +19,28 @@ pip install --upgrade timm
 ```bash
 !bash scripts/train_vqa_mulmodels_loop.sh subsets=subset_id1,subset_id2,...
 ```
-## 3. Inference.
-### 3.1. Load existing model.
+## 3. Evaluation.
+```bash
+from evaluation.evaluate import EvaluatorModeHandler
+import pandas as pd
+
+df = pd.read_csv(<path_to_model_answers>)
+evaluator = EvaluatorModeHandler(df)
+evaluator.evaluate()
+```
+## 4. Inference.
+### 4.1. Load existing model.
 ```bash
 from inference.predictor import PredictorModeHandler
 
 predictor = PredictorModeHandler()
-model_path = "/kaggle/working/new_output/checkpoint-1/pytorch_model.bin"
+model_path = <path_to_existing_model>
 model = predictor.load_final_model(model_path)
 ```
-### 3.2. Get the model output.
+### 44.2. Get the model output.
 ```bash
-image_path = "data/images/119776.jpg"
-question = "Con vật trong ảnh màu gì ?"
+image_path = <your_image_path>
+question = <your_question>
 predictor.predict_sample(model, image_path, question)
 ```
 ![Sample Result](example/example.png)
