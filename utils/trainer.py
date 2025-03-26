@@ -195,8 +195,7 @@ class TrainingModeHandler:
             "confidence": np.array(confidence_scores, dtype=np.float32)
         })
 
-        os.makedirs("data/predictions", exist_ok=True)
-
+        os.makedirs(self._paths_cfg["prediction_path"], exist_ok=True)
         subset_id = self._cfg.get("training")["subset_id"]
         filename = f"answers-{subset_id}.csv" if subset_id is not None else "answers.csv"
         output_path = os.path.join(
