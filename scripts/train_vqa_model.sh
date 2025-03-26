@@ -20,6 +20,7 @@ test_path="data/full/test.csv"
 python main.py --set training.lyp_mode="$lyp_mode" \
                      model.use_selector="$use_selector" \
                      paths.checkpoint.save_path="$save_checkpoint_path" \
+                     paths.checkpoint.load_path="$load_checkpoint_path" \
                      paths.train_path="$train_path" \
                      paths.valid_path="$valid_path" \
                      paths.test_path="$test_path"
