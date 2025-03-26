@@ -20,9 +20,9 @@ class TrainingModeHandler:
         self._use_selector = self._model_cfg.get("use_selector", False)
         self._unk_index = 0
 
-        self.ckpt_cfg = self._paths_cfg["checkpoint"]
-        self.ckpt_cfg["save_path"] = self.ckpt_cfg["save_path"] or "checkpoint/"
-        self.ckpt_cfg["load_path"] = self.ckpt_cfg["load_path"] or "checkpoint/"
+        self.ckpt_cfg = self._paths_cfg["checkpoints"]
+        self.ckpt_cfg["save_path"] = self.ckpt_cfg["save_path"] or "checkpoints/"
+        self.ckpt_cfg["load_path"] = self.ckpt_cfg["load_path"] or "checkpoints/"
         self._base_model_path = self.ckpt_cfg["base_model_path"] or os.path.join(
             "checkpoints/base", self._paths_cfg["base_model"])
         self._model = None

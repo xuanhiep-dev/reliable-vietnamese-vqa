@@ -15,12 +15,12 @@ pip install --upgrade timm
 ```bash
 !bash scripts/train_vqa_model.sh use_selector=<true|false> load_checkpoint_path=<path>
 ```
-### 2.3. Train from peers (multi-subset training without selector)
+### 2.3. Train from peers (multi-subset training without selector).
 ```bash
 !bash scripts/train_vqa_mulmodels_loop.sh subsets=subset_id1,subset_id2,...
 ```
 ## 3. Inference.
-### 3.1. Load VQA model.
+### 3.1. Load existing model.
 ```bash
 from inference.predictor import PredictorModeHandler
 
@@ -28,7 +28,7 @@ predictor = PredictorModeHandler()
 model_path = "/kaggle/working/new_output/checkpoint-1/pytorch_model.bin"
 model = predictor.load_final_model(model_path)
 ```
-### 3.2. Get a result.
+### 3.2. Get the model output.
 ```bash
 image_path = "data/images/119776.jpg"
 question = "Con vật trong ảnh màu gì ?"

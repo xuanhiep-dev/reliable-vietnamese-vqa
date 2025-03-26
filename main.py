@@ -13,8 +13,8 @@ os.environ['MLFLOW_EXPERIMENT_NAME'] = 'mlflow-vivqa'
 
 def _get_train_config(cfg):
     training_cfg = cfg.get("training")
-    ckpt_cfg = cfg.get("paths")["checkpoint"]
-    ckpt_cfg["save_path"] = ckpt_cfg["save_path"] or "checkpoint/"
+    ckpt_cfg = cfg.get("paths")["checkpoints"]
+    ckpt_cfg["save_path"] = ckpt_cfg["save_path"] or "checkpoints/"
 
     args = TrainingArguments(
         output_dir=ckpt_cfg["save_path"],

@@ -2,7 +2,7 @@ prediction_path: "data/predictions/"
 base_model: "base_model.pt"
 image_path: "data/images"
 ans_path: "data/answers.json"
-checkpoint:
+checkpoints:
   save_path: null
   load_path: null
   base_model_path: null
