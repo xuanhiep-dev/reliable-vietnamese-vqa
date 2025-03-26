@@ -1,7 +1,7 @@
 prediction_path: "data/predictions/"
 base_model: "base_model.pt"
 image_path: "data/images"
-ans_path: "data/answers.json"
+ans_path: "data/vocab.json"
 checkpoints:
   save_path: null
   load_path: null
