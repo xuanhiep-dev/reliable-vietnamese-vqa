@@ -78,6 +78,7 @@ class TrainingModeHandler:
             state_dict = torch.load(
                 self._base_model_path, map_location="cpu", weights_only=True)
         else:
+            load_path = os.path.join(load_path, "base/base_model.pt")
             print(f"[INFO] Loading checkpoint from {load_path}...")
             state_dict = torch.load(
                 load_path, map_location="cpu", weights_only=True)
