@@ -5,14 +5,15 @@ logging_strategy: "epoch"       # ["no", "epoch", "steps"]
 save_strategy: "epoch"          # ["no", "epoch", "steps"]
 save_total_limit: 1
 
-train_batch_size: 32
-eval_batch_size: 32
-epochs: 1
+train_batch_size: 64
+eval_batch_size: 64
+epochs: 20
 learning_rate: 3e-5
 weight_decay: 0.01
 workers: 2
 
-report_to: "mlflow"
+report_to: "wandb"
+run_name: "Run3"
 save_safetensors: false
 disable_tqdm: false
 overwrite_output_dir: true

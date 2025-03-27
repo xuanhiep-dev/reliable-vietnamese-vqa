@@ -31,6 +31,7 @@ def _get_train_config(cfg):
         weight_decay=training_cfg["weight_decay"],
         dataloader_num_workers=training_cfg["workers"],
         report_to=training_cfg["report_to"],
+        run_name=training_cfg["run_name"],
         save_safetensors=training_cfg["save_safetensors"],
         disable_tqdm=training_cfg["disable_tqdm"],
         overwrite_output_dir=training_cfg["overwrite_output_dir"],
@@ -70,7 +71,7 @@ def train():
         compute_metrics=compute_metrics,
         optimizers=(optimizer, None),
         callbacks=[EarlyStoppingCallback(
-            early_stopping_patience=5), PrintMessageCallback(handler.config)]
+            early_stopping_patience=15), PrintMessageCallback(handler.config)]
     )
 
     trainer.train()
