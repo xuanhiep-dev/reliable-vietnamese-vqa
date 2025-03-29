@@ -8,7 +8,7 @@ vqa:
   encoder_attention_heads_layers: 6
   encoder_embed_dim: 768
   max_source_positions: 512
-  classes: 325
+  classes: 353
   base_path: checkpoints/base_model.pth
 
 selector:
@@ -17,7 +17,7 @@ selector:
   params:
     use_softmax: false
     answer_hidden_size: 1024
-    n_answers: 325
+    n_answers: 353
     hidden_1: 1024
     hidden_2: 1024
     dropout: 0.5

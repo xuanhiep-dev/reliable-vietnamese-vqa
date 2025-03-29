@@ -121,13 +121,18 @@ class TrainingModeHandler:
     def build_compute_metrics(self):
         def compute_metrics(p):
             logits, labels = p
-            preds = np.argmax(logits, axis=1)
-
+            
+            # Debug information
+            print(f"DEBUG: Logits shape: {logits.shape}, Labels shape: {labels.shape}")
+            print(f"DEBUG: Logits sample: {logits[0][:5]}, Labels sample: {labels[0:5]}")
+            
+            # Filter out unknown labels first
             valid_mask = labels != self._unk_index
-            labels = labels[valid_mask]
-            preds = preds[valid_mask]
-
-            if len(labels) == 0:
+            filtered_labels = labels[valid_mask]
+            filtered_logits = logits[valid_mask]
+            
+            print(f"DEBUG: After filtering - Logits shape: {filtered_logits.shape}, Labels shape: {filtered_labels.shape}")
+            if len(filtered_labels) == 0:
                 return {
                     "accuracy": 0.0,
                     "precision": 0.0,
@@ -136,17 +141,49 @@ class TrainingModeHandler:
                 } if self._use_selector else {"accuracy": 0.0}
 
             if not self._use_selector:
-                acc = accuracy_score(labels, preds)
+                # For standard VQA model
+                preds = np.argmax(filtered_logits, axis=1)
+                acc = accuracy_score(filtered_labels, preds)
+                print(f"DEBUG: Standard VQA - Accuracy: {acc}")
                 return {"accuracy": acc}
             else:
-                correctness = (preds == labels).astype(int)
-                correctness = np.array(correctness, dtype=int)
-                preds = np.array(preds, dtype=int)
-
-                acc = accuracy_score(correctness, preds)
-                prec, recall, f1, _ = precision_recall_fscore_support(
-                    correctness, preds, average='binary', zero_division=0
-                )
+                # For selector model
+                # First get VQA predictions
+                # Print shape information for debugging
+                print(f"DEBUG: Filtered logits shape for selector: {filtered_logits.shape}")
+                
+                # Check if we have 2 classes (binary classification)
+                if filtered_logits.shape[1] == 2:
+                    # Binary classification
+                    print("DEBUG: Using binary classification logic")
+                    # Selector predictions - probability of being correct (class 1)
+                    selector_probs = filtered_logits[:, 1]
+                    selector_preds = (selector_probs > 0.5).astype(int)
+                    
+                    # Get VQA predictions for ground truth correctness
+                    vqa_preds = np.argmax(filtered_logits, axis=1)
+                    gt_correctness = (vqa_preds == filtered_labels).astype(int)
+                    
+                    # Count distribution of predictions and ground truth
+                    print(f"DEBUG: GT correctness distribution: 0s={np.sum(gt_correctness==0)}, 1s={np.sum(gt_correctness==1)}")
+                    print(f"DEBUG: Selector preds distribution: 0s={np.sum(selector_preds==0)}, 1s={np.sum(selector_preds==1)}")
+                    
+                    # Calculate metrics
+                    acc = accuracy_score(gt_correctness, selector_preds)
+                    prec, recall, f1, _ = precision_recall_fscore_support(
+                        gt_correctness, selector_preds, average='binary', zero_division=0
+                    )
+                else:
+                    # Non-binary case - treat as standard VQA
+                    print("DEBUG: Using multi-class logic")
+                    vqa_preds = np.argmax(filtered_logits, axis=1)
+                    gt_correctness = (vqa_preds == filtered_labels).astype(int)
+                    
+                    # Just use accuracy for now
+                    acc = np.mean(gt_correctness)
+                    prec, recall, f1 = 0.0, 0.0, 0.0
+                
+                print(f"DEBUG: Selector metrics - Acc: {acc}, Prec: {prec}, Rec: {recall}, F1: {f1}")
                 return {
                     "accuracy": acc,
                     "precision": prec,

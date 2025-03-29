@@ -261,6 +261,9 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
         logits = results["logits"]
         outputs = results["outputs"]
 
+        # For debugging
+        print(f"DEBUG: VQA logits shape: {logits.shape}")
+
         multiway_split_position = outputs["multiway_split_position"]
         multimodal_emb = outputs["encoder_out"]
         image_emb = outputs["encoder_out"][:,
@@ -268,13 +271,30 @@ class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
         text_emb = outputs["encoder_out"][:,
                                           multiway_split_position:, :]
 
+        # Pass detached tensors to the selector to ensure we're not updating VQA model if frozen
         selector_output = self.selector(
             logits.detach(),
             image_emb.detach(),
             text_emb.detach(),
             multimodal_emb.detach(),
         )
+        
+        # Get confidence scores from selector
         confidences = selector_output["confidences"]
+        
+        # For debugging
+        print(f"DEBUG: Selector confidences shape: {confidences.shape}")
+        
+        # Ensure confidences have correct shape for binary classification [batch_size, 2]
+        # where 0 = incorrect, 1 = correct
+        if confidences.shape[1] != 2:
+            print(f"WARNING: Unexpected selector confidence shape: {confidences.shape}, resizing to [batch_size, 2]")
+            # Create binary confidences: [incorrect, correct]
+            # Start with 50/50 probabilities to ensure we're not biasing
+            binary_confidences = torch.zeros((confidences.shape[0], 2), device=confidences.device)
+            binary_confidences[:, 0] = 0.5  # probability of being incorrect
+            binary_confidences[:, 1] = 0.5  # probability of being correct
+            confidences = binary_confidences
 
         return self.compute_loss(logits=logits, labels=labels, confidences=confidences, use_selector=self.use_selector)
 

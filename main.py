@@ -69,8 +69,7 @@ def train():
         eval_dataset=handler.valid_dataset,
         compute_metrics=compute_metrics,
         optimizers=(optimizer, None),
-        callbacks=[EarlyStoppingCallback(
-            early_stopping_patience=5), PrintMessageCallback(handler.config)]
+        callbacks=[PrintMessageCallback(handler.config)]
     )
 
     trainer.train()
