@@ -4,14 +4,19 @@ from evaluation.reliable_vqa_eval import ReliabilityEval
 
 
 class EvaluatorModeHandler:
-    def __init__(self, predict_df):
+    def __init__(self, predict_df, threshold_df=None):
         self.predict_df = predict_df
-        self.predict_df['question_id'] = range(1, len(self.predict_df) + 1)
-        self.questions = self._build_questions()
-        self.annotations = self._build_annotations()
-        self.predictions = self._build_predictions()
+        self.threshold_df = threshold_df or predict_df
 
-    def _build_questions(self):
+        self.predict_df['question_id'] = range(1, len(self.predict_df) + 1)
+        self.threshold_df['question_id'] = range(1, len(self.threshold_df) + 1)
+
+        self.questions = self._build_questions(self.predict_df)
+        self.annotations = self._build_annotations(self.predict_df)
+        self.predictions = self._build_predictions(self.predict_df)
+        self.threshold_predictions = self._build_predictions(self.threshold_df)
+
+    def _build_questions(self, df):
         return {
             'questions': [
                 {
@@ -19,23 +24,23 @@ class EvaluatorModeHandler:
                     'question': row['question'],
                     'question_id': row['question_id']
                 }
-                for _, row in self.predict_df.iterrows()
+                for _, row in df.iterrows()
             ]
         }
 
-    def _build_annotations(self):
+    def _build_annotations(self, df):
         return {
             'annotations': [
                 {
-                    'answers': row['answer'],
+                    'answers': row['ground_truth'],
                     'image_id': row['img_id'],
                     'question_id': row['question_id']
                 }
-                for _, row in self.predict_df.iterrows()
+                for _, row in df.iterrows()
             ]
         }
 
-    def _build_predictions(self):
+    def _build_predictions(self, df):
         return [
             {
                 'question_id': row['question_id'],
@@ -43,7 +48,7 @@ class EvaluatorModeHandler:
                 'confidence': row['confidence'],
                 'image_id': row['img_id']
             }
-            for _, row in self.predict_df.iterrows()
+            for _, row in df.iterrows()
         ]
 
     def _load_data_from_dicts(self, risk_tolerances):
@@ -55,7 +60,10 @@ class EvaluatorModeHandler:
         )
 
         res_vqa = ann_vqa.loadRes(VQA(), self.predictions)
-        threshold_res_vqa = ann_vqa.loadRes(VQA(), self.predictions)
+        threshold_res_vqa = (
+            ann_vqa.loadRes(VQA(), self.threshold_predictions)
+            if self.threshold_df is not None else None
+        )
 
         return ann_vqa, res_vqa, threshold_res_vqa, vqa_eval
 
