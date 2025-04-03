@@ -72,11 +72,12 @@ class PredictorModeHandler:
 
             ground_truth = [batch["answers"][i] for i in range(len(labels))]
 
+            reversed_vocab = {v: k for k,
+                              v in test_dataset.get_vocab().items()}
             for i in range(len(pred_idx)):
                 pred = pred_idx[i].item()
                 confidence = probs[i][pred].item()
-                print(pred)
-                answer = test_dataset.get_vocab().get(pred, "I don't know")
+                answer = reversed_vocab.get(pred, "I don't know")
                 predictions.append(answer)
                 confidences.append(confidence)
                 ground_truths.append(ground_truth[i])
