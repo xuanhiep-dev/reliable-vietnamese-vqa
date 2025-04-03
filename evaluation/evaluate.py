@@ -6,7 +6,10 @@ from evaluation.reliable_vqa_eval import ReliabilityEval
 class EvaluatorModeHandler:
     def __init__(self, predict_df, threshold_df=None):
         self.predict_df = predict_df
-        self.threshold_df = threshold_df or predict_df
+        if threshold_df is None or threshold_df.empty:
+            self.threshold_df = predict_df
+        else:
+            self.threshold_df = threshold_df
 
         self.predict_df['question_id'] = range(1, len(self.predict_df) + 1)
         self.threshold_df['question_id'] = range(1, len(self.threshold_df) + 1)
