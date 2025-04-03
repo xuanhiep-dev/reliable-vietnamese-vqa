@@ -192,7 +192,7 @@ class TrainingModeHandler:
         predicted_answer = [index_to_answer[idx] for idx in predicted_index]
         confidence_scores = torch.max(probabilities, dim=-1).values.numpy()
         ground_truth = [self._test_dataset.vocab_a[idx]
-                        for idx in self._test_dataset.answers]
+                        for idx in self._test_dataset["labels"]]
 
         return predicted_answer, confidence_scores, ground_truth
 
