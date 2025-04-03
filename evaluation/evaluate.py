@@ -7,6 +7,7 @@ class EvaluatorModeHandler:
     def __init__(self, predict_df, threshold_df=None):
         self.predict_df = predict_df
         if threshold_df is None or threshold_df.empty:
+            print(1)
             self.threshold_df = predict_df
         else:
             self.threshold_df = threshold_df
