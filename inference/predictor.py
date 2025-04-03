@@ -69,12 +69,13 @@ class PredictorModeHandler:
                                padding_mask=masks).logits
                 probs = torch.softmax(logits, dim=-1)
                 pred_idx = torch.argmax(probs, dim=-1)
-            print(pred_idx)
+
             ground_truth = [batch["answers"][i] for i in range(len(labels))]
 
             for i in range(len(pred_idx)):
                 pred = pred_idx[i].item()
                 confidence = probs[i][pred].item()
+                print(pred)
                 answer = test_dataset.get_vocab().get(pred, "I don't know")
                 predictions.append(answer)
                 confidences.append(confidence)
