@@ -3,8 +3,10 @@ import torch
 import models.model
 from utils.config import ConfigLoader
 from timm.models import create_model
-from utils.dataset import get_sample
+from utils.dataset import ViVQAProcessor
 from PIL import Image
+from torch.utils.data import DataLoader
+import pandas as pd
 import matplotlib.pyplot as plt
 
 
@@ -36,12 +38,68 @@ class PredictorModeHandler:
 
         return model.to(device).eval()
 
+    def predict_test_dataset(self, model, test_dataset, batch_size=32):
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        model.eval()
+
+        dataloader = DataLoader(
+            test_dataset, batch_size=batch_size, shuffle=False)
+
+        predictions = []
+        confidences = []
+        ground_truths = []
+        for batch in dataloader:
+            images = batch["image"].to(device, dtype=torch.float32)
+            questions = batch["question"].to(device)
+            masks = batch["padding_mask"].to(device)
+            labels = batch["labels"].cpu().numpy()
+
+            with torch.no_grad():
+                logits = model(image=images, question=questions,
+                               padding_mask=masks).logits
+                probs = torch.softmax(logits, dim=-1)
+                pred_idx = torch.argmax(probs, dim=-1)
+
+            ground_truth = [batch["vocab"].get(
+                label, "I don't know") for label in labels]
+
+            for i in range(len(pred_idx)):
+                pred = pred_idx[i].item()
+                confidence = probs[i][pred].item()
+                answer = batch["vocab"].get(pred, "I don't know")
+                predictions.append(answer)
+                confidences.append(confidence)
+                ground_truths.append(ground_truth[i])
+
+        self.save_predictions(predictions, confidences, ground_truths)
+
+    def save_predictions(self, predictions, confidences, ground_truths):
+        questions, img_ids = zip(*self._extract_metadata())
+
+        df = pd.DataFrame({
+            "question": questions,
+            "img_id": img_ids,
+            "answer": predictions,
+            "confidence": confidences,
+            "ground_truth": ground_truths
+        })
+
+        os.makedirs(self._paths_cfg["prediction_path"], exist_ok=True)
+        subset_id = self._cfg.get("training")["subset_id"]
+        filename = f"answers-{subset_id}.csv" if subset_id is not None else "answers.csv"
+        output_path = os.path.join(
+            self._paths_cfg["prediction_path"], filename)
+
+        df.to_csv(output_path, encoding="utf-8")
+        print(f"[INFO] Predictions saved to {output_path}")
+
     def predict_sample(self, model, image_path, question):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         print(
             f"[INFO] Question: {question}")
 
-        sample = get_sample(self._paths_cfg, image_path, question)
+        vivqa_processor = ViVQAProcessor(self._paths_cfg)
+        sample = vivqa_processor.process_sample(image_path, question)
         image = sample["image"].to(device, dtype=torch.float32)
         question_ids = sample["question"].to(device)
         mask = sample["padding_mask"].to(device)
@@ -55,9 +113,7 @@ class PredictorModeHandler:
             confidence = probs[0][pred_idx].item()
 
         answer = sample["vocab"].get(pred_idx, "I don't know")
-
         print(f"[RESULT] Answer: {answer} (Confidence: {confidence:.4f})")
-
         self.plot_an_image(image_path)
 
     def plot_an_image(self, image_path):

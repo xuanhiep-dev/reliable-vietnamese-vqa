@@ -5,7 +5,7 @@ import torch
 import pandas as pd
 import numpy as np
 from utils.config import ConfigLoader
-from utils.dataset import get_dataset
+from utils.dataset import Process, ViVQADataset
 from timm.models import create_model
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 
@@ -13,8 +13,6 @@ from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 class TrainingModeHandler:
     def __init__(self, config: ConfigLoader = None):
         self._cfg = config or ConfigLoader.from_cli()
-        self._train_dataset, self._valid_dataset, self._test_dataset = get_dataset(
-            self._cfg)
         self._paths_cfg = self._cfg.get("paths")
         self._model_cfg = self._cfg.get("model")
         self._use_selector = self._model_cfg.get("use_selector", False)
@@ -25,6 +23,8 @@ class TrainingModeHandler:
         self.ckpt_cfg["load_path"] = self.ckpt_cfg["load_path"] or "checkpoints/"
         self._base_model_path = self.ckpt_cfg["base_model_path"] or os.path.join(
             "checkpoints/base", self._paths_cfg["base_model"])
+
+        self._train_dataset, self._valid_dataset, self._test_dataset = self.get_dataset()
         self._model = None
 
     # ====== Properties ======
@@ -47,6 +47,28 @@ class TrainingModeHandler:
     @property
     def model(self):
         return self._model
+
+    # ====== Pre-processing process ======
+    def get_dataset(self, validation=True):
+        processor = Process()
+        image_path = self._paths_cfg["image_path"]
+        ans_path = self._paths_cfg["ans_path"]
+
+        df_train = pd.read_csv(self._paths_cfg["train_path"], index_col=0)
+        df_test = pd.read_csv(self._paths_cfg["test_path"], index_col=0)
+
+        train_dataset = ViVQADataset(
+            df_train, processor, image_path, ans_path)
+        test_dataset = ViVQADataset(
+            df_test, processor, image_path, ans_path)
+
+        if validation:
+            df_val = pd.read_csv(self._paths_cfg["valid_path"], index_col=0)
+            val_dataset = ViVQADataset(
+                df_val, processor, image_path, ans_path)
+            return train_dataset, val_dataset, test_dataset
+
+        return train_dataset, test_dataset
 
     # ====== Model Operations ======
     def save_base_model(self):
@@ -123,18 +145,6 @@ class TrainingModeHandler:
             logits, labels = p
             preds = np.argmax(logits, axis=1)
 
-            valid_mask = labels != self._unk_index
-            labels = labels[valid_mask]
-            preds = preds[valid_mask]
-
-            if len(labels) == 0:
-                return {
-                    "accuracy": 0.0,
-                    "precision": 0.0,
-                    "recall": 0.0,
-                    "f1": 0.0
-                } if self._use_selector else {"accuracy": 0.0}
-
             if not self._use_selector:
                 acc = accuracy_score(labels, preds)
                 return {"accuracy": acc}
@@ -172,7 +182,7 @@ class TrainingModeHandler:
 
     # ====== Prediction ======
     def _get_index_to_answer(self):
-        return {v: k for k, v in self._test_dataset.get_answers().items()}
+        return {v: k for k, v in self._test_dataset.get_vocab().items()}
 
     def _predict_answers(self, trainer, index_to_answer):
         predictions = trainer.predict(self._test_dataset)
@@ -182,17 +192,20 @@ class TrainingModeHandler:
         predicted_index = torch.argmax(probabilities, dim=-1).numpy()
         predicted_answer = [index_to_answer[idx] for idx in predicted_index]
         confidence_scores = torch.max(probabilities, dim=-1).values.numpy()
+        ground_truth = [self._test_dataset.vocab_a[idx]
+                        for idx in self._test_dataset.answers]
 
-        return predicted_answer, confidence_scores
+        return predicted_answer, confidence_scores, ground_truth
 
-    def _save_predictions(self, predicted_answer, confidence_scores):
+    def _save_predictions(self, predicted_answer, confidence_scores, ground_truth):
         questions, img_ids = zip(*self._extract_metadata())
 
         df = pd.DataFrame({
             "question": questions,
             "img_id": img_ids,
             "answer": np.array(predicted_answer, dtype=str),
-            "confidence": np.array(confidence_scores, dtype=np.float32)
+            "confidence": np.array(confidence_scores, dtype=np.float32),
+            "ground_truth": np.array(ground_truth, dtype=str)
         })
 
         os.makedirs(self._paths_cfg["prediction_path"], exist_ok=True)

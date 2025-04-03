@@ -155,22 +155,12 @@ class BEiT3Wrapper(nn.Module):
 
         if not use_selector:
             if labels is not None:
-                loss = F.cross_entropy(
-                    logits, labels, ignore_index=self.unk_index)
+                loss = F.cross_entropy(logits, labels)
         else:
             if labels is not None:
                 pred_inds = torch.argmax(F.softmax(logits, dim=1), dim=1)
                 correctness = (pred_inds == labels).to(dtype=torch.long)
-
-                valid_mask = labels != self.unk_index
-                if valid_mask.any():
-                    filtered_confidences = confidences[valid_mask]
-                    filtered_correctness = correctness[valid_mask]
-                    loss = F.cross_entropy(
-                        filtered_confidences, filtered_correctness)
-                else:
-                    loss = torch.tensor(
-                        0.0, device=logits.device, requires_grad=True)
+                loss = F.cross_entropy(confidences, correctness)
 
         return ViVQAOutput(
             loss=loss,
