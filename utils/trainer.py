@@ -168,12 +168,11 @@ class TrainingModeHandler:
 
     # ====== Post-training process ======
     def post_train(self, trainer):
-        if not self._use_selector:
-            index_to_answer = self._get_index_to_answer()
-            predicted_answer, confidence_scores = self._predict_answers(
-                trainer, index_to_answer)
-            self._save_predictions(predicted_answer, confidence_scores)
-            self._evaluate_model(trainer)
+        index_to_answer = self._get_index_to_answer()
+        predicted_answer, confidence_scores = self._predict_answers(
+            trainer, index_to_answer)
+        self._save_predictions(predicted_answer, confidence_scores)
+        self._evaluate_model(trainer)
 
     def _evaluate_model(self, trainer):
         results = trainer.evaluate(self._test_dataset)
