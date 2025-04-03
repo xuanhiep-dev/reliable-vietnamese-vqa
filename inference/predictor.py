@@ -38,19 +38,19 @@ class PredictorModeHandler:
 
         return model.to(device).eval()
 
-    def get_test_dataset(self):
+    def get_test_dataset(self, test_path):
         processor = Process()
         image_path = self._paths_cfg["image_path"]
         ans_path = self._paths_cfg["ans_path"]
-        df_test = pd.read_csv(self._paths_cfg["test_path"], index_col=0)
+        df_test = pd.read_csv(test_path, index_col=0)
         test_dataset = ViVQADataset(df_test, processor, image_path, ans_path)
         return test_dataset
 
-    def predict_test_dataset(self, model, batch_size=32):
+    def predict_test_dataset(self, model, test_path, batch_size=32):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model.eval()
 
-        test_dataset = self.get_test_dataset()
+        test_dataset = self.get_test_dataset(test_path)
         dataloader = DataLoader(
             test_dataset, batch_size=batch_size, shuffle=False)
 
