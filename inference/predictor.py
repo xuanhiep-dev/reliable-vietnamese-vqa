@@ -75,7 +75,7 @@ class PredictorModeHandler:
             for i in range(len(pred_idx)):
                 pred = pred_idx[i].item()
                 confidence = probs[i][pred].item()
-                answer = batch["answers"][i]
+                answer = batch["answers"][pred]
                 predictions.append(answer)
                 confidences.append(confidence)
                 ground_truths.append(ground_truth[i])
