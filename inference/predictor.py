@@ -69,7 +69,7 @@ class PredictorModeHandler:
                                padding_mask=masks).logits
                 probs = torch.softmax(logits, dim=-1)
                 pred_idx = torch.argmax(probs, dim=-1)
-
+            print(pred_idx)
             ground_truth = [batch["answers"][i] for i in range(len(labels))]
 
             for i in range(len(pred_idx)):
