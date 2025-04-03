@@ -93,7 +93,7 @@ class ViVQADataset(Dataset):
 
         with open(answers_path, 'r') as f:
             self.vocab_a = json.load(f)['answer']
-        self.answers = self.answers2idx(
+        self.labels = self.answers2idx(
             self.processor.preprocess_answers(dataframe), self.vocab_a)
 
     def answers2idx(self, answers, vocab_a):
@@ -105,7 +105,8 @@ class ViVQADataset(Dataset):
     def __getitem__(self, idx):
         question = self.dataframe['question'].iloc[idx]
         img_id = self.dataframe['img_id'].iloc[idx]
-        answer = self.answers[idx]
+        answer = self.dataframe['answer'].iloc[idx]
+        label = self.labels[idx]
 
         image = Image.open(f'{self.image_path}/{img_id}.jpg')
         inputs = self.processor(image, question,
@@ -116,7 +117,7 @@ class ViVQADataset(Dataset):
                                 padding='max_length',
                                 max_length=40)
 
-        inputs.update({'labels': answer})
+        inputs.update({'labels': label, 'answers': answer})
 
         return inputs
 

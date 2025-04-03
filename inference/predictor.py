@@ -69,13 +69,12 @@ class PredictorModeHandler:
                 probs = torch.softmax(logits, dim=-1)
                 pred_idx = torch.argmax(probs, dim=-1)
 
-            ground_truth = [batch["vocab"].get(
-                label, "I don't know") for label in labels]
+            ground_truth = [batch["answers"][i] for i in range(len(labels))]
 
             for i in range(len(pred_idx)):
                 pred = pred_idx[i].item()
                 confidence = probs[i][pred].item()
-                answer = batch["vocab"].get(pred, "I don't know")
+                answer = batch["answers"][i]
                 predictions.append(answer)
                 confidences.append(confidence)
                 ground_truths.append(ground_truth[i])
