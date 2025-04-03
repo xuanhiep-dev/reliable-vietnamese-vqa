@@ -58,7 +58,8 @@ class PredictorModeHandler:
         predictions = []
         confidences = []
         ground_truths = []
-        for batch in tqdm(dataloader, desc="Running predictions", unit="sample"):
+        total_samples = len(dataloader.dataset)
+        for batch in tqdm(dataloader, desc="Running predictions", total=total_samples, unit="sample"):
             images = batch["image"].to(device, dtype=torch.float32)
             questions = batch["question"].to(device)
             masks = batch["padding_mask"].to(device)
