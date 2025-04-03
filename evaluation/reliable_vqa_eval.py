@@ -33,8 +33,6 @@
 # policies,
 # either expressed or implied, of the FreeBSD Project.
 
-import re
-
 from utils.dataset import Process
 from collections import OrderedDict
 
