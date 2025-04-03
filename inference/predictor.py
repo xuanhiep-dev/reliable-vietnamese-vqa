@@ -6,6 +6,7 @@ from timm.models import create_model
 from utils.dataset import Process, ViVQADataset, ViVQAProcessor
 from PIL import Image
 from torch.utils.data import DataLoader
+from tqdm import tqdm
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -57,7 +58,7 @@ class PredictorModeHandler:
         predictions = []
         confidences = []
         ground_truths = []
-        for batch in dataloader:
+        for batch in tqdm(dataloader, desc="Processing batches", unit="batch"):
             images = batch["image"].to(device, dtype=torch.float32)
             questions = batch["question"].to(device)
             masks = batch["padding_mask"].to(device)
@@ -79,10 +80,11 @@ class PredictorModeHandler:
                 confidences.append(confidence)
                 ground_truths.append(ground_truth[i])
 
-        self.save_predictions(predictions, confidences, ground_truths)
+        self.save_predictions(predictions, confidences,
+                              ground_truths, test_dataset)
 
-    def save_predictions(self, predictions, confidences, ground_truths):
-        questions, img_ids = zip(*self._extract_metadata())
+    def save_predictions(self, predictions, confidences, ground_truths, test_dataset):
+        questions, img_ids = zip(*self._extract_metadata(test_dataset))
 
         df = pd.DataFrame({
             "question": questions,
@@ -100,6 +102,12 @@ class PredictorModeHandler:
 
         df.to_csv(output_path, encoding="utf-8")
         print(f"[INFO] Predictions saved to {output_path}")
+
+    def _extract_metadata(self, test_dataset):
+        for idx in range(len(test_dataset)):
+            metadata = test_dataset.get_sample_metadata(idx)
+            if metadata:
+                yield metadata["question"], metadata["img_id"]
 
     def predict_sample(self, model, image_path, question):
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
