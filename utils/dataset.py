@@ -40,49 +40,14 @@ class Process:
     def process_image(self, image):
         return self.image_processor(image.convert("RGB"))
 
-    def process_text(self,
-                     text: Union[str, List[str], List[int]] = None,
-                     add_special_tokens: bool = True,
-                     padding: Union[bool, str,
-                                    transformers.utils.generic.PaddingStrategy] = False,
-                     truncation: Union[bool, str,
-                                       transformers.tokenization_utils_base.TruncationStrategy] = None,
-                     max_length: Optional[int] = None,
-                     stride: int = 0,
-                     is_split_into_words: bool = False,
-                     pad_to_multiple_of: Optional[int] = None,
-                     return_tensors: Optional[Union[str, TensorType]] = None,
-                     return_token_type_ids: Optional[bool] = None,
-                     return_attention_mask: Optional[bool] = None,
-                     return_overflowing_tokens: bool = False,
-                     return_special_tokens_mask: bool = False,
-                     return_offsets_mapping: bool = False,
-                     return_length: bool = False,
-                     verbose: bool = True,):
+    def process_text(self, text: Union[str, List[str], List[int]] = None, **kwargs):
         text = word_tokenize(text.lower(), format='text')
-        text = self.tokenizer.encode_plus(
-            text=text,
-            add_special_tokens=add_special_tokens,
-            padding=padding,
-            truncation=truncation,
-            max_length=max_length,
-            stride=stride,
-            is_split_into_words=is_split_into_words,
-            pad_to_multiple_of=pad_to_multiple_of,
-            return_tensors=return_tensors,
-            return_token_type_ids=return_token_type_ids,
-            return_attention_mask=return_attention_mask,
-            return_overflowing_tokens=return_overflowing_tokens,
-            return_special_tokens_mask=return_special_tokens_mask,
-            return_offsets_mapping=return_offsets_mapping,
-            return_length=return_length,
-            verbose=verbose
-        )
+        text = self.tokenizer.encode_plus(text=text, **kwargs)
         return text
 
-    def __call__(self, image, text=None):
+    def __call__(self, image, text=None, **kwargs):
         image = self.process_image(image)
-        text = self.process_text(text)
+        text = self.process_text(text, **kwargs)
         text['padding_mask'] = 1 - text['attention_mask']
 
         return {
