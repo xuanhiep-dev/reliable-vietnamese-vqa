@@ -20,6 +20,18 @@ pip install --upgrade timm
 !bash scripts/train_vqa_mulmodels_loop.sh subsets=subset_id1,subset_id2,...
 ```
 ## 3. Evaluation.
+### 3.1. Load existing model.
+```bash
+from inference.predictor import PredictorModeHandler
+
+predictor = PredictorModeHandler()
+model = predictor.load_final_model(<path_to_selective_model>)
+```
+### 3.2. Get the prediction and save result.
+```bash
+predictor.predict_test_dataset(<loaded_model>, <path_to_test_dataset>)
+```
+### 3.3. Evaluate the result.
 ```bash
 from evaluation.evaluate import EvaluatorModeHandler
 import pandas as pd
