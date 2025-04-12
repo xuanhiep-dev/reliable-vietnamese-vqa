@@ -19,7 +19,6 @@ selector:
     answer_hidden_size: 1024
     n_answers: 353
     hidden_1: 1024
-    hidden_2: 1024
     dropout: 0.5
     top_k: 5
     full_dist: true
