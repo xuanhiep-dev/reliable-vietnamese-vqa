@@ -7,7 +7,7 @@ save_total_limit: 1
 
 train_batch_size: 32
 eval_batch_size: 32
-epochs: 1
+epochs: 50
 learning_rate: 3e-5
 weight_decay: 0.01
 workers: 2
