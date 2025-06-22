@@ -5,7 +5,6 @@ from underthesea import word_tokenize
 import re
 import json
 import torch
-import pandas as pd
 from omegaconf import OmegaConf
 from lavis.common.registry import registry
 from typing import List, Optional, Union
@@ -38,49 +37,17 @@ class Process:
         vis_processors = _build_proc_from_cfg(vis_eval_cfg)
         return vis_processors
 
-    def __call__(
-        self,
-        image,
-        text: Union[str, List[str], List[int]] = None,
-        add_special_tokens: bool = True,
-        padding: Union[bool, str,
-                       transformers.utils.generic.PaddingStrategy] = False,
-        truncation: Union[bool, str,
-                          transformers.tokenization_utils_base.TruncationStrategy] = None,
-        max_length: Optional[int] = None,
-        stride: int = 0,
-        is_split_into_words: bool = False,
-        pad_to_multiple_of: Optional[int] = None,
-        return_tensors: Optional[Union[str, TensorType]] = None,
-        return_token_type_ids: Optional[bool] = None,
-        return_attention_mask: Optional[bool] = None,
-        return_overflowing_tokens: bool = False,
-        return_special_tokens_mask: bool = False,
-        return_offsets_mapping: bool = False,
-        return_length: bool = False,
-        verbose: bool = True,
-    ):
-        image = self.image_processor(image.convert("RGB"))
+    def process_image(self, image):
+        return self.image_processor(image.convert("RGB"))
 
+    def process_text(self, text: Union[str, List[str], List[int]] = None, **kwargs):
         text = word_tokenize(text.lower(), format='text')
-        text = self.tokenizer.encode_plus(
-            text=text,
-            add_special_tokens=add_special_tokens,
-            padding=padding,
-            truncation=truncation,
-            max_length=max_length,
-            stride=stride,
-            is_split_into_words=is_split_into_words,
-            pad_to_multiple_of=pad_to_multiple_of,
-            return_tensors=return_tensors,
-            return_token_type_ids=return_token_type_ids,
-            return_attention_mask=return_attention_mask,
-            return_overflowing_tokens=return_overflowing_tokens,
-            return_special_tokens_mask=return_special_tokens_mask,
-            return_offsets_mapping=return_offsets_mapping,
-            return_length=return_length,
-            verbose=verbose
-        )
+        text = self.tokenizer.encode_plus(text=text, **kwargs)
+        return text
+
+    def __call__(self, image, text=None, **kwargs):
+        image = self.process_image(image)
+        text = self.process_text(text, **kwargs)
         text['padding_mask'] = 1 - text['attention_mask']
 
         return {
@@ -89,18 +56,45 @@ class Process:
             'padding_mask': text['padding_mask']
         }
 
+    def process_punctuation(self, s):
+        period_strip = re.compile(r'(?!<=\d)(\.)(?!\d)')
+        comma_strip = re.compile(r'(\d)(,)(\d)')
+        punctuation_chars = re.escape(r';/[]"{}()=+\_-><@`,?!.')
+        punctuation = re.compile(
+            r'([{}])'.format(re.escape(punctuation_chars)))
+        punctuation_with_a_space = re.compile(
+            r'(?<= )([{0}])|([{0}])(?= )'.format(punctuation_chars))
+
+        if punctuation.search(s) is None:
+            return s
+        s = punctuation_with_a_space.sub('', s)
+        if re.search(comma_strip, s) is not None:
+            s = s.replace(',', '')
+        s = punctuation.sub(' ', s)
+        s = period_strip.sub('', s)
+        return s.strip()
+
+    def preprocess_questions(self, df):
+        questions = [word_tokenize(question.lower(), format='text')
+                     for question in list(df['question'])]
+        return questions
+
+    def preprocess_answers(self, df):
+        answers = [self.process_punctuation(answer.lower())
+                   for answer in list(df['answer'])]
+        return answers
+
 
 class ViVQADataset(Dataset):
     def __init__(self, dataframe, processor, image_path, answers_path):
-        with open(answers_path, 'r') as f:
-            vocab = json.loads(f.read())
-        self.vocab_a = vocab['answer']
-        self.answers = self.answers2idx(
-            preprocess_answers(dataframe), self.vocab_a)
-
         self.dataframe = dataframe
         self.image_path = image_path
         self.processor = processor
+
+        with open(answers_path, 'r') as f:
+            self.vocab_a = json.load(f)['answer']
+        self.labels = self.answers2idx(
+            self.processor.preprocess_answers(dataframe), self.vocab_a)
 
     def answers2idx(self, answers, vocab_a):
         return [vocab_a[answer] for answer in answers]
@@ -111,7 +105,8 @@ class ViVQADataset(Dataset):
     def __getitem__(self, idx):
         question = self.dataframe['question'].iloc[idx]
         img_id = self.dataframe['img_id'].iloc[idx]
-        answer = self.answers[idx]
+        answer = self.dataframe['answer'].iloc[idx]
+        label = self.labels[idx]
 
         image = Image.open(f'{self.image_path}/{img_id}.jpg')
         inputs = self.processor(image, question,
@@ -121,57 +116,41 @@ class ViVQADataset(Dataset):
                                 truncation=True,
                                 padding='max_length',
                                 max_length=40)
-        inputs |= {'labels': answer}
+
+        inputs.update({'labels': label, 'answers': answer})
 
         return inputs
 
+    def get_sample_metadata(self, idx):
+        return {
+            "question": self.dataframe['question'].iloc[idx],
+            "img_id": self.dataframe['img_id'].iloc[idx]
+        }
 
-def get_dataset(opt, validation=True):
-    processor = Process()
-
-    df_train = pd.read_csv(opt.train_path, index_col=0)
-    df_test = pd.read_csv(opt.test_path, index_col=0)
-
-    train_dataset = ViVQADataset(
-        df_train, processor, opt.image_path, opt.ans_path)
-    test_dataset = ViVQADataset(
-        df_test, processor, opt.image_path, opt.ans_path)
-
-    if validation:
-        df_val = pd.read_csv(opt.val_path, index_col=0)
-        val_dataset = ViVQADataset(
-            df_val, processor, opt.image_path, opt.ans_path)
-        return train_dataset, val_dataset, test_dataset
-
-    return train_dataset, test_dataset
+    def get_vocab(self):
+        return self.vocab_a
 
 
-period_strip = re.compile(r'(?!<=\d)(\.)(?!\d)')
-comma_strip = re.compile(r'(\d)(,)(\d)')
-punctuation_chars = re.escape(r';/[]"{}()=+\_-><@`,?!.')
-punctuation = re.compile(r'([{}])'.format(re.escape(punctuation_chars)))
-punctuation_with_a_space = re.compile(
-    r'(?<= )([{0}])|([{0}])(?= )'.format(punctuation_chars))
+class ViVQAProcessor:
+    def __init__(self, cfg):
+        self.processor = Process()
+        with open(cfg["ans_path"], 'r') as f:
+            self.vocab = {v:  self.processor.process_punctuation(
+                k.lower()) for k, v in json.load(f)["answer"].items()}
 
+    def process_sample(self, image_path, question):
+        image = Image.open(image_path)
+        output = self.processor(image, question,
+                                return_tensors='pt',
+                                return_token_type_ids=False,
+                                return_attention_mask=True,
+                                truncation=True,
+                                padding='max_length',
+                                max_length=40)
 
-def process_punctuation(s):
-    if punctuation.search(s) is None:
-        return s
-    s = punctuation_with_a_space.sub('', s)
-    if re.search(comma_strip, s) is not None:
-        s = s.replace(',', '')
-    s = punctuation.sub(' ', s)
-    s = period_strip.sub('', s)
-    return s.strip()
+        output["image"] = torch.tensor(output["image"]).unsqueeze(0)
+        output["question"] = torch.tensor(output["question"])
+        output["padding_mask"] = torch.tensor(output["padding_mask"])
+        output['vocab'] = self.vocab_a
 
-
-def preprocess_questions(df):
-    questions = [word_tokenize(question.lower(), format='text')
-                 for question in list(df['question'])]
-    return questions
-
-
-def preprocess_answers(df):
-    answers = [process_punctuation(answer.lower())
-               for answer in list(df['answer'])]
-    return answers
+        return output

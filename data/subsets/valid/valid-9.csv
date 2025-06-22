@@ -1,0 +1,2401 @@
+,question,answer,img_id,type
+0,màu của món ăn là gì,màu vàng,448161,2
+1,những gì đang ngồi trên khăn trên ghế,con chó,437231,0
+2,con mèo nằm ở đâu,giường,233970,3
+3,một ông già mặc một cái cà vạt màu xanh sáng ở đâu,phòng bếp,46013,3
+4,nhóm đầu bếp nấu ăn ở đâu,phòng bếp,16125,3
+5,con gì đang ăn cỏ trên mặt đất,ngựa rằn,581253,0
+6,làm gì có đàn đi bộ băng qua một khu rừng có cỏ,con voi,550872,0
+7,"những gì chứa đầy bánh sandwich, quả mọng cắt lát và dưa chuột thái lát",thùng chứa,368581,0
+8,những gì đang đi qua cỏ cao,con voi,456483,0
+9,màu của ô tô là gì,màu vàng,447135,2
+10,những gì đang nằm trên một chiếc giường chưa được đánh hoa,con mèo,499486,0
+11,những gì ở cuối một con đường đông đúc,tòa tháp,566026,0
+12,nhà vệ sinh trắng trong một ngôi nhà những gì,phòng tắm,392928,0
+13,có bao nhiêu người ngồi trong căn phòng đầy chuối,năm,90891,1
+14,màu của vòi nước là gì,màu vàng,331074,2
+15,những gì bên cạnh một con ngựa nâu,con ngựa,502410,0
+16,màu của dĩa nhựa là gì,màu tía,130886,2
+17,những gì chuyến tàu đang đi xuống một số bài hát,hàng hoá,423215,0
+18,có bao nhiêu con ngựa vằn trưởng thành đứng gần đống đất hếch,ba,31269,1
+19,"giường 4 trụ, tủ quần áo và giấy dán tường hoa ở đâu",phòng ngủ,228043,3
+20,có bao nhiêu chiếc bánh rán bên trong một hộp bánh rán dunkin 'đang mở,sáu,411624,1
+21,cô bé đang đứng ở đâu trong khi đánh răng,hộp,190863,3
+22,tham quan những gì đậu trên đường phố cùng với các tòa nhà thương mại,xe buýt,352481,0
+23,màu của xe buýt là gì,màu trắng,114844,2
+24,màu của ruy băng là gì,màu đỏ,476207,2
+25,anh ấy đang đánh răng ở đâu,gương,388894,3
+26,hai người phụ nữ trang trí những gì,bánh,548703,0
+27,những gì đánh hơi không khí gần một tách cà phê,con chó,521348,0
+28,màu của con mèo là gì,màu đen,439779,2
+29,có bao nhiêu chú gấu nhỏ trên cỏ vào một ngày nắng,hai,377282,1
+30,những gì được hiển thị trong cửa sổ của một chuồng,con ngựa,432016,0
+31,những gì đang đứng trên mặt đất,con chim,509719,0
+32,pizza lớn nằm ở đâu,hộp,570483,3
+33,có bao nhiêu người đàn ông đang cầm bộ điều khiển trò chơi điện tử,hai,196377,1
+34,những gì đang ngồi trên đường ray xe lửa,tàu hỏa,462244,0
+35,những gì chứa đầy những chiếc thuyền dưới bầu trời xanh nhiều mây,bến du thuyền,384215,0
+36,đường xuống phố trên đường là những gì,phương tiện giao thông,520503,0
+37,người đàn ông trẻ tuổi đang ở đâu,phòng tắm,505385,3
+38,màu của cái bát là gì,màu xanh dương,119870,2
+39,có bao nhiêu nhà vệ sinh đối diện nhau với rào cản riêng tư,hai,115709,1
+40,phía trước bức tranh có bao nhiêu chiếc xe đạp,năm,222961,1
+41,bao nhiêu người đàn ông nhìn vào máy ảnh trong khi một người khác nhìn đi chỗ khác,một,439765,1
+42,màu của cam là gì,màu đen,45543,2
+43,có bao nhiêu người trượt tuyết đang đi xuyên quốc gia theo hướng ngược lại,hai,390773,1
+44,màu của len là gì,màu nâu,241461,2
+45,những gì bừa bộn với giấy và vật và máy tính xách tay trên,cái bàn,444682,0
+46,những gì đang đi xuống các đường ray bên cạnh đường cao tốc,tàu hỏa,547839,0
+47,nhiều trái cây và rau quả ở đâu,thùng chứa,524662,3
+48,con gì nằm bên trong nôi để ngủ,con mèo,581402,0
+49,màu của xe tải là gì,màu trắng,370149,2
+50,có bao nhiêu người đang chơi trò chơi ném đĩa trong khu vực cỏ,bốn,518265,1
+51,những gì được hiển thị với một số lớp trên đó,pizza,366677,0
+52,đường ray nào cho phép tàu đến và đi,tàu hỏa,506416,0
+53,những con chó nóng được sử dụng ở đâu,món ăn,243970,3
+54,có bao nhiêu con chim đang đậu trên bến gỗ gần nước,năm,522252,1
+55,con chó đang ở đâu,gương,494190,3
+56,bồn cầu trắng ở đâu,phòng tắm,375544,3
+57,màu của con ngựa là gì,màu nâu,195420,2
+58,cặp vợ chồng ở đâu,ván lướt sóng,496552,3
+59,con chó đang đẩy cái gì,ván trượt,372874,0
+60,những gì đậu trên một chiếc cốc ai đó đang giữ với cây trong nền,con chim,437240,0
+61,màu của lá là gì,màu xanh lá,72592,2
+62,màu của đồ bơi là gì,màu đen,399809,2
+63,có bao nhiêu người đàn ông trao cúp qua lưới trong một sân tennis,bốn,486606,1
+64,có bao nhiêu con voi đi bộ trong một khu vực cỏ với cây và đá,ba,480687,1
+65,những gì được tải lên với hình ảnh của người đàn ông trên đó,xe tải,508087,0
+66,hai người ăn một phần những gì trên đĩa với ly rượu,pizza,507887,0
+67,con mèo đen với đôi mắt vàng ngồi ở đâu,cái ghế,233379,3
+68,người đàn ông ở đâu,xe lăn,51052,3
+69,có bao nhiêu khay nhỏ với một chiếc bánh rán và các món ăn khác,bốn,25955,1
+70,có bao nhiêu người đang đứng trên đỉnh núi với ván trượt nhìn xuống,năm,339501,1
+71,màu của xe buýt là gì,màu vàng,119449,2
+72,những gì đang di chuyển trên đường ray xe lửa,động cơ,561967,0
+73,màu của máy bay là gì,màu vàng,111707,2
+74,"làm gì, những con cừu này ăn",hay,341128,0
+75,những gì được chuyển đổi thành nhà kho máy tính tạm thời,phòng bếp,486383,0
+76,người đàn ông cưỡi trên con dốc tuyết phủ,trượt tuyết,351793,0
+77,có bao nhiêu lò vi sóng cũ nằm trên sàn nhà cạnh một cái thùng rác,ba,326445,1
+78,màu của gấu bông là gì,màu xám,521806,2
+79,người đàn ông trong một bộ đồ đứng ở đâu,ô cửa,402113,3
+80,có bao nhiêu người thưởng thức đồ uống và ăn thức ăn cùng nhau,ba,310865,1
+81,màu của chiếc bình là gì,màu trắng,436693,2
+82,cô gái đang xem một trận đấu tennis ở đâu,phòng,469832,3
+83,những gì bên cạnh một nhà thờ nhỏ màu trắng,đồng hồ,414340,0
+84,con lừa kéo không có hành khách là gì,xe đẩy,384513,0
+85,màu của bầu trời là gì,màu xanh dương,546285,2
+86,người đàn ông đang chơi một trò chơi ở đâu,phòng,139523,3
+87,có bao nhiêu con chim trắng trên lưng voi,hai,58483,1
+88,có bao nhiêu người đàn ông đổ rác vào một chiếc xe tải,hai,49643,1
+89,có bao nhiêu quả táo vẫn mọc trên cành cây có mấy lỗ sâu,ba,321089,1
+90,"những gì ăn mặc như những người lính, đến một chiếc thuyền",gấu,450762,0
+91,người đàn ông đang xem là gì về phía anh ta trên đường ray,tàu hỏa,395046,0
+92,hai đứa trẻ đang ngồi trên một chiếc ghế sọc nhỏ ở đâu,phòng,145139,3
+93,con mèo lớn thư giãn ở đâu,chậu,81826,3
+94,có gì được thiết lập trên một kệ sách,máy vi tính,454388,0
+95,có bao nhiêu con hươu cao cổ đang chơi trong cuộc triển lãm hộp cát của chúng,hai,73981,1
+96,những gì ngủ với chân trên điều khiển từ xa,con mèo,566998,0
+97,cái gì đang đậu bên cạnh nhà hàng,xe tải,577223,0
+98,người đàn ông đang mang một tấm ván lướt sóng trên đỉnh sóng bao phủ là gì,bờ biển,352027,0
+99,cái gì đậu trong bãi đậu xe,xe tải,371054,0
+100,những gì trông ra trên vùng nước,con chim,480205,0
+101,những gì đã cập cảng bận rộn,con thuyền,573709,0
+102,những gì trên vỉa hè,xe máy,578099,0
+103,con gấu bông được làm từ cái gì,cây,580284,0
+104,bàn chân ai đó đang đặt cạnh đâu,cái túi,66085,3
+105,có bao nhiêu người trượt tuyết bên cạnh một ngọn đồi,hai,551172,1
+106,gà với nước sốt và bông cải xanh được phục vụ ở đâu,món ăn,231052,3
+107,những gì đang di chuyển bên cạnh một con đường nước trên đường ray xe lửa,tàu hỏa,472881,0
+108,con mèo đang đi đến đâu,chậu,22041,3
+109,những gì cho thấy phòng tắm lát gạch với một bồn rửa và nhà vệ sinh,ảnh chụp,436848,0
+110,gấu đi lên một số tảng đá ở đâu,chuồng,535766,3
+111,có bao nhiêu con ngựa vằn đang ăn cỏ,hai,529348,1
+112,màu của gạch là gì,màu xám,43011,2
+113,người đàn ông đang giữ điện thoại di động ở đâu,xe ô tô,347700,3
+114,có bao nhiêu cậu bé đang đá quả bóng trong khi một cậu bé khác đang bảo vệ cậu ấy,một,54295,1
+115,những gì đang đậu cạnh nhau,xe buýt,342814,0
+116,cái gì đã thiết lập với chiếc xe đạp,cái lều,337561,0
+117,màu của quả bóng là gì,màu xanh dương,444692,2
+118,trên bàn có bao nhiêu chiếc bánh nướng trên các đĩa riêng biệt,ba,74794,1
+119,những gì ngoài trời đi trên cỏ xanh với cây ở gần,con voi,474170,0
+120,một số động vật được nhìn thấy ở đâu,cửa tiệm,200133,3
+121,có bao nhiêu người đứng trên ván trượt tuyết trên đỉnh dốc tuyết,sáu,4554,1
+122,hộp bánh rán được trang trí ở đâu,hộp,75362,3
+123,taxi nào xuống đường băng để cất cánh,máy bay,352151,0
+124,những gì thiết lập trên một chiếc ghế dài để bạn bè chơi cùng nhau,laptop,517081,0
+125,những gì đang đứng cùng nhau trên con đường đất,hươu cao cổ,528232,0
+126,"đâu là cảnh sát với một chiếc xe đạp,",đường phố,215201,3
+127,màu sắc của các xe bus là gì,màu vàng,177958,2
+128,con mèo đang nằm ở đâu,chậu,494891,3
+129,người đàn ông và một cậu bé chơi một trò chơi video ở đâu,phòng,208379,3
+130,người đàn ông đang đi với những gì và đang bước vào một cửa hàng mèo và chó,con chó,496897,0
+131,người đàn ông trẻ mang theo những gì trong bộ đồ tắm màu đỏ,ván lướt sóng,581557,0
+132,có bao nhiêu chuyến tàu cạnh nhau tại một ga đường sắt,ba,440346,1
+133,phòng tắm với nhà vệ sinh và đứng lên cái gì,vòi hoa sen,374707,0
+134,có bao nhiêu chú gấu tốt nghiệp màu đỏ xếp thành hàng,sáu,170980,1
+135,màu sắc của các dấu hiệu là gì,màu xanh lá,540476,2
+136,món tôm và bông cải xanh được phục vụ ở đâu,bát,372871,3
+137,con gấu nào đang đẻ trên cánh đồng gần một tảng đá,gấu trúc,536517,0
+138,có bao nhiêu con cừu thò ra khỏi tường và ăn cỏ khô trên mặt đất,năm,213739,1
+139,những gì đi liền với một thứ nhỏ hơn,gấu,516766,0
+140,gia đình ngồi ở đâu,phòng,482330,3
+141,hàng chục bánh rán đang nằm ở đâu,hộp,59454,3
+142,có bao nhiêu ván tuyết đang dựa vào tường,năm,318006,1
+143,có bao nhiêu người cưỡi trên đầu một con voi,ba,379405,1
+144,cái gì đang ngủ trên giường với một trải giường màu đỏ,con mèo,395644,0
+145,người phụ nữ và cô bé giữ gì trong mưa,chiếc ô,428985,0
+146,có bao nhiêu người nhìn xung quanh phòng khách của một ngôi nhà,ba,454144,1
+147,màu của gấu là gì,màu nâu,544279,2
+148,người đàn ông đang ngồi trên một chiếc ghế dài với máy tính xách tay ở đâu,phòng,336075,3
+149,màu của rau là gì,màu xanh lá,89912,2
+150,màu của quả bóng là gì,màu đỏ,202128,2
+151,đỗ gì ở ga tàu,xe lửa,550372,0
+152,màu của con chó là gì,màu đen,80094,2
+153,những gì cuộn tròn thân cây của mình trong một khu vực có rào chắn,con voi,392905,0
+154,có bao nhiêu con ngựa đi trên một dải đất khô cằn,năm,64377,1
+155,cô gái nhỏ đang ném một chiếc dĩa nhựa đỏ ở đâu,đường phố,74572,3
+156,những gì đỗ ở bên đường,xe máy,385428,0
+157,có bao nhiêu bình sữa trẻ em ngồi trên quầy bếp,năm,81042,1
+158,người đàn ông đang chơi games ở đâu,phòng,283431,3
+159,có bao nhiêu con mèo đang ngồi trên một chiếc ghế dài đang giữ,hai,506740,1
+160,con chuột ăn rau ở đâu,lồng,345497,3
+161,đang ngồi và đứng trên bãi cỏ là gì,con bò,344897,0
+162,người đang nằm ở đâu,giường,517349,3
+163,có bao nhiêu người với ván lướt sóng đang bước xuống nước,bốn,286925,1
+164,màu của nền là gì,màu đen,581732,2
+165,những người tốt đẹp nấu ăn nấu chín những gì,bữa ăn,462386,0
+166,cầu thủ bóng chày swing ở đâu,lồng,234006,3
+167,anh ấy đang ôm em bé ở đâu,cái ghế,356248,3
+168,có bao nhiêu người trên một chiếc xe máy đang lái xe xuống phố,hai,309862,1
+169,màu của vali là gì,màu xanh dương,491701,2
+170,máy bay bay dọc theo cái gì,núi,347367,0
+171,màu của dĩa nhựa là gì,màu tía,394,2
+172,cái gì đang ngồi trên cao trên đường dây điện,con chim,373519,0
+173,người đó cầm gì với một số thức ăn trên đó,đĩa ăn,360600,0
+174,có bao nhiêu cái nhìn về một căn bếp với cửa sổ sau bồn rửa,một,465163,1
+175,đứa trẻ đang ở đâu,phòng,445900,3
+176,những gì đang hướng về nguồn thực phẩm của nó,ngựa vằn,492647,0
+177,màu của chiếc bình là gì,màu xanh lá,528127,2
+178,màu của con ngựa là gì,màu nâu,147735,2
+179,màu của đoạn giới thiệu là gì,màu đỏ,293966,2
+180,đoàn tàu dừng ở đâu,trạm,95948,3
+181,"không gian phòng khách hiện đại, và những gì",nhiều cái ghế,545564,0
+182,màu của áo là gì,màu xanh dương,504917,2
+183,có bao nhiêu con chó đang ngồi trên các tầng của một khu vườn trống,ba,81766,1
+184,màu của gấu là gì,màu nâu,271568,2
+185,màu của xe máy là gì,màu đỏ,5256,2
+186,bao nhiêu máy bay chiến đấu bay trên bầu trời,bốn,271401,1
+187,những gì đang đi dạo quanh những cái cây cùng nhau,con voi,474170,0
+188,một số bánh mì nằm ở đâu,lò vi sóng,129006,3
+189,những gì đỗ bên cạnh xe máy khác,xe máy,561037,0
+190,xe tải pick-up sáng bóng ở đâu với sở cứu hỏa phù hiệu ngồi,ga-ra,424694,3
+191,màu của chiếc nắp là gì,màu nâu,80339,2
+192,trên bàn có bao nhiêu khay đựng các loại thực phẩm khác nhau và một cái lọ,bốn,503022,1
+193,hai chuyến tàu dừng ở đâu,trạm,420589,3
+194,những gì được xếp chồng lên bên cạnh hành tây và bông cải xanh,cà rốt,471814,0
+195,người phụ nữ đang mang cái gì kế một vòi chữa cháy rất cao,túi,378831,0
+196,những gì bị mắc kẹt trong khu vực hàng rào,chiếc ô,390094,0
+197,những gì cắt thành các mảnh khác nhau nằm trên một khay tại một bàn,bánh,564418,0
+198,hai phụ nữ trưởng thành đang sử dụng bộ điều khiển trò chơi video trong khi đứng ở đâu,phòng,398623,3
+199,người chơi ván trượt trên tuyết được bao phủ là gì,đồi,574108,0
+200,những gì đang đứng cạnh hình ảnh của một con cá,con mèo,419008,0
+201,có bao nhiêu con bò trên cánh đồng cỏ xanh với bầu trời xanh,hai,424658,1
+202,cửa sổ nhỏ trong một bức tường gỗ là gì,phòng tắm,436392,0
+203,xe đẩy xanh là gì đi qua,trạm,384503,0
+204,những gì gắn vào tường bên cạnh một ô cửa,truyền hình,483328,0
+205,những gì đang kéo trên một dây giày bằng da với miệng của nó,con chó,476796,0
+206,màu của tường là gì,màu đỏ,474732,2
+207,cái gì đang nhìn vào người đàn ông chụp ảnh,hươu cao cổ,491481,0
+208,cái gì trên cái đĩa lớn màu trắng,pizza,378614,0
+209,màu của áo khoác là gì,màu vàng,376972,2
+210,màu của xe buýt là gì,màu vàng,42705,2
+211,nơi nào ba người đàn ông leo dốc bên cạnh những cái cây,trượt tuyết,14677,3
+212,màu của xe buýt là gì,màu đỏ,145761,2
+213,một chiếc đồng hồ gỗ cũ màu xanh lá cây đứng ở đâu,hành lang,208043,3
+214,có bao nhiêu con voi ở một cánh đồng trống với những con chim bay trên đầu,ba,527337,1
+215,những gì đang đi trên đường ray trong tuyết,xe lửa,449634,0
+216,màu của tường là gì,màu cam,293716,2
+217,màu của chiếc nắp là gì,màu trắng,441751,2
+218,đầu bếp mở lò nướng ở đâu,phòng bếp,189278,3
+219,"những gì chứa đầy trái cây, rau và đồ nhúng nằm trên đỉnh của một cái bàn",đĩa,478155,0
+220,mèo con đang ở đâu,phòng tắm,184557,3
+221,hai người đàn ông nói chuyện ở đâu trong khi một người phụ nữ đứng nhìn từ ngỏ vào,phòng bếp,128647,3
+222,những gì đang đứng trong tự nhiên cùng nhau,ngựa vằn,423810,0
+223,có bao nhiêu con ngựa gặm cỏ trên đỉnh đồi,ba,457776,1
+224,cái gì đang ngồi trên quầy cạnh chậu,chuối,347568,0
+225,có bao nhiêu biển báo giao thông được gắn trên cùng một biển báo,năm,433616,1
+226,những gì bên cạnh một số đường ray xe lửa trống,tàu hỏa,483803,0
+227,có bao nhiêu người đàn ông đang chơi trò ném đĩa trên bãi biển,ba,25643,1
+228,những gì đỗ trong rừng,xe tải,500829,0
+229,màu của con mèo là gì,màu xanh dương,67246,2
+230,có bao nhiêu biển báo màu trắng trên cột,hai,274233,1
+231,những gì đang di chuyển xuống đường ray,tàu hỏa,508041,0
+232,người đang chụp ảnh ở đâu,gương,522185,3
+233,cái gì gắn với phao di chuyển trong nước,máy bay,406119,0
+234,màu của áo là gì,màu đỏ,52324,2
+235,người trên ván trượt đang đi xuống tuyết bao phủ là gì,đồi,539079,0
+236,màu của lửa là gì,màu đỏ,151101,2
+237,màu của con mèo là gì,màu đen,529188,2
+238,những gì đứng giữa đại dương và đường,con ngựa,462329,0
+239,người ngồi xem mọi người chơi trong nước ở đâu,cái ghế,160967,3
+240,màu của boong tàu là gì,màu đỏ,99162,2
+241,có bao nhiêu con cừu đang gặm cỏ trên sườn đồi xanh,bốn,185530,1
+242,sự phản chiếu của một đuôi động vật nhìn thấy ở đâu,gương,481398,3
+243,một số người bạn đang run rẩy ở đâu,sân vận động,122093,3
+244,có bao nhiêu con ngựa vằn đứng cạnh nhau trên một cánh đồng cỏ bao phủ,hai,314725,1
+245,những gì được bao phủ bởi lò hơi đầy nước và các loại thực phẩm khác nhau,bếp,505133,0
+246,ba bông hoa ở đâu,lọ cắm hoa,343445,3
+247,tôi làm gì thậm chí còn không nhìn thấy cú đánh của bạn,bức ảnh,554340,0
+248,màu của chiếc bình là gì,màu tía,418808,2
+249,"người đàn ông đá bóng đá ở đâu,",sân vận động,562325,3
+250,có bao nhiêu người đang đứng bên ngoài tòa nhà lớn ''sone '',bốn,525058,1
+251,hai người ngồi trên bàn gỗ cạnh nhau làm gì,máy tính,374333,0
+252,người trẻ đang mang vào nước là gì,ván lướt sóng,401897,0
+253,có bao nhiêu con hươu cao cổ đứng trong một vòng vây với một thành phố ở phía sau,hai,435665,1
+254,người đàn ông đang ngồi ở đâu,con thuyền,45994,3
+255,cái gì đang nằm trong chốt,con bò,376358,0
+256,người đàn ông đang sửa chữa cái gì bên hồ,con thuyền,517570,0
+257,một vài con chó con ngủ trưa ở đâu,giường,340598,3
+258,chuối nấu sốt gì,chảo,380951,0
+259,những gì đỗ và nhốt ngoài nhà,xe đạp,428847,0
+260,màu của áo khoác là gì,màu đen,574419,2
+261,đỗ những gì đang đỗ dưới tán,xe tải,545749,0
+262,những bông hoa ở đâu,lọ cắm hoa,406295,3
+263,những gì đi lang thang xung quanh lồng của họ và ăn từ máng trên tường,hươu cao cổ,389721,0
+264,những gì đang đứng cùng nhau trong một khoảng trống,con ngựa,474762,0
+265,hai người phụ nữ đang thả cái gì hình một con chim,diều,502220,0
+266,những chú mèo con đang ngủ trưa ở đâu,cái rổ,404349,3
+267,cái gì ngồi như cái giá đỡ ở phía trước,thân cây,518006,0
+268,những gì đang nhìn vào con dao,con mèo,569333,0
+269,những gì bên cạnh một loạt các cây,hươu cao cổ,478406,0
+270,những gì được đậu trên mép giường,con mèo,435299,0
+271,"những gì bừa bộn với hồng hạc, knick-knacks, v.v.",phòng,427965,0
+272,những gì gắn trên màn hình bên ngoài,máy bay,483767,0
+273,tùy chỉnh được đỗ cùng với các xe máy truyền thống khác,xe máy,422326,0
+274,màu của biển báo là gì,màu đỏ,87403,2
+275,mắt cá nhìn ở đâu,nhà ở,134650,3
+276,màu của ghế là gì,màu tía,60140,2
+277,có bao nhiêu con ngựa vằn gặm cỏ trên cây bụi trong tự nhiên,một,45535,1
+278,người ngồi ở đâu,giường,173400,3
+279,cừu nằm ở đâu trên giường rơm,rào chắn,491958,3
+280,có bao nhiêu con voi với vòi của một con trong miệng của con kia,ba,497642,1
+281,những gì được đăng trên đá bởi một hồ nước,con chim,548275,0
+282,màu sắc của chi tiết là gì,màu vàng,300738,2
+283,màu của xe máy là gì,màu xanh dương,26027,2
+284,cái gì trên đảo của một nhà bếp lớn,chậu,444390,0
+285,có bao nhiêu con hươu cao cổ đang đứng dưới bóng cây,ba,282987,1
+286,có những gì được nhóm lại với nhau ở đây,rau,406426,0
+287,màu của lều là gì,màu xanh dương,372660,2
+288,cậu bé đang ngồi ở đâu,văn phòng,408957,3
+289,những gì đỗ và người đàn ông đứng cạnh một trong số đó,xe máy,531735,0
+290,màu của áo là gì,màu đỏ,579798,2
+291,những gì cao chót vót trên thành phố london,đồng hồ,393523,0
+292,những gì ngồi bên cạnh một chiếc máy bay khác,máy bay,395849,0
+293,có bao nhiêu cầu thủ bóng chày trên sân trong một trận đấu,năm,15472,1
+294,điều gì hiển thị các cặp cửa sổ nhỏ với rèm và không có rèm cửa,phòng,441535,0
+295,cô gái trẻ đang đọc ở đâu,giường,169854,3
+296,em bé đang ngồi ở đâu,bồn tắm,476605,3
+297,những gì bên cạnh một đống đá,gấu,513484,0
+298,có bao nhiêu con ngựa vằn đang gặm cỏ trong khu vườn thú ngoài trời,bốn,411343,1
+299,những gì được thắp sáng và bên cạnh nơi cháy,cây,382533,0
+300,những gì đang nằm cạnh một tấm gương và chứa đầy hoa,lọ cắm hoa,569700,0
+301,chàng trai trẻ giữ những gì và về sẵn sàng để đi thử nghiệm nó,máy bay,426700,0
+302,có bao nhiêu hoa loa kèn được trưng bày trong một cái bình,ba,12098,1
+303,những gì giữ con gấu đen cho bé khi chúng nằm trên mặt đất,gấu,453981,0
+304,màu của bên trong là gì,màu cam,326390,2
+305,những gì được kéo lên tại nhà ga với hành khách đi dọc theo,xe lửa,456584,0
+306,những gì có bánh sandwich chuẩn bị với một mặt súp và salad vườn,quán ăn,519460,0
+307,bao nhiêu phụ nữ đang chuẩn bị lên một chiếc xe buýt màu xanh lá cây,hai,455340,1
+308,màu của cây là gì,màu xanh lá,251264,2
+309,có bao nhiêu người cầm ô đi qua cây cầu gỗ,ba,149230,1
+310,màu của dấu hiệu là gì,màu đỏ,315232,2
+311,những gì đứng trên cành cây gần đại dương,con chim,546298,0
+312,người đàn ông ở đâu,gương,422375,3
+313,người đàn ông đứng ở đâu,phòng tắm,53604,3
+314,màu của vỏ là gì,màu tía,308470,2
+315,cái gì có một ống tắm vòi sen kết hợp với một sàn gốm trắng,phòng tắm,581863,0
+316,hai xe đang đỗ ở đâu,kho,217769,3
+317,có bao nhiêu con dê đang ngồi cạnh nhau trên bãi cỏ,hai,335039,1
+318,màu của áo là gì,màu trắng,110142,2
+319,con mèo xám đang ngồi ở đâu,vali,548141,3
+320,con hươu cao cổ đi lang thang xung quanh cái gì và ăn từ máng trên tường,lồng,389721,0
+321,màu của con chó là gì,màu xám,21514,2
+322,màu của áo là gì,màu đen,574645,2
+323,những gì đang đứng cạnh một con voi con,con voi,514979,0
+324,có bao nhiêu người đứng trong hàng trên đỉnh đồi với một thị trấn ở phía sau,bốn,157170,1
+325,những gì đang nhìn về phía mặt đất trong bao vây của nó,ngựa rằn,419371,0
+326,mẹ con ngựa vằn đang ăn ở đâu,lồng,291348,3
+327,có bao nhiêu cô gái đang ngồi trên một chiếc ghế dài gần đại dương,ba,424157,1
+328,cái gì thơm ngon trong một bát bạc,hoa quả,571279,0
+329,màu sắc của bông hoa là gì,màu tía,204969,2
+330,có bao nhiêu người đang lướt ván một người đang nằm trên ván lướt sóng,một,332405,1
+331,có bao nhiêu người trên lưng ngựa xếp hàng thành một hàng,mười,341241,1
+332,có bao nhiêu đĩa thức ăn có bánh mì nướng và bánh mì nâu băm,hai,167528,1
+333,"có bao nhiêu đoàn tàu khác nhau, một đoàn tàu có màu xanh lá cây và màu bạc",ba,3003,1
+334,cái gì đậu ở bãi đậu xe cạnh nhau,xe buýt,350309,0
+335,những gì ôm ấp bên cạnh nhau trên chăn hoa hoa,con mèo,551815,0
+336,một số trẻ em đang vui chơi ở đâu,cửa hàng,526098,3
+337,màu của bồn cầu là gì,màu trắng,188252,2
+338,màu của dĩa nhựa là gì,màu vàng,127810,2
+339,màu của xe buýt là gì,màu xanh dương,480064,2
+340,những gì đã mở ra khoe khớp nối màn hình của nó,điện thoại,435309,0
+341,màu của gấu bông là gì,màu tía,55389,2
+342,có bao nhiêu con chim nhỏ màu xám đang ngồi trên dây,bốn,30054,1
+343,đầu giường gỗ và gương gỗ đặt ở đâu,phòng ngủ,454271,3
+344,các quốc gia thống nhất phát sóng những gì đang cất cánh,máy bay,374886,0
+345,màu của dấu hiệu là gì,màu đỏ,268737,2
+346,những gì đang bay qua bầu trời xanh,máy bay,410221,0
+347,có bao nhiêu người đàn ông đeo kính và cà vạt đen cầm đồ đựng,năm,110761,1
+348,trái cây và rau quả nằm ở đâu,thùng chứa,263178,3
+349,con mèo đang nằm ở đâu,chậu,575923,3
+350,những gì nằm trên đường ray,động cơ,560111,0
+351,những gì tất cả các phím phổ biến nhất,bàn phím,364860,0
+352,màu của gấu là gì,màu nâu,334373,2
+353,màu của bầu trời là gì,màu xanh dương,177786,2
+354,màu sắc của đi bộ là gì,màu đen,307583,2
+355,màu của chiếc ô là gì,màu đỏ,121441,2
+356,màu của mặt tiền cửa hàng là gì,màu xanh dương,467318,2
+357,những gì đang đi dọc theo con đường cỏ,con voi,482667,0
+358,có bao nhiêu con chim trong một bãi đậu xe gần một số ô tô,ba,469373,1
+359,màu của nón là gì,màu cam,160229,2
+360,bộ sưu tập của gấu đồ chơi ở đâu,cửa tiệm,494090,3
+361,học sinh đang học ở đâu,phòng,545260,3
+362,cái gì đang ngủ trên giường đệm treo trên lò sưởi,con mèo,515585,0
+363,màu sắc của hành lý là gì,màu đỏ,133788,2
+364,có bao nhiêu con chó nâu ngồi trên chiếc ghế dài với sợi dây của chúng,hai,515226,1
+365,những gì đang nhìn ra một dãy núi và một người đang nhìn theo hướng ngược lại của người khác,con bò,414679,0
+366,phòng tắm lát gạch trắng sạch sẽ ở đâu,nhà ở,261144,3
+367,những gì đỗ ở trạm xe buýt trong một thành phố với các tòa nhà cao tầng,xe buýt,383389,0
+368,những gì bị kẹt trong giao thông trên đường chính,xe buýt,398119,0
+369,có bao nhiêu con ngựa đang đứng bên sông,hai,330729,1
+370,những gì bên ngoài với các tấm biển bán trên chúng,nhà vệ sinh,482100,0
+371,có bao nhiêu cuốn sách về đất sét polyme xếp chồng lên nhau trên giường,bốn,285477,1
+372,màu của lửa là gì,màu đỏ,461819,2
+373,ba con ngựa vằn uống nước ở đâu,chuồng,330532,3
+374,màu của con mèo là gì,màu cam,178178,2
+375,có bao nhiêu người đàn ông đang xếp một chiếc xe đạp lên đầu một chiếc xe,hai,123552,1
+376,màu của dấu hiệu là gì,màu xanh lá,169330,2
+377,những gì đang đậu trên đường chạy của máy bay,máy bay,498666,0
+378,người phụ nữ nằm ở đâu,giường,218114,3
+379,cái gì đang ngồi trên bàn,pizza,436315,0
+380,màu của chân là gì,màu đen,14432,2
+381,có bao nhiêu chai than vãn giữa máy nướng bánh mì và máy xay sinh tố,bốn,2964,1
+382,những gì có các thiết bị trắng và tường màu be,phòng,428041,0
+383,màu của phòng tắm là gì,màu trắng,506576,2
+384,có bao nhiêu người lướt sóng ngồi trên bờ với ván lướt sóng,ba,536834,1
+385,có bao nhiêu con ngựa nâu gặm cỏ trên cánh đồng bên cạnh một cái cây,hai,134034,1
+386,những gì được trưng bày tại sân bay,vali,511251,0
+387,màu của chiếc giường là gì,màu xanh dương,374133,2
+388,màu của vòi nước là gì,màu tía,167622,2
+389,những gì được xếp trên đường băng,máy bay,556597,0
+390,bánh làm từ oliu và lạp xưởng gọi là gì,pizza,568398,0
+391,những gì đang được kiểm tra bởi cơ học máy bay trong một sân bay,máy bay,550055,0
+392,có bao nhiêu con voi trong rạp xiếc đang thư giãn trước buổi biểu diễn khác,ba,467467,1
+393,màu của con mèo là gì,màu đen,531076,2
+394,cái bàn có bao nhiêu máy tính,năm,97492,1
+395,những gì nhìn chằm chằm vào nhau trước cửa kính của một hiên nhà,con mèo,572184,0
+396,con mèo trưởng thành nằm ở đâu,vali,324857,3
+397,màu của bầu trời là gì,màu xám,195721,2
+398,một người thừa cân đang chụp ảnh ở đâu,gương,149918,3
+399,tv màn hình phẳng lớn đang ở đâu,phòng,506470,3
+400,có bao nhiêu phụ nữ đạp xe trên đường trong ngày,ba,355231,1
+401,có bao nhiêu con diều vào một ngày trời nhiều mây,hai,145409,1
+402,những gì lỏng lẻo trong giao thông trên một đường phố,con bò,416385,0
+403,có bao nhiêu con chim trên một số tảng đá gần đại dương,ba,345685,1
+404,những gì kéo sà lan đằng sau nó qua nước,con thuyền,492196,0
+405,"cái gì có thức ăn với bông cải xanh, cá và khoai tây nướng",đĩa ăn,478766,0
+406,có bao nhiêu phụ nữ đứng quanh chiếc bánh và mỉm cười,năm,84211,1
+407,những gì đang giữ một loạt các loại rau và trái cây,chén đĩa,389381,0
+408,con mèo đang ngồi ở đâu,vali,360896,3
+409,người đàn ông đặt một con gà tây chưa nấu chín ở đâu,lò vi sóng,275413,3
+410,một con voi ăn một số thực phẩm ở đâu,chuồng,169947,3
+411,những gì trên quầy gỗ,donut,499922,0
+412,những gì trong nền,hươu cao cổ,421009,0
+413,"những gì đã được thực hiện, trông giống như khu rừng có bụi bẩn, gấu và cây cối làm từ frosting",bánh,544421,0
+414,cái gì đậu trên cỏ bên cạnh một tòa nhà có ô tô và máy bay đậu gần đó,xe máy,359086,0
+415,xe buýt hai tầng đang đậu ở đâu,tòa nhà,455333,3
+416,người đàn ông đang tận hưởng việc đọc ở đâu,thư viện,400080,3
+417,tủ lạnh cũ đang ở đâu,phòng,282296,3
+418,có bao nhiêu chiếc xúc xích kẹp thịt nướng trên đĩa giấy,hai,404642,1
+419,xe bán tải có tủ đông và 4 bánh ở đâu,giường,240967,3
+420,màu của xe tải là gì,màu xanh lá,214523,2
+421,những gì được ngồi trên cành cây,con chim,492349,0
+422,có bao nhiêu người đang chơi trò chơi điện tử trên tv,hai,27149,1
+423,những gì đang đeo dây cương đang đi qua rừng,con ngựa,366830,0
+424,có bao nhiêu người đang đứng cạnh nhau trên mặt đất phủ đầy tuyết,hai,334185,1
+425,những gì nằm trên bàn bên cạnh một số giấy tờ,laptop,473370,0
+426,người đàn ông đang sửa một cửa sổ ở đâu,phòng bếp,34212,3
+427,một số trái cây đang phát triển ở đâu,sân vườn,257029,3
+428,những gì đứng trên bàn với một máy tính xách tay trước mặt một người,con mèo,408736,0
+429,những gì trong cánh đồng cỏ,con cừu,346334,0
+430,tòa nhà cũ và tháp đồng hồ đang lái gì vậy,xe ô tô,361142,0
+431,những gì được xếp hàng ở bên đường,xe máy,580975,0
+432,một chiếc máy bay cũ ở đâu,ga-ra,104610,3
+433,cái gì đang đuổi theo một chiếc lông,con mèo,372227,0
+434,có bao nhiêu con cừu nằm trên tuyết với đầy đủ áo lông cừu,năm,239861,1
+435,màu của áo là gì,màu xám,392319,2
+436,có bao nhiêu cái bánh trên cái bàn màu đỏ,hai,351719,1
+437,có bao nhiêu người đang cầm con dao bên trên chiếc bánh trong khi một người phụ nữ ngồi sang một bên,năm,316238,1
+438,màu của con chó là gì,màu trắng,333863,2
+439,có bao nhiêu quả chuối trên bàn với một dấu hiệu tình yêu ở giữa,hai,3518,1
+440,màu của vòi nước là gì,màu đỏ,448702,2
+441,màu của tòa án là gì,màu xanh lá,42418,2
+442,có bao nhiêu con ngựa vằn đang phi nước đại cạnh nhau,hai,287302,1
+443,hai lính cắt bằng dao là gì,bánh,548288,0
+444,người đàn ông và phụ nữ kéo cái gì đến một tòa nhà,hành lý,359676,0
+445,cái gì đang rúc đầu vào đầu của một con bò khác,con bò,475423,0
+446,có bao nhiêu bức tranh với một con voi hai con sư tử hai con hươu cao cổ và hai người,bốn,242426,1
+447,cái gì đang ngồi trên băng ghế bị bỏ hoang,con chim,352936,0
+448,màu của bảng là gì,màu nâu,208805,2
+449,màu của con mèo là gì,màu nâu,22415,2
+450,những gì đứng cạnh pizza lớn,con chó,473720,0
+451,những gì nằm với nhau trong cánh đồng nắng,hươu cao cổ,561050,0
+452,những gì giữ những bông hoa màu vàng và đỏ,lọ cắm hoa,482134,0
+453,những gì hình nón có hình dạng được bao quanh bởi những bức ảnh được đóng khung,bánh,510103,0
+454,màu của chiếc thuyền là gì,màu vàng,560173,2
+455,màu của chiếc mũ là gì,màu tía,183071,2
+456,chuyến tàu nào vừa đi qua cầu vượt,đường sắt,558421,0
+457,màu của chiếc ô là gì,màu cam,48408,2
+458,người phụ nữ cắt lát táo ngoài trời mặc gì,tạp dề,228256,3
+459,những gì giữ một số rau trộn với một số nước sốt,bát,558640,0
+460,màu của cánh đồng là gì,màu xanh lá,531658,2
+461,những gì đỗ trên đỉnh của một tầng lát gạch,xe máy,444926,0
+462,những gì được hình dung trong hình ảnh này,sân khấu,429366,0
+463,có bao nhiêu đường chỉ dẫn ở phía trước của một tòa nhà,một,237860,1
+464,lọ hoa lớn được đặt ở đâu,cửa sổ,70983,3
+465,hai chiếc xe đạp và bàn ngồi ở đâu,phòng bếp,398419,3
+466,cái gì đang đậu trên khu vực gạch,xe máy,356263,0
+467,có bao nhiêu đứa trẻ đang ngồi trên giường ôm một con gấu nhỏ,ba,52901,1
+468,những gì sẽ nhận được nhiều sử dụng bởi chủ sở hữu của nó,chuột,443723,0
+469,có bao nhiêu con gấu đen trên hoặc xung quanh một cấu trúc chơi bằng gỗ,ba,219196,1
+470,có bao nhiêu người trên một chiếc mô tô với một người treo trước và một người khác treo sau,ba,459543,1
+471,màu của cà vạt là gì,màu tía,497172,2
+472,có bao nhiêu con chó nhỏ là các giống và màu sắc khác nhau,bốn,79021,1
+473,những gì được hiển thị trên bầu trời xanh,tòa nhà,402334,0
+474,màu của bảng là gì,màu trắng,70164,2
+475,có bao nhiêu con hươu cao cổ đang ở trong chuồng của chúng một bức tường cỏ và cây,hai,136983,1
+476,những gì đang kéo vào một ga xe lửa cùng một lúc,xe lửa,481928,0
+477,những gì bên cạnh một cửa sổ,giường,483531,0
+478,cái gì đang đỗ bên cạnh xe,xe máy,575544,0
+479,những gì được bật về phía nó tại một ngã tư,xe máy,454129,0
+480,màu sắc của đồng phục là gì,màu trắng,216226,2
+481,phòng tắm với gương lớn ở đâu,vòi hoa sen,361638,3
+482,màu của nhà vệ sinh là gì,màu trắng,494351,2
+483,có bao nhiêu con bò trắng đang ngồi trong khu trang trại,hai,518363,1
+484,người phụ nữ mang chó ở đâu,balo,412195,3
+485,nhà vệ sinh trắng đang ngồi ở đâu,vòi hoa sen,315647,3
+486,"có bao nhiêu chiếc bánh rán khác nhau, một chiếc màu hồng, một chiếc màu nâu",ba,109798,1
+487,nhà vệ sinh gắn trong phòng tắm,tường,404608,0
+488,có gì đứng sau những bụi cây trong tự nhiên,hươu cao cổ,458572,0
+489,màu của bầu trời là gì,màu xanh dương,538916,2
+490,người phụ nữ đang ở đâu,tạp dề,107138,3
+491,chewing trên cành cây là gì,quán bar,387355,0
+492,những người đang sử dụng máy tính xách tay của họ để học ở đâu,thư viện,331544,3
+493,bắn cái gì trên đường thành phố với vài chiếc ô tô đang đậu,vòi,376284,0
+494,màu của tường là gì,màu đỏ,34333,2
+495,có bao nhiêu máy bay phản lực màu trắng-xanh trong chuyến bay phối hợp,sáu,250241,1
+496,poster của một người đàn ông với ván trượt tuyết ở đâu,cửa sổ,477671,3
+497,cái gì đang ngồi trên băng ghế gần cái cây,con chim,352936,0
+498,phục vụ món thịt hầm bông cải xanh ở đâu,bát,508592,3
+499,một số bánh ngọt đang được chuẩn bị ở đâu,lò vi sóng,512892,3
+500,những gì bị xích vào đồng hồ đậu trên vỉa hè,xe đạp,567708,0
+501,có bao nhiêu cái hotdog trên đĩa của người này,bốn,113905,1
+502,hai người thư giãn ở đâu,phòng,401313,3
+503,ba thanh niên cầm cái ly gì khi đứng ở quán bar,rượu,515716,0
+504,những gì hiển thị trên phục vụ platter để tiêu thụ,pizza,389477,0
+505,con mèo đang ngồi ở đâu,phòng,315517,3
+506,người phụ nữ đang nướng gì đó bằng sô cô la,phòng bếp,193384,3
+507,những gì đứng trong vỏ bọc sở thú với ngựa vằn trong nền,hươu cao cổ,456756,0
+508,những gì được hiển thị với thức ăn và đậu chưa biết như một bên,món ăn,458510,0
+509,màu tóc là gì,màu trắng,532555,2
+510,màu của ruy băng là gì,màu vàng,464809,2
+511,màu của con chim là gì,màu xám,13986,2
+512,nơi nào hai người đàn ông di chuyển bên cạnh nhau,trượt tuyết,147520,3
+513,màu của gấu là gì,màu đen,537553,2
+514,người đàn ông đang làm việc chạm khắc một cây gậy bóng chày ở đâu,cửa tiệm,114561,3
+515,cậu bé rất trẻ đang giữ gì,chiếc ô,401552,0
+516,có bao nhiêu đường ở góc đường henry st. and love la,một,493503,1
+517,cái nhìn cận cảnh,pizza,434634,0
+518,có gì trong nước và có những bụi cây xanh,con voi,554978,0
+519,màu của cốc là gì,màu cam,578169,2
+520,những gì đang làm cho một cánh đồng bằng cách mang một cái cày trên nó,con ngựa,384496,0
+521,cái gì đang ngồi trên tay lái của một chiếc xe đạp,cừu,555687,0
+522,trẻ mới biết đi ở đâu,cái ghế,375099,3
+523,cô gái giữ cái gì,ván lướt sóng,376667,0
+524,bánh xe nóng hỗ trợ những gì trong một triển lãm studio,xe ô tô,349344,0
+525,những gì đang đỗ bên cạnh chiếc xe máy màu xanh,xe máy,495613,0
+526,những gì đi bộ cùng nhau qua cỏ đá lên bụi,con voi,483275,0
+527,màu của bảng là gì,màu đỏ,60140,2
+528,màu của gia súc là gì,màu đen,297465,2
+529,màu của con bò là gì,màu nâu,64818,2
+530,mèo con đang chơi ở đâu,gương,460661,3
+531,đâu là nơi băng ghế nép mình,lối đi,298141,3
+532,hai quý ông đứng ở đâu,văn phòng,350386,3
+533,những gì được bao phủ bởi hình ảnh và giấy tờ trong một nhà bếp,tủ đá,531086,0
+534,màu của ngân hàng là gì,màu xanh lá,520551,2
+535,xe lửa đỏ đang đậu ở đâu,trạm,431139,3
+536,màu của máy bay là gì,màu trắng,281103,2
+537,màu của sơn là gì,màu vàng,416936,2
+538,những gì trên đường băng sân bay,máy bay,539808,0
+539,những gì đang cất cánh ra đường băng,máy bay,518203,0
+540,màu sắc của các phân khúc là gì,màu cam,85902,2
+541,những gì đang đứng trên đỉnh của một chiếc đồng hồ,con chim,567383,0
+542,có bao nhiêu người đàn ông ngồi vào bàn với các món ăn và bia trước mặt họ,bốn,129897,1
+543,một con mèo màu cam đang ngủ ở đâu,giường,195889,3
+544,màu của gấu là gì,màu nâu,222122,2
+545,con ngựa kéo những gì đi xuống giữa một con đường,xe,524431,0
+546,có bao nhiêu đứa trẻ đeo găng tay bóng chày ở sân cỏ,ba,413182,1
+547,màu của dấu hiệu là gì,màu xanh dương,37854,2
+548,màu của tường là gì,màu đen,494383,2
+549,cái gì đậu ở đường lái xe bên hông một ngôi nhà,xe tải,364266,0
+550,tất cả những gì đang đỗ dọc theo lề đường,xe ô tô,437859,0
+551,màu sắc của những con chim là gì,màu đen,153946,2
+552,màu của phòng tắm là gì,màu xanh lá,210726,2
+553,người đẩy những gì phủ đầy hoa xuống đường,xe đạp,340998,0
+554,máy tính xách tay ở đâu,phòng,332512,3
+555,những gì bên cạnh một máy nâng cắt kéo,máy bay,540697,0
+556,con mèo màu đen cam trắng nằm ở đâu,vali,360157,3
+557,con mèo đang nhìn ở đâu,gương,45603,3
+558,cô gái đang đứng ở đâu,đường,473912,3
+559,người đàn ông đang đi tiểu ở đâu,nhà vệ sinh,218956,3
+560,những gì đang phát triển trong một khu vườn bị lùn bởi lá của nó,cây,410934,0
+561,con chó nhỏ đang mặc hoa là gì,áo vest,392818,0
+562,có bao nhiêu người đàn ông đang chụp ảnh chiếc máy bay pia,hai,100124,1
+563,những gì lái xe xuống con đường yên tĩnh,xe buýt,423519,0
+564,gấu bông ở đâu,cái ghế,417455,3
+565,người đàn ông và một đứa bé đang ở đâu,phòng bếp,436649,3
+566,màu sắc của những con chim là gì,màu nâu,336267,2
+567,tháp brown với đồng hồ và gác chuông và bên cạnh nó là gì,cây,430760,0
+568,xe tải đang ở đâu,đường phố,364266,3
+569,chiếc máy bay màu trắng và xám đã cập bến ở đâu,sân bay,165855,3
+570,màu của dĩa nhựa là gì,màu cam,573529,2
+571,nơi giữ khăn giấy treo từ dây,nhà vệ sinh,91492,3
+572,những gì chuẩn bị dừng lại ở trạm xe buýt vào ban đêm,xe buýt,542079,0
+573,màu của áo là gì,màu trắng,550410,2
+574,có bao nhiêu máy bay quân sự đang bay theo đội hình trên bầu trời xanh,sáu,99066,1
+575,những gì nằm trên bàn,sandwich,448923,0
+576,màu của chiếc mũ là gì,màu cam,33272,2
+577,con chó pug đen đang ở đâu,cái ghế,226308,3
+578,có bao nhiêu con cừu đứng xung quanh cánh đồng đất rộng lớn,năm,31678,1
+579,những người ở bên cạnh đường mang theo cái gì,chiếc ô,574332,0
+580,màu của con chim là gì,màu xám,141063,2
+581,những gì đỗ bên cạnh băng ghế trên đường phố,xe ô tô,456884,0
+582,nhà vệ sinh trắng đang ngồi ở đâu,phòng tắm,137995,3
+583,màu của khăn là gì,màu xanh dương,299811,2
+584,cái gì có vẻ làm người chơi quần vợt bị chói mắt,mặt trời,354174,0
+585,đầu bếp đứng ở đâu trong khi thực hiện một bữa ăn,phòng bếp,123539,3
+586,ngồi trên đỉnh cỏ xanh là gì,xe tải,391810,0
+587,người đàn ông trả lại quả bóng tennis bằng cách sử dụng cái gì,vợt,373356,0
+588,những gì đang ăn ngoài đất trong một khu vực hẻo lánh,con voi,463751,0
+589,người phụ nữ trong màu tím giữ gì,donut,406182,0
+590,cái gì dừng lại ở đèn giao thông màu đỏ,xe ô tô,354724,0
+591,phòng ngủ nằm ở đâu,tòa nhà,300882,3
+592,có bao nhiêu máy tính xách tay được bật và để trên kệ,ba,362480,1
+593,cái gì đang ngồi trên bàn gỗ,lát cắt,427782,0
+594,những gì giữ cá và cà rốt nấu chín,dĩa,533688,0
+595,con mèo nằm ở đâu,chậu,494891,3
+596,người chuẩn bị thức ăn ở đâu,phòng bếp,329191,3
+597,người phụ nữ đang cầm gì để phục vụ bóng,vợt,397101,0
+598,người đàn ông trong công viên thả gì với một cái đuôi dài,diều,407868,0
+599,nhóm người tập hợp ở đâu,đường phố,314092,3
+600,màu của chiếc đĩa là gì,màu trắng,426429,2
+601,màu của áo là gì,màu đen,65209,2
+602,màu của áo là gì,màu tía,318162,2
+603,tàu đang được chạy trên đường tàu là gì,cây,414068,0
+604,màu của cỏ là gì,màu xanh lá,447108,2
+605,con mèo lông mịn ở đâu,chậu,537022,3
+606,màu của chiếc giường là gì,màu trắng,549413,2
+607,cái gì đang nhìn ra cửa sổ cao,con mèo,346865,0
+608,những gì nằm ở đầu một tòa nhà mới,tòa tháp,574110,0
+609,màu của con ngựa là gì,màu nâu,529056,2
+610,thật là gãi với cái mỏ của nó,con vịt,400994,0
+611,ăn những gì rải rác trên mặt đất để tiêu thụ,bãi cỏ,474347,0
+612,"cà rốt, rau và thực phẩm khác được khuấy ở đâu",bát,435328,3
+613,màu của bầu trời là gì,màu xanh dương,471256,2
+614,cảnh sát đi xe máy ở đâu,đường bộ,519053,3
+615,thước và kéo ở đâu,người giữ,78359,3
+616,con chó vàng lớn đang mặc gì với khuôn mặt cười,nón,410168,0
+617,những gì đang ngồi dọc theo một con phố,tòa nhà,361142,0
+618,những gì gắn vào tường của một tòa nhà,đồng hồ,555748,0
+619,có bao nhiêu người trong bộ đồ toàn thân và một người không đứng ngoài ván lướt sóng trên bãi biển,hai,497801,1
+620,màu của áo là gì,màu trắng,103539,2
+621,hai người phụ nữ đang ăn pizza pepperoni đang mặc gì,kính đeo,466838,0
+622,"giường, tv và loveseat ở đâu",phòng ngủ,165433,3
+623,pizza pepperoni vỏ mỏng ở đâu,hộp,460830,3
+624,dòng bạc trong phòng tắm nhỏ đã làm gì,bồn tắm,536343,0
+625,cậu bé nhỏ đang đứng trên đại dương ở đâu,áo vest,368248,3
+626,hai người vẽ màu đỏ ở đâu,phòng tắm,528583,3
+627,màu của màn hình là gì,màu vàng,57178,2
+628,người đàn ông đẩy rất nhiều hành lý ở đâu,sân bay,488583,3
+629,những gì cuộn tròn với một số động vật nhồi bông,con mèo,480593,0
+630,những gì tận dụng hai tiêu điểm thông qua một chiếc ghế dài,phòng,491755,0
+631,những gì bị chiếm bởi con ngựa nhỏ nhỏ,cái ghế,417653,0
+632,những gì xếp chồng lên nhau trên một chiếc vali cổ điển khác,vali,421681,0
+633,nintendo wii với hình ảnh của một tay cầm bộ điều khiển trò chơi ở đâu,hộp,459819,3
+634,những gì được đặt trong khu vực rừng,vòi,524502,0
+635,nơi đặt bồn rửa nhỏ,phòng tắm,231387,3
+636,", người cũng có những gì",chiếc ô,389258,0
+637,có bao nhiêu người trượt tuyết xuyên quốc gia qua tuyết,ba,265796,1
+638,có bao nhiêu con gấu nhồi bông lớn đang ngồi trên ghế trong một căn phòng,hai,443916,1
+639,người đàn ông cởi trần chụp ảnh tự sướng trong gương ở đâu,phòng tắm,210189,3
+640,có bao nhiêu người mỉm cười bên cạnh nhau khi cầm vợt tennis,bốn,122355,1
+641,đang mua sắm gì khi ngồi trên một chiếc ghế dài màu xanh,túi,532463,0
+642,những gì rất xa trên không khí,diều,424601,0
+643,màu của cỏ là gì,màu xám,147276,2
+644,lap những gì và theo dõi trên bàn với các loại giấy tờ và thiết bị,máy vi tính,578107,0
+645,em bé đang chơi ở đâu,giường,239757,3
+646,màu của ví là gì,màu nâu,497600,2
+647,người phụ nữ mỉm cười giữ những gì,laptop,556862,0
+648,màu của bầu trời là gì,màu xám,213536,2
+649,cô gái nhỏ mặc những gì đang làm pizza,áo sơ mi,405444,0
+650,những gì đang kéo giỏ hàng bằng thùng bia trên đó,con ngựa,459117,0
+651,đang chơi gì với nhau trong cái hố nước nông vậy,con voi,353408,0
+652,màu của nhà vệ sinh là gì,màu nâu,250720,2
+653,con mèo ngồi ở đâu,giường,182758,3
+654,làm sạch và sẵn sàng để được sử dụng,phòng bếp,448795,0
+655,màu của con chó là gì,màu đen,103219,2
+656,những chiếc bánh rán tá đang sắp xếp độc đáo là gì,hộp,458313,0
+657,những gì ngồi trong bồn tắm trong một phòng tắm,cái ghế,532126,0
+658,màu của nút là gì,màu đỏ,142034,2
+659,con mèo đã cuộn tròn ở đâu,giường,278776,3
+660,hai người ngồi ở đâu,băng ghế,388527,3
+661,người đàn ông đang cưỡi gì trên mặt nước của đại dương,ván lướt sóng,486774,0
+662,người đàn ông nấu pizza ở đâu,lò vi sóng,268239,3
+663,xúc xích đang được phục vụ ở đâu trên một cuộn tròn,quán ăn,83862,3
+664,làm việc những gì đặt trên một bức tường gạch,cái bàn,459825,0
+665,cái đầu của nó ở phía sau của người khác,ngựa rằn,454750,0
+666,cái gì đã làm sương sô cô la trên đĩa có tách cà phê và hộp đựng khăn ăn hình chim cánh cụt,donut,378605,0
+667,những gì đang chạy trên đường,xe buýt,571384,0
+668,những gì đang nằm trên bàn với kính râm trên,xe đẩy,549649,0
+669,màu của mèo con là gì,màu cam,55630,2
+670,cái gì đã đậu trong bãi đậu xe với một chiếc mũ bảo hiểm trên ghế,xe máy,361386,0
+671,có bao nhiêu người đang băng qua sông trên một con voi,hai,433714,1
+672,màu sắc của các dấu hiệu là gì,màu xanh dương,145411,2
+673,có bao nhiêu lọ hoa có kích thước khác nhau được trang trí bằng những con bướm,bốn,429530,1
+674,"những gì sơn màu đỏ, trắng và xanh",vòi,479195,0
+675,có bao nhiêu người đàn ông đứng trên một bãi đá gần một bụi cây,hai,42493,1
+676,màu của cà vạt là gì,màu xanh dương,110459,2
+677,đa dạng các loại trái cây nằm ở đâu,hộp,112327,3
+678,cái gì ngồi trên mặt đất bên cạnh một cái bàn lăn,vali,364133,0
+679,những người trẻ đang thả tại một công viên là gì,diều,407868,0
+680,người đàn ông đứng ở đâu khi một chuyến tàu đi qua,trạm,81544,3
+681,một đám người đang đứng ở đâu,sân bay,62778,3
+682,màu của phòng tắm là gì,màu trắng,581601,2
+683,có bao nhiêu người lướt sóng hướng về một con sóng trong đại dương,ba,167352,1
+684,những gì trong phòng khách,lò sưởi,464339,0
+685,người đang cưỡi ván trượt xuống phía tuyết bao phủ là gì,núi,336427,0
+686,người phụ nữ để đồ trang điểm ở đâu,vali,127660,3
+687,có bao nhiêu loại pizza khác nhau trên đĩa có ly nước trên bàn,hai,253729,1
+688,máy bay đậu ở đâu,sân bay,272846,3
+689,những gì nghiêng đi một bên khi nó chìm xuống sông,con thuyền,545924,0
+690,những gì được kéo qua để đón hành khách,xe buýt,447569,0
+691,màu của bông hoa là gì,màu trắng,239052,2
+692,màu của dĩa nhựa là gì,màu xanh lá,489762,2
+693,những gì nằm trên tấm chăn màu xanh lá cây gần một con mèo ngồi,con mèo,387383,0
+694,cái gì đậu trong bãi đậu xe,xe buýt,359937,0
+695,người đàn ông ở đâu trong khi mọi người xem anh ta,lồng,214852,3
+696,phòng tắm được phản chiếu ở đâu,gương,564646,3
+697,người phụ nữ đang vuốt ve một con mèo đen trắng ở đâu,giường,192824,3
+698,những gì nó đã làm sáng với một cái xô trên sàn nhà,phòng tắm,453093,0
+699,cái gì đang đỗ trên con đường đá cuội,xe máy,468508,0
+700,gấu teddy nhồi bông nào trên một chi trên cây,màu cam,419116,0
+701,người đàn ông đứng ở đâu,cửa hàng,454712,3
+702,2 người được phản chiếu ở đâu,gương,227127,3
+703,người đàn ông đang giữ những tấm thức ăn ở đâu,phòng bếp,104817,3
+704,người đàn ông trẻ đang nghỉ trưa ở đâu,văn phòng,140263,3
+705,có bao nhiêu người đang chuẩn bị thức ăn trong bếp,ba,506037,1
+706,có bao nhiêu con bò đi bộ trước cổng kim loại trên đường phố,ba,192730,1
+707,màu của bầu trời là gì,màu xanh dương,271301,2
+708,những gì nằm với bồn rửa và bàn chải đánh răng,tường,432619,0
+709,những gì được làm sạch và tổ chức tốt,phòng,575970,0
+710,con mèo lớn đang nằm ở đâu,giường,403144,3
+711,những gì đang nằm cạnh bên bức tường,bồn tắm,567693,0
+712,cô gái nhỏ cầm những gì được bao phủ bởi rắc,donut,466533,0
+713,có bao nhiêu con cừu ngoài đồng đang ăn rơm,năm,31678,1
+714,"cái gì đang bay trong không khí, trên không",máy bay,379453,0
+715,những gì tạo nên màn hình đẹp,ván lướt sóng,378701,0
+716,hai người mặc những gì đang cưỡi ngựa nâu,mũ bảo hiểm,344633,0
+717,sự phản chiếu của mèo xám và trắng ở đâu,gương,458631,3
+718,màu của tháp là gì,màu nâu,307371,2
+719,những gì đang ngồi trên vỉa hè bên cạnh một trụ cứu hỏa,con ngựa,514248,0
+720,bao nhiêu con ngựa nằm xuống trong khi một con khác đứng gần đó trên một bãi cát ven biển,một,33649,1
+721,có bao nhiêu chiếc xe buýt màu trắng trên đường phố bên cạnh hàng cây,hai,236381,1
+722,màu của đối tượng là gì,màu xanh dương,402980,2
+723,táo đỏ và xanh nằm ở đâu,cái rổ,501739,3
+724,những gì đã chụp vào một ngày nhiều mây,tòa tháp,509551,0
+725,những thứ thiết yếu cần thiết ở đâu,chung cư,22478,3
+726,cô gái giơ tay lên với sự phấn khích mang lại những gì,bánh,379837,0
+727,người đàn ông và phụ nữ đặt những gì lại với nhau,ván lướt sóng,473754,0
+728,màu của diều là gì,màu vàng,547439,2
+729,người đàn ông đang chụp ảnh mình ở đâu,gương,235609,3
+730,người phụ nữ tắm cho hai đứa trẻ ở đâu,bồn tắm,176947,3
+731,cái gì đang trong thùng chứa,donut,497484,0
+732,những gì đang đi trên đường ray,tàu hỏa,565331,0
+733,con mèo đang ngồi ở đâu,đường phố,562558,3
+734,những gì đang được chăn thả trong khu vực có hàng rào,con bò,576200,0
+735,những gì bên cạnh hàng rào trong một bao vây,hươu cao cổ,398519,0
+736,nhà vệ sinh và bồn tắm ở đâu,phòng tắm,382542,3
+737,bếp trắng và tủ đặt ở đâu,phòng bếp,9620,3
+738,người phụ nữ đang sử dụng ipad ở đâu,giường,377850,3
+739,người phụ nữ đội mũ mang theo bao nhiêu điện thoại di động,năm,138772,1
+740,xe đầu kéo kéo cái gì,xe tải,448114,0
+741,máy pha chế và lò vi sóng ở đâu,phòng bếp,414651,3
+742,đâu là người đàn ông và phụ nữ ở đâu,phòng,12614,3
+743,những gì đứng trên góc của một giao điểm dưới bầu trời xanh,tòa nhà,412676,0
+744,trạm xe buýt hai tầng đã dừng ở đâu,đường phố,246573,3
+745,con chó đen và trắng đang ngồi ở đâu,cửa sổ,321057,3
+746,hai người khác đang chèo thuyền ở đâu trong một dòng sông,ca nô,102437,3
+747,màu của ghế là gì,màu đen,348290,2
+748,đang chơi gì trong một cánh đồng cùng nhau,gấu,377282,0
+749,người đàn ông trung niên râu ôm ấp những gì,gấu,566529,0
+750,cô gái trẻ uống gì,cà phê,482808,0
+751,điều gì cho thấy người phụ nữ khỏa thân sử dụng máy tính xách tay của cô ấy,bức tranh,437720,0
+752,những gì đỗ trên đường phố gần đám đông,xe tải,422432,0
+753,con hươu cao cổ được đặt ở đâu,vali,502459,3
+754,nhiều người đang đi bộ ở đâu,chiếc ô,99398,3
+755,ba chú chó nhỏ nhìn ra những gì trong khi ngồi trên lòng một người phụ nữ,cửa sổ,407286,0
+756,hai con cú non ôm nhau ngủ ở đâu,hộp,88621,3
+757,có bao nhiêu con mèo đang thư giãn trong chăn êm ái trên đi văng,hai,162178,1
+758,màu của gạch là gì,màu trắng,502665,2
+759,chiếc giường nằm ở đâu,phòng,248918,3
+760,có bao nhiêu người đang nhìn vào điện thoại di động,bốn,27610,1
+761,con mèo đang ngồi ở đâu,vali,85131,3
+762,có bao nhiêu con hươu cao cổ đang ăn thức ăn từ máng ăn trong chuồng,năm,96161,1
+763,những gì đang đứng cạnh nhau,hươu cao cổ,505538,0
+764,màu của gấu là gì,màu đen,311953,2
+765,bình hoa của hoa ở đâu,cửa sổ,81431,3
+766,những gì nằm giữa một số cây bụi trong công viên,tòa tháp,565929,0
+767,xe máy đang hoạt động ở đâu,ga-ra,436856,3
+768,có bao nhiêu trẻ em trên cánh đồng chơi thả diều,ba,487994,1
+769,màu của gạch là gì,màu nâu,220601,2
+770,màu của cổ áo là gì,màu đỏ,550063,2
+771,có những người đang xem có bao nhiêu người đàn ông trên lưng ngựa,ba,229552,1
+772,màu sắc của uống là gì,màu tía,556306,2
+773,những gì đang bay qua bầu trời xanh,hải âu,420929,0
+774,màu của tủ lạnh là gì,màu trắng,433224,2
+775,màu của dĩa nhựa là gì,màu tía,550875,2
+776,người đàn ông trên ghế vắt sữa con gì,con bò,576084,0
+777,có bao nhiêu tổng thống được đại diện trong bức ảnh này,năm,223726,1
+778,con ngựa ăn gì bởi một hàng rào dây,bãi cỏ,516827,0
+779,người đàn ông đang ở đâu,đường phố,391956,3
+780,có bao nhiêu người đàn ông trong sóng của đại dương,bốn,35711,1
+781,những gì mới được tạo thành,giường,376718,0
+782,có bao nhiêu người đang cưỡi ngựa trên bờ biển,bốn,102059,1
+783,những gì bên cạnh nhau trên một bề mặt đất bên cạnh một gờ đá,con voi,534308,0
+784,cầu thủ bóng chày đang đung đưa vào một quả bóng là gì,gậy,492605,0
+785,màu sắc của các dấu hiệu là gì,màu xanh lá,228727,2
+786,những gì gắn vào bên của một tòa nhà,đồng hồ,551780,0
+787,kéo cắt và kẹp là gì,tách,550322,0
+788,có bao nhiêu đường chỉ dẫn phía trước những cánh cửa sơn màu,một,237860,1
+789,có bao nhiêu con gấu nâu đang nằm trên một tảng đá và một con gấu khác đang đi dạo,một,295370,1
+790,màu của thiết bị là gì,màu vàng,23203,2
+791,màu sắc của bộ đồ lặn là gì,màu đen,149810,2
+792,có bao nhiêu chiếc vali kiểu cũ được xếp chồng lên nhau,sáu,40065,1
+793,màu của con mèo là gì,màu đen,520655,2
+794,màu của lá là gì,màu xanh lá,205380,2
+795,người đó đã chạy nước ở đâu,chậu,312299,3
+796,người đàn ông đang cầm gì bên cạnh một khu ăn uống ngoài trời,pizza,363276,0
+797,anh chàng giữ những gì đã sẵn sàng để chơi bóng,gậy,403675,0
+798,có bao nhiêu người đàn ông trong những chiếc áo khoác tối đứng gần một người đàn ông,hai,304614,1
+799,cái đĩa màu xanh và trắng với trái cây và những gì,rau,576774,0
+800,có bao nhiêu con hươu cao cổ đang đứng bên hàng rào,năm,149763,1
+801,màu của gấu bông là gì,màu xanh dương,149555,2
+802,màu của ghế sofa là gì,màu nâu,219413,2
+803,người đàn ông tự chụp ảnh của mình ở đâu,phòng,121219,3
+804,những gì đứng cạnh kệ với chai trên chúng,tủ đá,533589,0
+805,màu của chuối là gì,màu vàng,390797,2
+806,màu của áo khoác là gì,màu tía,169779,2
+807,màu của con mèo là gì,màu đen,88082,2
+808,cái gì được trưng bày trước biển hiệu xe máy,xe máy,355040,0
+809,giao lưu trong mô hình ba ba bởi một,ngựa vằn,544071,0
+810,trận đấu quần vợt đang diễn ra ở đâu,sân vận động,39405,3
+811,khách của đám cưới tập trung ở đâu,nhà ở,236370,3
+812,màu của xe buýt là gì,màu cam,313131,2
+813,màu của bàn là gì,màu xám,391000,2
+814,những gì đang đứng trên đống gỗ trong một cánh đồng cỏ bên cạnh cây cối,hươu cao cổ,392933,0
+815,có bao nhiêu con hươu cao cổ uống nước cùng với ngỗng trong chuồng của chúng,ba,86121,1
+816,màu của phòng tắm là gì,màu xanh dương,532509,2
+817,một số ngỗng trông rất dễ thương ở đâu,chuồng,344214,3
+818,có bao nhiêu chiếc vali đen xếp chồng lên nhau,sáu,56226,1
+819,những gì nằm trên đỉnh của một chiếc ghế sofa màu đỏ,con chó,553795,0
+820,con ngựa kéo bốn người ở đâu,đường,517603,3
+821,người đàn ông đang nằm ở đâu,giường,395817,3
+822,những gì đang ngồi trong rừng,băng ghế,401124,0
+823,màu của mũ bảo hiểm là gì,màu đỏ,270524,2
+824,những gì được bao quanh bởi đá trên tường,nhà vệ sinh,389128,0
+825,cái gì bày ra trên bàn,sandwich,338581,0
+826,những gì xếp hàng đến đồng tiền mét trên một vỉa hè đông đúc?,xe ô tô,485123,0
+827,có bao nhiêu người đàn ông đang sửa chiếc nơ của mình và một người đàn ông khác đang tìm kiếm,một,414747,1
+828,màu của lửa là gì,màu vàng,116832,2
+829,con mèo đang nằm ở đâu,chậu,111727,3
+830,màu của chiếc tàu là gì,màu đỏ,517032,2
+831,cô gái cầm trên tay những gì phủ rắc,donut,466533,0
+832,"có bao nhiêu người đang ngồi trên chiếc ca nô, với người thứ ba từ chèo trước",bốn,456245,1
+833,trên bàn trắng có bao nhiêu con gấu bông,hai,56250,1
+834,màu của bếp là gì,màu đen,534130,2
+835,cân bằng cưỡi mèo nằm ở phía bên của một tòa nhà gạch,con chim,434035,0
+836,những gì sơn màu xanh bên cạnh một bụi cây bounty với hoa màu đỏ,băng ghế,391674,0
+837,có bao nhiêu con voi xám trong đó có một con chim trắng trên đầu,hai,64309,1
+838,có gì đỗ bên cạnh một chiếc xe buýt cũ,xe ô tô,543043,0
+839,những gì nằm trong cỏ và nhìn vào camera,con cừu,547383,0
+840,người phụ nữ mặc gì khi ăn bánh rán,áo sơ mi,524627,0
+841,những gì dừng lại ở đèn dừng với tháp đồng hồ phía trước,xe ô tô,415413,0
+842,ai đó giữ lưỡi cái gì và đặt thức ăn lên nó,hươu cao cổ,507557,0
+843,mèo con màu đen ngồi ở đâu,cái túi,352549,3
+844,ngồi trên đầu phòng tắm là gì,người giữ,432619,0
+845,những gì đang ngồi trong một bãi đậu xe bẩn,xe tải,424554,0
+846,những gì bên cạnh nhau trên một tầng trong nhà,ván trượt,430096,0
+847,hai người phụ nữ đang trang trí một chiếc bánh ở đâu,phòng bếp,61773,3
+848,"khu vực giải trí chứa một tv nhỏ, hoa, phim, sách và chăn ở đâu",cái nồi,311488,3
+849,lái xe gì mà đầu của họ thò ra ngoài cửa sổ,con chó,346071,0
+850,màu của bầu trời là gì,màu xám,5500,2
+851,những gì hoàn chỉnh với bồn tắm gang,sân khấu,442009,0
+852,người đàn ông đang mặc một chiếc khăn đang giữ,chuối,540196,0
+853,có gì đỗ gần một số xe hơi,xe đạp,406253,0
+854,có bao nhiêu con dê lông đang đi bộ lên một con đường mòn trên đồi,ba,206397,1
+855,"chuối, marshmellows, chip và cái gì được rắc trong một cái bát",sô cô la,577539,0
+856,bó hoa hồng được đặt ở đâu,lọ cắm hoa,510034,3
+857,màu của các tấm là gì,màu trắng,151945,2
+858,có bao nhiêu cô gái mặc áo sơ mi xanh lá chanh đang dựa vào một chiếc máy bay động cơ nhỏ,hai,234162,1
+859,người đang tắm cho một con chó ở đâu,bồn tắm,467252,3
+860,gương đánh bóng và một ổ cắm,vòi hoa sen,394517,0
+861,màu của xe buýt là gì,màu xanh dương,257044,2
+862,màu của gấu là gì,màu nâu,69350,2
+863,người đàn ông cầm một con dơi và mặc những gì,mũ,348469,0
+864,cái nhìn chằm chằm vào người xử lý của họ khi ở trên núi,con ngựa,527504,0
+865,người trượt tuyết trượt những gì đang đi trên một con đường tuyết,cây sào,472216,0
+866,những gì ăn mặc như một con gà tây và một quả bí ngô,gấu,475330,0
+867,có bao nhiêu người đi dưới và che ô trong mưa,hai,513482,1
+868,người phụ nữ trong chiếc khăn màu vàng giữ những gì,điện thoại,459272,0
+869,người đàn ông chuẩn bị thức ăn ở đâu,phòng bếp,22857,3
+870,những gì nằm trên chiếc giường nhỏ trong một khu vực chật chội,con chó,451449,0
+871,màu tóc là gì,màu đỏ,460903,2
+872,màu của xe tải là gì,màu đỏ,69393,2
+873,những gì đang đứng ở rìa tài sản của họ,con chó,485489,0
+874,ăn thức ăn cho mèo từ món ăn của nó là gì,con mèo,437556,0
+875,hai người đang bay một con diều trong tuyết gần tuyết bao phủ là gì,núi,413522,0
+876,thanh niên xem thiết lập những gì,máy tính,540253,0
+877,những gì ngồi đóng cửa trong phòng trung tính,tủ lạnh,407520,0
+878,những gì ngồi trong bóng râm bởi một bức tường,con cừu,427643,0
+879,cái gì đã sẵn sàng để ăn trong đĩa,bữa ăn,347819,0
+880,nhóm hươu cao cổ ở đâu,chuồng,445768,3
+881,đâu là dấu hiệu cảnh báo màu cam ám chỉ dầu thô,đường phố,171806,3
+882,màu của vòi nước là gì,màu đỏ,460290,2
+883,cái gì đang nhìn vào cây trên mặt đất,ngựa vằn,557220,0
+884,những gì có thể được nhìn thấy gặm cỏ trên cỏ ở bên đường,gấu,454956,0
+885,những gì chứa đầy đồ đạc và một chiếc tv màn hình phẳng,phòng,352507,0
+886,cái gì đang bên cạnh một máy rửa chén,tủ đông,499480,0
+887,những gì đang nằm trên sàn nhà vào một ngày nắng,con voi,566538,0
+888,những gì đang nằm trên giường lộn xộn,con chó,516404,0
+889,những gì nhìn rất ngon và khỏe mạnh,sandwich,575179,0
+890,màu của bánh là gì,màu trắng,92319,2
+891,cái gì trên đĩa,pizza,409239,0
+892,những gì nằm trên bề mặt bởi một tấm gương,điện thoại,511403,0
+893,có bao nhiêu con mèo ngồi bên chiếc ô và con kia ngồi dưới nó,một,47563,1
+894,nhóm động vật dễ thương ở đâu,giường,2240,3
+895,màu của cái mỏ con vật là gì,màu đỏ,305315,2
+896,những gì đỗ dọc theo đường phố gần đèn giao thông,xe ô tô,390684,0
+897,màu của con ngựa là gì,màu trắng,123764,2
+898,màu sắc của các tính năng là gì,màu đen,342709,2
+899,hai người phụ nữ giữ gì với một hình ảnh trên đó,bánh,479213,0
+900,hai người đang chơi trò chơi video ở đâu,phòng,256385,3
+901,màu của đèn là gì,màu vàng,488812,2
+902,màu của lá là gì,màu nâu,435803,2
+903,cái gặm nhấm này trên một nhánh trong khi một con vẹt khác đồng hồ,con vẹt,537301,0
+904,con hươu cao cổ ăn ở đâu trên đỉnh cột,vườn bách thú,337857,3
+905,những gì nằm trên tấm chăn bẩn cũ,con chó,383448,0
+906,người cầm xẻng xúc cát ở đâu,gầu múc,488693,3
+907,những gì trong cửa sổ trong một tòa nhà gạch,đồng hồ,413497,0
+908,một số cầu thang là một cái bàn và một chiếc tivi được gọi là gì,đi văng,579970,0
+909,con đường nào đi dọc theo sườn đồi đá,đường sắt,508996,0
+910,có bao nhiêu lát bánh mì sandwich khác nhau mà không có vỏ,năm,217779,1
+911,màu của cuốn sách là gì,màu tía,201644,2
+912,học sinh đang ở đâu,cái ghế,151864,3
+913,có bao nhiêu máy tính xách tay đặt cạnh nhau trên một cái bàn,hai,374333,1
+914,cái gì đang ngồi trên chiếc khăn ở băng ghế sau của ô tô,con chó,364010,0
+915,cái gì nằm bên cạnh mặt nước của một bến cảng,băng ghế,335529,0
+916,"những gì đứng đầu với rau bina, cà chua và bông cải xanh",pizza,335733,0
+917,"có bao nhiêu cô gái đang nhảy trên không, hai trong số họ đang cầm vợt bóng",năm,1943,1
+918,cái gì bên cạnh vỏ điện thoại dệt kim,điện thoại,340637,0
+919,màu của bầu trời là gì,màu xanh dương,335255,2
+920,"cái gì có màu trắng, be và nâu",lọ cắm hoa,518719,0
+921,có gì trên đường phố,xe đẩy,376625,0
+922,giao thông của một cây cầu lớn là gì,xe buýt,364919,0
+923,màu của chiếc ô là gì,màu đen,101822,2
+924,cặp vợ chồng cầm ly rượu ở đâu,bảo tàng,144817,3
+925,người đàn ông nằm ở đâu,giường,300375,3
+926,những gì chơi trong nước nông trong một bao vây,con voi,392985,0
+927,con ngựa đã kéo những gì với những người ở phía sau,xe,500583,0
+928,có bao nhiêu chàng trai đang cầm điều khiển từ xa wii đứng lên chơi,hai,531852,1
+929,gấu bông hồng đang ngồi ở đâu,máy sấy khô,402004,3
+930,những gì đã đăng ở trên chúng,bồn tiểu,348045,0
+931,màu sắc của một,màu trắng,513944,2
+932,có bao nhiêu người trong trang phục đang tạo dáng với khuôn mặt hài hước,ba,297182,1
+933,có bao nhiêu bức tranh được treo trên tường của phòng tắm,hai,485894,1
+934,màu của xe buýt là gì,màu vàng,395314,2
+935,trái tim màu đen định hình những gì với một con dao trong đó,bánh,550400,0
+936,"những gì đang ngồi trên mặt đất, nó dường như là một con diều",máy bay,511363,0
+937,màu của vòi nước là gì,màu vàng,439278,2
+938,những gì ăn một cái gì đó trên mặt đất,con ngựa,449132,0
+939,có bao nhiêu con gấu bông trắng đang ngồi cạnh nhau,hai,515006,1
+940,những gì gắn vào tường bên cạnh một cột cao,xe đạp,561928,0
+941,có bao nhiêu con ngựa dự thảo đang làm việc trong một trang trại vào khoảng năm 1932,sáu,564232,1
+942,con ngựa kéo một chiếc xe lôi ở đâu,đường phố,202004,3
+943,người đàn ông ở đâu trong khi đang cầm một chiếc cặp kim loại,cửa hàng,539851,3
+944,con chim đã chết được cân ở đâu,tách,142941,3
+945,đâu là người đàn ông mặc một chiếc nút chai đứng,phòng,341886,3
+946,anh chàng đang mang những gì trên tay,ván lướt sóng,581557,0
+947,người đàn ông đang ở đâu,trạm,192720,3
+948,màu của đối tượng là gì,màu xanh dương,541797,2
+949,những gì đảo lộn trên bờ biển tuyết,con thuyền,412914,0
+950,màu của chiếc đĩa là gì,màu xanh dương,214300,2
+951,màu của con mèo là gì,màu xám,578072,2
+952,những gì đang truyền một chuyến tàu khác trong một trạm,tàu hỏa,537861,0
+953,nơi đã làm nhiều sản phẩm nướng,cửa sổ,45325,3
+954,màu của bông hoa là gì,màu xanh dương,217407,2
+955,người phụ nữ nướng bánh quy ở đâu,lò vi sóng,551713,3
+956,những gì nằm ở góc sai xuống một cống nước dưới nước sông bên cạnh nó có vẻ cao,băng ghế,545363,0
+957,nhà vệ sinh là một bồn rửa và một chiếc khăn và giấy vệ sinh,buồng,397327,0
+958,tủ lạnh màu đen đang ở đâu,buồng,546114,3
+959,những gì được hiển thị với các sản phẩm khác trong nền,táo,352377,0
+960,nhóm phụ nữ tập hợp ở đâu,phòng,2752,3
+961,màu của vải là gì,màu vàng,336088,2
+962,cái gì chia ra cho thấy những bát thức ăn khác nhau,bức ảnh,346138,0
+963,có bao nhiêu người đàn ông mặc đồ lạnh giá ngồi trên đỉnh bốn con voi,bốn,100253,1
+964,hai con chó trong một cái chăn chia sẻ những gì,đồ chơi,512118,0
+965,màu của cà rốt là gì,màu vàng,361376,2
+966,bao nhiêu máy bay phản lực màu đỏ bay trong không khí và để lại một vệt khói,chín,532753,1
+967,những gì đang rời khỏi máy ảnh,ngựa vằn,335326,0
+968,người đàn ông đang ngồi ở đâu,cái ghế,29161,3
+969,người đàn ông ở đâu trong một đầu bếp đồng phục chuẩn bị thức ăn,phòng bếp,123539,3
+970,xe buýt đang dừng ở đâu tại trạm xe buýt,đường phố,212346,3
+971,có bao nhiêu người chơi polo trên ngựa trên một cánh đồng,năm,213592,1
+972,màu của chiếc giường là gì,màu trắng,302353,2
+973,một số loại rau trộn với nhau ở đâu,cái nồi,370613,3
+974,những gì đang chuẩn bị để hạ cánh trên đường băng,máy bay,374886,0
+975,màu của ô cửa là gì,màu đỏ,70600,2
+976,rượu vang đỏ được rót vào ly trên bàn là gì,nến,347087,0
+977,con mèo ngồi ở đâu,vali,252420,3
+978,người đàn ông và hai phụ nữ ở đâu,phòng bếp,466890,3
+979,những gì được bao phủ trong cỏ và cỏ dại vào ban đêm,bát,410670,0
+980,con mèo đang ngồi ở đâu,chậu,371773,3
+981,màu của bông hoa là gì,màu tía,439366,2
+982,nệm và gối nằm ở đâu,phòng,434394,3
+983,có bao nhiêu bánh rán được hiển thị trên khăn giấy,ba,558641,1
+984,con mèo đang đâu,bồn tắm,558073,3
+985,có bao nhiêu con voi chơi với nhau ngoài bãi đất,hai,258788,1
+986,những gì nằm trên vỉa hè thành phố,băng ghế,491131,0
+987,màu sắc của cái đó là gì,màu đỏ,169499,2
+988,những gì đang bay cao trên bầu trời trên những đám mây,máy bay,424776,0
+989,những gì đang đi xuống phố,xe đẩy,415530,0
+990,trẻ nhỏ đang đặt ở đâu,toa xe,446743,3
+991,bốn người đàn ông sử dụng gì,dao,421955,0
+992,những gì đang đi trên một cánh đồng tuyết phủ tuyết,gấu,503207,0
+993,cái gì trong đỉnh tháp,đồng hồ,449392,0
+994,đoàn tàu đang ở đâu,trạm,88414,3
+995,người đàn ông và phụ nữ đang ở đâu,gian hàng,210769,3
+996,màu của con chó là gì,màu nâu,235446,2
+997,có bao nhiêu người cùng nhau tạo dáng trên sàn nhảy,ba,4684,1
+998,rất nhiều đồ vật trang trí động vật đặt ở đâu,cái ghế,176767,3
+999,người đang đi đâu trên ván trượt của mình,đường phố,135270,3
+1000,những gì kéo xe đang di chuyển dọc theo lối đi,con ngựa,501835,0
+1001,"bao nhiêu hành lý màu xanh, đen và đỏ",ba,7690,1
+1002,có bao nhiêu cái bánh mì kẹp xúc xích đang ngồi trên cát sau tấm kính,hai,72955,1
+1003,người phụ nữ đang sử dụng một công cụ ktichen để tạo ra thứ gì đó ở đâu,bát,464650,3
+1004,nhóm hoa màu đỏ ở đâu với thân cây xanh dài,lọ cắm hoa,242597,3
+1005,màu của tủ đông là gì,màu trắng,110204,2
+1006,người đàn ông cầm cái gì trong khi mặc một chiếc áo sơ mi sặc sỡ,máy ảnh,340209,0
+1007,những bông hoa nằm ở đâu,lọ cắm hoa,398270,3
+1008,người phụ nữ khỏa thân đang nằm ở đâu,giường,75055,3
+1009,màu của chuỗi là gì,màu đỏ,331520,2
+1010,con mèo sử dụng nhà vệ sinh ở đâu,nhà ở,37477,3
+1011,màu của quần short là gì,màu trắng,92366,2
+1012,"chips, bông cải xanh và cơm ở đâu",bát,415570,3
+1013,nơi nào một số táo và chuối được chứa,bát,101686,3
+1014,đứa trẻ đang nằm ở đâu,giường,567439,3
+1015,màu của cái bát là gì,màu nâu,271416,2
+1016,cái gì đang ngồi trên thớt bên cạnh lớp phủ,pizza,512989,0
+1017,con chó nhỏ nằm ở đâu,cái rổ,77806,3
+1018,có bao nhiêu chiếc máy bay lớn bên cạnh một vài chiếc máy bay nhỏ hơn,một,192702,1
+1019,máy bay chiến đấu cổ điển ở đâu,ga-ra,477029,3
+1020,cặp vợ chồng mới cưới đang cắt là gì,bánh,469203,0
+1021,con mèo đang ngồi ở đâu,tủ lạnh,191156,3
+1022,màu của vẹt là gì,màu vàng,240590,2
+1023,có bao nhiêu cầu thủ đá bóng trên sân trong khi một cầu thủ đá bóng,ba,202328,1
+1024,những gì được trưng bày với vật dụng nha khoa tại hội chợ,xe ô tô,560474,0
+1025,những gì bao gồm bánh mì kẹp thịt rau và bông cải xanh,bữa trưa,431481,0
+1026,ba con chó lớn ngồi ở đâu,hộp,336843,3
+1027,những gì chứa đầy đồ nội thất màu nâu,phòng,578498,0
+1028,những gì đang đứng trong một không gian mở,con voi,476300,0
+1029,một con voi ăn một số thực phẩm ở đâu,chuồng,493773,3
+1030,màu của điều khiển từ xa là gì,màu trắng,488605,2
+1031,những gì đang đi nhanh chóng khi nhóm người nhìn vào,tàu hỏa,471023,0
+1032,người phụ nữ đang giữ gì bởi một phòng tắm,máy ảnh,459921,0
+1033,những gì nằm trên mặt bàn màu xám,bàn phím,482774,0
+1034,có bao nhiêu phụ nữ mặc áo sơ mi xanh ở bàn cam,ba,333565,1
+1035,màu của con mèo là gì,màu đen,575902,2
+1036,có gì đang ngồi trên sông,con thuyền,455040,0
+1037,màu của nước ép là gì,màu cam,41818,2
+1038,màu của xe buýt là gì,màu đỏ,52693,2
+1039,màu của đám mây là gì,màu xanh dương,55373,2
+1040,những gì chứa đầy máy tính xách tay,cái bàn,570782,0
+1041,cái gì đang băng qua con suối nhỏ trong một trang trại,con ngựa,458168,0
+1042,cái gì đang đứng trên mặt đất cát bên ngoài vào ban ngày với cây cối phía sau nó,con voi,348931,0
+1043,cái gì đang nhìn trên một bức tường đá ngắn,con ngựa,496081,0
+1044,màu mắt là gì,màu vàng,233379,2
+1045,con gấu nhỏ màu đen ở đâu,sân,332562,3
+1046,màu của con mèo là gì,màu đen,411160,2
+1047,"những gì, ngoại trừ hai chai rượu vang",tủ đá,430677,0
+1048,có bao nhiêu lát là tấm chứa pizza pepperoni,một,309539,1
+1049,có bao nhiêu người ngồi trên ca nô băng qua mặt nước,bốn,456245,1
+1050,có bao nhiêu con voi xám đứng cạnh nhau trên một con đường,hai,270402,1
+1051,có bao nhiêu người đàn ông cầm gậy bóng chày đứng trên một cánh đồng,ba,564676,1
+1052,những chiếc pizza đang nằm ở đâu,phòng,534859,3
+1053,người phụ nữ đang ngồi ở đâu,phòng bếp,269493,3
+1054,có bao nhiêu đồng đội lấy được cây gậy trong khi chờ đợi cùng các đồng đội khác,một,376342,1
+1055,những gì chống lại bức tường của phòng khách nhỏ,cái bàn,399791,0
+1056,bếp nằm ở đâu,phòng bếp,572859,3
+1057,bao nhiêu người đàn ông mặc lễ phục đang nắm tay nhau,hai,31734,1
+1058,có gì đang ngồi trên tổ của nó,con chim,397403,0
+1059,những gì chứa đầy bánh rán trên đầu bàn,cái rổ,553576,0
+1060,bánh pizza chưa nấu chín với xúc xích nằm ở đâu,chảo,497500,3
+1061,kích thước trung bình đã được vận chuyển bằng cách phun graffiti được sơn ở bên cạnh,hàng hoá,398220,0
+1062,hai giường đơn ở đâu,phòng,48710,3
+1063,cái gì đang đứng trên tuyết với hai chiếc đĩa,con chó,379077,0
+1064,con mèo đang ngủ ở đâu,hành lý,422910,3
+1065,cô gái trẻ đang chải tóc ở đâu,phòng ngủ,86922,3
+1066,những gì chứa đầy chuối ngồi trên bàn,bát,480122,0
+1067,những gì đang trên đầu bàn,máy tính,486040,0
+1068,có bao nhiêu chuối được treo từ người giữ chuối,ba,552755,1
+1069,có bao nhiêu con voi đang cùng nhau đi dạo trong vòng vây của chúng,bốn,42696,1
+1070,những gì đỗ với chiếc ô màu tím trên ghế,xe tay ga,565650,0
+1071,cái gì đang mở một phần trên bàn làm việc,laptop,341874,0
+1072,con mèo đang nằm ở đâu,ô cửa,182903,3
+1073,có bao nhiêu người đàn ông đứng trên ván lướt sóng trên bãi biển,ba,187451,1
+1074,những gì đang chăn thả trên vỉa hè thành phố,con cừu,375783,0
+1075,những gì đỗ bên cạnh nhau trong một bãi đậu xe,xe tải,570755,0
+1076,màu của con chó là gì,màu đen,273443,2
+1077,"có bao nhiêu con chó lông trắng ở bên đường, một con bị buộc dây",hai,223203,1
+1078,cái gì đậu trên cánh đồng xanh bên cạnh các phương tiện khác,xe tải,360064,0
+1079,những gì được thiết lập với máy tính xách tay và loa,cái bàn,463876,0
+1080,nhà vệ sinh và bồn rửa đặt ở đâu,phòng tắm,28589,3
+1081,những gì nằm cạnh thuyền trên bờ biển,con ngựa,470885,0
+1082,cái gì ở cuối của một con đường mòn,nhà vệ sinh,481753,0
+1083,bánh sinh nhật bao nhiêu tuổi với ngựa trên đỉnh,sáu,13605,1
+1084,màu của khay là gì,màu vàng,448161,2
+1085,người đầu bếp rán cá ở đâu,phòng bếp,205601,3
+1086,nải chuối xanh treo ở đâu,kho,397075,3
+1087,màu của tháp là gì,màu đỏ,177922,2
+1088,cái gì đậu trên cành cây,con chim,337139,0
+1089,những gì được nhét vào các tấm trắng trên gối,gấu,436603,0
+1090,màu của thứ kẻ sọc là gì,màu trắng,103580,2
+1091,những gì đang chờ đợi trong khi chủ sở hữu của anh ta cắt một ít thịt,con chó,419974,0
+1092,màu của xe đang chạy là gì,màu đỏ,2089,2
+1093,những gì được dán vào tòa nhà cao tầng,đồng hồ,413709,0
+1094,màu của chiếc ô là gì,màu đen,731,2
+1095,một quả bóng chày được đánh ở đâu,sân vận động,579925,3
+1096,cô bé nằm ở đâu,giường,369338,3
+1097,những gì ngồi ở mặt sau của một băng ghế làm bằng gỗ,con chim,484026,0
+1098,cô gái có làn da trắng mặc áo hoodie giơ lên ​​là gì,bàn chải,504621,0
+1099,có bao nhiêu máy bay đang hình thành trên bầu trời,sáu,250241,1
+1100,màu của chiếc tàu là gì,màu xanh dương,62329,2
+1101,hai hộp lớn của bánh rán và đồ uống ở đâu,văn phòng,198120,3
+1102,cái gì phủ trên kem và dâu tây nằm trên đĩa,món tráng miệng,345941,0
+1103,có bao nhiêu người trượt tuyết trượt tuyết trên đồi với hai người đang xuống đồi,ba,14677,1
+1104,người đàn ông trẻ mỉm cười ở đâu,cái ghế,263687,3
+1105,màu của băng ghế là gì,màu xanh dương,341272,2
+1106,con ngựa đã kéo những gì với những người trong xe,xe,500583,0
+1107,có bao nhiêu cốc có con chó trên đó và người kia có một con mèo,một,212877,1
+1108,cái gì đậu trên đất liền ngồi cạnh một cái hồ,con thuyền,377882,0
+1109,cái gì đang ngồi bên cạnh hai cái quầy,lò vi sóng,533978,0
+1110,có bao nhiêu đường được đăng vào cột kim loại,một,291149,1
+1111,một số người nếm rượu ở đâu,phòng,21462,3
+1112,cái gì ở đó đang nhìn cái gì đó,hươu cao cổ,351903,0
+1113,những gì đứng đầu với bánh sandwich bánh ngọt trên đầu bàn,đĩa ăn,528821,0
+1114,con chó nâu và trắng mặc những gì,cà vạt,468541,0
+1115,màu của con mèo là gì,màu cam,118997,2
+1116,những gì đang đuổi theo một cái dĩa,con chó,575357,0
+1117,người đàn ông mặc áo yếm màu vàng cầm cái gì,chuối,558611,0
+1118,cái gì được phun bằng sơn kim loại màu xanh,điêu khắc,335045,0
+1119,người đi bộ ở đâu,tòa nhà,292804,3
+1120,phòng khách rộng lớn được bố trí trang nhã ở đâu,nhà ở,236604,3
+1121,màu của xe là gì,màu vàng,11812,2
+1122,màu của lá là gì,màu xanh lá,319126,2
+1123,hai con hươu cao cổ lớn và một con hươu cao cổ con ở đâu,vườn bách thú,529671,3
+1124,lọ hoa nằm ở cạnh cái gì,bát,127035,3
+1125,những gì đang được chuẩn bị trên bếp trong một nhà bếp,bữa ăn,418882,0
+1126,màu của ghế là gì,màu nâu,520091,2
+1127,cửa sổ hiển thị ở đâu,cửa hàng,362764,3
+1128,người đội mũ bảo hiểm xe máy đang đi cái gì,ván trượt,476119,0
+1129,màu của động cơ là gì,màu đen,318164,2
+1130,những gì được treo ở phía bên của một bức tường,bức tranh,571215,0
+1131,"những gì đứng, bị che khuất một phần bởi cây",con voi,534151,0
+1132,theo sau là dòng xe ô tô,động cơ,344816,0
+1133,cái gì trên sàn trong một căn phòng,cái túi,343229,0
+1134,có bao nhiêu phụ nữ đang cầm ván lướt sóng và mỉm cười ở bãi biển,hai,566159,1
+1135,màu của con ngựa là gì,màu nâu,218121,2
+1136,những gì lộ ra pizza với thịt và rau,lò vi sóng,484425,0
+1137,xe đạp đang đỗ ở đâu,bồn tắm,541571,3
+1138,cái gì phủ đầy gỉ sét đang đậu trong sân,xe tải,500829,0
+1139,cái gì trông giống như họ đang ôm nhau,gấu,532985,0
+1140,màu sắc của đôi giày là gì,màu đỏ,280866,2
+1141,có bao nhiêu con gấu trong nước lạnh,hai,341383,1
+1142,người phụ nữ và người đàn ông đứng ở đâu khi chơi trò chơi video,nhà ở,229427,3
+1143,những chiếc bàn phủ đầy tuyết,quán ăn,413626,0
+1144,những gì đang ngồi dưới một đám mây tràn ngập bầu trời xanh,máy bay,500058,0
+1145,màu của áo là gì,màu xanh dương,498651,2
+1146,bồn tắm trắng đang nằm ở đâu,phòng tắm,310532,3
+1147,con chó đang mặc gì và ngồi bằng một chiếc xe máy,mũ,472375,0
+1148,cái gì đang đậu khi một số người đi xe đẩy,xe buýt,577036,0
+1149,những gì bên cạnh một chiếc bánh pizza,con chó,473720,0
+1150,một chiếc máy bay và những chiếc ô tô cũ ở đâu,tòa nhà,527557,3
+1151,cái gì đang đứng bên dòng nước,con chim,507550,0
+1152,tàu hiện đại đang đậu ở đâu,trạm,308110,3
+1153,gấu bông nâu đang ngồi ở đâu,cái ghế,357095,3
+1154,những gì chia sẻ cành mà họ đang ăn,hươu cao cổ,420472,0
+1155,những người đang tận hưởng công ty của nhau ở đâu,phòng,427238,3
+1156,màu của ánh sáng là gì,màu đỏ,408303,2
+1157,chiếc máy bay nhỏ màu xanh và trắng đã đậu ở đâu,ga-ra,259113,3
+1158,màu của chiếc bình là gì,màu xanh lá,556763,2
+1159,con mèo đang cuộn tròn ở đâu,chậu,311167,3
+1160,cô gái đang nhìn ở đâu,gương,581736,3
+1161,cái gì trên chiếc bàn màu cam và được mở ra,máy tính,517081,0
+1162,màu của ô cửa là gì,màu xanh lá,131460,2
+1163,màu của trượt tuyết là gì,màu tía,105600,2
+1164,có bao nhiêu con chó trên dây xích đang đánh hơi nhau trong công viên,hai,314879,1
+1165,những gì đang nằm bên băng ghế,con chó,423036,0
+1166,những gì đang chơi với đĩa ném bên ngoài,con chó,421072,0
+1167,cáo gì đang được treo trong quán bar,đồng hồ,581632,0
+1168,màu của bầu trời là gì,màu xanh dương,93667,2
+1169,màu của cánh đồng là gì,màu xanh lá,331229,2
+1170,màu của áo là gì,màu tía,364458,2
+1171,người phụ nữ đang cắt với kem roi là gì,bánh,538163,0
+1172,người trượt ván ở đâu,ga-ra,492548,3
+1173,màu của khăn là gì,màu nâu,521473,2
+1174,màu của áo là gì,màu xám,28010,2
+1175,có bao nhiêu bồn tiểu trong phòng tắm công cộng của nam giới,ba,356725,1
+1176,màu sắc của ca nô là gì,màu xanh dương,193629,2
+1177,màu của gấu là gì,màu đen,29182,2
+1178,có bao nhiêu người lướt sóng thay thế vị trí của họ để cưỡi sóng biển,ba,273586,1
+1179,có bao nhiêu cậu bé đang chơi bóng đá trên sân,bốn,302168,1
+1180,hai người đàn ông cầm những chiếc kính tạo dáng chụp ảnh,rượu,418062,0
+1181,màu của cái tủ là gì,màu trắng,564451,2
+1182,đứa trẻ đang giữ một chiếc ô màu cam ở đâu,vòi hoa sen,46674,3
+1183,những gì giữ vào lồng kim loại trong khi bơi,gấu,539067,0
+1184,nhiều bánh rán khác nhau nằm ở đâu,hộp,136929,3
+1185,anh chàng thổi khô tóc ở đâu,phòng tắm,432037,3
+1186,"những gì đứng đầu với nấm, bông cải xanh, hành tây và phô mai",pizza,549224,0
+1187,màu của chiếc giường là gì,màu cam,41233,2
+1188,những gì chứa đầy đồ nội thất và một cửa sổ được bao phủ trong rèm cửa,phòng,402639,0
+1189,những gì cúi xuống đang ăn cỏ đứng cạnh một hàng rào,hươu cao cổ,528261,0
+1190,những gì tiếp theo là hai chiếc xe tải nhỏ hơn,xe buýt,440461,0
+1191,những gì đỗ gần cảnh một tai nạn,xe ô tô,434990,0
+1192,những gì đang khóa vòi của họ với nhau,con voi,562595,0
+1193,màu của con bò là gì,màu đen,303012,2
+1194,một số trẻ em đang tập thể dục ở đâu,phòng,524702,3
+1195,màu của chiếc bình là gì,màu đỏ,323829,2
+1196,pizza đã cắt thành tám lát,hộp,171467,3
+1197,bao phủ một khu vực với các yếu tố kiến ​​trúc dọc theo đường phố,các tòa nhà,555597,0
+1198,màu của con chó là gì,màu nâu,374832,2
+1199,màu của túi là gì,màu nâu,101245,2
+1200,những gì dựa vào bức tường xi măng graffitied,xe đạp,506577,0
+1201,tất cả những gì trong cánh đồng này,hươu cao cổ,421009,0
+1202,những gì vòi chữa cháy sơn với dây xích treo ở bên dưới,lá cờ,580757,0
+1203,những gì được thể hiện đang phát triển giữa các kim thông,cây,410934,0
+1204,màu của bầu trời là gì,màu xanh dương,563535,2
+1205,những người đứng tiểu xếp hàng ở đâu,nhà vệ sinh,235168,3
+1206,màu sắc của bông cải xanh là gì,màu xanh lá,104756,2
+1207,màu của con ngựa là gì,màu nâu,318225,2
+1208,những gì có hình dạng giống như con cừu,bánh,363793,0
+1209,cô gái giữ một quả chuối ở đâu,thùng chứa,426422,3
+1210,những gì phát triển giữa các bên bê tông của đường,bông hoa,493395,0
+1211,có bao nhiêu người đàn ông đang mỉm cười khi họ bày thức ăn mà họ đã chuẩn bị trên bàn,ba,30387,1
+1212,sáu người đứng ở đâu trong khi một người chụp ảnh,phòng bếp,99511,3
+1213,màu của xe là gì,màu xám,374977,2
+1214,đầu và cổ của cái gì nhô ra khỏi cây cọ và cái cây,hươu cao cổ,504414,0
+1215,những gì hiển thị trên bàn gọn gàng bên cạnh giường,trang thiết bị,392476,0
+1216,cái gì đang ngồi trên băng ghế trên cỏ,con chim,391029,0
+1217,những gì không thể chờ đợi để kết thúc một ngày,con voi,571219,0
+1218,con mèo xám và trắng đang ở đâu,cái ghế,523571,3
+1219,có bao nhiêu điều khiển từ xa được đặt cùng nhau trên những quả bóng nhiều màu sắc,năm,334109,1
+1220,có bao nhiêu con hươu cao cổ quay đầu với những đám mây ở phía sau,bốn,545278,1
+1221,màu của máy bay phản lực là gì,màu xám,249259,2
+1222,những gì trống rỗng bên ngoài ngôi nhà trên một căn cứ ngói,băng ghế,466332,0
+1223,con mèo trắng lớn đang nằm ở đâu,ngăn kéo,578020,3
+1224,những gì được nhìn thấy đang chăn thả trong một cánh đồng,con bò,559099,0
+1225,những gì cũng có cờ bên cạnh nó,đồng hồ,511379,0
+1226,màu của chiếc bình là gì,màu trắng,220518,2
+1227,bó lục bình trắng sắp xếp ở đâu,lọ cắm hoa,515434,3
+1228,người chơi quần vợt đang nhìn khắp sân ở đâu,sân vận động,437816,3
+1229,có bao nhiêu chiếc xe máy đậu trong món tráng miệng,ba,259316,1
+1230,những gì được thiết lập như máy trạm với máy tính xách tay,cái bàn,513688,0
+1231,có gì mặc một chiếc mũ voi,con mèo,545826,0
+1232,màu nước là gì,màu xanh dương,433637,2
+1233,người phụ nữ mặc buổi tối giữ một con dao và khắc những gì,bánh,410484,0
+1234,những gì chứa đầy những chiếc thuyền buồm vào một ngày nắng,bến du thuyền,340472,0
+1235,những gì được hiển thị bên cạnh con phố đông đúc với những chiếc xe trên đó,tòa nhà,361142,0
+1236,hai nhà vệ sinh và hai bồn cầu ở đâu,phòng tắm,577107,3
+1237,màu của lá là gì,màu xanh lá,95320,2
+1238,màu của tấm thảm là gì,màu đỏ,273561,2
+1239,những gì đang đi qua cánh đồng với nhau,ngựa vằn,454750,0
+1240,cái gì đang ngồi trên ghế,con mèo,561599,0
+1241,cái gì trong đĩa và bát,chén đĩa,346138,0
+1242,xe lửa nào rời trạm,xe điện ngầm,400152,0
+1243,cái gì đang với lên để lấy một sợi lông trên một sợi dây,con mèo,372227,0
+1244,những gì được phép phát triển trong chai bia,bông hoa,515885,0
+1245,người đàn ông mặc áo khoác tối màu đang sử dụng cái gì,điện thoại,436791,0
+1246,có bao nhiêu con ngựa đang kéo một cỗ xe bên cạnh một chiếc máy kéo trên đường,hai,16758,1
+1247,có bao nhiêu người đang ngồi trên đồi bên cạnh một con dê,hai,252807,1
+1248,màu của xe buýt là gì,màu vàng,244870,2
+1249,những gì đỗ ở bến tàu với những ngọn núi trong nền,con thuyền,418700,0
+1250,bếp ở đâu,phòng bếp,577301,3
+1251,màu của tường là gì,màu xanh lá,261144,2
+1252,con mèo đang nằm ở đâu,ngăn kéo,266029,3
+1253,những gì chứa đầy rau xanh trên một mặt đất ngâm,bát,410670,0
+1254,hai màn hình máy tính ở đâu,văn phòng,205460,3
+1255,những gì được nhìn thấy nằm trên một thiết bị khác,trượt tuyết,435894,0
+1256,những gì đỗ trên đường phố với một vài người xung quanh nó,xe buýt,447569,0
+1257,màu của quả bóng là gì,màu xanh lá,445355,2
+1258,có bao nhiêu người đi trên hai xe máy trên đường phố,hai,14388,1
+1259,màu của tủ lạnh là gì,màu trắng,365116,2
+1260,màu của cây là gì,màu xanh dương,370739,2
+1261,màu tóc là gì,màu đen,90989,2
+1262,trẻ nhỏ đứng ở công viên trượt băng làm gì,xe đạp,361472,0
+1263,người đàn ông đang đi trên đường có bao nhiêu con chó,ba,313459,1
+1264,bánh sandwich đóng gói hào phóng làm gì,bữa trưa,457566,0
+1265,cô gái cầm cái bọc giấy,sandwich,346788,0
+1266,bốn con hươu cao cổ ở đâu,chuồng,555668,3
+1267,những gì nằm trong bóng râm của khu vườn rừng được quy hoạch tốt này,băng ghế,507313,0
+1268,có bao nhiêu người đàn ông đang đứng xếp hàng với tấm vé trên tay,bốn,535517,1
+1269,những gì đang đi xuống rãnh lưới đến một cây cầu,tàu hỏa,419096,0
+1270,có bao nhiêu người phụ nữ đứng quanh con chó trên dây xích,bốn,482021,1
+1271,màu của con mèo là gì,màu đen,193254,2
+1272,màu của xe buýt là gì,màu vàng,322659,2
+1273,có bao nhiêu đĩa bánh pizza với các lớp phủ khác nhau và một chồng đĩa trắng ở giữa,hai,7787,1
+1274,con mèo đen đang ngồi ở đâu,cái túi,501377,3
+1275,màu của chiếc tàu là gì,màu đỏ,462292,2
+1276,những gì vận chuyển một chiếc xe tải nhỏ khác trên kéo của nó,xe tải,467848,0
+1277,đâu là bồn rửa đôi,phòng tắm,150920,3
+1278,màu của sườn đồi là gì,màu xanh lá,525633,2
+1279,người đó đang cưỡi cái gì,xe đạp,483108,0
+1280,người đàn ông với một con chó chụp ảnh ở đâu,gương,451825,3
+1281,người đàn ông đang chụp ảnh mình ở đâu,gương,237118,3
+1282,có bao nhiêu con chó đang chơi với một món đồ chơi màu vàng bên ngoài,hai,512118,1
+1283,những gì nằm trên giá sách,máy vi tính,454388,0
+1284,màu của dĩa nhựa là gì,màu trắng,338197,2
+1285,các chậu và chảo treo ở đâu,phòng bếp,282351,3
+1286,màu sắc của tán cây là gì,màu xanh dương,227577,2
+1287,màu của chiếc ô là gì,màu tía,229544,2
+1288,có bao nhiêu đoàn tàu ở cạnh nhau trên các đường ray song song,ba,466621,1
+1289,người phụ nữ đang sấy tóc cho một đứa trẻ ở đâu,phòng tắm,362166,3
+1290,ba gấu bông và một con búp bê ở đâu,hộp,2240,3
+1291,người đàn ông đang ngồi ở đâu,phòng bếp,115619,3
+1292,chiếc ghế dài sọc mà một chiếc đồng hồ một cái gương một cây và một chiếc đèn và cái gì trong đó,bức ảnh,503210,0
+1293,người đàn ông đang ăn gì với những thứ rắc bên ngoài,donut,375621,0
+1294,những gì trông giống như donut trên màn hình,bánh,419379,0
+1295,những gì chăn thả trong cánh đồng mở,ngựa vằn,455557,0
+1296,màu của chiếc tàu là gì,màu đỏ,425072,2
+1297,những gì đi bộ với những chiếc dĩa nhựa gần nước,con chó,546962,0
+1298,cậu bé đang mặc gì,cà vạt,375881,0
+1299,người đàn ông lái xe qua một vũng nước với một con chó ở đâu,con thuyền,81886,3
+1300,một số trái cây và rau quả ở đâu,thùng chứa,124914,3
+1301,những gì có con dao với một quả táo dính máu ướt đẫm,tường,573796,0
+1302,đang ngồi trong bếp cái gì vậy,tủ đá,554523,0
+1303,màu của kính là gì,màu xanh lá,543468,2
+1304,cậu bé đang đánh răng ở đâu,phòng tắm,575273,3
+1305,những gì được nhồi với pho mát và các lớp phủ khác,pizza,348877,0
+1306,"bữa trưa của trái cây, bánh quy giòn, hạt và phô mai đóng gói đặt ở đâu",thùng chứa,540270,3
+1307,màu của gấu là gì,màu đen,167359,2
+1308,ngựa vằn trong việc ăn tự nhiên những gì,bãi cỏ,417946,0
+1309,màu của con mèo là gì,màu đen,431060,2
+1310,cái gì trong đầu của một máy xay,rau,413120,0
+1311,"những gì bên cạnh quả lê, một cốc và một chai trà",điện thoại,546626,0
+1312,cậu bé mặc gì xách xe đạp lên dốc ở công viên trượt băng,mũ bảo hiểm,361472,0
+1313,có bao nhiêu con bò được gắn thẻ đang đứng trong một cái bao vây đầy bùn,hai,541510,1
+1314,màu của chiếc tàu là gì,màu xanh lá,211788,2
+1315,màu của xe tải là gì,màu đỏ,227418,2
+1316,cái gì mở bên cạnh đèn lit,máy vi tính,523096,0
+1317,có bao nhiêu người đang chơi trò chơi với bộ điều khiển màu đen,ba,403743,1
+1318,màu của cái tủ là gì,màu trắng,127495,2
+1319,màu của tòa nhà là gì,màu xám,83986,2
+1320,người phụ nữ đang ngồi ở đâu,cái ghế,308936,3
+1321,màu của xe buýt là gì,màu vàng,23203,2
+1322,những gì nép mình trong rừng được bao quanh bởi những tảng đá,ngựa rằn,449406,0
+1323,có bao nhiêu người đàn ông đang tạo dáng chụp ảnh trong một trận đấu tennis một cách hài hước,hai,316404,1
+1324,màu của chiếc hộp là gì,màu đen,412516,2
+1325,màu của bầu trời là gì,màu xanh dương,90820,2
+1326,điều gì đang xảy ra trên đường ray,tàu hỏa,338986,0
+1327,có bao nhiêu con vịt đang bơi trong ao màu xanh lá cây,hai,74711,1
+1328,cái gì đầy cam trên bàn bên cạnh một cái đĩa có nhiều cam hơn nữa,lọ cắm hoa,484080,0
+1329,những gì được bao phủ trong phô mai trên đỉnh của một tấm,con chó,451598,0
+1330,có bao nhiêu con mèo đang thư giãn trên chiếc giường trắng nguyên sơ,hai,553547,1
+1331,có bao nhiêu con dê nằm trên một đống đá tại một sở thú,ba,231601,1
+1332,những gì đang ngồi trong món nướng,rau,431323,0
+1333,những gì đang đi trên cánh đồng cỏ,con ngựa,518255,0
+1334,công nhân vá lỗ ở đâu,đường phố,556089,3
+1335,màu của con mèo là gì,màu đen,368603,2
+1336,những gì chứa đầy những con bò và một vài đèn,chuồng trại,453520,0
+1337,những gì đang được lên máy bay trong khi một người đàn ông tải hành lý tại một sân bay,máy bay,475710,0
+1338,có bao nhiêu con ngựa vằn đang lang thang trên một bãi đất trống qua một cái cây,ba,256859,1
+1339,con chim đậu ở đâu khi nhìn qua một thành phố,cửa sổ,395973,3
+1340,màu của xe là gì,màu vàng,576026,2
+1341,người đàn ông đang bay trên bãi biển là gì,diều,382345,0
+1342,màu của bầu trời là gì,màu xanh dương,141257,2
+1343,cái gì đang đỗ trên đường lái xe râm mát,toa xe,472598,0
+1344,những gì bên cạnh động vật nhồi bông màu vàng,sandwich,532620,0
+1345,có bao nhiêu chiếc máy bay trong một đội hình tam giác đang bay trên bầu trời,sáu,292639,1
+1346,con chó thò đầu vào bồn cầu ở đâu,phòng tắm,479134,3
+1347,"người đàn ông đeo bao nhiêu chiếc cà vạt khác nhau, ngồi trên một chiếc ghế dài",ba,437632,1
+1348,cái gì nằm bên cạnh chiếc bánh pizza đĩa lớn,đĩa ăn,358075,0
+1349,đang chơi gì khi chiến đấu ngoài trời,gấu,377282,0
+1350,có bao nhiêu người đang học cách lướt sóng trên bãi biển đầy cát,bốn,172556,1
+1351,màu của xe buýt là gì,màu đen,560997,2
+1352,bên cạnh một quả chuối chứa đầy thức ăn thừa,bát,348708,0
+1353,con mèo xám đã cuộn tròn ở đâu,cái rổ,419273,3
+1354,màu của chiếc bình là gì,màu xanh dương,521657,2
+1355,có bao nhiêu trẻ nhỏ cầm vợt trên sân tennis,ba,47624,1
+1356,người đàn ông đang chụp ảnh ở đâu,gương,513129,3
+1357,điều gì đang theo dõi người đàn ông vào một cửa hàng,con chó,496897,0
+1358,con gấu hoặc một số loại động vật lớn đang nắm chặt là gì,cây,347529,0
+1359,có bao nhiêu con chó đang thư giãn bên cạnh người đàn ông trên một vỉa hè,hai,305247,1
+1360,có bao nhiêu con hươu cao cổ trong một cái chuồng có cỏ và hàng rào,ba,226961,1
+1361,pizza được chứa ở đâu,hộp,570483,3
+1362,người đàn ông đang giữ một ván trượt tuyết và đứng,ván trượt,439658,0
+1363,lượng thực phẩm được phục vụ ở đâu,bát,400571,3
+1364,"con mèo ở đâu với những giọt nước rơi, với ngói trên tường",bồn tắm,48993,3
+1365,có bao nhiêu con ngựa đang gặm cỏ trên cánh đồng có hàng rào đường sắt,hai,432000,1
+1366,người đàn ông phản chiếu ở đâu,gương,52611,3
+1367,màu của chiếc thuyền là gì,màu vàng,400275,2
+1368,bàn ăn có bao nhiêu đứa trẻ ngồi với đĩa trước mặt chúng,ba,115018,1
+1369,máy sấy tóc đen đang ở đâu,cái ghế,355124,3
+1370,màu của sườn đồi là gì,màu xanh lá,234255,2
+1371,ngồi cạnh nhau trong phòng khách sạn là gì,giường,397512,0
+1372,màu của rèm là gì,màu trắng,550126,2
+1373,những gì nhét thân cây của mình trên một hàng rào dây,con voi,438919,0
+1374,những chiếc bánh răng trong tuyết ở đâu,trượt tuyết,547672,3
+1375,bồn rửa và kệ khăn tắm ở đâu,phòng tắm,178770,3
+1376,màu của con mèo là gì,màu cam,263493,2
+1377,màu của xe tải là gì,màu xám,461917,2
+1378,hai người đàn ông đang ngồi và nói chuyện ở đâu,phòng,51555,3
+1379,có bao nhiêu người lướt sóng đang lướt trong sóng biển,hai,509415,1
+1380,những gì chứa đầy trái cây và rau quả tươi,bát,435475,0
+1381,những gì đông đúc với những chiếc thuyền buồm trên mặt nước trong xanh yên tĩnh,bến du thuyền,519703,0
+1382,những gì bên cạnh nền tảng,tàu hỏa,537861,0
+1383,có bao nhiêu người với ván lướt sóng đang nhìn xuống nước,ba,371651,1
+1384,những gì được xếp hàng trên đường bên cạnh nhau,xe máy,391011,0
+1385,những gì được thắp sáng trong đêm,các tòa nhà,466416,0
+1386,cái gì đang ngồi trên băng ghế công viên bên cạnh một hành lý nhỏ với một chiếc ô trên đầu,cái túi,342060,0
+1387,ba người phụ nữ mặc những gì tại một sự kiện trà lạ mắt,mũ,536654,0
+1388,có bao nhiêu đứa trẻ ngồi trên chiếc ghế dài và nhìn vào tivi,hai,571644,1
+1389,có bao nhiêu người ăn pizza và uống nước ngọt,hai,41279,1
+1390,một chiếc bánh sandwich đã cắt được đặt ở đâu,thùng chứa,76877,3
+1391,có bao nhiêu con mèo đang ngồi trên ghế và một con mèo khác đang ngồi dưới ghế,một,125690,1
+1392,"hai lò nướng ở đâu, và một trong số chúng đang được sử dụng",quán ăn,189278,3
+1393,màu của gấu là gì,màu đen,550099,2
+1394,những gì được hiển thị với tv và trang trí,quán bar,528386,0
+1395,tòa tháp này có gì ở trên cùng,đồng hồ,454623,0
+1396,những gì được bao phủ trong búp bê,xe ô tô,560474,0
+1397,màu của cát là gì,màu đỏ,391046,2
+1398,màu của lọ mứt là gì,màu cam,78695,2
+1399,cái gì neo đậu trên bãi biển,con thuyền,353518,0
+1400,bầy hươu cao cổ ở đâu,chuồng,525600,3
+1401,những gì tỏa sáng qua cửa sổ trên phòng tắm sạch sẽ,mặt trời,485916,0
+1402,những gì đứng trên cỏ cao trong rừng,con bò,500389,0
+1403,màu của lướt sóng là gì,màu đen,165531,2
+1404,màu của chiếc xe là gì,màu xám,272040,2
+1405,màu của chiếc bình là gì,màu xanh lá,118673,2
+1406,hai người đàn ông mặc trang phục trượt tuyết đứng trên cái gì phủ đầy tuyết,đồi,523955,0
+1407,những gì có đầy trái cây tươi và rau quả,bát,461172,0
+1408,cô gái trẻ đang xem điện thoại của cô ấy ở đâu,cái ghế,175541,3
+1409,những người đang làm việc trên máy tính ở đâu,thư viện,278742,3
+1410,ánh sáng phía trên vòi hoa sen ở đâu,phòng tắm,284153,3
+1411,màu của chiếc đĩa là gì,màu xanh lá,10969,2
+1412,bơi trong một số nước là gì,con chim,436551,0
+1413,những gì được bao phủ tranh sơn tường,tàu hỏa,337666,0
+1414,màu của quần short là gì,màu đen,92301,2
+1415,một cái bàn ở đâu,phòng,93246,3
+1416,có bao nhiêu người trên lưng ngựa đang chạy trên mặt nước trước con tàu,hai,437970,1
+1417,màu sắc của sự phân tán là gì,màu cam,447099,2
+1418,con mèo lớn đang ở đâu,chậu,460533,3
+1419,gấu bông nằm ở đâu,cái rổ,362659,3
+1420,có bao nhiêu con hươu cao cổ đang gặm cỏ và đứng cạnh nhau,ba,241238,1
+1421,có bao nhiêu con hươu cao cổ trên địa hình đầy cát,ba,17997,1
+1422,có bao nhiêu cậu bé trong một đội bóng nhỏ đang tạo dáng chụp ảnh,ba,84114,1
+1423,có bao nhiêu người đàn ông ngồi trên băng ghế cùng nhau trong bụi bẩn,ba,187442,1
+1424,cái gì nằm ở mỗi bên của ngăn kéo,nhiều cái ghế,533129,0
+1425,một số người đàn ông chơi game ở đâu,chung cư,429038,3
+1426,người đang chụp ảnh ở đâu,gương,175513,3
+1427,bộ hành lý nằm ở đâu,bánh xe,226224,3
+1428,màu của thảm là gì,màu xanh lá,581351,2
+1429,cái gì đứng trên cỏ,con voi,370749,0
+1430,con mèo xiêm ngồi trên giường phản chiếu ở đâu,gương,43851,3
+1431,có bao nhiêu người đàn ông hướng dẫn một con ngựa đua trên đường đua,ba,255123,1
+1432,cầu thủ bóng chày trẻ mặc đồ đen và trắng,gậy,492605,0
+1433,có bao nhiêu người trong kho chuối,năm,90891,1
+1434,người đang nằm ở đâu,giường,36022,3
+1435,đầu bếp đứng ở đâu,phòng bếp,282889,3
+1436,hoa trên bàn ngoài trời ở đâu,lọ cắm hoa,367853,3
+1437,"có bao nhiêu đôi chân với tất, một đôi chân trần khác",một,498938,1
+1438,những gì được dừng ở ga tàu,tàu hỏa,423804,0
+1439,màu của chiếc ghế dài là gì,màu đỏ,24204,2
+1440,có bao nhiêu con cừu đang chăn thả tự do trong cánh đồng mở,ba,503575,1
+1441,con người đang cưỡi lên những gì,con voi,572347,0
+1442,có bao nhiêu người trò chuyện bên trong màn hình phòng khách của cửa hàng,bốn,575733,1
+1443,tủ lạnh tan đang ở đâu,phòng bếp,233376,3
+1444,những gì đang kéo một cái cày trong khi một người đàn ông theo sau,con ngựa,384496,0
+1445,có bao nhiêu chiếc ô màu hồng với cây xanh và ghế đá công viên và hoa ở khắp mọi nơi,ba,191972,1
+1446,những gì được sử dụng như parasols để ngăn chặn mặt trời trên những con đường nóng,chiếc ô,413689,0
+1447,người phụ nữ đang ngồi ở đâu,cái ghế,512625,3
+1448,màu của con chim là gì,màu nâu,148474,2
+1449,màu của xe là gì,màu đỏ,227484,2
+1450,những gì gần đĩa thức ăn và đồ uống,laptop,518592,0
+1451,xe đạp màu cam nổi bật ở đâu,ảnh chụp,298182,3
+1452,những gì đang mặc áo len trong một chú cừu khô,con cừu,434263,0
+1453,một thùng lớn và một nồi nhỏ ở đâu,phòng tắm,305464,3
+1454,màu của bảng là gì,màu xanh lá,215746,2
+1455,cái gì được chiếu sáng lờ mờ bởi bóng đèn trên cao,phòng tắm,576576,0
+1456,có bao nhiêu người cùng ăn tối và nói chuyện,hai,297157,1
+1457,những gì dựa vào cây trong công viên,băng ghế,491508,0
+1458,những gì đi vào một đường hầm đá cũ,con ngựa,514690,0
+1459,người đi du lịch ở đâu qua một hồ nước nhỏ,con thuyền,162237,3
+1460,con mèo đứng ở đâu,chậu,227044,3
+1461,có bao nhiêu tầng bánh với bong bóng màu đỏ và trắng trên đó,ba,544410,1
+1462,màu của con bò là gì,màu đen,425292,2
+1463,màu sắc của bông hoa là gì,màu tía,16890,2
+1464,người đàn ông chơi golf ở đâu,phòng,263323,3
+1465,người đàn ông đang chụp ảnh selfie ở đâu,phòng tắm,52611,3
+1466,một bồn tắm trắng tiêu chuẩn nằm ở đâu,phòng tắm,231732,3
+1467,đèn bật sáng ở đâu,phòng ngủ,558378,3
+1468,những gì được bao phủ trong một loại thực phẩm mexico,đĩa ăn,542777,0
+1469,hai người bạn thưởng thức những gì tại một nhà hàng pizza,bữa trưa,437412,0
+1470,màu của bản vẽ là gì,màu đen,285493,2
+1471,một số cây cam với cam ở đâu,cửa hàng,558748,3
+1472,con mèo dính đầu ở đâu,lọ cắm hoa,22415,3
+1473,hai bông hoa màu tím ở đâu,lọ cắm hoa,52773,3
+1474,có bao nhiêu con ngựa đang đứng gặm cỏ trên cánh đồng,ba,471312,1
+1475,người phụ nữ đang ngồi và làm việc ở đâu,gian hàng,519635,3
+1476,cái gì được bọc trong lá thiếc trên đầu quầy,cái mâm,555356,0
+1477,cậu bé đang nằm ở đâu,giường,508822,3
+1478,màu sắc của khăn choàng là gì,màu xanh dương,345831,2
+1479,màu của cửa sổ là gì,màu nâu,75811,2
+1480,con mèo đang ngồi ở đâu,bát,570528,3
+1481,những gì đang theo sau ba người phụ nữ về phía lối vào của một tòa nhà,con chó,506751,0
+1482,cái gì bên cạnh ghế trên bãi biển,chiếc ô,576827,0
+1483,có bao nhiêu biển báo đường phố được gắn vào một cột điện,hai,209630,1
+1484,màu của bồn rửa là gì,màu trắng,76264,2
+1485,con mèo đang ngồi ở đâu,bồn tắm,562999,3
+1486,có bao nhiêu chiếc máy bay nhỏ nhả khói trên bầu trời,ba,60953,1
+1487,trên bàn có bao nhiêu cái hotdog trên đĩa,bốn,113905,1
+1488,cái gì đã làm lớp phủ sô cô la phủ bằng nến trên đó,bánh,449279,0
+1489,những gì đang đi xuống đường với những chiếc xe đang đỗ,ván trượt,498759,0
+1490,con mèo lông xám ngồi ở đâu,chậu,72605,3
+1491,những gì đỗ ở nhà ga sân bay dưới bầu trời xám,máy bay,475798,0
+1492,những gì đang nghiêng về nhìn vào cốc,con mèo,387434,0
+1493,một số người đi xe đạp ở đâu,đường phố,21528,3
+1494,màu của ghế là gì,màu xanh lá,11222,2
+1495,những gì trang trí bởi những đám hoa,bánh,556873,0
+1496,màu của chiếc bình là gì,màu xanh lá,68857,2
+1497,có bao nhiêu ván lướt sóng được sắp xếp thành một vòng cung trên một khu vực cỏ,năm,273352,1
+1498,hai con voi đứng ở đâu,chuồng,463751,3
+1499,màu sắc trang phục của huấn luyện viên là gì,màu nâu,53037,2
+1500,những gì đang lội trong ao trong khi một cái khác đang ngồi gần đó,con vịt,396779,0
+1501,con mèo đang ngồi ở đâu,cây,127809,3
+1502,cái gì đang nhìn qua một hàng rào gỗ lớn,hươu cao cổ,472557,0
+1503,những gì đang trôi nổi trên một cơ thể lớn của nước của liên hợp quốc tham dự,con thuyền,400547,0
+1504,màu của con mèo là gì,màu xám,411485,2
+1505,con voi non giữ cái miệng của nó,thân cây,551459,0
+1506,có bao nhiêu cầu thủ bóng chày đang giữ những con gậy bóng chày đứng trong hầm,ba,573704,1
+1507,những gì ăn một miếng thức ăn trong khu vực đá với cỏ khô,gấu,519112,0
+1508,kéo và bút đặt trên một hình tam giác là gì,mặt,430762,0
+1509,có bao nhiêu trẻ nhỏ đang chơi bên ngoài,ba,127522,1
+1510,đi văng trắng ở đâu,phòng,325665,3
+1511,những gì ngồi trên mảng cỏ,xe cộ,398507,0
+1512,những đứa trẻ này đang bay diều của họ ở đâu,đường phố,467265,3
+1513,những gì ngồi trong phòng khách,cái bàn,444565,0
+1514,màu của nền là gì,màu cam,289223,2
+1515,màu của gạch là gì,màu trắng,547156,2
+1516,người đang chụp ảnh ở đâu,gương,491873,3
+1517,cái gì dừng lại ở nhà ga,tàu hỏa,368648,0
+1518,người phụ nữ ở đâu,phòng bếp,548118,3
+1519,giường ngủ gọn gàng ở đâu,phòng ngủ,484123,3
+1520,những gì được lật mở và có bảng chìa khóa,điện thoại,493424,0
+1521,người đàn ông đang xem máy tính xách tay của mình ở đâu,giường,460916,3
+1522,cái gì trên bàn trên một cái đĩa trắng,donut,378605,0
+1523,màu của con mèo là gì,màu đen,506782,2
+1524,tàu hơi nước dừng ở đâu,tòa nhà,391158,3
+1525,những gì đứng trên đá với một cái miệng mở,gấu,519611,0
+1526,màu của chiếc đĩa là gì,màu xanh dương,135576,2
+1527,màu của gấu là gì,màu nâu,357113,2
+1528,có bao nhiêu người dường như đang chơi nintendo wii trên một màn hình lớn,bốn,156594,1
+1529,"có bao nhiêu ván lướt sóng nhô ra sau một chiếc ô tô nhỏ, mui trần",hai,174357,1
+1530,con gấu nào ăn tre trong một khu vực nhiều cây cối,gấu trúc,476417,0
+1531,cậu bé ăn bánh rán gì,donut,514222,0
+1532,những gì uống nước từ ao trong một đồng cỏ tươi tốt,con ngựa,570788,0
+1533,vali hành lý đang nằm ở đâu,phòng,64157,3
+1534,cái gì đang đỗ trên đường trước một chiếc xe hơi,xe tay ga,567171,0
+1535,đám đông người đi bộ ở đâu,đường phố,364228,3
+1536,cái gì đang đỗ ở bên đường,xe máy,540187,0
+1537,giường đang ngồi ở đâu,phòng ngủ,80159,3
+1538,những gì mang các gói hàng đi qua một công viên,xe tải,553998,0
+1539,những gì đang ngồi trong bình hoa trên bàn gỗ,bông hoa,494970,0
+1540,màu của phòng tắm là gì,màu trắng,66930,2
+1541,muốn kết bạn với một cậu bé là gì,con voi,350897,0
+1542,những gì đang bay trên nước bình tĩnh,con chim,544811,0
+1543,con voi đang ở đâu,vườn bách thú,83013,3
+1544,màu của con ngựa là gì,màu nâu,299134,2
+1545,điều gì thu nhận ánh sáng vào phòng khách,cửa sổ,364470,0
+1546,màu của vali là gì,màu đen,208834,2
+1547,màu của xe buýt là gì,màu xanh lá,347135,2
+1548,nhóm phụ nữ nói chuyện và ăn đồ ăn nhẹ ở đâu,văn phòng,181208,3
+1549,những gì đang ngồi cạnh nhau trên thảm,ván trượt,430096,0
+1550,cái gì được quấn trong dải ruy băng xanh trên nền đỏ,gấu,516766,0
+1551,màu của con mèo là gì,màu đen,566016,2
+1552,con voi chỉ những gì vào một cô gái,thân cây,513724,0
+1553,những gì đang tỏa sáng từ một trong hai đồng hồ trên tháp,mặt trời,387833,0
+1554,màu của xe đạp là gì,màu đỏ,579802,2
+1555,tuyết đã bao phủ trong những ngọn núi là gì,băng ghế,455044,0
+1556,màu của cà vạt là gì,màu đen,378846,2
+1557,người đàn ông hói vàng đang giữ gì,chuối,558611,0
+1558,người đàn ông đang mang theo con sóng gì vậy,ván lướt sóng,483358,0
+1559,những gì đang đậu lại đằng sau,xe tải,499835,0
+1560,màu của chiếc ô là gì,màu xanh dương,123916,2
+1561,có bao nhiêu con cừu đang chăn thả cùng nhau,năm,477828,1
+1562,tay giữ gì,búi tóc,546283,0
+1563,những gì bên cạnh những con voi khác,con voi,488368,0
+1564,những gì lấy ngủ trên giường với một tấm chăn,con chó,401991,0
+1565,những gì với một số người trên và ngoài tàu một tàu điện ngầm,trạm,518197,0
+1566,màu của vòi nước là gì,màu đỏ,403398,2
+1567,người phụ nữ nằm ở đâu,giường,57810,3
+1568,có bao nhiêu con vịt đang đứng cạnh nhau,năm,40455,1
+1569,những gì đang tụ tập với nhau trên tấm thảm góc sau một đống hành lý,con chó,471521,0
+1570,những gì đang được để cho một người đàn ông,con ngựa,511294,0
+1571,những gì nhìn vào một cái gì đó trong khi đứng trên một tảng đá,gấu,450004,0
+1572,cặp đôi cưỡi những gì bên cạnh một dòng sông,con voi,548420,0
+1573,màu của gấu là gì,màu đen,519205,2
+1574,có một con ngựa kéo những gì,xe,508639,0
+1575,màu của áo là gì,màu đen,469035,2
+1576,cái gì đậu trên đường băng sân bay,máy bay,478862,0
+1577,cô gái trẻ đang đứng ở đâu trong khi nhìn vào gương,phòng tắm,578651,3
+1578,người phụ nữ đang kiểm tra ở đâu,lò vi sóng,451274,3
+1579,mở thứ gì có trưng bày nhiều lựa chọn thực phẩm bên trong,cửa,512330,0
+1580,sáu người đàn ông chuẩn bị một bữa ăn như một người đàn ông khác nhìn vào,phòng bếp,51630,3
+1581,những gì được phủ trong lớp phủ bên trong khay nướng,pizza,556478,0
+1582,nơi nào làm bánh sô cô la ba tầng,cửa tiệm,36544,3
+1583,hai con hươu cao cổ đang ăn thứ gì từ cây cao trong môi trường sống do con người tạo ra,lá,347925,0
+1584,hai người đang chơi ở đâu,văn phòng,373881,3
+1585,màu của con mèo là gì,màu nâu,381047,2
+1586,người đàn ông chuẩn bị bữa tối ở đâu,phòng bếp,146961,3
+1587,cái gì nằm trên những cái bánh quy trên đầu lò,pizza,556478,0
+1588,những gì mặc trong trang phục ngày lễ,gấu,475330,0
+1589,có bao nhiêu chai rượu được bày ra trên bàn với ly,ba,54541,1
+1590,thức uống được chứa ở đâu,tủ đá,309087,3
+1591,những gì nâng cao thân của họ với nhau,con voi,340305,0
+1592,người đàn ông đang đặt hàng ở đâu,quán ăn,392974,3
+1593,người phụ nữ đang chụp ảnh con chó và suy ngẫm ở đâu,gương,332434,3
+1594,đồ chiên giòn và đồ nhúng ở đâu,cái rổ,202609,3
+1595,màu của cà vạt là gì,màu xám,239586,2
+1596,điều gì đang lái xe bên ngoài vào lúc hoàng hôn,xe buýt,455085,0
+1597,những gì trên vỉa hè,vòi,513690,0
+1598,người đàn ông đang tìm ở đâu,cửa hàng,344065,3
+1599,cậu bé mỉm cười ở đâu trong khi cầm bàn chải đánh răng,bồn tắm,549746,3
+1600,có bao nhiêu con hươu cao cổ ở đồng bằng cỏ với cây cối trên nền,bốn,30423,1
+1601,những gì đang ăn một số thực phẩm từ một máng gỗ,con heo,434089,0
+1602,những gì trong chậu trắng bên ngoài,bông hoa,533485,0
+1603,người đàn ông và một người phụ nữ trong trang phục cưới cho ăn gì,hươu cao cổ,531928,0
+1604,những gì giữa các nhánh của một cây mọc trên bầu trời,máy bay,457131,0
+1605,những tờ giấy được đánh số ở đâu,phòng bếp,417885,3
+1606,hai con mèo con ở đâu,bát,350075,3
+1607,màu của tường là gì,màu cam,188511,2
+1608,những bông hoa màu tím và màu vàng với cây xanh ở đâu,thùng chứa,325799,3
+1609,có bao nhiêu chiếc vali màu hồng đứng thẳng trước cửa sổ,ba,125298,1
+1610,cô gái cười nháy mắt trong bếp có bao nhiêu con mắt,một,245096,1
+1611,có bao nhiêu con diều sặc sỡ tất cả đều được xâu chuỗi theo cùng một đường,bảy,97099,1
+1612,giếng làm gì với đèn ở trên và xung quanh nó,giường,387909,0
+1613,những gì nằm ở phía trước treo tường,lọ cắm hoa,431401,0
+1614,màu của áo là gì,màu xanh dương,276870,2
+1615,bánh pizza nằm ở đâu,hộp,39697,3
+1616,có bao nhiêu kiện hành lý màu hồng đặt trên sàn nhà,ba,125298,1
+1617,những gì chứa đầy những bông hoa màu cam đậm và một cây gậy,lọ cắm hoa,415015,0
+1618,những gì đang ở giữa thị trấn để mọi người đến thăm,bức tượng,538064,0
+1619,có cái gì đang trôi xuống sông,con thuyền,378139,0
+1620,cửa hàng làm gì trên trang web cho khách hàng,donut,450399,0
+1621,những gì đứng ở bên của một tòa nhà,tòa tháp,414340,0
+1622,cái gì đang nhìn khá có ý nghĩa với máy ảnh,bò đực,472648,0
+1623,có gì ăn từ một cái bát,hươu cao cổ,552073,0
+1624,màu của gấu là gì,màu đen,499634,2
+1625,những chiếc ghế dài màu vàng và một chiếc ô được phản chiếu ở đâu,hồ bơi,141224,3
+1626,màu của gấu là gì,màu nâu,503715,2
+1627,những gì đang được chăn thả trên bãi cỏ xanh,con cừu,575403,0
+1628,màu của ghế là gì,màu xám,216480,2
+1629,những gì được thắp sáng trong chiếc cốc thủy tinh lớn với những ngọn nến khác xung quanh nó,nến,445662,0
+1630,màu của thùng là gì,màu vàng,431008,2
+1631,những gì đứng gần nhau ăn từ một máng ăn,hươu cao cổ,504024,0
+1632,những gì được nhóm lại với nhau như cây,lá,410934,0
+1633,gấu bông ngồi ở đâu,cái ghế,149566,3
+1634,hàng của quân đội hoa kỳ những gì,máy bay,395849,0
+1635,màu của lông là gì,màu đen,131731,2
+1636,có bao nhiêu bình khác nhau trên kệ,ba,551889,1
+1637,một số con voi và một con đang ăn gì,lá,512254,0
+1638,những gì được đặt bên cạnh nhau,máy bay,396673,0
+1639,các loại những gì đang ngồi trên một đĩa với một ly sữa trắng,bữa ăn,460494,0
+1640,chiếc vali ở đâu với những thứ trong đó,sàn nhà,498994,0
+1641,có bao nhiêu nữ vận động viên tạo dáng chụp ảnh cho olympic 2010 ở vancouver,ba,172925,1
+1642,màu của ánh sáng là gì,màu đỏ,56664,2
+1643,những gì đang nằm trên một chiếc chăn sọc ngựa vằn,con mèo,530367,0
+1644,bóng chày bị bắt ở đâu,găng tay,106331,3
+1645,có bao nhiêu người trong bộ đồ bơi lội đang lướt sóng trên đại dương,bốn,143320,1
+1646,những gì đang ngồi bên bức tượng của đồng hồ,con chim,526756,0
+1647,máy bay cánh quạt lớn đang ở đâu,ga-ra,242405,3
+1648,những gì đang nằm trên đỉnh của một chiếc giường nghỉ ngơi trong một căn phòng,con chó,529256,0
+1649,cái gì ngoài bãi biển nơi có một chiếc ô màu cam,hồ,576827,0
+1650,màu của chiếc đĩa là gì,màu xanh lá,486609,2
+1651,có bao nhiêu người thắp nến trên bánh,ba,27578,1
+1652,con mèo đang ngồi ở đâu trong khi một đứa trẻ ngủ,giường,91465,3
+1653,có bao nhiêu biển báo hiệu bên dưới biển báo đường phố,một,294431,1
+1654,bồn tiểu gì với hệ thống xả trong phòng tắm,sàn nhà,370444,0
+1655,màu của xe tải là gì,màu đỏ,109738,2
+1656,cài đặt hành trình tại bến tàu là cái gì,con thuyền,513181,0
+1657,màu của vòi nước là gì,màu vàng,390288,2
+1658,cậu bé đang vuốt ve thú cưng của mình ở đâu,chuồng trại,91656,3
+1659,màu sắc của bikini là gì,màu vàng,12678,2
+1660,những gì đang nằm trên đỉnh của một chiếc kéo màu đỏ,chuồng,430762,0
+1661,ba người đàn ông trong đồng phục quân sự đã cắt gì,bánh,506458,0
+1662,một lò nướng ở đâu,phòng bếp,484332,3
+1663,một số quả cam sáng bóng chồng chất ở đâu,bát,193892,3
+1664,con mèo đen trắng nằm ở đâu,giường,34415,3
+1665,một số gói giấy thiếc ở đâu,lò vi sóng,374890,3
+1666,xe tay ga đang đậu ở đâu,cửa sổ,246923,3
+1667,những gì đang bay trên bãi biển rất có tổ chức,diều,421865,0
+1668,màu của xe tải là gì,màu đỏ,551050,2
+1669,màu của kéo cắt là gì,màu đen,211983,2
+1670,đứa trẻ trẻ đang giữ gì,chiếc ô,401552,0
+1671,những gì đang ngồi trên bàn khi một người đàn ông nhìn ra khỏi một cửa sổ,lọ cắm hoa,502063,0
+1672,màu của diều là gì,màu đỏ,114080,2
+1673,người phụ nữ đang chụp ảnh sự phản chiếu của cô ấy ở đâu,gương,95383,3
+1674,những gì nằm cạnh đồi verdant,bờ biển,427865,0
+1675,cô dâu chú rể cắt những gì,bánh,422982,0
+1676,tàu điện ngầm dừng lại ở đâu,trạm,438968,3
+1677,màu của lò nướng là gì,màu trắng,577623,2
+1678,nhà vệ sinh trắng đang đặt ở đâu,phòng tắm,357865,3
+1679,khung giường kim loại nằm ở đâu,phòng,416741,3
+1680,những gì đang đỗ gần tòa nhà gạch,xe tải,489861,0
+1681,cừu trưởng thành và em bé ở đâu,chuồng,468280,3
+1682,màu của mèo con là gì,màu xám,88608,2
+1683,người đàn ông đang điều chỉnh cà vạt ở đâu,gương,296455,3
+1684,những gì trên đường băng sân bay,máy bay,501502,0
+1685,những gì được cắt lát ngồi bên cạnh một nửa quả táo không cắt lát,quả táo,366493,0
+1686,màu của lớp lót là gì,màu nâu,500677,2
+1687,những gì đang ngồi ở lối vào của bãi đậu xe,đồng hồ,396768,0
+1688,cái gì đang ngồi trên thớt với một cái máy gọt vỏ,quả táo,360706,0
+1689,màu của xe đang chạy là gì,màu xanh dương,264797,2
+1690,một tá bánh rán ở đâu,hộp,548393,3
+1691,màu sắc của bông hoa là gì,màu trắng,443315,2
+1692,cô bé đang ăn hotdog và cưỡi ngựa ở đâu,xe đẩy,489739,3
+1693,những gì đang lái xuống đường trước nhà,xe ô tô,499388,0
+1694,cái gì đang trên bàn gỗ có đồ ăn,đĩa ăn,519460,0
+1695,những gì đi bộ trên bãi cỏ xanh trong khu vườn thú ,hươu cao cổ,380106,0
+1696,những gì đang thối đi trong cánh đồng này,xe tải,434723,0
+1697,màu sắc của bông hoa là gì,màu tía,332723,2
+1698,người phụ nữ bên ngoài sửa chữa gì,chiếc ô,520237,0
+1699,những gì đỗ ở phía trước của một ngôi nhà,xe buýt,558539,0
+1700,những gì đỗ ở một kho tàu ngoài trời,xe lửa,411866,0
+1701,có bao nhiêu người chơi quần vợt chơi quần vợt trên sân,hai,228708,1
+1702,có bao nhiêu người với một con chó nhỏ đang đứng trên băng ghế,bốn,86754,1
+1703,màu sắc của giày là gì,màu đen,149143,2
+1704,người đàn ông nướng bánh ở đâu,lò vi sóng,376776,3
+1705,máy bay đang ở đâu,sân vận động,482798,3
+1706,có bao nhiêu con mèo đang ngồi cạnh chiếc vali đen mà một con mèo khác đang đặt,một,174137,1
+1707,cây hoa đỏ bên cửa sổ trong cái gì,lọ cắm hoa,491294,0
+1708,những gì đang đi qua cỏ và cát trên bãi biển,hươu cao cổ,531607,0
+1709,con ngựa đá cái gì,con ngựa,357044,0
+1710,những mặt hàng sặc sỡ được trưng bày ở đâu,ảnh chụp,240615,3
+1711,màu của xe buýt là gì,màu xanh dương,400091,2
+1712,cặp đôi đang chuẩn bị một bữa tối lớn ở đâu,phòng bếp,552199,3
+1713,những gì được neo trên bờ hồ trước nhà,con thuyền,410612,0
+1714,ngồi một cách bình tĩnh trong đống cỏ khô,con bò,571034,0
+1715,những gì đứng giữa một phòng tắm trắng nguyên sơ,bồn tắm,573993,0
+1716,những gì đậu trên đỉnh của một cốc cà phê trắng,con chim,430238,0
+1717,màu của ô liu là gì,màu đen,427603,2
+1718,hai cô gái nhỏ mặc áo trắng cầm cái gì,chiếc ô,351868,0
+1719,người đàn ông xịt với vòi nước vào gì,con voi,486112,0
+1720,những gì đặt với pizza trên bàn màu cam,đĩa,485288,0
+1721,những gì đang nằm trên mặt đất trên cỏ,ngựa rằn,451263,0
+1722,nhóm bàn lộn xộn ở đâu,văn phòng,81074,3
+1723,màu của tòa nhà là gì,màu đỏ,374723,2
+1724,những gì đỗ bên ngoài trạm xăng với vành ,xe ô tô,552824,0
+1725,có bao nhiêu vali được xếp chồng lên nhau,năm,40065,1
+1726,cái gì với nhà vệ sinh và đứng lên tắm,phòng tắm,374707,0
+1727,màu của nón là gì,màu cam,116771,2
+1728,có bao nhiêu con chim đang ngồi cùng nhau trên cành cây,hai,121414,1
+1729,có bao nhiêu chiếc bánh mì tàu ngầm trên bàn bên cạnh một tách cà phê,ba,403593,1
+1730,những gì gắn vào bên của một tòa nhà,đồng hồ,540789,0
+1731,màu của trượt tuyết là gì,màu đen,544373,2
+1732,con mèo đang ngồi ở đâu,chậu,567754,3
+1733,đầu bếp chuẩn bị thức ăn ở đâu,phòng bếp,113590,3
+1734,con hươu cao cổ cúi xuống lá là gì,cây,427471,0
+1735,nhà vệ sinh đơn độc đặt ở đâu,phòng tắm,309382,3
+1736,con chó nhỏ nằm ở đâu,vali,202186,3
+1737,gấu bông trắng lớn đang ở đâu,cái ghế,96984,3
+1738,xe buýt hai tầng hiện đại để lại những gì,trạm,498274,0
+1739,những gì chứa đầy những chiếc bàn gỗ với máy tính xách tay của apple trên chúng,thư viện,509811,0
+1740,màu của xe máy là gì,màu đỏ,496274,2
+1741,có bao nhiêu người đang chơi trò chơi wii trên một chiếc tivi lớn,bốn,335758,1
+1742,có bao nhiêu cầu thủ bóng chày với cây vợt trong tay tạo dáng chụp ảnh,ba,134100,1
+1743,những gì nằm trên vỉa hè bên ngoài một ngôi nhà,lò vi sóng,472595,0
+1744,những gì đầy nhiều thức ăn,tủ đá,512330,0
+1745,màu sắc của người phụ nữ là gì,màu trắng,101215,2
+1746,những gì đặt xung quanh một ăng-ten trên xe hơi,donut,383445,0
+1747,cái gì đang treo trên tháp,đồng hồ,359148,0
+1748,những gì kéo vào ga tàu cạnh nhau,xe lửa,559955,0
+1749,hươu cao cổ ăn và uống ở đâu,chuồng,430065,3
+1750,phòng khách có gì với một khuôn mặt gạch lớn,lò sưởi,464339,0
+1751,cái gì đang ngồi trên máy tính xách tay,con mèo,568508,0
+1752,cái gì đã làm cho trông giống như xúc xích và một chai tương cà,bánh,380300,0
+1753,một người đàn ông lớn ở đâu,ô cửa,232597,3
+1754,nơi có màu hồng che giường và bàn,phòng ngủ,142051,3
+1755,màu của con ngựa là gì,màu nâu,479929,2
+1756,màu của xe buýt là gì,màu vàng,281285,2
+1757,có bao nhiêu người đang đi xuống lối đi bộ lót ván với ô,ba,149230,1
+1758,màu của bánh là gì,màu vàng,332614,2
+1759,cặp vợ chồng đang đứng ở đâu,vòi hoa sen,152389,3
+1760,"những gì chủ yếu là màu bạc, một lối đi chéo có thể được nhìn thấy trong nền",vòi,492163,0
+1761,bàn này có bao nhiêu ly rượu và một món ăn nhẹ,năm,62038,1
+1762,có bao nhiêu đứa trẻ trong một bức ảnh đen trắng,năm,531144,1
+1763,những gì nằm trên bụi bẩn gần một số nước,con voi,498383,0
+1764,có bao nhiêu con gấu bông phù hợp đang nằm trên giường,năm,356733,1
+1765,người đàn ông đang đi xe đạp với tốc độ bao nhiêu mà không cầm ghi đông,mười,67117,1
+1766,bồ vệ sinh nằm ở đâu,phòng tắm,212074,3
+1767,những gì chứa đầy bánh rán với nhiều lớp khác nhau,hộp,568675,0
+1768,những gì lơ lửng vào dòng ở phía trước của một lán,con bò,458168,0
+1769,cái gì đang đậu trên đá cuội gần một chiếc xe tải ford,xe máy,359715,0
+1770,màu của ngôi nhà là gì,màu vàng,387365,2
+1771,có bao nhiêu chiếc máy bay buồng lái nhỏ đang đậu trên cánh đồng cỏ,hai,148602,1
+1772,cái gì đang ngồi trong lò nướng,đồ chơi,362482,0
+1773,màu của gấu là gì,màu nâu,265315,2
+1774,có bao nhiêu cái bánh mì tròn đang ngồi trên khay bạc,năm,166124,1
+1775,cái gì liếm tai của một con bò nâu khác,con bò,475423,0
+1776,có bao nhiêu con gấu bắc cực nằm dài trên mặt đất của một cái chuồng,hai,269380,1
+1777,màu của điểm dừng là gì,màu đỏ,465266,2
+1778,mèo con nhỏ đang ngồi ở đâu,bát,55630,3
+1779,có bao nhiêu người mặc trang phục sặc sỡ đang đạp xe dài,năm,424464,1
+1780,những gì bay ngang qua một ngọn núi tuyết phủ,máy bay,347367,0
+1781,người đang quan sát trên bức tường đá có bao nhiêu con hươu cao cổ,ba,208003,1
+1782,xe tải gửi thư dừng ở đâu,đường,145538,3
+1783,nhà vệ sinh và một bức tranh ở đâu,phòng tắm,377745,3
+1784,có bao nhiêu xe buýt rẽ phải trước một xe buýt khác,một,401778,1
+1785,có bao nhiêu người đàn ông đang đẩy một người khác trên ván trượt,một,88286,1
+1786,những gì bên cạnh máy rửa chén,chậu,517018,0
+1787,có bao nhiêu con gấu bông nâu được xếp trên kệ,bốn,357113,1
+1788,những gì đã xem giữa hai cây trên một bên lề đường,vòi,412551,0
+1789,"có bao nhiêu cậu bé ném bóng, một cậu bé trên sân bóng chày",một,578567,1
+1790,ngựa vằn ăn gì trong một cánh đồng đầy cây,bãi cỏ,551602,0
+1791,có bao nhiêu con cừu trên đồng cỏ vào một ngày nắng,mười,353302,1
+1792,con chó lớn với một dây xích ngồi ở đâu,xe ô tô,90827,3
+1793,con mèo mịn đẻ ở đâu,vali,85131,3
+1794,người phụ nữ đang ngồi ở đâu,vali,147775,3
+1795,những gì tìm kiếm bên cạnh trong một cánh đồng,gấu,458177,0
+1796,người đàn ông đang giữ một ván trượt đang đứng ở đâu,ô cửa,511802,3
+1797,có bao nhiêu con ngựa vằn trên cánh đồng cỏ dưới gốc cây,ba,197437,1
+1798,cái gì đang ngồi dưới bầu trời đầy sương mù,tòa tháp,430760,0
+1799,những gì phục vụ trong các chảo thép không gỉ được phục vụ tại bàn,chén đĩa,505240,0
+1800,những gì ở bãi đất trống phía trước dãy núi,con bò,486203,0
+1801,chuyến tàu đang ở đâu,trạm,408249,3
+1802,nhiều thuyền được xếp hàng ở đâu,bến du thuyền,136323,3
+1803,màu sắc của thực phẩm là gì,màu nâu,458642,2
+1804,xe buýt xanh hai tầng dừng ở đâu,ga-ra,488932,3
+1805,cái gì nổi bật trên bức tường màu vàng tươi,vòi,348648,0
+1806,những gì được sơn để giống với dalmatian,vòi,354278,0
+1807,có bao nhiêu chiếc xe amtrak loại cũ đang ngồi trên đường ray,hai,515590,1
+1808,màu của xe tải là gì,màu đỏ,109738,2
+1809,có bao nhiêu cô gái đang tham gia vào một môn thể thao dưới nước ở đại dương,sáu,120230,1
+1810,xe cứu hỏa đậu ở đâu,ga-ra,213366,3
+1811,những gì đậu trên máng xối nhà,con chim,464248,0
+1812,người đàn ông đang cầm gì và đi bộ xuống vỉa hè trong mưa,chiếc ô,379259,0
+1813,hai con bò ăn cỏ khô ở đâu,chuồng trại,369811,3
+1814,"hai con bò trong một cánh đồng là gì, một cái mặc",kính râm,386436,0
+1815,cậu bé bay gì,diều,392687,0
+1816,mèo con đang ngồi ở đâu,cái ghế,74825,3
+1817,những gì gặm cỏ trong khi hai con bò trong nền nhìn vào,con bò,459396,0
+1818,màu của lá là gì,màu xanh lá,191264,2
+1819,có một người đàn ông uống những gì với thức ăn,đồ uống,482362,0
+1820,màu của táo là gì,màu đỏ,52818,2
+1821,những gì chứa đầy trái cây và rau các loại,hộp,374087,0
+1822,con chim đang ngủ ở đâu,cái nồi,233039,3
+1823,hai người đang chơi một trò chơi video ở đâu,phòng,485160,3
+1824,màu sắc của các mẫu là gì,màu đen,104718,2
+1825,những gì dừng lại để trả phí đỗ xe cho phụ nữ,xe ô tô,418701,0
+1826,màu của mỏ là gì,màu cam,309721,2
+1827,có bao nhiêu người cầm hai chiếc điện thoại ở phía trước,hai,94936,1
+1828,những gì nằm tại bến cảng dọc theo những chiếc thuyền khác,con thuyền,575441,0
+1829,màu của chăn là gì,màu đỏ,143521,2
+1830,xe máy màu đỏ đậu ở đâu,đường phố,373128,3
+1831,có bao nhiêu miếng bông cải xanh đang được giữ trên một cái nĩa,hai,358427,1
+1832,màu của dĩa nhựa là gì,màu tía,394,2
+1833,một giường phụ được thiết lập ở đâu,phòng ngủ,62292,3
+1834,màu của con ngựa là gì,màu nâu,83151,2
+1835,màu của tòa nhà là gì,màu trắng,371791,2
+1836,có bao nhiêu chú cừu non được bao quanh bởi thảm cỏ xanh tươi,hai,335039,1
+1837,những gì gặm cỏ trên cánh đồng với cây và cỏ,ngựa vằn,544071,0
+1838,tàu cao tốc đi chậm ở đâu,trạm,29253,3
+1839,màu sắc của dây nịch là gì,màu tía,305690,2
+1840,người phụ nữ đứng gần một cái bàn với những chai rượu trên đó,ba,494622,1
+1841,hai người đàn ông và một đầu bếp phụ nữ ở đâu,phòng bếp,166926,3
+1842,có bao nhiêu con hươu cao cổ đi dạo bên ngoài gần một cánh cổng gỗ,ba,528748,1
+1843,màu của áo là gì,màu trắng,226747,2
+1844,màu sắc của chiếc váy là gì,màu tía,466615,2
+1845,màu của dĩa nhựa là gì,màu vàng,280847,2
+1846,tàu đỏ dừng ở đâu,trạm,395614,3
+1847,những gì được thiết lập với ga tàu,động cơ,528404,0
+1848,những gì đang nằm trong trang trại,bò,578493,0
+1849,hai giường được đặt gọn gàng ở đâu,phòng,435994,3
+1850,có bao nhiêu con hươu cao cổ đứng trên đồng bằng với một vài cây,ba,205282,1
+1851,cái gì đang ngồi trong đống gần cam và trái cây khác,táo,352377,0
+1852,những gì có một ván trượt ở tốc độ cao,máy ảnh,498759,0
+1853,màu của xe tải là gì,màu đỏ,203440,2
+1854,người đàn ông chuẩn bị thức ăn ở đâu trong khi đứng,phòng bếp,350960,3
+1855,cô gái có selfie ở đâu,phòng tắm,22341,3
+1856,cái gì trên bàn này,pizza,485288,0
+1857,những gì đỗ trong khu vực cỏ,xe buýt,479556,0
+1858,màu của bệ là gì,màu xanh dương,395627,2
+1859,màu của ánh sáng là gì,màu đỏ,200619,2
+1860,có bao nhiêu người đi về phía một chiếc máy bay nhỏ trên đường băng,ba,230046,1
+1861,con chó đang ở đâu,cái ví,365236,3
+1862,cái gì nằm trên vỉa hè lát gạch xám,băng ghế,491131,0
+1863,đoàn tàu nào gắn các toa tàu và đậu trên một bộ đường ray,đầu máy,477623,0
+1864,người đàn ông nằm ở đâu trên một chiếc ghế dài,phòng,203479,3
+1865,người đang làm việc ở đâu,cửa tiệm,460139,3
+1866,ngôi nhà rất đẹp được sắp xếp rất tốt những gì,nhiều cái ghế,558673,0
+1867,có bao nhiêu con ngựa vằn đang đi qua bãi cỏ của cánh đồng,ba,154,1
+1868,người đàn ông đang chơi một trò chơi ở đâu,phòng,463989,3
+1869,có một người đàn ông giữ những gì,diều,426700,0
+1870,có bao nhiêu cô gái tuổi teen di chuột dưới một chiếc ô trong khi họ nói và cười,ba,301867,1
+1871,màu của quần là gì,màu đen,440347,2
+1872,cái gì đang rúc vào sở thú trong khu trưng bày của họ,ngựa vằn,341950,0
+1873,những gì đậu sau một chiếc xe tải trắng trên cỏ,xe đạp,436559,0
+1874,màu sắc của giao thông là gì,màu đỏ,435764,2
+1875,có bao nhiêu con hươu cao cổ đang đi dạo với thảm thực vật thưa thớt xung quanh,ba,326475,1
+1876,màu của xe tải là gì,màu xám,540110,2
+1877,cây cỏ nhỏ đang cắm ở đâu,lọ cắm hoa,299380,3
+1878,màu của con mèo là gì,màu nâu,572627,2
+1879,có bao nhiêu người đang nhìn vào hai con bê và một con mèo,bốn,531366,1
+1880,những gì đứng trước một tòa nhà kính,cái ghế,506751,0
+1881,người đàn ông cầm nhạc cụ cầm cái gì,thân cây,500018,0
+1882,màu của lá là gì,màu xanh lá,557101,2
+1883,con mèo đen trắng nằm ở đâu,cái ghế,240691,3
+1884,những gì đang đi xuống đường ray xe lửa,tàu hỏa,450464,0
+1885,hai người phụ nữ đang ăn gì ở bên ngoài,donut,341973,0
+1886,người đàn ông ăn xin mỉm cười khi cầm bao nhiêu chuối,ba,131127,1
+1887,người đàn ông ở đâu,xe lăn,120061,3
+1888,cái gì được cắt làm đôi trên một cái đĩa,sandwich,527631,0
+1889,những gì được lật mở trên sàn nhà,điện thoại,441577,0
+1890,màu của bụi cây là gì,màu nâu,453906,2
+1891,hai người làm đầy bánh tortilla ở đâu,phòng bếp,425137,3
+1892,màu của áo khoác là gì,màu cam,67331,2
+1893,có bao nhiêu bản sao của bức ảnh này về cùng một trụ cứu hỏa,bốn,59108,1
+1894,một số trẻ em đang cưỡi trên một đoạn đường dốc,ván trượt,409345,0
+1895,màu của xe là gì,màu trắng,514676,2
+1896,màu của gấu là gì,màu nâu,399984,2
+1897,những gì đậu trên bờ tuyết,con chim,497117,0
+1898,những gì cạnh nhau trong một bãi đậu xe,xe buýt,484723,0
+1899,có bao nhiêu con hươu cao cổ đang quay mặt ra khỏi máy ảnh trong lồng,hai,461522,1
+1900,có bao nhiêu người đang đi bộ lên đồi để trượt tuyết,bốn,19096,1
+1901,có bao nhiêu người phụ nữ chơi trò chơi điện tử trước ghế dài,hai,101530,1
+1902,có một con mèo đen lớn đang mặc cái gì,cà vạt,337180,0
+1903,cái gì đang đỗ trên đường trước một tòa nhà,xe máy,566278,0
+1904,có bao nhiêu hipster đang ngồi trên một băng ghế gỗ bên cạnh nhau,hai,306553,1
+1905,có bao nhiêu người mặc đồ trắng trượt tuyết xuyên quốc gia,năm,419017,1
+1906,màu sắc của những con ngựa là gì,màu nâu,312744,2
+1907,ba quả chuối chín nằm ở đâu,bát,491029,3
+1908,có bao nhiêu con mèo đang nằm trên một con mèo khác ngồi trên băng ghế,một,229088,1
+1909,"đầy đủ với cà chua, nấm, xúc xích và ớt là gì ",pizza,340015,0
+1910,những gì đang giữ một đèn thủy tinh đứng trên một chiếc đồng hồ cũ,bức tượng,545007,0
+1911,màu của con mèo là gì,màu xám,308812,2
+1912,màu của con dao là gì,màu xanh lá,169732,2
+1913,hai con hươu cao cổ ở đâu,chuồng,173166,3
+1914,người đứng ở đâu trong khi chụp ảnh tự sướng,phòng tắm,459921,3
+1915,băng ghế đã làm gì trước một cây nho,rào chắn,461007,0
+1916,những gì đang giữ đi bộ xuống một con đường thành phố trong tuyết,chiếc ô,445468,0
+1917,có bao nhiêu đầu bếp đang chuẩn bị bữa tối cho nhà hàng,hai,495489,1
+1918,những gì đang giữ với những rắc màu vẫn còn trong cốc giấy,cupcake,455448,0
+1919,sự phản chiếu của một người phụ nữ được nhìn thấy ở đâu,gương,237976,3
+1920,màu của con chó là gì,màu nâu,423826,2
+1921,hai người đang chơi ở đâu,cửa hàng,84489,3
+1922,chuột hamster nhìn ở đâu,gương,77292,3
+1923,cậu bé tập đánh bóng ở đâu,lồng,52957,3
+1924,chuối và hai quả táo được đặt ở đâu,bát,353558,3
+1925,những gì đang ăn từ bát kim loại,cún yêu,576136,0
+1926,màu của chăn là gì,màu xanh dương,214478,2
+1927,những gì đậu lên trên một nhánh cây,con chim,580084,0
+1928,người đàn ông cầm những gì chuẩn bị ném nó,dĩa nhựa,409198,0
+1929,có bao nhiêu người đang ngồi trên tuyết với ván trượt tuyết trước một ngọn núi,bảy,14543,1
+1930,màu của thuyền chèo là gì,màu nâu,540943,2
+1931,màu của chiếc tàu là gì,màu vàng,446307,2
+1932,những gì đang ngồi trên bàn cạnh nhau,điện thoại,444770,0
+1933,con mèo đang nằm ở đâu,cái ví,553378,3
+1934,màu của túi là gì,màu cam,327328,2
+1935,có bao nhiêu cảnh sát đang cưỡi ngựa xuyên qua một đám đông,bốn,160968,1
+1936,có bao nhiêu chiếc giường chưa được dọn sẵn với một cái tủ đầu giường giữa chúng,hai,363217,1
+1937,màu sắc của hành lý là gì,màu cam,364082,2
+1938,màu của dĩa nhựa là gì,màu vàng,318529,2
+1939,ngủ trên giường là gì,con mèo,541053,0
+1940,con mèo đen bóng ở đâu,vali,150919,3
+1941,màu của xe tải là gì,màu cam,577835,2
+1942,"bốn người, ba người có ô, đứng ở đâu",sân vườn,566568,3
+1943,màu của áo là gì,màu cam,386684,2
+1944,có bao nhiêu người trong phòng khách đang chơi nintendo wii,hai,199721,1
+1945,màu của hồ là gì,màu xanh dương,350361,2
+1946,cô gái trẻ nằm ở đâu,giường,497870,3
+1947,xe bus được phản chiếu ở đâu,gương,497989,3
+1948,một phụ nữ lớn tuổi đang làm việc ở đâu,phòng bếp,442926,3
+1949,con mèo đang ngồi ở đâu,chậu,72605,3
+1950,những gì bên cạnh một bức tường đá,hươu cao cổ,384848,0
+1951,màu của gấu là gì,màu đen,445276,2
+1952,trẻ nhỏ chơi trò chơi điện tử ở đâu,phòng,484790,3
+1953,cái gì đã kéo vào chiếc xe đẩy đứng trước một ngôi đền,con ngựa,508639,0
+1954,cái gì có một cái bàn gỗ và một cái mũ,phòng,463134,0
+1955,cái gì trong cỏ,vòi,458156,0
+1956,người đàn ông đang đi xuống bên cạnh một chiếc xe buýt trên đường phố là gì,đường đi bộ,389684,0
+1957,hướng hoa hướng dương cắm ở đâu,lọ cắm hoa,433389,3
+1958,màu của các thẻ là gì,màu vàng,45459,2
+1959,giấy kẹp và khoai tây chiên ở đâu,cái rổ,563659,3
+1960,những gì đứng cạnh nhau ở giữa cây,hươu cao cổ,530163,0
+1961,màu của động cơ là gì,màu cam,455132,2
+1962,màu của chiếc bình là gì,màu tía,418808,2
+1963,pizza chứa ở đâu,hộp,92181,3
+1964,những gì đang dành nhiều thời gian trong rừng,hươu cao cổ,495291,0
+1965,có bao nhiêu con cừu đang đứng cách xa những con khác,một,265573,1
+1966,màu của chiếc thuyền là gì,màu xanh dương,479103,2
+1967,những gì đang nằm trên bề mặt trong ngày,con chim,497117,0
+1968,màu của chân là gì,màu đen,333280,2
+1969,"cái gì ở trên cùng với bốn chiếc bánh rán, hai trong số chúng phủ sô cô la",đĩa ăn,356586,0
+1970,một số quả táo xanh đang ở đâu,cái rổ,24877,3
+1971,đàn gia súc đã tập hợp ở đâu,rào chắn,500818,3
+1972,những gì ăn một số thực phẩm ở cuối đường hầm,con ngựa,514690,0
+1973,có bao nhiêu con mèo đang chạm mặt nhau,hai,7247,1
+1974,vòi chữa cháy này được sơn cái gì,màu sắc,469803,0
+1975,bó hoa vàng ở đâu,lọ cắm hoa,363956,3
+1976,những gì đang nằm trên giường với một chiếc gối màu xanh và màu cam,gấu,436413,0
+1977,những gì đang đi trên mặt đất,con chim,476190,0
+1978,cô bé dễ thương ở đâu với mái tóc xoăn,sân,277386,3
+1979,xe bán tải đang ở đâu,đường phố,304236,3
+1980,những gì kéo vào chiếc dĩa nhựa màu xanh với miệng của họ,con chó,568238,0
+1981,đàn ông và phụ nữ cắt những gì cùng nhau,bánh,371854,0
+1982,con thú nhồi bông nào được treo bên trong cốc cà phê,con mèo,562735,0
+1983,đi văng và tivi treo tường ở đâu,phòng,565637,3
+1984,tàu nào di chuyển dọc theo đường ray trong bãi xe lửa,tàu,536168,0
+1985,có bao nhiêu con ngựa vằn đang đứng trên một bãi cỏ khô cao,bốn,142622,1
+1986,màu của dấu hiệu là gì,màu đỏ,411792,2
+1987,pizza được nướng ở đâu,lò vi sóng,382012,3
+1988,hai chàng trai đang làm việc ở đâu,quán ăn,182505,3
+1989,cái gì đang ngồi trên đi văng,gấu,573891,0
+1990,những cuộn bánh quế nằm ở đâu,lò vi sóng,93601,3
+1991,cái gì nằm bên trong bồn rửa mặt trong phòng tắm,con mèo,361621,0
+1992,xe kéo đang đậu và đang kéo những gì,phương tiện giao thông,491336,0
+1993,màu của gấu là gì,màu trắng,469181,2
+1994,bánh mì được sưởi ấml ở đâu,lò vi sóng,129006,3
+1995,cô ấy đang ăn gì,sandwich,565227,0
+1996,cặp vợ chồng ở đâu,phòng tắm,464630,3
+1997,màu của gấu bông là gì,màu nâu,265315,2
+1998,có bao nhiêu con ngựa vằn đứng trong khu vực cỏ ở nơi hoang dã,ba,557252,1
+1999,những người làm bánh rán ở đâu,cửa hàng,15794,3
+2000,nơi một số đang đứng là ở đâu,trạm,493252,3
+2001,người đó đang đi đâu xuống một ngọn đồi nhỏ,trượt tuyết,201372,3
+2002,màu của bãi cỏ là gì,màu xanh lá,448698,2
+2003,thức ăn gần như đã sẵn sàng ở đâu,món ăn,340419,3
+2004,cái gì nằm trên đường màu vàng của đường phố,donut,554340,0
+2005,những gì phản chiếu trong gương,con mèo,490639,0
+2006,cô bé đang giữ và trừng mắt nhìn những gì,gấu,399741,0
+2007,loài gặm nhấm trong ngôi nhà vật nuôi đang ăn gì,bông cải xanh,354606,0
+2008,những gì trông giống như khuôn mặt cười,người giữ,518287,0
+2009,những gì nằm trên tháp,đồng hồ,387833,0
+2010,cô gái trẻ đang diễn xuất ngớ ngẩn ở đâu,phòng,245853,3
+2011,có bao nhiêu con voi đang đứng trên sông trong tự nhiên,ba,10449,1
+2012,những gì đậu trên cành trên cây,con chim,482526,0
+2013,những gì đi bộ ở rìa của nước,con bò,526044,0
+2014,có nhiều loại rau và trái cây ở đâu,bát,221894,3
+2015,màu của cổng là gì,màu xanh dương,258671,2
+2016,cái gì đang đỗ trong bụi bẩn bên cạnh cây,xe tải,475042,0
+2017,cửa mở ở đâu để lộ một nhà vệ sinh,phòng,156739,3
+2018,màu của con bò là gì,màu nâu,339757,2
+2019,đổ những gì một mình trên đường với các tòa nhà và cây trần và cây bụi đằng sau nó,xe tải,454382,0
+2020,màu của cà vạt là gì,màu đỏ,252702,2
+2021,màu của áo là gì,màu xám,516176,2
+2022,những gì kéo xe kéo du hành xuống giữa một con đường,con ngựa,524431,0
+2023,cái gì đang ngồi bên một chiếc lá,con chim,466531,0
+2024,có bao nhiêu người trên bãi biển đang cưỡi ngựa,sáu,432410,1
+2025,có bao nhiêu chiếc xe đạp có gắn máy làm mát đậu dưới gốc cây,bốn,492382,1
+2026,nơi chụp ảnh tự sướng ở đâu,cửa,114510,3
+2027,người phụ nữ và hai em bé bơi ở đâu,hồ bơi,196672,3
+2028,có bao nhiêu người đàn ông chơi tennis trên sân xi măng,hai,411044,1
+2029,những gì bay mà không có người nhìn thấy trên một cánh đồng xanh,diều,395083,0
+2030,thứ bị bỏ rơi trên chiếc ghế dài màu xanh lá cây,cái ví,352538,0
+2031,màu của chiếc ô là gì,màu đỏ,105640,2
+2032,màu của bông hoa là gì,màu tía,292982,2
+2033,màu của nhà vệ sinh là gì,màu trắng,38771,2
+2034,người phụ nữ giữ những gì bên cạnh một tách cà phê,donut,537369,0
+2035,hai đứa trẻ nhỏ nằm ở đâu,giường,14653,3
+2036,có bao nhiêu con vật đang đẻ trên bãi cỏ gần một cái cây,bốn,280599,1
+2037,người đàn ông mang theo gì,vali,422836,0
+2038,người đàn ông và một người phụ nữ đứng bên cạnh nhau ở bãi biển,bảng,473754,0
+2039,những gì đi bộ trên bàn gần một cái đĩa,con chim,409088,0
+2040,có bao nhiêu con ngựa vằn đang tụ tập với nhau trong một bao vây,ba,202587,1
+2041,những gì đang đến gần trên đường tàu,phương tiện giao thông,508996,0
+2042,cái gì đang nằm trên bàn trắng,bánh,556608,0
+2043,có bao nhiêu người đàn ông mặc đồng phục cưỡi ngựa băng qua đồng cỏ,bốn,403567,1
+2044,người đàn ông với một tạp dề chuẩn bị hỗn hợp ở đâu,bát,285821,3
+2045,cái bàn gỗ ở đâu,lọ cắm hoa,2106,3
+2046,con chó nhìn ở đâu,gương,425672,3
+2047,màu của chiếc đĩa là gì,màu trắng,6512,2
+2048,màu của chiếc ô là gì,màu xanh dương,527628,2
+2049,màu của con mèo là gì,màu đen,424760,2
+2050,có bao nhiêu người trượt tuyết xuyên quốc gia trên con đường xuyên qua những tán cây,năm,157940,1
+2051,có bao nhiêu con ngựa ở giữa một cuộc đua ngựa,hai,260951,1
+2052,người xuống dốc tuyết,ván trượt,413948,0
+2053,khuôn mặt của một người phụ nữ trong kính râm phản chiếu,gương,207775,3
+2054,những người chơi bóng chày đang chơi ở đâu,sân vận động,540947,3
+2055,những gì bao quanh bởi hàng rào,xe tải,450404,0
+2056,những gì đang trên và kết nối với dây,điện thoại,511403,0
+2057,cái gì bên cạnh máy tính xách tay,chuột,372466,0
+2058,người đàn ông đi xuống phố cầm cái gì,chiếc ô,379259,0
+2059,những gì đỗ ở phía trước nhà với một loạt các dấu hiệu dừng được sắp xếp trước mặt họ,xe ô tô,433904,0
+2060,một số người và ký hiệu gì hai con ngựa đang kéo người trong xe,xe đạp,515303,0
+2061,cái gì bị trôi dạt vào bờ,con thuyền,354744,0
+2062,màu của gấu là gì,màu đen,131731,2
+2063,cậu bé đang đứng đâu,phòng tắm,196900,3
+2064,bộ dụng cụ đầy màu sắc ở đâu,cửa tiệm,401977,3
+2065,có bao nhiêu cô gái xinh đẹp đứng cạnh nhau,bốn,131366,1
+2066,những gì đặt cạnh nhau trong phòng tắm,bồn tiểu,577796,0
+2067,màu của chiếc ô là gì,màu xanh dương,164850,2
+2068,miếng kem sô cô la lấp đầy cái gì khi cắn một miếng,donut,445695,0
+2069,màu của cái tủ là gì,màu nâu,342342,2
+2070,trên khay có bao nhiêu chiếc hotdog với ớt một củ hành,hai,266951,1
+2071,những con bò bị xiềng xích ở đâu,chuồng trại,232701,3
+2072,một người đàn ông đang làm ở đâu,lối đi,47734,3
+2073,những gì đang được đưa vào sô cô la lỏng,bánh,392991,0
+2074,"quang cảnh nào với nhà vệ sinh, vòi hoa sen và bồn rửa",ô cửa,373793,0
+2075,có bao nhiêu người đàn ông đang chơi bóng đá một người đàn ông đã trưởng thành,ba,453757,1
+2076,những gì đang đứng bên cạnh hàng rào dây,con ngựa,431855,0
+2077,pizza đã cắt lát được đặt ở đâu,hộp,147369,3
+2078,những gì trên vỉa hè tại sân bay,máy bay,413734,0
+2079,cậu bé đang bay là gì,diều,392687,0
+2080,có bao nhiêu con ngựa vằn đang đứng trong một đám mây,ba,337185,1
+2081,người phụ nữ uống gì và ăn bánh,cà phê,505619,0
+2082,có bao nhiêu người đàn ông đứng trên thuyền khi người đàn ông kia chèo thuyền,một,187784,1
+2083,người đàn ông mặc áo sơ mi mồ hôi xám là gì là bay,diều,539937,0
+2084,người phụ nữ đang chụp ảnh mình ở đâu,gương,362140,3
+2085,những gì được ngồi trên cành cây đang ngồi cạnh một bó bụi cây,con chim,551861,0
+2086,màu của cái tủ là gì,màu nâu,25470,2
+2087,tv và ghế sofa đang ở đâu,phòng,86226,3
+2088,cái gì đang bay trên bầu trời xanh,diều,556157,0
+2089,có bao nhiêu người đàn ông trong khi giữ ván lướt gỗ dài,bốn,576634,1
+2090,con bò nâu nhạt nằm ở đâu cong trong khi mọi người ở gần những chiếc xe trong nền,đường phố,372163,3
+2091,nơi là một phòng khách nhỏ và thông thường,nhà ở,211107,3
+2092,cái gì đang nằm trên giường với đôi mắt của nó,con mèo,359574,0
+2093,những gì sử dụng hồ như một đường băng,máy bay,556901,0
+2094,có bao nhiêu người cưỡi ngựa trên bãi biển lên ngay mặt nước,ba,532007,1
+2095,những gì nghiêng người ăn cỏ trên một cánh đồng,hươu cao cổ,562171,0
+2096,màu của tường là gì,màu trắng,357272,2
+2097,cái gì giữ máy tính xách tay và máy tính để bàn,cái bàn,493753,0
+2098,hai người đang kéo cái gì ở sân bay,vali,359676,0
+2099,màu của cây là gì,màu cam,31733,2
+2100,những gì nằm trên con đường gạch giữa lá,băng ghế,496093,0
+2101,những gì ngồi cạnh nhau trên ghế,gấu,573891,0
+2102,những gì được xếp hàng bên cạnh nhau với nhiều người đứng giữa họ trước nhiều cây,xe máy,436174,0
+2103,những gì nhìn vào du khách đến công viên động vật hoang dã?,ngựa vằn,478821,0
+2104,con mèo đen lớn nghỉ ngơi ở đâu,giường,425470,3
+2105,màu của bàn tay là gì,màu tía,269557,2
+2106,có bao nhiêu loại điện thoại di động khác nhau trên bàn,năm,99498,1
+2107,những gì mang thức ăn cho cửa hàng,xe tải,577223,0
+2108,những gì đặt ra nhìn ra cửa sổ,hươu cao cổ,442661,0
+2109,những gì đang chăn thả trên đồng cỏ xanh tươi dọc theo sông và núi,gia súc,500663,0
+2110,có bao nhiêu nam vận động viên trượt ván đang đứng nói chuyện một người mặc áo đen,ba,329304,1
+2111,tiếp theo là khu rừng xanh tươi tốt là gì,ngựa rằn,371245,0
+2112,một số ngựa nâu và một là đang ăn ở đâu,chuồng,544516,3
+2113,màu của gấu là gì,màu đen,337962,2
+2114,những cái bánh rán đầy với những rắc đường ở bên ngoài,sô cô la,416787,0
+2115,trên bàn có những bông hoa màu tím,lọ cắm hoa,366630,0
+2116,nhiều ngựa vằn đang cùng nhau ở đâu,vườn bách thú,28690,3
+2117,hai thương nhân chuẩn bị bánh ngọt ở đâu,cửa hàng,73470,3
+2118,những gì trong bồn rửa nhà bếp là một số cắt mới,bông hoa,514018,0
+2119,máy bay phản lực đỏ và trắng đang cất cánh là gì,các tòa nhà,518203,0
+2120,màu của áo là gì,màu trắng,58708,2
+2121,có bao nhiêu người đàn ông ngồi trên chiếc ghế dài mỉm cười với điều khiển wii trên tay,hai,472749,1
+2122,có bao nhiêu người trong dãy phòng đang đặt ra sau một số bát phục vụ,hai,30387,1
+2123,màu của gin là gì,màu đỏ,432909,2
+2124,trên bàn có bao nhiêu chiếc bánh pizza phủ đầy rau,hai,188850,1
+2125,hai con ngựa nâu đang ăn gì,bãi cỏ,581929,0
+2126,điều gì đang vượt qua một dòng sông lớn,cầu,393523,0
+2127,nải lớn của chuối được bao bọc ở đâu,cái túi,118485,3
+2128,ba người đàn ông đang làm việc và thu thập chuối ở đâu,cửa tiệm,283329,3
+2129,người phụ nữ ăn bánh rán ở đâu,cửa tiệm,44170,3
+2130,công nhân nhà bếp đứng ở đâu,phòng bếp,80011,3
+2131,những bức tường và đồ đạc là sứ ở đâu,phòng tắm,314787,3
+2132,hai con ngựa vằn và một con hươu cao cổ đứng ở đâu,máy bay,475304,3
+2133,người đàn ông cưỡi gì trên mặt đất trên tuyết,ván trượt,578427,0
+2134,người đàn ông đang giữ điện thoại di động của mình đang chụp ảnh ở đâu,gương,14969,3
+2135,bốn người đang cưỡi trượt ván trượt tuyết ở đâu,núi,579081,0
+2136,những gì nằm trên sàn bên cạnh một số đôi giày,con chó,412240,0
+2137,có bao nhiêu món ăn khác nhau trên bàn gỗ,ba,280018,1
+2138,màu của con mèo là gì,màu xám,72605,2
+2139,tủ đông tủ lạnh đang ở đâu,phòng bếp,404191,3
+2140,màu của tòa nhà là gì,màu xám,403525,2
+2141,màu của viên đạn là gì,màu vàng,557648,2
+2142,những gì bay qua bầu trời đầy mây,máy bay,344397,0
+2143,những chiếc giường được làm gọn gàng trong một phòng ngủ iwth,cửa sổ,388457,0
+2144,cái gì đang dựa vào xe cút kít ở sân sau,ván lướt sóng,353909,0
+2145,những gì được nhìn thấy dựa trên ghế và nhìn vào một màn hình máy tính xách tay,con mèo,409247,0
+2146,hàng tá bánh rán được đặt ở đâu,hộp,58041,3
+2147,người đàn ông đang cưỡi một chiếc ván trượt xuống một tấm kim loại treo,đường sắt,529065,0
+2148,con chó đang nghiêng về phía cửa sổ của một chiếc xe được phản chiếu ở đâu,gương,494190,3
+2149,người chơi tennis mặc những gì đang chơi tennis,áo sơ mi,454495,0
+2150,cái gì trong hộp đựng của nó trên bàn,sandwich,556980,0
+2151,năm người cưỡi những gì trên đường,xe máy,534827,0
+2152,bồn rửa và đi tắm ở đâu,phòng tắm,191031,3
+2153,màu của chiếc ô là gì,màu vàng,271654,2
+2154,những gì đang ngồi trên đại dương không di chuyển,con thuyền,397483,0
+2155,màu sắc của trang phục là gì,màu đỏ,274116,2
+2156,bình sơn tay nằm ở đâu,cửa hàng,262631,3
+2157,những gì nằm trên cỏ bên ngoài,con mèo,389969,0
+2158,những gì chứa một bông hồng màu hồng ở trước gương,lọ cắm hoa,569464,0
+2159,"đĩa có chứa một khẩu phần bông cải xanh, nấu chín và nấm xào",thịt,425848,0
+2160,màu của nhà vệ sinh là gì,màu trắng,196977,2
+2161,màu của con bò là gì,màu nâu,173760,2
+2162,màu của gấu là gì,màu tía,547100,2
+2163,ngũ cốc ở đâu cạnh chiếc bánh rán sô cô la trên đĩa,bát,364364,3
+2164,người trẻ làm một mánh khóe trượt ván ở đâu,đường phố,181612,3
+2165,có bao nhiêu chiếc máy bay đóng thế đang bay rất gần nhau,bốn,161973,1
+2166,những gì đang đi trên con đường đất và cây cối,hươu cao cổ,522315,0
+2167,màu của dấu hiệu là gì,màu xanh dương,419656,2
+2168,con mèo đen đang ngồi ở đâu,chậu,447885,3
+2169,con voi vươn qua hàng rào về phía một đứa trẻ làm gì,thân cây,350897,0
+2170,bông cải xanh băm nhỏ và cà rốt quăng ở đâu,bát,103804,3
+2171,"những gì nhìn từ mặt đất, thông qua một số đường dây điện",máy bay,410221,0
+2172,con mèo đang tận hưởng một giấc ngủ ngắn ở đâu,cái ghế,2988,3
+2173,những gì đứng trong thói quen của nó trong khi mọi người xem,con voi,469279,0
+2174,cái bát gì có hình những bông hoa trắng và xanh trong đó,lọ cắm hoa,467951,0
+2175,màu của dấu hiệu là gì,màu xanh dương,10420,2
+2176,có bao nhiêu người đi xe đạp một số cây và một con chim bồ câu,ba,515289,1
+2177,phòng bếp có nhiều khoảng thông tầng và hình dưới là phòng bếp có tủ ở giữa là gì,bức ảnh,353317,0
+2178,"cảnh xiếc nơi có bao nhiêu samurai đứng thành hàng, trong khi hai con voi đi phía sau họ",năm,81143,1
+2179,"con hươu cao cổ thè lưỡi, được cho ăn gì bằng tay",cà rốt,518721,0
+2180,du thuyền ngồi ở bến chờ hành khách,con thuyền,464130,0
+2181,những gì đang ngồi trên sàn đá,vali,464787,0
+2182,có bao nhiêu con chim đậu trên vỉa hè trong khi những con khác đứng xem,một,198406,1
+2183,những gì xếp hàng chống lại tòa nhà gạch,xe đạp,429497,0
+2184,những gì đang ngồi bên bờ gỗ,đồng hồ,384587,0
+2185,ngồi bên trong bồn tắm là gì,con mèo,558073,0
+2186,màu của cát là gì,màu trắng,354546,2
+2187,có bao nhiêu con hươu cao cổ đang ăn lá trên ngọn cây bị chặt,ba,191005,1
+2188,có bao nhiêu con ngựa đứng từ xa trên đồng cỏ,bốn,319522,1
+2189,cái gì đang đỗ trên đường phố,xe tải,489358,0
+2190,màu của vòi nước là gì,màu đỏ,553976,2
+2191,màu của xe buýt là gì,màu tía,159567,2
+2192,màu của sàn là gì,màu xanh lá,158569,2
+2193,màu của bầu trời là gì,màu xanh dương,90820,2
+2194,cái gì đã làm cái giá treo tường bên cạnh cái quầy,lò vi sóng,531563,0
+2195,những gì đang đứng cùng nhau ép khuôn mặt của nó với nhau,ngựa vằn,478553,0
+2196,những gì đặt trên đầu bàn bên cạnh một ly rượu,pizza,527064,0
+2197,màu của ghế là gì,màu xanh dương,299647,2
+2198,có bao nhiêu bình chứa hoa trắng và tím,hai,557987,1
+2199,những gì đang di chuyển cùng với lưu lượng lớn xuống một độ nghiêng,xe tải,446460,0
+2200,màu của cuốn sách là gì,màu vàng,47944,2
+2201,tàu chở hàng hóa lớn ở đâu,trạm,11812,3
+2202,hàng vali được xếp hàng ở đâu,sân bay,516214,3
+2203,cái gì đang nằm trên đi văng,con chó,406976,0
+2204,hotdog được chứa ở đâu,hộp,430533,3
+2205,người phụ nữ đang thưởng thức một miếng bánh ở đâu,quán ăn,279490,3
+2206,"những gì nằm ngoài, sẵn sàng tại sân bay",máy bay,477441,0
+2207,màu sắc của bông hoa là gì,màu tía,449504,2
+2208,màu của cà vạt là gì,màu đỏ,50817,2
+2209,tòa nhà gạch lớn trải dài vào bầu trời xanh và có những gì,đồng hồ,520683,0
+2210,màu của gấu là gì,màu nâu,149835,2
+2211,đậu và rau xanh ở đâu,chảo,444869,3
+2212,những gì đang mặc chiếc mũ bóng chày sang một bên,con mèo,475732,0
+2213,có bao nhiêu diều đầy màu sắc của các loại hình dạng đang bay trên bầu trời xanh,sáu,302071,1
+2214,người phụ nữ với ván trượt tuyết đang đứng trên đỉnh tuyết cái gì,đồi,363126,0
+2215,có bao nhiêu phụ nữ đang đứng trên lối đi của tòa nhà trong khi một phụ nữ đang bế một đứa trẻ,bốn,225087,1
+2216,những gì chứa đầy thực phẩm được trình bày nghệ thuật,dĩa,567898,0
+2217,màu của gấu là gì,màu nâu,204806,2
+2218,người phụ nữ trẻ trên macbook uống những gì,đồ uống,482808,0
+2219,cái gì đang đỗ trước một người xem tháp nhìn ra nước,xe máy,432309,0
+2220,màu của con chó là gì,màu đen,383658,2
+2221,ảnh chụp phòng tắm với phòng ngủ thông nhau phản chiếu ở đâu,gương,523664,3
+2222,có bao nhiêu con mòng biển trong vùng nước đầm lầy và một con đang bay,một,546296,1
+2223,những gì kéo lên trạm xe buýt,xe buýt,424927,0
+2224,màu của bàn chải đánh răng là gì,màu cam,472390,2
+2225,cái gì đậu bên ngoài tòa nhà,xe ô tô,357944,0
+2226,có bao nhiêu người đàn ông đang ngồi trên đường trước một tòa nhà,hai,8211,1
+2227,những gì đi chơi trong cánh đồng khô,con ngựa,474762,0
+2228,thịt và bông cải xanh có gì đặc trưng với nhau,món ăn,352418,0
+2229,có bao nhiêu con hươu cao cổ đứng trong vườn bách thú với cây cối,ba,80974,1
+2230,có bao nhiêu bông hoa riêng lẻ trong một cái bình,ba,146997,1
+2231,có bao nhiêu bánh mì tròn được đặt trên giá lò nướng,năm,166124,1
+2232,có bao nhiêu người đàn ông đang mang hành lý lên một lối đi có mái che,hai,457169,1
+2233,những gì núc trên cỏ như một con đà điểu đứng trong bóng râm bên dưới cây bên trái,ngựa rằn,431901,0
+2234,những gì đang đánh nhau bằng ngà của họ,con voi,568315,0
+2235,những gì nằm trên bàn máy tính bên cạnh một con chuột,máy vi tính,385641,0
+2236,người phụ nữ mặc áo vàng đánh gì trên sân đất nện,quả bóng,563927,0
+2237,màu của sân là gì,màu đen,479314,2
+2238,những gì có đầy hoa màu vàng trên sàn nhà,lọ cắm hoa,366264,0
+2239,con voi con đang tắm ở đâu,hồ bơi,29085,3
+2240,chuối và cam được đặt cùng với những con bướm trên cái gì,đĩa ăn,383341,0
+2241,màu của bầu trời là gì,màu vàng,394359,2
+2242,cái gì trên tay lái của xe mô tô,cừu,555687,0
+2243,cái gì đang đỗ trong con hẻm hẹp,xe đạp,400658,0
+2244,người phụ nữ cắt gì,bánh,538163,0
+2245,một số sinh viên hoặc bạn bè ăn pizza ở đâu,thư viện,22411,3
+2246,mẹ và cậu bé xem có bao nhiêu con voi trên cánh đồng,ba,486983,1
+2247,bó hoa được sắp xếp ở đâu,lọ cắm hoa,254237,3
+2248,những gì chứa đầy thịt bò và bông cải xanh bên cạnh chặt gậy,thùng chứa,559838,0
+2249,có bao nhiêu con gấu bắc cực đang cố gắng vượt qua một con khác trong trò chơi đấu vật dưới nước,một,400299,1
+2250,những gì chứa một bánh ngọt và một thức uống,cái mâm,562856,0
+2251,người mặc quần đùi đứng ở đâu,vali,286081,3
+2252,người đàn ông đang mặc một bộ đồ ở đâu,sân vườn,107900,3
+2253,những gì huddled trong bồn tắm cho một sự phù hợp hoàn hảo,con mèo,416668,0
+2254,những gì đang di chuyển xung quanh  một con đờng uốn cong,xe ô tô,580829,0
+2255,con gì đang đứng trong bãi cỏ,con vịt,578703,0
+2256,những gì đang diễn ra trên con đường của một thành phố tắc nghẽn và đồi núi,xe buýt,413339,0
+2257,có bao nhiêu con hươu cao cổ đang đứng cạnh cái cây,ba,282987,1
+2258,màu của cái tủ là gì,màu trắng,72421,2
+2259,có bao nhiêu con ngựa đang đứng cạnh một con sông có cỏ cao phía sau họ,hai,330729,1
+2260,màu của bầu trời là gì,màu xanh dương,78169,2
+2261,cái gì ở phía trước máy tính và nhìn vào màn hình,con mèo,573877,0
+2262,màu của chiếc tàu là gì,màu đỏ,68063,2
+2263,màu của con bò là gì,màu nâu,447684,2
+2264,nguồn cấp dữ liệu coule vừa kết hôn làm gì,bánh,363207,0
+2265,một con mèo giận dữ đang mặc gì lệch một bên,nón,475732,0
+2266,hai con chó nằm ở đâu,giường,210958,3
+2267,tàu sắt anh đang đợi ở đâu,trạm,404739,3
+2268,một số người kiểm tra đồ nội thất ở đâu,phòng,454144,3
+2269,những gì trên sườn đồi cỏ bên một ngọn núi,con cừu,353695,0
+2270,có bao nhiêu người đang chụp ảnh nhóm trong trang phục công sở,bảy,395853,1
+2271,màu của xe buýt là gì,màu đỏ,434221,2
+2272,người đàn ông chuẩn bị pizza ở đâu,lò vi sóng,233877,3
+2273,một bếp lò kép cũ nằm ở đâu,phòng bếp,571808,3
+2274,điều gì theo sau một con ngựa vằn khác qua một công viên,ngựa rằn,346875,0
+2275,một quý ông lớn tuổi ở đâu,phòng,164208,3
+2276,hoa tulip tím ở đâu,lọ cắm hoa,155102,3
+2277,màu của xe là gì,màu xanh dương,112114,2
+2278,người phụ nữ đứng với một cô gái với một dấu chấm polka,chiếc ô,389258,0
+2279,"giường, những gì, và bàn cuối trong một phòng khách sạn",cửa,494751,0
+2280,có bao nhiêu người trên ván trượt một cô gái bị một con chó kéo,ba,76937,1
+2281,màu của chiếc bình là gì,màu xám,22415,2
+2282,người phụ nữ trẻ đang ăn gì,chuối,526940,0
+2283,màu của gối là gì,màu trắng,35573,2
+2284,bức tranh treo phía trên nhà vệ sinh hiển thị cái gì,bức ảnh,555677,0
+2285,"những trường hợp mở có kích thước, một cái đầy đủ",đồ chơi,568337,0
+2286,những gì trên bãi biển bởi một tàu du lịch,thuyền buồm,511662,0
+2287,màu của cửa là gì,màu cam,407053,2
+2288,màu sắc của bông hoa là gì,màu trắng,421059,2
+2289,con mèo đang nằm ở đâu,chậu,65457,3
+2290,người phụ nữ ở đâu,phòng,555857,3
+2291,"những gì đông đúc với nhiều thứ bao gồm cả ghế, một chiếc xe đạp và một cái bàn với cốc trên đó",phòng,384527,0
+2292,cái gì tuyết phủ dày bên cạnh một cái cây,băng ghế,455044,0
+2293,màu của con mèo là gì,màu đen,296161,2
+2294,những gì đứng đầu với món tráng miệng bánh ngọt và một con dao và nĩa,đĩa ăn,434513,0
+2295,những gì cạnh nhau trong một bãi đậu xe,xe buýt,484723,0
+2296,cái gì đang ngồi ở bên đường,vòi,373753,0
+2297,màu sắc của các dấu hiệu là gì,màu cam,406208,2
+2298,những gì nằm trên miếng lót chuột bên cạnh ipod,chuột,568982,0
+2299,"có bao nhiêu hộp đựng cà rốt, bông cải xanh, cơm, súp lơ và các loại rau khác",bốn,545411,1
+2300,những gì đang đi xuống các đường ray tàu,tàu hỏa,434279,0
+2301,những gì mở trên cát của một bãi biển,chiếc ô,490337,0
+2302,cái gì đang ngồi trên nhà vệ sinh bên trong phòng tắm,con mèo,465591,0
+2303,màu của con chim là gì,màu xanh dương,432805,2
+2304,màu của bánh là gì,màu trắng,64954,2
+2305,những gì nghiêng trên cỏ ăn,con ngựa,523681,0
+2306,cái gì đang ngồi trên bàn làm việc,máy vi tính,353096,0
+2307,những gì chứa đầy hai hình ảnh đóng khung cũ và đứng đầu với cà vạt cổ,hộp,534178,0
+2308,xe lửa đỏ và trắng đậu ở đâu,trạm,158099,3
+2309,những gì được đặt trên giường đôi với khăn trải giường màu đỏ,khăn,527994,0
+2310,màu của lá là gì,màu xanh lá,200796,2
+2311,những gì nằm trên tường,cây,557884,0
+2312,có bao nhiêu đứa trẻ nhỏ mỗi đứa trên một giường của giường tầng ba tầng,ba,272632,1
+2313,bồn vệ sinh màu xanh lá cây được tô điểm ở đâu,phòng tắm,455769,3
+2314,màu của con ngựa là gì,màu đen,556694,2
+2315,người phụ nữ đang ở đâu,gương,150088,3
+2316,màu của lá là gì,màu xanh lá,19002,2
+2317,những gì đỗ gần một chiếc xe đạp khác,xe máy,538792,0
+2318,người đàn ông ở sảnh tiếp tân cầm cái gì,nước,347254,0
+2319,hoa trắng và vàng được sắp xếp ở đâu,lọ cắm hoa,412172,3
+2320,màu tóc là gì,màu nâu,466097,2
+2321,màu của tường là gì,màu trắng,429539,2
+2322,màu của áo khoác là gì,màu xanh dương,280484,2
+2323,người phụ nữ giữ bàn chải đánh răng ở đâu,cửa hàng,88514,3
+2324,một nhà bếp không có đồ đạc ở đâu,nhà ở,549575,3
+2325,màu của cạnh là gì,màu xanh lá,267454,2
+2326,có bao nhiêu người đi xe máy đang rẽ vào một khúc cua trên con đường nông thôn,hai,475769,1
+2327,màu của gấu là gì,màu đen,461560,2
+2328,có bao nhiêu giường trong một phòng ngủ có tv,hai,205794,1
+2329,màu của lửa là gì,màu vàng,477831,2
+2330,màu của bầu trời là gì,màu xám,364303,2
+2331,người đàn ông cưỡi những gì xuống một bên của một con dốc phủ tuyết,ván trượt,432488,0
+2332,màu của con chó là gì,màu đen,126815,2
+2333,mặt mèo được phản chiếu ở đâu,gương,292993,3
+2334,màu của con ngựa là gì,màu nâu,209383,2
+2335,màu của bảng là gì,màu đen,499801,2
+2336,người phụ nữ mang con chó ở đâu,balo,265916,3
+2337,gấu nhồi bông được đặt ở đâu,cái rổ,545364,3
+2338,đang lái xe gì trên đường phố,xe ô tô,354724,0
+2339,hai con ngựa kéo những gì xuống phố,xe,421978,0
+2340,những gì nuôi con chim của cô ấy bởi tổ,con chim,409701,0
+2341,cái gì nằm thẳng trên ghế,máy sấy khô,355124,0
+2342,có bao nhiêu cảnh sát trên lưng ngựa đứng trên đường phố,bốn,431876,1
+2343,cậu bé trượt ván ở đâu,hồ bơi,270215,3
+2344,phòng tắm được thấyị ở đâu,phòng,469389,3
+2345,những gì đang nằm trên bàn làm việc gần một cặp màn hình và bàn phím,con mèo,383406,0
+2346,"đâu là người đàn ông, phụ nữ và hai con chó di chuyển dọc theo",con thuyền,97613,3
+2347,một số con ngựa rất lớn kéo những gì tải với thùng,toa xe,459117,0
+2348,người đang buộc những gì xung quanh cổ một cô gái,cà vạt,450075,0
+2349,màu của bộ đồ là gì,màu xám,110459,2
+2350,màu sắc của kéo là gì,màu tía,472312,2
+2351,màu của con chim là gì,màu trắng,96679,2
+2352,có bao nhiêu người giữ những chiếc ô đầy màu sắc trong một đoạn tối,hai,305667,1
+2353,những gì được đặt ở cả hai bên của một con vật lớn hơn nhiều đang dẫn đầu,hươu cao cổ,567198,0
+2354,chó đang nằm ở đâu,vali,293532,3
+2355,cái gì đầy chuối chín trên bàn,cái rổ,362189,0
+2356,có bao nhiêu nam thanh niên tại giải ném đĩa bay đang tạo dáng chụp ảnh,bốn,342049,1
+2357,màu của nút là gì,màu xanh lá,438315,2
+2358,người đàn ông đang sửa xe đạp ở đâu,cửa tiệm,28099,3
+2359,màu của bầu trời là gì,màu xanh dương,565641,2
+2360,cái gì đang nằm trên thứ màu xanh,tách,557510,0
+2361,cái gì bị treo bởi những sợi dây buộc vào một cái cột,con thuyền,382850,0
+2362,có bao nhiêu kiện hành lý màu hồng ngồi trên sàn gỗ,ba,125298,1
+2363,màu của chiếc ghế dài là gì,màu đỏ,251292,2
+2364,nhà hàng đã chuẩn bị gì với một mặt súp và salad vườn,sandwich,519460,0
+2365,cái gì đang ngồi trong một công viên cây xanh trống rỗng,băng ghế,371155,0
+2366,những gì ngồi trên cánh đồng và nhìn về phía máy ảnh,con cừu,547383,0
+2367,máy tính xách tay và đèn bàn nằm ở đâu,phòng,264363,3
+2368,nhóm các chàng trai mặc đồng phục màu đen và đỏ và giày đen mang theo cái gì,chiếc ô,477288,0
+2369,cái gì cao ở phía bên của bức tường tháp,đồng hồ,367452,0
+2370,những gì được hiển thị vận chuyển lô hàng xe đạp,phương tiện giao thông,551952,0
+2371,người đàn ông đang đi về phía cây ở đâu,xe tải,425447,3
+2372,có bao nhiêu đứa trẻ cầm bộ điều khiển wii trong một phòng khách,bốn,116286,1
+2373,màu của chiếc đĩa là gì,màu trắng,95737,2
+2374,"những gì được gộp lại với nhau trên sàn, bao gồm một túi mua sắm, một túi duffel và một chiếc vali màu đen",túi,457226,0
+2375,những gì đang chờ để được lên máy bay,xe buýt,466346,0
+2376,những gì liên tiếp trong một phòng tắm bị phá hủy,phòng tắm,566189,0
+2377,cái gì trên tấm trắng lớn,pizza,552221,0
+2378,những gì đang đi bên cạnh nhau trên bãi cỏ,con ngựa,371194,0
+2379,kẹo dẻo màu nằm ở đâu,bát,238336,3
+2380,những gì đỗ trên đường trước một chiếc xe hơi,xe máy,488943,0
+2381,những gì nằm bên cạnh bồn tắm trong một phòng tắm trống,nhà vệ sinh,446574,0
+2382,màu của xe buýt là gì,màu đỏ,100331,2
+2383,con mèo xám đang ngồi ở đâu,vali,408116,3
+2384,có bao nhiêu con hươu cao cổ đi bộ trên mặt đất cát,bốn,174238,1
+2385,những gì có nhà vệ sinh một số ống và một cửa sổ,bồn tắm,568150,0
+2386,người đàn ông và phụ nữ đi xe bên cạnh một cơ thể của nước,con voi,548420,0
+2387,màu của chiếc tàu là gì,màu vàng,446307,2
+2388,cô gái nhỏ đang  cầm một bộ điều khiển trò chơi video nằm ở đâu,giường,175606,3
+2389,có bao nhiêu con hươu cao cổ đứng quanh sào ăn cỏ khô,năm,14686,1
+2390,những gì khiến đường hầm được bao quanh bởi một khu rừng,tàu hỏa,528404,0
+2391,cái gì nằm trong góc bếp,tủ đá,554523,0
+2392,người lướt sóng có bao nhiêu dấu hiệu khi vác ván xuống nước,mười,349846,1
+2393,màu của hàng rào là gì,màu xanh lá,358384,2
+2394,những gì sẽ bay vào một ngày nắng,máy bay,474788,0
+2395,gấu bông koala ôm gấu bông koala con ở đâu,cái ghế,239793,3
+2396,những gì bên cạnh bức tường đá cao,hươu cao cổ,506224,0
+2397,người đàn ông đang chất gì lên giường của một chiếc xe tải,những quả cam,341230,0
+2398,một số chiếc xe đang lái xe xuống cạnh nhau là gì,đường bộ,406103,0
+2399,người đàn ông đang kiểm tra trần nhà ở đâu,phòng,388961,3

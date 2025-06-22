@@ -1,145 +1,84 @@
-from transformers import TrainingArguments, Trainer, EarlyStoppingCallback
-import mlflow
-import argparse
-import os
+from transformers import TrainingArguments, Trainer, EarlyStoppingCallback, TrainerCallback
+import models.model
+from utils.trainer import TrainingModeHandler
+import pandas as pd
 import numpy as np
-from timm.models import create_model
-from sklearn.metrics import accuracy_score
-import modules.model
-from utils.dataset import get_dataset
+import mlflow
+import os
+import warnings
 
+warnings.filterwarnings("ignore")
 os.environ['MLFLOW_EXPERIMENT_NAME'] = 'mlflow-vivqa'
 
 
-def compute_metrics(p):
-    pred, labels = p
-    pred = np.argmax(pred, axis=1)
-    accuracy = accuracy_score(y_true=labels, y_pred=pred)
-    return {"accuracy": accuracy}
+def _get_train_config(cfg):
+    training_cfg = cfg.get("training")
+    ckpt_cfg = cfg.get("paths")["checkpoints"]
+    ckpt_cfg["save_path"] = ckpt_cfg["save_path"] or "checkpoints/"
 
-
-def get_options():
-    args = argparse.ArgumentParser()
-
-    # Training Argument
-    args.add_argument("--output-dir", type=str, default="./output")
-    args.add_argument("--log-level", choices=[
-                      "debug", "info", "warning", "error", "critical", "passive"], default="passive")
-    args.add_argument("--lr-scheduler-type",
-                      choices=["cosine", "linear"], default="cosine")
-    args.add_argument("--warmup-ratio", type=float, default=0.1)
-    args.add_argument("--logging-strategy",
-                      choices=["no", "epoch", "steps"], default="epoch")
-    args.add_argument("--save-strategy",
-                      choices=["no", "epoch", "steps"], default="epoch")
-    args.add_argument("--save-total-limit", type=int, default=1)
-    args.add_argument("-tb", "--train-batch-size", type=int, default=65)
-    args.add_argument("-eb", "--eval-batch-size", type=int, default=65)
-    args.add_argument("-e", "--epochs", type=int, default=15)
-    args.add_argument("-lr", "--learning-rate", type=float, default=3e-5)
-    args.add_argument("--weight-decay", type=float, default=0.01)
-    args.add_argument("--workers", type=int, default=2)
-
-    # Varriables setting
-    args.add_argument("--image-path", type=str, default="./data/images")
-    args.add_argument("--ans-path", type=str, default="./data/vocab.json")
-    args.add_argument("--train-path", type=str,
-                      default="./data/ViVQA-csv/train.csv")
-    args.add_argument("--val-path", type=str,
-                      default="./data/ViVQA-csv/val.csv")
-    args.add_argument("--test-path", type=str,
-                      default="./data/ViVQA-csv/test.csv")
-    # args.add_argument("--feature-paths", type=str, default="./features")
-
-    # Model setting
-    # args.add_argument("--efficientnet-b", choices=[0, 1, 2, 3, 4, 5, 6, 7], default=7)
-    args.add_argument("--drop-path-rate", type=float, default=0.3)
-    args.add_argument("--encoder-layers", type=int, default=6)
-    args.add_argument("--encoder-attention-heads-layers", type=int, default=6)
-    args.add_argument("--classes", type=int, default=353)
-
-    opt = args.parse_args()
-    return opt
-
-
-def _get_train_all_config(opt):
     args = TrainingArguments(
-        output_dir=opt.output_dir,
-        log_level=opt.log_level,
-        lr_scheduler_type=opt.lr_scheduler_type,
-        warmup_ratio=opt.warmup_ratio,
-        logging_strategy=opt.logging_strategy,
-        save_strategy=opt.save_strategy,
-        save_total_limit=opt.save_total_limit,
-        per_device_train_batch_size=opt.train_batch_size,
-        per_device_eval_batch_size=opt.eval_batch_size,
-        num_train_epochs=opt.epochs,
-        learning_rate=opt.learning_rate,
-        weight_decay=opt.weight_decay,
-        dataloader_num_workers=opt.workers,
-        report_to='mlflow',
-        save_safetensors=False,
-        disable_tqdm=False
+        output_dir=ckpt_cfg["save_path"],
+        log_level=training_cfg["log_level"],
+        lr_scheduler_type=training_cfg["lr_scheduler_type"],
+        warmup_ratio=training_cfg["warmup_ratio"],
+        logging_strategy=training_cfg["logging_strategy"],
+        save_strategy=training_cfg["save_strategy"],
+        save_total_limit=training_cfg["save_total_limit"],
+        per_device_train_batch_size=training_cfg["train_batch_size"],
+        per_device_eval_batch_size=training_cfg["eval_batch_size"],
+        num_train_epochs=training_cfg["epochs"],
+        learning_rate=training_cfg["learning_rate"],
+        weight_decay=training_cfg["weight_decay"],
+        dataloader_num_workers=training_cfg["workers"],
+        report_to=training_cfg["report_to"],
+        save_safetensors=training_cfg["save_safetensors"],
+        disable_tqdm=training_cfg["disable_tqdm"],
+        overwrite_output_dir=training_cfg["overwrite_output_dir"],
+        metric_for_best_model=training_cfg["metric_for_best_model"],
+        eval_strategy=training_cfg["eval_strategy"],
+        load_best_model_at_end=training_cfg["load_best_model_at_end"],
+        greater_is_better=training_cfg["greater_is_better"]
     )
     return args
 
 
-def _get_train_config(opt):
-    args = TrainingArguments(
-        output_dir=opt.output_dir,
-        log_level=opt.log_level,
-        lr_scheduler_type=opt.lr_scheduler_type,
-        warmup_ratio=opt.warmup_ratio,
-        logging_strategy=opt.logging_strategy,
-        save_strategy=opt.save_strategy,
-        save_total_limit=opt.save_total_limit,
-        per_device_train_batch_size=opt.train_batch_size,
-        per_device_eval_batch_size=opt.eval_batch_size,
-        num_train_epochs=opt.epochs,
-        learning_rate=opt.learning_rate,
-        weight_decay=opt.weight_decay,
-        dataloader_num_workers=opt.workers,
-        report_to='mlflow',
-        save_safetensors=False,
-        disable_tqdm=False,
-        overwrite_output_dir=True,
-        metric_for_best_model='accuracy',
-        evaluation_strategy='epoch',
-        load_best_model_at_end=True,
-        greater_is_better=True
-    )
-    return args
+class PrintMessageCallback(TrainerCallback):
+    def __init__(self, cfg):
+        self.cfg = cfg
+
+    def on_train_begin(self, args, state, control, **kwargs):
+        if self.cfg.get("model")["use_selector"]:
+            print("Selector is ON. Computing Selective loss.")
+        else:
+            print(
+                "Selector is OFF. Only getting logits from VQA model and computing VQA loss.")
 
 
-def main():
-    opt = get_options()
+def train():
+    handler = TrainingModeHandler()
 
-    train_dataset, val_dataset, test_dataset = get_dataset(opt)
+    model = handler.load_model()
+    optimizer = handler.build_optimizer()
+    compute_metrics = handler.build_compute_metrics()
 
-    model = create_model('vivqa_model',
-                         num_classes=opt.classes,
-                         drop_path_rate=opt.drop_path_rate,
-                         encoder_layers=opt.encoder_layers,
-                         encoder_attention_heads=opt.encoder_attention_heads_layers)
-
-    args = _get_train_config(opt)
-
+    args = _get_train_config(handler.config)
     trainer = Trainer(
         model=model,
         args=args,
-        train_dataset=train_dataset,
-        eval_dataset=val_dataset,
+        train_dataset=handler.train_dataset,
+        eval_dataset=handler.valid_dataset,
         compute_metrics=compute_metrics,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)]
+        optimizers=(optimizer, None),
+        callbacks=[EarlyStoppingCallback(
+            early_stopping_patience=5), PrintMessageCallback(handler.config)]
     )
 
     trainer.train()
-
-    test = trainer.evaluate(test_dataset)
-    print(f'Test Accuracy: {test["eval_accuracy"]}')
+    handler.post_train(trainer)
 
     mlflow.end_run()
+    handler.cleanup_after_training()
 
 
 if __name__ == '__main__':
-    main()
+    train()

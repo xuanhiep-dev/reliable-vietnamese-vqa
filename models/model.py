@@ -11,8 +11,9 @@ import math
 from transformers.utils.generic import ModelOutput
 from dataclasses import dataclass
 from typing import Optional
-from modules.TextEmbedding import BartPhoExtractor
-from modules.VisionEmbedding import Blip2EfficientExtractor
+from models.language_embedding import BartPhoExtractor
+from models.vision_embedding import Blip2EfficientExtractor
+from models.selective_models import SelectivePredictor
 
 
 @dataclass
@@ -25,12 +26,18 @@ def trunc_normal_(tensor, mean=0., std=1.):
     __call_trunc_normal_(tensor, mean=mean, std=std, a=-std, b=std)
 
 
-def _get_base_config(drop_path_rate=0, mlp_ratio=4, encoder_layers=6, encoder_attention_heads=6, **kwargs):
+def _get_base_config(**kwargs):
     return EncoderConfig(
         multiway=True,
-        layernorm_embedding=False, normalize_output=True, no_output_layer=True,
-        drop_path_rate=drop_path_rate, encoder_embed_dim=768, encoder_attention_heads=encoder_attention_heads,
-        encoder_ffn_embed_dim=int(768 * mlp_ratio), encoder_layers=encoder_layers,
+        layernorm_embedding=False,
+        normalize_output=True,
+        no_output_layer=True,
+        drop_path_rate=kwargs["drop_path_rate"],
+        encoder_embed_dim=kwargs["encoder_embed_dim"],
+        encoder_attention_heads=kwargs["encoder_attention_heads_layers"],
+        encoder_ffn_embed_dim=int(
+            kwargs["encoder_embed_dim"] * kwargs["mlp_ratio"]),
+        encoder_layers=kwargs["encoder_layers"],
     )
 
 
@@ -50,7 +57,7 @@ class Pooler(nn.Module):
 
 
 class ViVQABEiT3(nn.Module):
-    def __init__(self, args):
+    def __init__(self, args, **kwargs):
         super().__init__()
         self.args = args
         assert args.multiway
@@ -107,6 +114,7 @@ class ViVQABEiT3(nn.Module):
             multiway_split_position=multiway_split_position
         )
         encoder_out["multiway_split_position"] = multiway_split_position
+
         return encoder_out
 
 
@@ -114,7 +122,8 @@ class BEiT3Wrapper(nn.Module):
     def __init__(self, args, **kwargs):
         super().__init__()
         self.args = args
-        self.beit3 = ViVQABEiT3(args)
+        self.beit3 = ViVQABEiT3(args, **kwargs)
+        self.unk_index = 0
         # self.apply(self._init_weights)
 
     def fix_init_weight(self):
@@ -141,16 +150,33 @@ class BEiT3Wrapper(nn.Module):
             nn.init.constant_(m.bias, 0)
             nn.init.constant_(m.weight, 1.0)
 
+    def compute_loss(self, logits, labels=None, confidences=None, use_selector=None):
+        loss = None
+
+        if not use_selector:
+            if labels is not None:
+                loss = F.cross_entropy(logits, labels)
+        else:
+            if labels is not None:
+                pred_inds = torch.argmax(F.softmax(logits, dim=1), dim=1)
+                correctness = (pred_inds == labels).to(dtype=torch.long)
+                loss = F.cross_entropy(confidences, correctness)
+
+        return ViVQAOutput(
+            loss=loss,
+            logits=confidences if use_selector else logits
+        )
+
 
 class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
-    def __init__(
-            self,
-            args,
-            num_classes,
-            norm_layer=nn.LayerNorm,
-            **kwargs
-    ):
-        super(BEiT3ForVietnameseVisualQuestionAnswering, self).__init__(args=args)
+    def __init__(self, args,
+                 norm_layer=nn.LayerNorm,
+                 use_selector=None,
+                 **kwargs):
+        super(BEiT3ForVietnameseVisualQuestionAnswering,
+              self).__init__(args=args, **kwargs)
+
+        self.use_selector = use_selector
         embed_dim = args.encoder_embed_dim
         self.pooler = Pooler(
             input_features=embed_dim,
@@ -162,7 +188,7 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
             nn.Linear(embed_dim, embed_dim * 2),
             norm_layer(embed_dim * 2),
             nn.GELU(),
-            nn.Linear(embed_dim * 2, num_classes),
+            nn.Linear(embed_dim * 2, kwargs["classes"]),
         )
         self.head.apply(self._init_weights)
 
@@ -170,28 +196,88 @@ class BEiT3ForVietnameseVisualQuestionAnswering(BEiT3Wrapper):
         question = question.squeeze(dim=1)
         padding_mask = padding_mask.squeeze(dim=1)
 
+        self._image = image
+        self._question = question
+        self._padding_mask = padding_mask
+
         outputs = self.beit3(
             textual_tokens=question,
             visual_tokens=image,
-            text_padding_position=padding_mask,
+            text_padding_position=padding_mask
         )
+
         x = outputs["encoder_out"]
         cls_rep = self.pooler(x)
         logits = self.head(cls_rep)
 
-        loss = None
-        if labels is not None:
-            loss = F.cross_entropy(logits, labels)
+        if not self.use_selector:
+            return self.compute_loss(logits=logits, labels=labels)
 
-        return ViVQAOutput(
-            loss=loss,
-            logits=logits,
+        return {"logits": logits, "outputs": outputs}
+
+
+class ViVQABEiT3Selective(BEiT3ForVietnameseVisualQuestionAnswering):
+    def __init__(self, args, norm_layer=nn.LayerNorm, **kwargs):
+        super().__init__(args, norm_layer=norm_layer,
+                         use_selector=kwargs["use_selector"], **kwargs["vqa"])
+        self.select_cfg = kwargs["selector"]
+        self.vqa_cfg = kwargs["vqa"]
+        self._init_selector()
+
+    def _init_selector(self):
+        self.selector = SelectivePredictor(
+            self.select_cfg["type"], **self.select_cfg["params"])
+
+    def get_optimizer_parameters(self):
+        params = []
+
+        selector_params = {"params": list(self.selector.parameters())}
+
+        if not self.select_cfg["freeze_vqa"]:
+            params.append(
+                {"params": list(set(self.parameters()) - set(self.selector.parameters()))})
+        else:
+            params.append(selector_params)
+
+        if "sel_lr" in self.select_cfg:
+            selector_params["lr"] = self.select_cfg["sel_lr"]
+
+        return params
+
+    def forward(self, image, question, padding_mask, labels=None, **kwargs):
+        results = super().forward(image, question,
+                                  padding_mask, labels, **self.vqa_cfg)
+
+        logits = results["logits"]
+        outputs = results["outputs"]
+
+        multiway_split_position = outputs["multiway_split_position"]
+        multimodal_emb = outputs["encoder_out"]
+        image_emb = outputs["encoder_out"][:,
+                                           :multiway_split_position, :]
+        text_emb = outputs["encoder_out"][:,
+                                          multiway_split_position:, :]
+
+        selector_output = self.selector(
+            logits.detach(),
+            image_emb.detach(),
+            text_emb.detach(),
+            multimodal_emb.detach(),
         )
+        confidences = selector_output["confidences"]
+
+        return self.compute_loss(logits=logits, labels=labels, confidences=confidences, use_selector=self.use_selector)
 
 
 @register_model
-def vivqa_model(pretrained=False, num_classes=353, **kwargs):
-    args = _get_base_config(**kwargs)
-    model = BEiT3ForVietnameseVisualQuestionAnswering(
-        args, num_classes=num_classes, **kwargs)
+def avivqa_model(pretrained=False, **kwargs):
+    args = _get_base_config(**kwargs["vqa"])
+
+    use_selector = kwargs["use_selector"]
+    if not use_selector:
+        model = BEiT3ForVietnameseVisualQuestionAnswering(
+            args, use_selector=use_selector, **kwargs["vqa"])
+    else:
+        model = ViVQABEiT3Selective(args, **kwargs)
+
     return model
