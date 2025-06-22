@@ -1,0 +1,42 @@
+use_selector: false
+
+vqa:
+  model_name: "avivqa_model"
+  drop_path_rate: 0.3
+  mlp_ratio: 4
+  encoder_layers: 6
+  encoder_attention_heads_layers: 6
+  encoder_embed_dim: 768
+  max_source_positions: 512
+  classes: 353
+  base_path: checkpoints/base_model.pth
+
+selector:
+  model_name: "selector"
+  type: combo_embeddings_logit
+  params:
+    use_softmax: false
+    answer_hidden_size: 1024
+    n_answers: 353
+    hidden_1: 1024
+    hidden_2: 1024
+    dropout: 0.5
+    top_k: 5
+    full_dist: true
+    use_qi_embed: true
+    image_feat_size: 768
+    text_feat_size: 768
+    qi_feat_size: 768
+    image_hidden_size: 512
+    text_hidden_size: 512
+    qi_hidden_size: 512
+    pool_image_embedding: true
+    pool_image_dim: 1
+    pool_text_embedding: true
+    pool_text_dim: 1
+    pool_multi_embedding: true
+    pool_multi_dim: 1
+    pool_type: max
+    classes: 2
+  sel_lr: 0.0001
+  freeze_vqa: true

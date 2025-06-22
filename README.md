@@ -1,68 +1,59 @@
-# Descriptions
-```
-usage: main.py [-h] [--output-dir OUTPUT_DIR]
-               [--log-level {debug,info,warning,error,critical,passive}]
-               [--lr-scheduler-type {cosine,linear}]
-               [--warmup-ratio WARMUP_RATIO]
-               [--logging-strategy {no,epoch,steps}]
-               [--save-strategy {no,epoch,steps}]
-               [--save-total-limit SAVE_TOTAL_LIMIT] [-tb TRAIN_BATCH_SIZE]
-               [-eb EVAL_BATCH_SIZE] [-e EPOCHS] [-lr LEARNING_RATE]
-               [--weight-decay WEIGHT_DECAY] [--workers WORKERS]
-               [--image-path IMAGE_PATH] [--ans-path ANS_PATH]
-               [--train-path TRAIN_PATH] [--test-path TEST_PATH]
-               [--feature-paths FEATURE_PATHS]
-               [--efficientnet-b {0,1,2,3,4,5,6,7}]
-               [--drop-path-rate DROP_PATH_RATE]
-               [--encoder-layers ENCODER_LAYERS]
-               [--encoder-attention-heads-layers ENCODER_ATTENTION_HEADS_LAYERS]
-               [--classes CLASSES]
-
-options:
-  -h, --help            show this help message and exit
-  --output-dir OUTPUT_DIR
-  --log-level {debug,info,warning,error,critical,passive}
-  --lr-scheduler-type {cosine,linear}
-  --warmup-ratio WARMUP_RATIO
-  --logging-strategy {no,epoch,steps}
-  --save-strategy {no,epoch,steps}
-  --save-total-limit SAVE_TOTAL_LIMIT
-  -tb TRAIN_BATCH_SIZE, --train-batch-size TRAIN_BATCH_SIZE
-  -eb EVAL_BATCH_SIZE, --eval-batch-size EVAL_BATCH_SIZE
-  -e EPOCHS, --epochs EPOCHS
-  -lr LEARNING_RATE, --learning-rate LEARNING_RATE
-  --weight-decay WEIGHT_DECAY
-  --workers WORKERS
-  --image-path IMAGE_PATH
-  --ans-path ANS_PATH
-  --train-path TRAIN_PATH
-  --test-path TEST_PATH
-  --feature-paths FEATURE_PATHS
-  --efficientnet-b {0,1,2,3,4,5,6,7}
-  --drop-path-rate DROP_PATH_RATE
-  --encoder-layers ENCODER_LAYERS
-  --encoder-attention-heads-layers ENCODER_ATTENTION_HEADS_LAYERS
-  --classes CLASSES
-```
-# Example
-Install.
+# Installation & Training Guide
+## 1. Install.
 ```bash
 pip install salesforce-lavis
 pip install torchscale underthesea mlflow efficientnet_pytorch
 pip install --upgrade transformers
+pip install --upgrade timm
 ```
-Run training.
+## 2. Training.
+### 2.1. Train a new model and save checkpoint.
 ```bash
-python main.py  --log-level 'info'\
-                --output-dir './output'\
-                --image-path './data/images' \
-                --train-path './data/ViVQA-csv/train.csv'\
-                --val-path './data/ViVQA-csv/validation.csv'\
-                --test-path './data/ViVQA-csv/test.csv' \
-                --ans-path './data/vocab.json'\
-                --train-batch-size 32 \
-                --eval-batch-size 32 \
-                --encoder-layers 6 \
-                --encoder-attention-heads-layers 6 \
-                --epoch 25
+!bash scripts/train_vqa_model.sh use_selector=<true|false> save_checkpoint_path=<path>
 ```
+### 2.2. Resume training from existing checkpoint.
+```bash
+!bash scripts/train_vqa_model.sh use_selector=<true|false> load_checkpoint_path=<path>
+```
+### 2.3. Train from peers (multi-subset training without selector).
+```bash
+!bash scripts/train_vqa_mulmodels_loop.sh subsets=subset_id1,subset_id2,...
+```
+## 3. Evaluation.
+### 3.1. Load existing model.
+```bash
+from inference.predictor import PredictorModeHandler
+
+predictor = PredictorModeHandler()
+model = predictor.load_final_model(<path_to_selective_model>)
+```
+### 3.2. Get the prediction and save result.
+```bash
+predictor.predict_test_dataset(<loaded_model>, <path_to_test_dataset>)
+```
+### 3.3. Evaluate the result.
+```bash
+from evaluation.evaluate import EvaluatorModeHandler
+import pandas as pd
+
+df = pd.read_csv(<path_to_model_answers>)
+evaluator = EvaluatorModeHandler(df)
+evaluator.evaluate()
+```
+## 4. Inference.
+### 4.1. Load existing model.
+```bash
+from inference.predictor import PredictorModeHandler
+
+predictor = PredictorModeHandler()
+model_path = <path_to_existing_model>
+model = predictor.load_final_model(model_path)
+```
+### 4.2. Get the model output.
+```bash
+image_path = <your_image_path>
+question = <your_question>
+predictor.predict_sample(model, image_path, question)
+```
+### The picture below shows an example of a model result.
+![Sample Result](example/example.png)
