@@ -1,3 +1,71 @@
+# Reliable Vietnamese VQA
+
+A robust and reliable Visual Question Answering (VQA) system tailored for the Vietnamese language.  
+This project integrates advanced vision-language models with a selective answering mechanism to ensure trustworthy outputs — especially when uncertain or unanswerable questions are encountered.
+
+---
+
+## Overview
+
+This system enables **accurate** and **selective** answering of visual questions in Vietnamese by combining:
+
+- **Visual Encoder:** Extracts image features using a frozen BLIP-2 model.
+- **Text Encoder/Decoder:** Processes Vietnamese questions using BARTpho.
+- **Selector Module:** Determines whether the model should answer or abstain based on confidence.
+- **Answer Generator:** Generates answers from visual and textual embeddings if confidence is high enough.
+
+---
+
+## Architecture
+```
++------------------+
+|  Input Image     |
++--------+---------+
+        ↓
+[BLIP-2 Visual Encoder]
+        ↓
++--------+---------+
+| Visual Embedding |
++--------+---------+
+        ↓
++----------------+----------------+
+| Vietnamese Question (BARTpho) |
++---------------+-----------------+
+        ↓
+[Cross-modal Fusion]
+        ↓
++-----------------------+
+| Selector (Confidence) |
++-----------+-----------+
+Yes (High) | No (Low)
+       ↓ | ↓
+[Answer Decoder] | [Return "I don't know"]
+         ↓
+    Final Output
+```
+## Project Structure
+```
+reliable-vietnamese-vqa/
+│
+├── configs/               # Config files (YAML)
+├── data/                  # Dataset, vocab, predictions
+│   ├── full/
+│   ├── vivqa/
+│   ├── subsets/
+│   ├── predictions/
+│   └── vocab.json
+│
+├── evaluation/            # Evaluation scripts
+├── inference/             # Inference pipeline
+├── models/                # Model definitions
+├── scripts/               # Training shell scripts
+├── utils/                 # Utility functions (dataset, training, vision)
+│
+├── main.py                # Main entry point
+├── requirements.txt       # Dependencies
+└── README.md              # Project documentation
+```
+
 # Installation & Training Guide
 ## 1. Install.
 ```bash
@@ -55,5 +123,8 @@ image_path = <your_image_path>
 question = <your_question>
 predictor.predict_sample(model, image_path, question)
 ```
-### The picture below shows an example of a model result.
-![Sample Result](example/example.png)
+### 5. Features
+- Selective Answering to avoid unreliable outputs
+- Fully supports Vietnamese input questions
+- Modular design: Easily swap visual or language backbones
+- Built-in metrics: Accuracy, F1, Answerability
