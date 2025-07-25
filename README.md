@@ -1,7 +1,6 @@
 # Reliable Vietnamese VQA
 
-A robust and reliable Visual Question Answering (VQA) system tailored for the Vietnamese language.  
-This project integrates advanced vision-language models with a selective answering mechanism to ensure trustworthy outputs — especially when uncertain or unanswerable questions are encountered.
+A dependable Visual Question Answering (VQA) system designed specifically for the Vietnamese language. It combines visual and language understanding with a selective answering strategy that avoids responding to questions when the model lacks sufficient confidence, helping improve output credibility in real-world scenarios.
 
 ---
 
