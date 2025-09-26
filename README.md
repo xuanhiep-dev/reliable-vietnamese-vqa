@@ -1,3 +1,9 @@
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.3-orange?logo=pytorch)
+![Transformers](https://img.shields.io/badge/Transformers-4.41-green?logo=huggingface)
+![LAVIS](https://img.shields.io/badge/LAVIS-BLIP2-yellow)
+
+
 # Reliable Vietnamese VQA
 
 A dependable Visual Question Answering (VQA) system tailored for the Vietnamese language.
