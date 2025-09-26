@@ -1,6 +1,7 @@
 # Reliable Vietnamese VQA
 
-A dependable Visual Question Answering (VQA) system designed specifically for the Vietnamese language. It combines visual and language understanding with a selective answering strategy that avoids responding to questions when the model lacks sufficient confidence, helping improve output credibility in real-world scenarios.
+A dependable Visual Question Answering (VQA) system tailored for the Vietnamese language.
+Unlike conventional VQA systems, this project integrates a selective answering mechanism to abstain when confidence is low - ensuring credible, real-world reliability.
 
 ---
 
@@ -8,10 +9,12 @@ A dependable Visual Question Answering (VQA) system designed specifically for th
 
 This system enables **accurate** and **selective** answering of visual questions in Vietnamese by combining:
 
-- **Visual Encoder:** Extracts image features using a frozen BLIP-2 model.
-- **Text Encoder/Decoder:** Processes Vietnamese questions using BARTpho.
-- **Selector Module:** Determines whether the model should answer or abstain based on confidence.
-- **Answer Generator:** Generates answers from visual and textual embeddings if confidence is high enough.
+- Visual Understanding: Frozen BLIP-2 as vision encoder.
+- Vietnamese Language Support: BARTpho for question encoding/decoding.
+- Selector Module: Confidence-based abstention for reliable predictions.
+- Answer Generator: Produces accurate answers only when confidence is high.
+- Evaluation Toolkit: Built-in metrics — Accuracy, F1, Answerability, Risk–Coverage.
+- Modular Design: Swap visual or text backbones easily.
 
 ---
 
@@ -42,6 +45,9 @@ Yes (High) | No (Low)
          ↓
     Final Output
 ```
+
+---
+
 ## Project Structure
 ```
 reliable-vietnamese-vqa/
@@ -127,3 +133,19 @@ predictor.predict_sample(model, image_path, question)
 - Fully supports Vietnamese input questions
 - Modular design: Easily swap visual or language backbones
 - Built-in metrics: Accuracy, F1, Answerability
+
+# Features
+- Selective Answering — avoids unreliable responses.
+- Native Vietnamese support for input questions.
+- Modular & Extensible — swap encoders or backbones easily.
+- Evaluation-ready — risk–coverage curves, answerability metrics.
+- Engineering Friendly — clean configs, training scripts, inference pipeline.
+
+## Roadmap
+- Add CLIP-ViT as optional vision backbone.
+- Integrate uncertainty calibration (e.g. temperature scaling).
+- Expand to multi-lingual VQA (EN–VI).
+- Dockerize inference API for deployment.
+
+## License
+License © 2025 [Duong Xuan Hiep]
