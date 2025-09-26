@@ -1,6 +1,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.3-orange?logo=pytorch)
-![Transformers](https://img.shields.io/badge/Transformers-4.41-green?logo=huggingface)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green?logo=fastapi)
+![HuggingFace](https://img.shields.io/badge/Transformers-4.41-green?logo=huggingface)
 ![LAVIS](https://img.shields.io/badge/LAVIS-BLIP2-yellow)
 
 
