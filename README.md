@@ -134,12 +134,33 @@ predictor.predict_sample(model, image_path, question)
 - Modular design: Easily swap visual or language backbones
 - Built-in metrics: Accuracy, F1, Answerability
 
-# Features
-- Selective Answering — avoids unreliable responses.
-- Native Vietnamese support for input questions.
-- Modular & Extensible — swap encoders or backbones easily.
-- Evaluation-ready — risk–coverage curves, answerability metrics.
-- Engineering Friendly — clean configs, training scripts, inference pipeline.
+---
+
+## 6. Example Output
+### 6.1. Case 1: System Confident
+👤 **User Query:**  
+*Ảnh này có bao nhiêu con mèo?*  
+
+**Input Image:**  
+*(user uploads image with 2 cats)*  
+
+🤖 **Chatbot Answer:**  
+> Có **2 con mèo** trong ảnh.  
+>
+> *(Confidence: 0.91 — Answer returned)*
+### 6.2. Case 2: System Not Confident
+👤 **User Query:**  
+*Người trong ảnh này đang nghĩ gì?*  
+
+**Input Image:**  
+*(user uploads portrait image)*  
+
+🤖 **Chatbot Answer:**  
+> Tôi **không chắc chắn để đưa ra câu trả lời chính xác**.  
+>
+> *(Confidence: 0.32 — Below threshold, abstained)*
+
+---
 
 ## Roadmap
 - Add CLIP-ViT as optional vision backbone.
