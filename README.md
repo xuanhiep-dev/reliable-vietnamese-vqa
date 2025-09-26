@@ -137,28 +137,32 @@ predictor.predict_sample(model, image_path, question)
 ---
 
 ## 6. Example Output
-### 6.1. Case 1: System Confident
+
+### ✅ 6.1 Case 1: System Confident
 👤 **User Query:**  
 *Ảnh này có bao nhiêu con mèo?*  
 
-**Input Image:**  
-*(user uploads image with 2 cats)*  
+🖼️ **Input Image:**  
+*(Người dùng tải lên ảnh có 2 con mèo)*  
 
 🤖 **Chatbot Answer:**  
 > Có **2 con mèo** trong ảnh.  
->
-> *(Confidence: 0.91 — Answer returned)*
-### 6.2. Case 2: System Not Confident
+>  
+> 🔎 *(Confidence: 0.91 — Answer returned)*  
+
+---
+
+### ❌ 6.2 Case 2: System Not Confident
 👤 **User Query:**  
 *Người trong ảnh này đang nghĩ gì?*  
 
-**Input Image:**  
-*(user uploads portrait image)*  
+🖼️ **Input Image:**  
+*(Người dùng tải lên ảnh chân dung)*  
 
 🤖 **Chatbot Answer:**  
 > Tôi **không chắc chắn để đưa ra câu trả lời chính xác**.  
->
-> *(Confidence: 0.32 — Below threshold, abstained)*
+>  
+> ⚠️ *(Confidence: 0.32 — Below threshold, abstained)*  
 
 ---
 
