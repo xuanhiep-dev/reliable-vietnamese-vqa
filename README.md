@@ -1,6 +1,13 @@
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.3-orange?logo=pytorch)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green?logo=fastapi)
+![LAVIS](https://img.shields.io/badge/LAVIS-BLIP2-yellow)
+
+
 # Reliable Vietnamese VQA
 
-A dependable Visual Question Answering (VQA) system designed specifically for the Vietnamese language. It combines visual and language understanding with a selective answering strategy that avoids responding to questions when the model lacks sufficient confidence, helping improve output credibility in real-world scenarios.
+A dependable Visual Question Answering (VQA) system tailored for the Vietnamese language.
+Unlike conventional VQA systems, this project integrates a selective answering mechanism to abstain when confidence is low - ensuring credible, real-world reliability.
 
 ---
 
@@ -8,10 +15,12 @@ A dependable Visual Question Answering (VQA) system designed specifically for th
 
 This system enables **accurate** and **selective** answering of visual questions in Vietnamese by combining:
 
-- **Visual Encoder:** Extracts image features using a frozen BLIP-2 model.
-- **Text Encoder/Decoder:** Processes Vietnamese questions using BARTpho.
-- **Selector Module:** Determines whether the model should answer or abstain based on confidence.
-- **Answer Generator:** Generates answers from visual and textual embeddings if confidence is high enough.
+- Visual Understanding: Frozen BLIP-2 as vision encoder.
+- Vietnamese Language Support: BARTpho for question encoding/decoding.
+- Selector Module: Confidence-based abstention for reliable predictions.
+- Answer Generator: Produces accurate answers only when confidence is high.
+- Evaluation Toolkit: Built-in metrics — Accuracy, F1, Answerability, Risk–Coverage.
+- Modular Design: Swap visual or text backbones easily.
 
 ---
 
@@ -42,6 +51,9 @@ Yes (High) | No (Low)
          ↓
     Final Output
 ```
+
+---
+
 ## Project Structure
 ```
 reliable-vietnamese-vqa/
@@ -127,3 +139,44 @@ predictor.predict_sample(model, image_path, question)
 - Fully supports Vietnamese input questions
 - Modular design: Easily swap visual or language backbones
 - Built-in metrics: Accuracy, F1, Answerability
+
+---
+
+## 6. Example Output
+
+### ✅ 6.1. System Confident
+👤 **User Query:**  
+*Ảnh này có bao nhiêu con mèo?*  
+
+🖼️ **Input Image:**  
+*(Người dùng tải lên ảnh có 2 con mèo)*  
+
+🤖 **Chatbot Answer:**  
+> Có **2 con mèo** trong ảnh.  
+>  
+> 🔎 *(Confidence: 0.91 — Answer returned)*  
+
+---
+
+### ❌ 6.2. System Not Confident
+👤 **User Query:**  
+*Người trong ảnh này đang nghĩ gì?*  
+
+🖼️ **Input Image:**  
+*(Người dùng tải lên ảnh chân dung)*  
+
+🤖 **Chatbot Answer:**  
+> Tôi **không chắc chắn để đưa ra câu trả lời chính xác**.  
+>  
+> ⚠️ *(Confidence: 0.32 — Below threshold, abstained)*  
+
+---
+
+## Roadmap
+- Add CLIP-ViT as optional vision backbone.
+- Integrate uncertainty calibration (e.g. temperature scaling).
+- Expand to multi-lingual VQA (EN–VI).
+- Dockerize inference API for deployment.
+
+## License
+License © 2025 [Duong Xuan Hiep]
