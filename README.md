@@ -138,7 +138,7 @@ predictor.predict_sample(model, image_path, question)
 
 ## 6. Example Output
 
-### ✅ 6.1 Case 1: System Confident
+### ✅ 6.1. System Confident
 👤 **User Query:**  
 *Ảnh này có bao nhiêu con mèo?*  
 
@@ -152,7 +152,7 @@ predictor.predict_sample(model, image_path, question)
 
 ---
 
-### ❌ 6.2 Case 2: System Not Confident
+### ❌ 6.2. System Not Confident
 👤 **User Query:**  
 *Người trong ảnh này đang nghĩ gì?*  
 
